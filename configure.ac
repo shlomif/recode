@@ -42,6 +42,8 @@ AM_WITH_DMALLOC
 AM_GNU_GETTEXT_VERSION(0.18)
 AM_GNU_GETTEXT(external)
 
+AM_CONDITIONAL(MES_SITES, [test -f "~/etc/mes-sites/site.mk"])
+
 AH_BOTTOM([
 #include "cleaner.h"
 ])
