@@ -69,7 +69,7 @@ synchro: local
 	find $(top_srcdir) -name '*~' | xargs rm -fv
 	synchro -PD alcyon entretien
 
-ifneq "$(wildcard ~/etc/mes-sites/site.mk)" ""
+if MES_SITES
 
 site: site-all
 
@@ -81,7 +81,7 @@ caption_color = "\#ffffb7"
 LOGOURL = "/logo.gif"
 GOALS = $(wildcard manual/*.html)
 
-include ~/etc/mes-sites/site.mk
+-include ~/etc/mes-sites/site.mk
 
 $(htmldir)/manual/%.html: manual/%.html
 	@[ -d $(htmldir)/manual ] || mkdir -v $(htmldir)/manual
