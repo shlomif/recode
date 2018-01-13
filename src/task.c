@@ -27,21 +27,14 @@
 /* Buffer size used in transform_mere_copy.  */
 #define BUFFER_SIZE (16 * 1024)
 
-/* Input or output helpers.  */
+/* Input and output helpers.  */
 
 /*-------------------------------------------------------------------.
 | Read one byte from the input text of TASK, or EOF is none remain.  |
 `-------------------------------------------------------------------*/
 
-/* This function is directly called by get_byte whenever USE_HELPERS
-   is defined, and also from within generated Flex code unless
-   INLINE_HARDER is defined.  Otherwise, get_byte does everything
-   necessary and this routine is not needed.  */
-
-#if USE_HELPERS || !INLINE_HARDER
-
 int
-get_byte_helper (RECODE_SUBTASK subtask)
+get_byte (RECODE_SUBTASK subtask)
 {
   if (subtask->input.file)
     return getc (subtask->input.file);
@@ -51,20 +44,12 @@ get_byte_helper (RECODE_SUBTASK subtask)
     return (unsigned char) *subtask->input.cursor++;
 }
 
-#endif /* USE_HELPERS || !INLINE_HARDER */
-
 /*-----------------------------------------.
 | Write BYTE on the output text for TASK.  |
 `-----------------------------------------*/
 
-/* This function is directly called by put_byte whenever USE_HELPERS
-   is defined, and also from within generated Flex code unless
-   INLINE_HARDER is defined.  It is also called when the output
-   buffer needs to be reallocated, which put_byte does not know
-   how to handle itself.  */
-
 void
-put_byte_helper (int byte, RECODE_SUBTASK subtask)
+put_byte (int byte, RECODE_SUBTASK subtask)
 {
   if (subtask->output.file)
     putc (byte, subtask->output.file);

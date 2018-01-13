@@ -408,8 +408,8 @@ cdef extern from "common.h":
 
     # task.c
 
-    int get_byte_helper(RECODE_SUBTASK)
-    void put_byte_helper(int, RECODE_SUBTASK)
+    int get_byte(RECODE_SUBTASK)
+    void put_byte(int, RECODE_SUBTASK)
     bool recode_if_nogo(recode_error_, RECODE_SUBTASK)
     bool transform_byte_to_byte(RECODE_SUBTASK)
     bool transform_byte_to_variable(RECODE_SUBTASK)

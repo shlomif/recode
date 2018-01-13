@@ -678,10 +678,8 @@ const char *ucs2_to_rfc1345 (recode_ucs2);
 
 /* task.c.  */
 
-#if USE_HELPERS || !INLINE_HARDER
-int get_byte_helper (RECODE_SUBTASK);
-#endif
-void put_byte_helper (int, RECODE_SUBTASK);
+int get_byte (RECODE_SUBTASK);
+void put_byte (int, RECODE_SUBTASK);
 bool recode_if_nogo (enum recode_error, RECODE_SUBTASK);
 bool transform_byte_to_byte (RECODE_SUBTASK);
 bool transform_byte_to_variable (RECODE_SUBTASK);
@@ -713,39 +711,6 @@ bool put_ucs4 (unsigned, RECODE_SUBTASK);
 
 /* Giving a name to the ASCII character assigned to position 0.  */
 #define NUL '\0'
-
-#ifdef FLEX_SCANNER
-# if !INLINE_HARDER
-#  undef USE_HELPERS
-#  define USE_HELPERS 1
-# endif
-#endif
-
-#if USE_HELPERS
-
-# define get_byte(Subtask) \
-    get_byte_helper ((Subtask))
-
-# define put_byte(Byte, Subtask) \
-    put_byte_helper ((Byte), (Subtask))
-
-#else /* not USE_HELPERS */
-
-# define get_byte(Subtask) \
-    ((Subtask)->input.file					\
-     ? getc ((Subtask)->input.file)				\
-     : (Subtask)->input.cursor == (Subtask)->input.limit	\
-     ? EOF							\
-     : (unsigned char) *(Subtask)->input.cursor++)
-
-# define put_byte(Byte, Subtask) \
-    ((Subtask)->output.file					\
-     ? (putc ((char) (Byte), (Subtask)->output.file), 0)	\
-     : (Subtask)->output.cursor == (Subtask)->output.limit	\
-     ? (put_byte_helper ((int) (Byte), (Subtask)), 0)		\
-     : (*(Subtask)->output.cursor++ = (Byte), 0))
-
-#endif /* not USE_HELPERS */
 
 #ifdef FLEX_SCANNER
 
