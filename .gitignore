@@ -32,6 +32,7 @@ html/
 /po/POTFILES
 /po/stamp-po
 /python/Recode.c
+/recode-*.tar.gz
 /src/.deps/
 /src/.libs/
 /src/charname.h
