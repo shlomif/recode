@@ -492,7 +492,11 @@ perform_pass_sequence (RECODE_TASK task)
 
 /* FIXME: This is no good.  The main process might open too many files for
    one thing.  All of it should create children from left to right, instead
-   of all children to a single parent right to left.  */
+   of all children to a single parent right to left.
+
+   The code to do it correctly is below, but doesn't yet work for multiple
+   steps.
+*/
 
 static bool
 perform_pipe_sequence (RECODE_TASK task)
@@ -667,6 +671,7 @@ static bool
 perform_pipe_sequence (RECODE_TASK task)
 {
   RECODE_CONST_REQUEST request = task->request;
+  RECODE_OUTER outer = request->outer;
   struct recode_subtask subtask_block;
   RECODE_SUBTASK subtask = &subtask_block;
 
@@ -736,7 +741,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	      return false;
 	    }
 
-	  step = request->sequence_array[sequence_index];
+	  step = request->sequence_array + sequence_index;
 	  subtask->step = step;
 	  (*step->transform_routine) (subtask);
 
@@ -785,7 +790,7 @@ perform_pipe_sequence (RECODE_TASK task)
       return false;
     }
 
-  step = request->sequence_array[0];
+  step = request->sequence_array;
   subtask->step = step;
   (*step->transform_routine) (subtask);
 
@@ -824,6 +829,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	  }
     }
 
+#if 0
   if (interrupted)
     /* FIXME: It is not very clear what happened in sub-processes.  */
     if (task->error_so_far < task->fail_level)
@@ -831,6 +837,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	task->error_so_far = task->fail_level;
 	task->error_at_step = step;
       }
+#endif
 
   SUBTASK_RETURN (subtask);
 }
