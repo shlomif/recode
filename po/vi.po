@@ -1,53 +1,54 @@
 #  Vietnamese translation for recode-3.6.
 #  Copyright (C) 2005 Free Software Foundation, Inc.
 #  Clytie Siddall <clytie@riverland.net.au>, 2005.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
-"Report-Msgid-Bugs-To: <recode-bugs@iro.umontreal.ca>\n"
-"POT-Creation-Date: 2001-01-02 22:35+0100\n"
+"Report-Msgid-Bugs-To: rrt@sc3d.org\n"
+"POT-Creation-Date: 2018-01-15 14:25+0000\n"
 "PO-Revision-Date: 2005-02-20 18:44+0950\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net> \n"
-"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: src/main.c:142
+#: src/main.c:105
 msgid "No error"
 msgstr "Không có lỗi"
 
-#: src/main.c:145
+#: src/main.c:108
 msgid "Non canonical input"
 msgstr "Dữ liệụ gõ không đúng tiêu chuẩn"
 
-#: src/main.c:148
+#: src/main.c:111
 msgid "Ambiguous output"
 msgstr "Dữ liệu xuất là mơ hồ"
 
-#: src/main.c:151
+#: src/main.c:114
 msgid "Untranslatable input"
 msgstr "Dữ liệu gõ không dịch được"
 
-#: src/main.c:154
+#: src/main.c:117
 msgid "Invalid input"
 msgstr "Dữ liệu gõ không hợp lệ"
 
-#: src/main.c:157
+#: src/main.c:120
 msgid "System detected problem"
 msgstr "Hệ thống mới gặp lỗi"
 
-#: src/main.c:160
+#: src/main.c:123
 msgid "Misuse of recoding library"
 msgstr "Không sử dụng thư viện mã hóa lại cho đúng"
 
-#: src/main.c:163
+#: src/main.c:126
 msgid "Internal recoding bug"
 msgstr "Lỗi mã hóa lại nội  bộ"
 
-#: src/main.c:208
+#: src/main.c:166
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -77,16 +78,19 @@ msgstr ""
 "chương trình này; nếu không thì hãy viết thư cho Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA (Mỹ).\n"
 
-#: src/main.c:233
+#: src/main.c:191
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Thử lệnh `%s %s' để tìm thấy thông tin thêm.\n"
 
-#: src/main.c:237
-msgid "Free `recode' converts files between various character sets and surfaces.\n"
-msgstr "Chương trình `recode' (mã hóa lại) tự do thì chuyển đổi tập tin giữa nhiều bộ ký tự và mặt khác nhau.\n"
+#: src/main.c:195
+#, fuzzy
+msgid "Recode converts files between various character sets and surfaces.\n"
+msgstr ""
+"Chương trình `recode' (mã hóa lại) tự do thì chuyển đổi tập tin giữa nhiều "
+"bộ ký tự và mặt khác nhau.\n"
 
-#: src/main.c:241
+#: src/main.c:199
 #, c-format
 msgid ""
 "\n"
@@ -95,7 +99,7 @@ msgstr ""
 "\n"
 "Cách sử dụng: %s [TÙY_CHỌN]... [ [BỘ_KÝ_TỰ] | LỜI_YÊU_CẦU [TẬP_TIN]... ]\n"
 
-#: src/main.c:244
+#: src/main.c:202
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -105,14 +109,15 @@ msgstr ""
 "Nếu tùy chọn dài phải có đối số thì tùy chọn ngắn thích hợp cũng vậy.\n"
 "Đối với đối số tùy chọn thì cách giống nhau.\n"
 
-#: src/main.c:250
+#: src/main.c:208
+#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
+"list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
-"  -F, --freeze-tables        write out a C module holding all tables\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
 "      --help                 display this help and exit\n"
@@ -120,16 +125,20 @@ msgid ""
 msgstr ""
 "\n"
 "Danh sách:\n"
-"  -l, --list[=DẠNG]        _ghi danh sach_ một hay tất cả bộ ký tự và biệt hiệu được biết\n"
+"  -l, --list[=DẠNG]        _ghi danh sach_ một hay tất cả bộ ký tự và biệt "
+"hiệu được biết\n"
 "  -k, --known=CẶP          hạn chế bộ ký tự theo danh sách CẶP _được biết_\n"
-"  -h, --header[=[NGÔN_NGỮ/]TÊN]   ghi TÊN bảng ra thiết bị xuất chuẩn bằng sử dụng ngôn ngữ ấy rồi thoát (_đầu đề_)\n"
-"  -F, --freeze-tables        ghi ra mô-đun C chứa tất cả _bảng_ (_làm đông đặc_)\n"
-"  -T, --find-subsets         thông báo tât cả bộ ký tự là _nhóm phụ_ của bộ khác (_tìm_)\n"
+"  -h, --header[=[NGÔN_NGỮ/]TÊN]   ghi TÊN bảng ra thiết bị xuất chuẩn bằng "
+"sử dụng ngôn ngữ ấy rồi thoát (_đầu đề_)\n"
+"  -F, --freeze-tables        ghi ra mô-đun C chứa tất cả _bảng_ (_làm đông "
+"đặc_)\n"
+"  -T, --find-subsets         thông báo tât cả bộ ký tự là _nhóm phụ_ của bộ "
+"khác (_tìm_)\n"
 "  -C, --copyright            hiển thị các điều kiện _bản quyền_ và sao chép\n"
 "      --help                 hiển thị _trợ giúp_ này rồi thoát\n"
 "      --version              xuất thông tin _phiên bản_ rồi thoát\n"
 
-#: src/main.c:263
+#: src/main.c:220
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -142,22 +151,25 @@ msgid ""
 msgstr ""
 "\n"
 "Chế độ thi hành:\n"
-"  -v, --verbose           giải thích dãy bước và thông báo tiến trình (_chi tiết_)\n"
-"  -q, --quiet, --silent   thu hồi các thông điệp về việc mã hóa lại không hoàn tác (_im_)\n"
-"  -f, --force             _buộc_ tất cả việc mã hóa lại ngay cả khi không thể hoàn tác\n"
+"  -v, --verbose           giải thích dãy bước và thông báo tiến trình (_chi "
+"tiết_)\n"
+"  -q, --quiet, --silent   thu hồi các thông điệp về việc mã hóa lại không "
+"hoàn tác (_im_)\n"
+"  -f, --force             _buộc_ tất cả việc mã hóa lại ngay cả khi không "
+"thể hoàn tác\n"
 "  -t, --touch             _sờ_ mọi tập tin được mã hóa lại sau khi thay thế\n"
 "  -i, --sequence=files    sử dụng _tâp tin_ trung cấp cho việc _sắp xếp_ \n"
 "      --sequence=memory   sử dụng bộ đệm _nhớ_ cho việc _sắp xếp_\n"
 
-#: src/main.c:275
+#: src/main.c:232
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
 msgstr "  -p, --sequence=pipe     sử dụng thiết bị _ống_ cho việc _sắp xếp_\n"
 
-#: src/main.c:280
+#: src/main.c:237
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=pipe     bằng cờ -i (trên hệ điều hành này)\n"
 
-#: src/main.c:285
+#: src/main.c:242
 msgid ""
 "\n"
 "Fine tuning:\n"
@@ -171,62 +183,78 @@ msgstr ""
 "\n"
 "Điều hưởng tinh:\n"
 "  -s, --strict           sử dụng ánh xạ _chặt chẽ_, ngay cả ký tự phóng\n"
-"  -d, --diacritics       chuyển đổi chỉ _dấu phụ_ hay điều như nhau đối với HTML/LaTeX\n"
-"  -S, --source[=NGÔN_NGỮ]    hạn chế việc ma hóa lại nên chỉ xử lý chuỗi và chú thích như ngôn ngữ ấy (_nguồn_)\n"
-"  -c, --colons           sử dụng _dấu hai chấm_ thay thế dấu nháy kép cho dấu tách đôi\n"
+"  -d, --diacritics       chuyển đổi chỉ _dấu phụ_ hay điều như nhau đối với "
+"HTML/LaTeX\n"
+"  -S, --source[=NGÔN_NGỮ]    hạn chế việc ma hóa lại nên chỉ xử lý chuỗi và "
+"chú thích như ngôn ngữ ấy (_nguồn_)\n"
+"  -c, --colons           sử dụng _dấu hai chấm_ thay thế dấu nháy kép cho "
+"dấu tách đôi\n"
 "  -g, --graphics         ước các thước đo IBMPC bằng _đồ họa_ ASCII\n"
-"  -x, --ignore=BÔ_KÝ_TỰ   _bỏ qua_ bộ ký tự ấy khi chọn đường dẫn mã hóa lại\n"
+"  -x, --ignore=BÔ_KÝ_TỰ   _bỏ qua_ bộ ký tự ấy khi chọn đường dẫn mã hóa "
+"lại\n"
 
-#: src/main.c:296
+#: src/main.c:253
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"Khi tùy chọn -l không có DẠNG hay BỘ KÝ TỰ thi ghi danh sách tất cả bộ ký tự và mặt sẵn sàng.\n"
-"DẠNG là `decimal' (thập phân), `octal' (bát phân), `hexadecimal' (thập lục phân) hay `full' (toàn) (hay một của chữ đầu `dohf').\n"
+"Khi tùy chọn -l không có DẠNG hay BỘ KÝ TỰ thi ghi danh sách tất cả bộ ký tự "
+"và mặt sẵn sàng.\n"
+"DẠNG là `decimal' (thập phân), `octal' (bát phân), `hexadecimal' (thập lục "
+"phân) hay `full' (toàn) (hay một của chữ đầu `dohf').\n"
 
-#: src/main.c:302
+#: src/main.c:259
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
+"locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Nếu chưa lập BỘ_KÝ_TỰ_MẶC_ĐỊNH trong môi trường thì LC_ALL, LC_CTYPE, LANG\n"
 "quyết định biên mã phụ thuộc vào miền địa phương, là BỘ_KÝ_TỰ mặc định\n"
 
-#: src/main.c:307
+#: src/main.c:264
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
+"AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 "Có thể sử dụng tùy chọn -k trước khi ghi danh sách bộ ký tự sau BỘ_KÝ_TỰ,\n"
 "cả hai bộ ký tự ấy có dạng bảng, có mọi đôi dạng `BEF1:AFT1,BEF2:AFT2,...'\n"
 "và cả hai BEF và AFT là mã dạng số thập phân.\n"
 
-#: src/main.c:312
-msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr "LN hay NGÔN_NGỮ là một ngôn ngữ, có thể `c', `perl' hay `po'; còn `c' là mặc định.\n"
+#: src/main.c:269
+msgid ""
+"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr ""
+"LN hay NGÔN_NGỮ là một ngôn ngữ, có thể `c', `perl' hay `po'; còn `c' là mặc "
+"định.\n"
 
-#: src/main.c:315
+#: src/main.c:272
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
+"ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
+"AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
+"a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
 "LỜI_YÊU_CẦU là PHỤ_LỜI_YÊU_CẦU[,PHỤ_LỜI_YÊU_CẦU]...;\n"
 "PHỤ_LỜI_YÊU_CẦU là BIÊN_MÃ [..BIÊN_MÃ]... BIÊN_MÃ là [BỘ_KÝ_TỰ][/[MẶT]]...;\n"
 "LỜI_YÊU_CẦU thường hình như TRƯỚC..SAU, mà cả hai TRƯỚC và SAU là bô ký tự.\n"
-"Khi không nhập BỘ_KÝ_TỰ nên sử dụng bộ ký tự thường; khi không nhập [/MẶT]...\n"
-"nên sử dụng những mặt ngụ ý cho BỘ_KÝ_TỰ; ký tự / có tên mặt trống có nghĩa là\n"
+"Khi không nhập BỘ_KÝ_TỰ nên sử dụng bộ ký tự thường; khi không nhập [/"
+"MẶT]...\n"
+"nên sử dụng những mặt ngụ ý cho BỘ_KÝ_TỰ; ký tự / có tên mặt trống có nghĩa "
+"là\n"
 "không có mặt nào. Hãy xem sổ hướng dẫn.\n"
 
-#: src/main.c:323
+#: src/main.c:280
 msgid ""
 "\n"
 "If none of -i and -p are given, presume -p if no FILE, else -i.\n"
@@ -235,10 +263,12 @@ msgid ""
 msgstr ""
 "\n"
 "Nếu chưa nhận -i và -p thì giả sử -p nếu không có TẬP_TIN, nếu có thì -i.\n"
-"Sẽ mã hóa lại mỗi TẬP_TIN trên mình nên xóa bỏ điều trước. Nếu chưa ghi rõ TẬP_TIN\n"
-"thì thay quyền trình lọc và mã hóa lại dữ liệu gõ chuẩn ra thiết bị xuất chuẩn.\n"
+"Sẽ mã hóa lại mỗi TẬP_TIN trên mình nên xóa bỏ điều trước. Nếu chưa ghi rõ "
+"TẬP_TIN\n"
+"thì thay quyền trình lọc và mã hóa lại dữ liệu gõ chuẩn ra thiết bị xuất "
+"chuẩn.\n"
 
-#: src/main.c:329
+#: src/main.c:286
 msgid ""
 "\n"
 "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
@@ -246,50 +276,51 @@ msgstr ""
 "\n"
 "Hãy thông báo lỗi cho <recode-bugs@iro.umontreal.ca>.\n"
 
-#: src/main.c:430
+#: src/main.c:385
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Dãy `%s' mơ hồ"
 
-#: src/main.c:434
+#: src/main.c:389
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Chưa biết dãy `%s' "
 
-#: src/main.c:464 src/main.c:522
+#: src/main.c:418 src/main.c:476
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Ngôn ngữ `%s' mơ hồ"
 
-#. -1
-#: src/main.c:468 src/main.c:526
+#: src/main.c:422 src/main.c:480
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Chưa biết ngôn ngữ `%s'"
 
-#: src/main.c:560
+#: src/main.c:514
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Dạng `%s' mơ hồ"
 
-#: src/main.c:564
+#: src/main.c:518
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Chưa biết dạng `%s' "
 
-#: src/main.c:621
+#: src/main.c:578
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Tác giả: François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:624
+#: src/main.c:581
+#, fuzzy
 msgid ""
 "\n"
-"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Bản quyền (C) năm 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Bản quyền (C) năm 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, "
+"Inc.\n"
 
-#: src/main.c:628
+#: src/main.c:585
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -297,74 +328,72 @@ msgstr ""
 "Đây là phần mềm tự do; hãy xem mã nguồn để thấy điều kiện sao chép.\n"
 "Không bảo đảm gì cả, dù khả năng bán hay khả năng làm việc dứt khoát.\n"
 
-#: src/main.c:669
+#: src/main.c:627
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Chưa biết ký hiệu `%s' "
 
-#: src/main.c:709 src/main.c:723
+#: src/main.c:667 src/main.c:681
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Bộ ký tự `%s' là chưa được biệt hoặc mơ hồ"
 
-#: src/main.c:754
+#: src/main.c:712
+#, c-format
 msgid "Required argument is missing"
 msgstr "Thiếu đốí số bắt buộc"
 
-#: src/main.c:797
+#: src/main.c:755
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Phản đối cú pháp ấy, hãy sử dụng `%s' thay thế"
 
-#: src/main.c:803
+#: src/main.c:761
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Lời yêu cầu `%s' không đúng"
 
-#: src/main.c:903
+#: src/main.c:861
 #, c-format
 msgid "Recoding %s..."
 msgstr "Đang mã hóa lại %s..."
 
-#: src/main.c:913
+#: src/main.c:871
+#, c-format
 msgid " done\n"
 msgstr " xong rồi\n"
 
-#: src/main.c:954
+#: src/main.c:912
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " không xong được: %s trong bước `%s..%s'\n"
 
-#: src/main.c:961
+#: src/main.c:919
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s không xong được: %s trong bước `%s..%s'"
 
-#: src/main.c:984
+#: src/main.c:942
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s trong bước `%s..%s'"
 
-#: src/names.c:335
+#: src/names.c:362
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Bộ ký tự %s tồn tại rồi, không là %s"
 
-#: src/names.c:831
+#: src/names.c:861
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Không ghi `%s' được vì không có tên nào cho bộ ký tự này"
 
-#. code counter
-#. expected value for code counter
-#. insert a while line before printing
-#. Print the long table according to explode data.
-#: src/names.c:984 src/names.c:1030
+#: src/names.c:1013 src/names.c:1059
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Hệ2  Hệ8  Hệ16   UCS2  Nhớ  %s\n"
 
-#: src/names.c:1049
+#: src/names.c:1078
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Tiếc là không có tên nào cho `%s'"
@@ -379,58 +408,57 @@ msgstr "Đã lập việc tạo mặt lại hơn một lần cho `%s'"
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Đã lập việc bỏ mặt hơn một lần cho `%s'"
 
-#: src/recode.c:115 src/recode.c:127
+#: src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Hết bộ nhớ ảo rồì"
 
-#: src/recode.c:155
-#, c-format, ycp-format
-msgid "Codes %3d and %3d both recode to %3d"
+#: src/recode.c:108
+#, fuzzy, c-format
+msgid "Codes %3d and %3u both recode to %3d"
 msgstr "Có mã hóa lại cả hai mã %3d và %3d thành %3d"
 
-#: src/recode.c:169
-#, c-format, ycp-format
-msgid "No character recodes to %3d"
+#: src/recode.c:122
+#, fuzzy, c-format
+msgid "No character recodes to %3u"
 msgstr "Không mã hóa lại ký tự nào thành %3d"
 
-#: src/recode.c:170
+#: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
 msgstr "Không đảo được bảng một-đối-một đã cho"
 
-#: src/recode.c:224 src/recode.c:236
+#: src/recode.c:179 src/recode.c:191
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Đang theo phương pháp chẩn đoán cho `%s' đến `%s'"
 
-#: src/recode.c:229 src/recode.c:241
-#, c-format
-msgid "Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"
+#: src/recode.c:184 src/recode.c:196
+#, fuzzy, c-format
+msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
 msgstr "Số cặp %d: <%3d, %3d> xung đột với <%3d, %3d>"
 
-#: src/recode.c:272
+#: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
 msgstr "Không thể xong tạo bảng từ bộ cặp được biết"
 
-#: src/recode.c:497
+#: src/recode.c:452
 msgid "Identity recoding, not worth a table"
 msgstr "Việc mã hóa lại chỉ giống hệt, không cần bảng toàn"
 
-#: src/recode.c:504
+#: src/recode.c:459
 msgid "Recoding is too complex for a mere table"
 msgstr "Việc mã hóa lại quá phức tạp đối với bảng"
 
-#. Print the header of the header file.
-#: src/recode.c:536
-#, c-format
-msgid "%sConversion table generated mechanically by Free `%s' %s"
+#: src/recode.c:491
+#, fuzzy, c-format
+msgid "%sConversion table generated mechanically by %s %s"
 msgstr "%sBảng chuyển đổi được tạo ra tự động do Free (Tự do) `%s' %s"
 
-#: src/recode.c:538
+#: src/recode.c:493
 #, c-format
 msgid "%sfor sequence %s.%s"
 msgstr "%sđối với dãy %s.%s"
 
-#: src/recode.c:744
+#: src/recode.c:714
 msgid "No table to print"
 msgstr "Không có bảng nào để in"
 
@@ -463,48 +491,48 @@ msgstr "*Không xong đươc*"
 msgid "*mere copy*"
 msgstr "*chỉ bản sao*"
 
-#: src/request.c:246
+#: src/request.c:232
 msgid "Virtual memory exhausted!"
 msgstr "Hết bộ nhớ ảo rồi."
 
-#: src/request.c:265
+#: src/request.c:251
 msgid "Step initialisation failed"
 msgstr "Không khởi động bước được"
 
-#: src/request.c:272
+#: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Không khởi động bước được (chưa xử lý tùy chọn)"
 
-#: src/request.c:568
+#: src/request.c:554
 #, c-format
 msgid "Request: %s\n"
 msgstr "Lời yêu cầu: %s\n"
 
-#: src/request.c:720
+#: src/request.c:706
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Đã co lại cho: %s\n"
 
-#: src/request.c:823 src/request.c:932
+#: src/request.c:812 src/request.c:921
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Chưa chấp nhận tên mặt `%s'"
 
-#: src/request.c:903
+#: src/request.c:892
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Không có cách mã hóa lại tư `%s' sang `%s'"
 
-#: src/request.c:1013
+#: src/request.c:1002
 msgid "Expecting `..' in request"
 msgstr "Đang ngờ `..' trong lời yêu cầu"
 
-#: src/task.c:826 src/task.c:1002
+#: src/task.c:622 src/task.c:799
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Trạng thái đời của xử lý con là 0x%0.2x"
 
-#: src/testdump.c:298
+#: src/testdump.c:314
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

@@ -27,9 +27,11 @@ html/
 /ltmain.sh
 /m4
 /missing
+/po/*.gmo
 /po/.reference/
 /po/Makefile.in
 /po/POTFILES
+/po/remove-potcdate.sed
 /po/stamp-po
 /python/Recode.c
 /recode-*.tar.gz

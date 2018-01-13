@@ -6,49 +6,51 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
-"POT-Creation-Date: 2001-01-02 22:35+0100\n"
+"Report-Msgid-Bugs-To: rrt@sc3d.org\n"
+"POT-Creation-Date: 2018-01-15 14:25+0000\n"
 "PO-Revision-Date: 2008-04-18 10:24+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
-"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 
-#: src/main.c:142
+#: src/main.c:105
 msgid "No error"
 msgstr "Žiadna chyba"
 
-#: src/main.c:145
+#: src/main.c:108
 msgid "Non canonical input"
 msgstr "Chýba kanonický vstup"
 
-#: src/main.c:148
+#: src/main.c:111
 msgid "Ambiguous output"
 msgstr "Nejednoznačný výstup"
 
-#: src/main.c:151
+#: src/main.c:114
 msgid "Untranslatable input"
 msgstr "Nepreložiteľný vstup"
 
-#: src/main.c:154
+#: src/main.c:117
 msgid "Invalid input"
 msgstr "Neplatný vstup"
 
-#: src/main.c:157
+#: src/main.c:120
 msgid "System detected problem"
 msgstr "Systém zistil problém"
 
-#: src/main.c:160
+#: src/main.c:123
 msgid "Misuse of recoding library"
 msgstr "Chybné použitie knižnice na zmenu kódovania"
 
-#: src/main.c:163
+#: src/main.c:126
 msgid "Internal recoding bug"
 msgstr "Vnútorná chyba zmeny kódovania"
 
-#: src/main.c:208
+#: src/main.c:166
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -69,24 +71,27 @@ msgstr ""
 "Free Software Foundation; buď verzie 2 alebo (podľa vášho\n"
 "rozhodnutia) ktorejkoľvek neskoršej verzie.\n"
 "\n"
-"Tento program je rozširovaný v nádeji, že bude užitočný, avšak BEZ AKEJKOĽVEK\n"
+"Tento program je rozširovaný v nádeji, že bude užitočný, avšak BEZ "
+"AKEJKOĽVEK\n"
 "ZÁRUKY; neposkytujú sa ani odvodené záruky PREDAJNOSTI alebo VHODNOSTI NA\n"
 "KONKRÉTNY ÚČEL. Ďalšie podrobnosti nájdete v GNU General Public License.\n"
 "\n"
 "Kópia GNU General Public License mala byť dodaná spolu s týmto\n"
-"programom; pokiaľ sa tak nestalo, napíšte do Free Software Foundation, Inc.,\n"
+"programom; pokiaľ sa tak nestalo, napíšte do Free Software Foundation, "
+"Inc.,\n"
 "59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:233
+#: src/main.c:191
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Skúste viac informácií pomocou „%s %s“\n"
 
-#: src/main.c:237
-msgid "Free `recode' converts files between various character sets and surfaces.\n"
+#: src/main.c:195
+#, fuzzy
+msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr "„recode“ prevádza súbory medzi rôznymi znakovými sadami a povrchmi.\n"
 
-#: src/main.c:241
+#: src/main.c:199
 #, c-format
 msgid ""
 "\n"
@@ -95,7 +100,7 @@ msgstr ""
 "\n"
 "Použitie: %s [VOĽBA]... [ [ZNAKSAD] | CIEĽ [SÚBOR]... ]\n"
 
-#: src/main.c:244
+#: src/main.c:202
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -105,14 +110,15 @@ msgstr ""
 "Ak je pri dlhej voľbe zobrazený argument ako povinný, je povinný aj\n"
 "pri zodpovedajúcej krátkej voľbe. Obdobne pre voliteľné argumenty.\n"
 
-#: src/main.c:250
+#: src/main.c:208
+#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
+"list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
-"  -F, --freeze-tables        write out a C module holding all tables\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
 "      --help                 display this help and exit\n"
@@ -120,16 +126,20 @@ msgid ""
 msgstr ""
 "\n"
 "Výpisy:\n"
-"  -l, --list[=FORMÁT]        vypísať jednu alebo všetky známe znakové sady a aliasy\n"
-"  -k, --known=PÁRY           obmedziť znakové sady podľa známeho zoznamu PÁRov\n"
-"  -h, --header[=[JA/]MENO]   zapísať na štand. výstup tabuľku MENO pomocou JA, potom skončiť\n"
+"  -l, --list[=FORMÁT]        vypísať jednu alebo všetky známe znakové sady a "
+"aliasy\n"
+"  -k, --known=PÁRY           obmedziť znakové sady podľa známeho zoznamu "
+"PÁRov\n"
+"  -h, --header[=[JA/]MENO]   zapísať na štand. výstup tabuľku MENO pomocou "
+"JA, potom skončiť\n"
 "  -F, --freeze-tables        zapísať C modul obsahujúci všetky tabuľky\n"
-"  -T, --find-subsets         oznamovať všetky znakové sady ako podmnožiny iných\n"
+"  -T, --find-subsets         oznamovať všetky znakové sady ako podmnožiny "
+"iných\n"
 "  -C, --copyright            zobraziť autorské práva a podmienky šírenia\n"
 "      --help                 zobraziť tohto pomocníka a skončiť\n"
 "      --version              zobraziť informácie o verzii a skončiť\n"
 
-#: src/main.c:263
+#: src/main.c:220
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -147,17 +157,19 @@ msgstr ""
 "  -f, --force             vynútiť zmenu kódovania aj ak je nevratná\n"
 "  -t, --touch             po zmene aktualizovať dátum súboru\n"
 "  -i, --sequence=files    pri následných prechodoch použiť dočasné súbory\n"
-"      --sequence=memory   pri následných prechodoch použiť odkladanie v pamäti\n"
+"      --sequence=memory   pri následných prechodoch použiť odkladanie v "
+"pamäti\n"
 
-#: src/main.c:275
+#: src/main.c:232
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr "  -p, --sequence=pipe     pri následných prechodoch použiť mechanizmus rúr\n"
+msgstr ""
+"  -p, --sequence=pipe     pri následných prechodoch použiť mechanizmus rúr\n"
 
-#: src/main.c:280
+#: src/main.c:237
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=pipe     ekvivalent -i (na tomto systéme)\n"
 
-#: src/main.c:285
+#: src/main.c:242
 msgid ""
 "\n"
 "Fine tuning:\n"
@@ -172,12 +184,14 @@ msgstr ""
 "Dolaďovanie:\n"
 "  -s, --strict           použiť prísne mapovanie, povoliť stratu znakov\n"
 "  -d, --diacritics       previesť iba diakritiku alebo pod. pre HTML/LaTeX\n"
-"  -S, --source[=JA]      obmedziť zmenu kódovania na reťazce a komentáre podľa JA\n"
-"  -c, --colons           použiť na mieste úvodzoviek apostrofy namiesto dvojitých apostrofov\n"
+"  -S, --source[=JA]      obmedziť zmenu kódovania na reťazce a komentáre "
+"podľa JA\n"
+"  -c, --colons           použiť na mieste úvodzoviek apostrofy namiesto "
+"dvojitých apostrofov\n"
 "  -g, --graphics         aproximovať IBMPC okraje pomocou ASCII grafiky\n"
 "  -x, --ignore=ZNAKSAD   ignorovať ZNAKSAD pri výbere cesty zmeny kódovania\n"
 
-#: src/main.c:296
+#: src/main.c:253
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -185,47 +199,59 @@ msgid ""
 msgstr ""
 "\n"
 "Voľba -l bez FORMÁTu a ZNAKSAD zobrazí dostupné znakové sady a povrchy.\n"
-"FORMÁT je „decimal“, „octal“, „hexadecimal“ alebo „full“ (alebo jedno z „dohf“).\n"
+"FORMÁT je „decimal“, „octal“, „hexadecimal“ alebo „full“ (alebo jedno z "
+"„dohf“).\n"
 
-#: src/main.c:302
+#: src/main.c:259
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
+"locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Ak nie je v prostredí nastavená premenná DEFAULT_CHARSET, ZNAKSAD bude\n"
-"štandardne kódovanie závislé na lokálnom nastavení, ktoré určujú LC_ALL, LC_CTYPE, LANG.\n"
+"štandardne kódovanie závislé na lokálnom nastavení, ktoré určujú LC_ALL, "
+"LC_CTYPE, LANG.\n"
 
-#: src/main.c:307
+#: src/main.c:264
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
+"AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 "Voľba -k zobrazí pre danú ZNAKSAD možné znakové sady PRED kde obe sú,\n"
 "tabuľkové znakové sady s PÁRMIO v tvare „PRED1:PO1,PRED2:PO2,...“\n"
 "a PRED a PO sú kódy uvedené ako desiatkové čísla.\n"
 
-#: src/main.c:312
-msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr "JA je nejaký jazyk. Môže to byť „c“, „perl“ alebo „po“; štandardne je to „c“.\n"
+#: src/main.c:269
+msgid ""
+"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr ""
+"JA je nejaký jazyk. Môže to byť „c“, „perl“ alebo „po“; štandardne je to "
+"„c“.\n"
 
-#: src/main.c:315
+#: src/main.c:272
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
+"ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
+"AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
+"a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"POŽIADAVKA je PODPOŽIADAVKA[,PODPOŽIADAVKA]...; PODPOŽIADAVKA je KÓDOVANIE[..KÓDOVANIE]...\n"
-"KÓDOVANIE je [ZNAKSAD][/[POVRCH]]...; POŽIADAVKA často vyzerá nasledovne: PRED..PO,\n"
+"POŽIADAVKA je PODPOŽIADAVKA[,PODPOŽIADAVKA]...; PODPOŽIADAVKA je KÓDOVANIE[.."
+"KÓDOVANIE]...\n"
+"KÓDOVANIE je [ZNAKSAD][/[POVRCH]]...; POŽIADAVKA často vyzerá nasledovne: "
+"PRED..PO,\n"
 "kde PRED a PO sú znakové sady. Vynechaná ZNAKSAD znamená zvyčajnú\n"
 "znakovú sadu; vynechaný [/POVRCH]... znamená zvyčajné povrchy ZNAKSAD;/\n"
 "prázdny názov povrchu znamená žiadny povrch. Pozri príručku.\n"
 
-#: src/main.c:323
+#: src/main.c:280
 msgid ""
 "\n"
 "If none of -i and -p are given, presume -p if no FILE, else -i.\n"
@@ -238,7 +264,7 @@ msgstr ""
 "prepíše originál. Ak nie je zadaný SÚBOR, funguje ako filter a mení\n"
 "kódovanie štandardného vstupu na štandardný výstup.\n"
 
-#: src/main.c:329
+#: src/main.c:286
 msgid ""
 "\n"
 "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
@@ -246,50 +272,50 @@ msgstr ""
 "\n"
 "Chyby oznamujte na adresu <recode-bugs@iro.umontreal.ca>.\n"
 
-#: src/main.c:430
+#: src/main.c:385
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Postupnosť „%s“ je nejednoznačná"
 
-#: src/main.c:434
+#: src/main.c:389
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Postupnosť „%s“ je neznáma"
 
-#: src/main.c:464 src/main.c:522
+#: src/main.c:418 src/main.c:476
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Jazyk „%s“ je nejednoznačný"
 
-#. -1
-#: src/main.c:468 src/main.c:526
+#: src/main.c:422 src/main.c:480
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Jazyk „%s“ je neznámy"
 
-#: src/main.c:560
+#: src/main.c:514
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Formát „%s“ je nejednoznačný"
 
-#: src/main.c:564
+#: src/main.c:518
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Formát „%s“ je neznámy"
 
-#: src/main.c:621
+#: src/main.c:578
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Napísal Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:624
+#: src/main.c:581
+#, fuzzy
 msgid ""
 "\n"
-"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:628
+#: src/main.c:585
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -298,74 +324,72 @@ msgstr ""
 "kóde. Neexistuje ŽIADNA ZÁRUKA; neposkytujú sa ani záruky PREDAJNOSTI\n"
 "alebo VHODNOSTI NA KONKRÉTNY ÚČEL.\n"
 
-#: src/main.c:669
+#: src/main.c:627
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Symbol „%s“ je neznámy"
 
-#: src/main.c:709 src/main.c:723
+#: src/main.c:667 src/main.c:681
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Znaková sada „%s“ je neznáma alebo nejednoznačná"
 
-#: src/main.c:754
+#: src/main.c:712
+#, c-format
 msgid "Required argument is missing"
 msgstr "Chýba povinný argument"
 
-#: src/main.c:797
+#: src/main.c:755
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Neodporúča sa používať túto syntax, dajte prosím prednosť „%s“"
 
-#: src/main.c:803
+#: src/main.c:761
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Požiadavka „%s“ je chybná"
 
-#: src/main.c:903
+#: src/main.c:861
 #, c-format
 msgid "Recoding %s..."
 msgstr "Mení sa kódovanie %s..."
 
-#: src/main.c:913
+#: src/main.c:871
+#, c-format
 msgid " done\n"
 msgstr " hotovo\n"
 
-#: src/main.c:954
+#: src/main.c:912
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " zlyhalo: %s v kroku „%s..%s“\n"
 
-#: src/main.c:961
+#: src/main.c:919
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s zlyhalo: %s v kroku „%s..%s“"
 
-#: src/main.c:984
+#: src/main.c:942
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s v kroku „%s..%s“"
 
-#: src/names.c:335
+#: src/names.c:362
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Znaková sada %s už existuje a nie je %s"
 
-#: src/names.c:831
+#: src/names.c:861
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Nemožno vypísať „%s“, táto znaková sada nemá dostupné žiadne názvy"
 
-#. code counter
-#. expected value for code counter
-#. insert a while line before printing
-#. Print the long table according to explode data.
-#: src/names.c:984 src/names.c:1030
+#: src/names.c:1013 src/names.c:1059
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Okt Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1049
+#: src/names.c:1078
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Prepáčte, pre „%s“ nie sú dostupné žiadne názvy"
@@ -380,58 +404,58 @@ msgstr "Zmena povrchu nastavená viac než raz pre „%s“"
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Odstránenie povrchu nastavené viac než raz pre „%s“"
 
-#: src/recode.c:115 src/recode.c:127
+#: src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Virtuálna pamäť je vyčerpaná"
 
-#: src/recode.c:155
-#, c-format, ycp-format
-msgid "Codes %3d and %3d both recode to %3d"
+#: src/recode.c:108
+#, fuzzy, c-format
+msgid "Codes %3d and %3u both recode to %3d"
 msgstr "Kódy %3d a %3d sa oba menia na kód %3d"
 
-#: src/recode.c:169
-#, c-format, ycp-format
-msgid "No character recodes to %3d"
+#: src/recode.c:122
+#, fuzzy, c-format
+msgid "No character recodes to %3u"
 msgstr "Žiadny znak sa nemení na kód %3d"
 
-#: src/recode.c:170
+#: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
 msgstr "Nie je možné invertovať danú tabuľku jedna k jednej"
 
-#: src/recode.c:224 src/recode.c:236
+#: src/recode.c:179 src/recode.c:191
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Nasleduje diagnostika „%s“ na „%s“"
 
-#: src/recode.c:229 src/recode.c:241
-#, c-format
-msgid "Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"
+#: src/recode.c:184 src/recode.c:196
+#, fuzzy, c-format
+msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
 msgstr "Č. páru %d: <%3d, %3d> je v konflikte s <%3d, %3d>"
 
-#: src/recode.c:272
+#: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
 msgstr "Nie je možné dokončiť tabuľku z množiny známych párov"
 
-#: src/recode.c:497
+#: src/recode.c:452
 msgid "Identity recoding, not worth a table"
 msgstr "Identická zmena kódovania, na to sa neoplatí používať tabuľku"
 
-#: src/recode.c:504
+#: src/recode.c:459
 msgid "Recoding is too complex for a mere table"
-msgstr "Zmena kódovanie je príliš zložitá než aby sa dala jednoducho použiť tabuľka"
+msgstr ""
+"Zmena kódovanie je príliš zložitá než aby sa dala jednoducho použiť tabuľka"
 
-#. Print the header of the header file.
-#: src/recode.c:536
-#, c-format
-msgid "%sConversion table generated mechanically by Free `%s' %s"
+#: src/recode.c:491
+#, fuzzy, c-format
+msgid "%sConversion table generated mechanically by %s %s"
 msgstr "%sKonverznú tabuľku vytvoril automaticky program „%s“ %s"
 
-#: src/recode.c:538
+#: src/recode.c:493
 #, c-format
 msgid "%sfor sequence %s.%s"
 msgstr "%sza postupnosť %s.%s"
 
-#: src/recode.c:744
+#: src/recode.c:714
 msgid "No table to print"
 msgstr "Niet žiadnej tabuľky na výpis"
 
@@ -464,48 +488,48 @@ msgstr "*Nedosiahnuteľné*"
 msgid "*mere copy*"
 msgstr "*prosté kopírovanie*"
 
-#: src/request.c:246
+#: src/request.c:232
 msgid "Virtual memory exhausted!"
 msgstr "Virtuálna pamäť je vyčerpaná!"
 
-#: src/request.c:265
+#: src/request.c:251
 msgid "Step initialisation failed"
 msgstr "Inicializácia kroku zlyhala"
 
-#: src/request.c:272
+#: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Inicializácia kroku zlyhala (nespracované voľby)"
 
-#: src/request.c:568
+#: src/request.c:554
 #, c-format
 msgid "Request: %s\n"
 msgstr "Požiadavka: %s\n"
 
-#: src/request.c:720
+#: src/request.c:706
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Zmrštené na: %s\n"
 
-#: src/request.c:823 src/request.c:932
+#: src/request.c:812 src/request.c:921
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Nerozpoznaný názov povrchu „%s“"
 
-#: src/request.c:903
+#: src/request.c:892
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Neexistuje spôsob zmeny kódovania z „%s“ na „%s“"
 
-#: src/request.c:1013
+#: src/request.c:1002
 msgid "Expecting `..' in request"
 msgstr "V požiadavke sa očakávalo „..“"
 
-#: src/task.c:826 src/task.c:1002
+#: src/task.c:622 src/task.c:799
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Stav čakania detského procesu je 0x%0.2x"
 
-#: src/testdump.c:298
+#: src/testdump.c:314
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
