@@ -648,7 +648,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	  }
     }
 
-#if FIXME
+#if 0
   if (interrupted)
     /* FIXME: It is not very clear what happened in sub-processes.  */
     if (task->error_so_far < task->fail_level)

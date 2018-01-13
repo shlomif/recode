@@ -41,9 +41,6 @@ static int show_version = 0;
 /* If true, show a list of one or all known charsets, then exit.  */
 static bool show_symbols = false;
 
-/* If true, dump all tables as a big C module.  */
-static bool freeze_tables = false;
-
 /* If true, check all charsets for subsets, then exit.  */
 static bool find_subsets = false;
 
@@ -87,19 +84,8 @@ static bool strict_mapping = false;
 /* The following charset name will be ignored, if given.  */
 static const char *ignored_name = NULL;
 
-#if 0
-/* Unabridged names of BEFORE and AFTER charsets, even if still aliases.
-   These are used for naming the array in produced C code.  */
-static const char *before_full_name;
-static const char *after_full_name;
-#endif
-
 /* Ordinals of list, BEFORE and AFTER charset.  */
 static RECODE_SYMBOL list_charset;
-#if 0
-static RECODE_SYMBOL before_charset;
-static RECODE_SYMBOL after_charset;
-#endif
 
 /* Flag telling usage that we are decoding charsets.  */
 bool decoding_charset_flag = false;
@@ -169,10 +155,6 @@ setup_signals (void)
 #ifdef SIGPIPE
   signal (SIGPIPE, signal_handler);
 #endif
-#if 0
-  signal (SIGINT, signal_handler);
-  signal (SIGTERM, signal_handler);
-#endif
 }
 
 /* Main control.  */
@@ -232,7 +214,6 @@ Listings:\n\
   -l, --list[=FORMAT]        list one or all known charsets and aliases\n\
   -k, --known=PAIRS          restrict charsets according to known PAIRS list\n\
   -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n\
-  -F, --freeze-tables        write out a C module holding all tables\n\
   -T, --find-subsets         report all charsets being subset of others\n\
   -C, --copyright            display Copyright and copying conditions\n\
       --help                 display this help and exit\n\
@@ -326,7 +307,6 @@ static const struct option long_options[] =
   {"diacritics", no_argument, NULL, 'd'},
   {"find-subsets", no_argument, NULL, 'T'},
   {"force", no_argument, NULL, 'f'},
-  {"freeze-tables", no_argument, NULL, 'F'},
   {"header", optional_argument, NULL, 'h'},
   {"help", no_argument, &show_help, 1},
   {"ignore", required_argument, NULL, 'x'},
@@ -429,10 +409,6 @@ main (int argc, char *const *argv)
       case 'C':
 	print_copyright ();
 	exit (EXIT_SUCCESS);
-
-      case 'F':
-	freeze_tables = true;
-	break;
 
       case 'S':
 	if (optarg)
@@ -625,12 +601,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
     if (!outer)
       abort ();
   }
-
-  if (freeze_tables)
-    {
-      recode_freeze_tables (outer);
-      exit (EXIT_SUCCESS);
-    }
 
   /* Set strict mapping.  */
 

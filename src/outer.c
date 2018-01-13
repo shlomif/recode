@@ -138,40 +138,6 @@ declare_single (RECODE_OUTER outer,
   return single;
 }
 
-#if 0
-
-/*-------------------------------------------.
-| Create and initialize a new data surface.  |
-`-------------------------------------------*/
-
-bool
-declare_data_surface (RECODE_OUTER outer, const char *name,
-		      struct recode_quality resurfacer_quality,
-		      Recode_init resurfacer_init_routine,
-		      Recode_transform resurfacer_transform_routine,
-		      struct recode_quality unsurfacer_quality,
-		      Recode_init unsurfacer_init_routine,
-		      Recode_transform unsurfacer_transform_routine)
-{
-}
-
-/*-------------------------------------------------.
-| Create and initialize a new structural surface.  |
-`-------------------------------------------------*/
-
-bool
-declare_tree_surface (RECODE_OUTER outer, const char *name,
-		      struct recode_quality resurfacer_quality,
-		      Recode_init resurfacer_init_routine,
-		      Recode_transform resurfacer_transform_routine,
-		      struct recode_quality unsurfacer_quality,
-		      Recode_init unsurfacer_init_routine,
-		      Recode_transform unsurfacer_transform_routine)
-{
-}
-
-#endif
-
 /*---------------------------------------------------------------.
 | Declare a charset available through `iconv', given the NAME of |
 | this charset (which might already exist as an alias), and the  |
@@ -220,34 +186,6 @@ declare_iconv (RECODE_OUTER outer, const char *name, const char *iconv_name)
 
   return true;
 }
-
-#if 0
-
-/*------------------------------------------------.
-| Save explode data within the symbol structure.  |
-`------------------------------------------------*/
-
-bool register_explode_data
-  (RECODE_OUTER, const char *, const unsigned short *);
-
-bool
-register_explode_data (RECODE_OUTER outer,
-		       const char *name, const unsigned short *data)
-{
-  RECODE_SYMBOL symbol;
-
-  symbol = find_alias (outer, name, SYMBOL_CREATE_CHARSET);
-  if (!symbol)
-    return false;
-
-  assert(symbol->type = RECODE_CHARSET);
-  symbol->data_type = RECODE_EXPLODE_DATA;
-  /* The cast is a way to silently discard the const.  */
-  symbol->data = (void *) data;
-  return true;
-}
-
-#endif
 
 /*--------------------------------------------------------------------------.
 | Associate an explode format DATA structure with charset NAME_COMBINED, an |

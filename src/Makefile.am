@@ -50,7 +50,7 @@ H_SURFACES = base64.h
 C_SURFACES = base64.c dump.c endline.c permut.c quoted.c
 L_SURFACES =
 
-recode_SOURCES = main.c freeze.c mixed.c
+recode_SOURCES = main.c mixed.c
 recode_LDADD = librecode.la ../lib/libgnu.la
 
 librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
