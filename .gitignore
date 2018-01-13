@@ -41,4 +41,5 @@ html/
 /stamp-h1
 /tests/setup.py
 /tests/Recode.body.c
+/tests/Recode.c
 /tests/Recode.so
