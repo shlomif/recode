@@ -8,6 +8,7 @@ html/
 /ABOUT-NLS
 /aclocal.m4
 /autom4te.cache
+/build-aux
 /cleaner.h
 /compile
 /config.guess
@@ -19,6 +20,7 @@ html/
 /configure
 /depcomp
 /doc/recode.info
+/INSTALL
 /install-sh
 /lib/.deps/
 /libtool
