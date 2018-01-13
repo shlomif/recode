@@ -22,7 +22,7 @@ AUTOMAKE_OPTIONS = gnits
 ACLOCAL = ./aclocal.sh @ACLOCAL@
 ACLOCAL_AMFLAGS = -I m4
 
-EXTRA_DIST = COPYING-LIB aclocal.sh after-patch.py after-patch.sh \
+EXTRA_DIST = COPYING-LIB aclocal.sh \
 m4/gnulib-cache.m4 tables.py \
 keld/NomsSeulsfinal.lst keld/charsets.def keld/control.def \
 keld/iso10646.def keld/mnemonics,ds keld/other.def keld/rfc1345.txt
