@@ -131,9 +131,6 @@ task_perror (RECODE_CONST_TASK task)
 | Signal handler.  |
 `-----------------*/
 
-#if FIXME
-static jmp_buf signal_label;	/* where to jump when signal received */
-#endif
 static bool interrupted = 0;	/* set when some signal has been received */
 
 static void
