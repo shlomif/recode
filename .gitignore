@@ -28,6 +28,7 @@ html/
 /m4
 !/m4/ChangeLog
 /missing
+/po/.reference/
 /po/Makefile.in
 /po/POTFILES
 /po/stamp-po

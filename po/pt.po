@@ -7,11 +7,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.6\n"
-"Report-Msgid-Bugs-To: recode-bugs@iro.umontreal.ca\n"
-"POT-Creation-Date: 2008-03-09 20:51-0400\n"
+"POT-Creation-Date: 2001-01-02 22:35+0100\n"
 "PO-Revision-Date: 2005-11-13 15:20+0000\n"
 "Last-Translator: Helder Correia <helder.pereira.correia@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,11 +84,8 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Para mais informação, tente '%s %s'.\n"
 
 #: src/main.c:237
-#, fuzzy
-msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Free 'recode' converte ficheiros entre vários conjuntos de caracteres e "
-"superfícies.\n"
+msgid "Free `recode' converts files between various character sets and surfaces.\n"
+msgstr "Free 'recode' converte ficheiros entre vários conjuntos de caracteres e superfícies.\n"
 
 #: src/main.c:241
 #, c-format
@@ -114,8 +111,7 @@ msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -F, --freeze-tables        write out a C module holding all tables\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
@@ -125,14 +121,11 @@ msgid ""
 msgstr ""
 "\n"
 "Listagens:\n"
-"  -l, --list[=FORMATO]       listar um ou todos os conj. caracteres "
-"conhecidos e pseudónimos\n"
-"  -k, --known=PARES          restringir conj. caracteres de acordo com lista "
-"de PARES conhecidos\n"
+"  -l, --list[=FORMATO]       listar um ou todos os conj. caracteres conhecidos e pseudónimos\n"
+"  -k, --known=PARES          restringir conj. caracteres de acordo com lista de PARES conhecidos\n"
 "  -h, --header[=[LN/]NOME]   escrever NOME tabela usando LN e sair\n"
 "  -F, --freeze-tables        escrever um módulo C com todas as tabelas\n"
-"  -T, --find-subsets         reportar conj. de caracteres subconj. de "
-"outros\n"
+"  -T, --find-subsets         reportar conj. de caracteres subconj. de outros\n"
 "  -C, --copyright            exibir direitos de autor e condições de cópia\n"
 "      --help                 exibir esta ajuda e sair\n"
 "      --version              exibir versão e sair\n"
@@ -151,12 +144,10 @@ msgstr ""
 "\n"
 "Modos de operação:\n"
 "  -v, --verbose           explicar sequência de passos e relatar progresso\n"
-"  -q, --quiet, --silent   inibir mensagens acerca de recodificações "
-"irreversíveis\n"
+"  -q, --quiet, --silent   inibir mensagens acerca de recodificações irreversíveis\n"
 "  -f, --force             forçar recodificações mesmo quando irreversíveis\n"
 "  -t, --touch             actualizar data dos ficheiros após recodificação\n"
-"  -i, --sequence=files    usar ficheiros intermédios para passos "
-"sequenciais\n"
+"  -i, --sequence=files    usar ficheiros intermédios para passos sequenciais\n"
 "      --sequence=memory   usar memória para passos sequenciais\n"
 
 #: src/main.c:275
@@ -181,14 +172,11 @@ msgstr ""
 "\n"
 "Afinação:\n"
 "  -s, --strict           usar mapeamentos severos, até perder caracteres\n"
-"  -d, --diacritics       converter apenas diacríticos ou afins para HTML/"
-"LaTeX\n"
-"  -S, --source[=LN]      limitar recodificação de expressões e comentários "
-"como para LN\n"
+"  -d, --diacritics       converter apenas diacríticos ou afins para HTML/LaTeX\n"
+"  -S, --source[=LN]      limitar recodificação de expressões e comentários como para LN\n"
 "  -c, --colons           usar dois pontos em vez de aspas para diérese\n"
 "  -g, --graphics         aproximar réguas IBMPC por gráficos ASCII\n"
-"  -x, --ignore=CONJCAR   ignorar CONJCAR ao escolher um caminho a "
-"recodificar\n"
+"  -x, --ignore=CONJCAR   ignorar CONJCAR ao escolher um caminho a recodificar\n"
 
 #: src/main.c:296
 msgid ""
@@ -197,61 +185,46 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"A opção -l sem FORMATO  nem CONJCAR lista os conjuntos de caracteres e "
-"superfícies disponíveis.\n"
+"A opção -l sem FORMATO  nem CONJCAR lista os conjuntos de caracteres e superfícies disponíveis.\n"
 "FORMATO é 'decimal', 'octal', 'hexadecimal' ou 'full' (ou um de 'dohf').\n"
 
 #: src/main.c:302
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"A não ser que DEFAULT_CHARSET esteja definido no ambiente, CONJCAR toma o "
-"valor\n"
-"da codificação por omissão da localização, determinado por LC_ALL, LC_CTYPE, "
-"LANG.\n"
+"A não ser que DEFAULT_CHARSET esteja definido no ambiente, CONJCAR toma o valor\n"
+"da codificação por omissão da localização, determinado por LC_ALL, LC_CTYPE, LANG.\n"
 
 #: src/main.c:307
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Com -k, possível antes de conj. caracteres serem listados para dados após "
-"CONJCAR,\n"
+"Com -k, possível antes de conj. caracteres serem listados para dados após CONJCAR,\n"
 "sendo ambos tabulares, com PARES da forma `BEF1:AFT1,BEF2:AFT2,...'\n"
 "e BEFs e AFTs sendo códigos são dados como números decimais.\n"
 
 #: src/main.c:312
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr ""
-"LN é uma linguagem, podendo ser 'c', 'perl' ou 'po'; 'c' é predefinido.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr "LN é uma linguagem, podendo ser 'c', 'perl' ou 'po'; 'c' é predefinido.\n"
 
 #: src/main.c:315
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"PEDIDO é SUBPEDIDO[,SUBPEDIDO]...; SUBPEDIDO é CODIFICAÇÃO[.."
-"CODIFICAÇÃO]...\n"
-"CODIFICAÇÃO é [CONJCAR][/[SUPERFÍCIE]]...; PEDIDO pode parecer-se com ANTES.."
-"DEPOIS,\n"
-"com ANTES e DEPOIS sendo conjuntos de caracteres.  Um CONJCAR omitido "
-"implica o conjunto\n"
+"PEDIDO é SUBPEDIDO[,SUBPEDIDO]...; SUBPEDIDO é CODIFICAÇÃO[..CODIFICAÇÃO]...\n"
+"CODIFICAÇÃO é [CONJCAR][/[SUPERFÍCIE]]...; PEDIDO pode parecer-se com ANTES..DEPOIS,\n"
+"com ANTES e DEPOIS sendo conjuntos de caracteres.  Um CONJCAR omitido implica o conjunto\n"
 "habitual; um [/SURFACE]... omitido implica as superfćies para CONJCAR; um /\n"
-"com um nome de superfície vazio significa ausência de superfícies.  Veja o "
-"manual manual.\n"
+"com um nome de superfície vazio significa ausência de superfícies.  Veja o manual manual.\n"
 
 #: src/main.c:323
 msgid ""
@@ -262,10 +235,8 @@ msgid ""
 msgstr ""
 "\n"
 "Se nem -i nem -p forem dados, presume-se -p sem FICHEIRO, senão -i.\n"
-"Cada FICHEIRO é recodificado sobre si próprio, destruindo-se o original.  "
-"Se\n"
-"FICHEIRO não for especificado, actue-se como um filtro e recidifique-se a "
-"entrada padrão para a saída padrão.\n"
+"Cada FICHEIRO é recodificado sobre si próprio, destruindo-se o original.  Se\n"
+"FICHEIRO não for especificado, actue-se como um filtro e recidifique-se a entrada padrão para a saída padrão.\n"
 
 #: src/main.c:329
 msgid ""
@@ -275,124 +246,125 @@ msgstr ""
 "\n"
 "Reporte erros para <recode-bugs@iro.umontreal.ca>.\n"
 
-#: src/main.c:429
+#: src/main.c:430
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "A sequência '%s' é ambígua"
 
-#: src/main.c:433
+#: src/main.c:434
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "A sequência '%s' é desconhecida"
 
-#: src/main.c:463 src/main.c:521
+#: src/main.c:464 src/main.c:522
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "A linguagem '%s' é ambígua"
 
-#: src/main.c:467 src/main.c:525
+#. -1
+#: src/main.c:468 src/main.c:526
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "A linguagem '%s' é desconhecida"
 
-#: src/main.c:559
+#: src/main.c:560
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "O formato '%s' é ambíguo"
 
-#: src/main.c:563
+#: src/main.c:564
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "O formato '%s' é desconhecido"
 
-#: src/main.c:620
+#: src/main.c:621
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Escrito por François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:623
-#, fuzzy
+#: src/main.c:624
 msgid ""
 "\n"
-"Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:627
+#: src/main.c:628
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Este programa é livre; veja o código fonte para saber as condições de "
-"cópia.\n"
-"NÃO HÁ GARANTIA; nem mesmo de COMERCIABILIDADE ou de UTILIDADE PARA UM "
-"PROPÓSITO PARTICULAR.\n"
+"Este programa é livre; veja o código fonte para saber as condições de cópia.\n"
+"NÃO HÁ GARANTIA; nem mesmo de COMERCIABILIDADE ou de UTILIDADE PARA UM PROPÓSITO PARTICULAR.\n"
 
-#: src/main.c:673
+#: src/main.c:669
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "O símbolo '%s' é desconhecido"
 
-#: src/main.c:713 src/main.c:727
+#: src/main.c:709 src/main.c:723
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "O conjunto de caracteres '%s' é desconhecido ou ambíguo"
 
-#: src/main.c:758
+#: src/main.c:754
 msgid "Required argument is missing"
 msgstr "Argumento requerido em falta"
 
-#: src/main.c:801
+#: src/main.c:797
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "A sintaxe está desaprovada, por favor prefira '%s'"
 
-#: src/main.c:807
+#: src/main.c:803
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "O pedido '%s' é erróneo"
 
-#: src/main.c:907
+#: src/main.c:903
 #, c-format
 msgid "Recoding %s..."
 msgstr "Convertendo %s..."
 
-#: src/main.c:917
-#, c-format
+#: src/main.c:913
 msgid " done\n"
 msgstr " terminado\n"
 
-#: src/main.c:958
+#: src/main.c:954
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " falhou: %s no passo '%s..%s'\n"
 
-#: src/main.c:965
+#: src/main.c:961
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s falhou: %s no passo '%s..%s'"
 
-#: src/main.c:988
+#: src/main.c:984
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s no passo '%s..%s'"
 
-#: src/names.c:342
+#: src/names.c:335
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "O conjunto de caracteres %s j�existe e n� �%s"
 
-#: src/names.c:837
+#: src/names.c:831
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Não é possível listar '%s', sem nomes para este conjunto de caracteres"
 
-#: src/names.c:990 src/names.c:1036
+#. code counter
+#. expected value for code counter
+#. insert a while line before printing
+#. Print the long table according to explode data.
+#: src/names.c:984 src/names.c:1030
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1055
+#: src/names.c:1049
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Desculpe, sem nomes para '%s'"
@@ -412,12 +384,12 @@ msgid "Virtual memory exhausted"
 msgstr "Memória virtual esgotada"
 
 #: src/recode.c:155
-#, c-format
+#, c-format, ycp-format
 msgid "Codes %3d and %3d both recode to %3d"
 msgstr "Ambos os c�igos %3d e %3d s� convertidos em %3d"
 
 #: src/recode.c:169
-#, c-format
+#, c-format, ycp-format
 msgid "No character recodes to %3d"
 msgstr "Nenhum car�ter �convertido em %3d"
 
@@ -437,8 +409,7 @@ msgstr "Par nº %d: <%3d, %3d> em conflito com <%3d, %3d>"
 
 #: src/recode.c:272
 msgid "Cannot complete table from set of known pairs"
-msgstr ""
-"Não é possível completar a tabela a partir do conjunto de pares conhecidos"
+msgstr "Não é possível completar a tabela a partir do conjunto de pares conhecidos"
 
 #: src/recode.c:497
 msgid "Identity recoding, not worth a table"
@@ -448,9 +419,10 @@ msgstr "Recodificação identidade, tabela desnecessária"
 msgid "Recoding is too complex for a mere table"
 msgstr "A recodificação é demasiado complexa para uma mera tabela"
 
+#. Print the header of the header file.
 #: src/recode.c:536
-#, fuzzy, c-format
-msgid "%sConversion table generated mechanically by %s %s"
+#, c-format
+msgid "%sConversion table generated mechanically by Free `%s' %s"
 msgstr "%sTabela de conversão gerada mecanicamente por Free '%s' %s"
 
 #: src/recode.c:538
@@ -527,12 +499,12 @@ msgstr "Não é possível recodificar de '%s' para '%s'"
 msgid "Expecting `..' in request"
 msgstr "À espera de '..' no pedido"
 
-#: src/task.c:833 src/task.c:1009
+#: src/task.c:826 src/task.c:1002
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "O estado de espera do processo filho é 0x%0.2x"
 
-#: src/testdump.c:309
+#: src/testdump.c:298
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

@@ -1,18 +1,24 @@
-# Messages français pour Free recode.
-# Copyright © 2004 Free Software Foundation, Inc.
-# Michel Robitaille <robitail@iro.umontreal.ca>, traduction depuis/since 1996.
+# Messages franÃ§ais pour Free recode.
+# Copyright Â© 2004 Free Software Foundation, Inc.
+#
+# This file is distributed under the same license as the recode package.
+#
+# Michel Robitaille <robitail@iro.umontreal.ca>, 2004.
+# StÃ©phane Aulery <lkppo@free.fr>, 2015.
+#
+# RÃ©encodage ISO-8859-1 => UTF-8 et typos, S. Aulery, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Free recode 3.6\n"
-"Report-Msgid-Bugs-To: recode-bugs@iro.umontreal.ca\n"
-"POT-Creation-Date: 2008-03-09 20:51-0400\n"
-"PO-Revision-Date: 2004-05-10 08:00-0500\n"
-"Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
+"Project-Id-Version: recode 3.6\n"
+"POT-Creation-Date: 2001-01-02 22:35+0100\n"
+"PO-Revision-Date: 2015-04-11 21:06+0200\n"
+"Last-Translator: StÃ©phane Aulery <lkppo@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
@@ -22,31 +28,31 @@ msgstr "Pas d'erreur"
 
 #: src/main.c:145
 msgid "Non canonical input"
-msgstr "Entrée en forme non canonique"
+msgstr "EntrÃ©e en forme non canonique"
 
 #: src/main.c:148
 msgid "Ambiguous output"
-msgstr "Sortie ambiguë"
+msgstr "Sortie ambiguÃ«"
 
 #: src/main.c:151
 msgid "Untranslatable input"
-msgstr "Entrée non traduisible"
+msgstr "EntrÃ©e non traduisible"
 
 #: src/main.c:154
 msgid "Invalid input"
-msgstr "Entrée invalide"
+msgstr "EntrÃ©e invalide"
 
 #: src/main.c:157
 msgid "System detected problem"
-msgstr "Problème rapporté par le système"
+msgstr "ProblÃ¨me rapportÃ© par le systÃ¨me"
 
 #: src/main.c:160
 msgid "Misuse of recoding library"
-msgstr "Mauvais usage de la logithèque de recodage"
+msgstr "Mauvais usage de la logithÃ¨que de recodage"
 
 #: src/main.c:163
 msgid "Internal recoding bug"
-msgstr "Problème interne durant le recodage"
+msgstr "ProblÃ¨me interne durant le recodage"
 
 #: src/main.c:208
 msgid ""
@@ -65,30 +71,27 @@ msgid ""
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
 "Ce programme est un logiciel libre; vous pouvez le redistribuer ou le\n"
-"modifier selon les termes de la License Publique Générale de GNU, publiée\n"
-"par la Free Software Foundation (soit la version 2 ou soit, à votre\n"
-"discrétion, toute version ultérieure).\n"
+"modifier selon les termes de la License Publique GÃ©nÃ©rale de GNU, publiÃ©e\n"
+"par la Free Software Foundation (soit la version 2 ou soit, Ã  votre\n"
+"discrÃ©tion, toute version ultÃ©rieure).\n"
 "\n"
-"Ce programme est distribué pour être utile, mais SANS AUCUNE GARANTIE;\n"
-"sans même la garantie implicite qu'il est DE QUALITE LOYALE ET MARCHANDE\n"
-"ou APPROPRIE POUR UN BUT PARTICULIER.  Voir la Licence Publique Générale\n"
-"de GNU pour plus de détails.\n"
+"Ce programme est distribuÃ© pour Ãªtre utile, mais SANS AUCUNE GARANTIE;\n"
+"sans mÃªme la garantie implicite qu'il est DE QUALITE LOYALE ET MARCHANDE\n"
+"ou APPROPRIE POUR UN BUT PARTICULIER.  Voir la Licence Publique GÃ©nÃ©rale\n"
+"de GNU pour plus de dÃ©tails.\n"
 "\n"
-"Vous devriez avoir reçu copie de la Licence Publique Générale de GNU\n"
-"avec ce programme; sinon, écrire à la Free Software Foundation, Inc.,\n"
+"Vous devriez avoir reÃ§u copie de la Licence Publique GÃ©nÃ©rale de GNU\n"
+"avec ce programme; sinon, Ã©crire Ã  la Free Software Foundation, Inc.,\n"
 "59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
 #: src/main.c:233
 #, c-format
 msgid "Try `%s %s' for more information.\n"
-msgstr "Pour plus d'information, essayez « %s %s ».\n"
+msgstr "Pour plus d'information, essayez Â« %s %s Â».\n"
 
 #: src/main.c:237
-#, fuzzy
-msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"« Free recode » transforme les jeux de caractères et les surfaces de "
-"fichiers\n"
+msgid "Free `recode' converts files between various character sets and surfaces.\n"
+msgstr "Â« Free recode Â» transforme les jeux de caractÃ¨res et les surfaces de fichiers\n"
 
 #: src/main.c:241
 #, c-format
@@ -106,19 +109,16 @@ msgid ""
 "for the equivalent short option also.  Similarly for optional arguments.\n"
 msgstr ""
 "\n"
-"Un paramètre obligatoire pour une option de forme longue l'est aussi pour "
-"une\n"
-"option de forme courte.  La même règle s'applique à un paramètre indiqué "
-"comme\n"
-"étant optionnel.\n"
+"Un paramÃ¨tre obligatoire pour une option de forme longue l'est aussi pour une\n"
+"option de forme courte.  La mÃªme rÃ¨gle s'applique Ã  un paramÃ¨tre indiquÃ© comme\n"
+"Ã©tant optionnel.\n"
 
 #: src/main.c:250
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -F, --freeze-tables        write out a C module holding all tables\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
@@ -128,16 +128,11 @@ msgid ""
 msgstr ""
 "\n"
 "Listes:\n"
-"  -l, --list[=FORMAT]       afficher un charset donné, ou fournir toute la "
-"liste\n"
-"  -k, --known=PAIRES        choisir les charsets selon quelques PAIRES "
-"connues\n"
-"  -h, --header[=[LN/]NOM]   tabuler NOM sur stdout, utilisant LN, puis "
-"terminer\n"
-"  -F, --freeze-tables       produire un module C contenant toutes les "
-"tables\n"
-"  -T, --find-subsets        lister tout charset qui est sous-ensemble d'un "
-"autre\n"
+"  -l, --list[=FORMAT]       afficher un charset donnÃ©, ou fournir toute la liste\n"
+"  -k, --known=PAIRES        choisir les charsets selon quelques PAIRES connues\n"
+"  -h, --header[=[LN/]NOM]   tabuler NOM sur stdout, utilisant LN, puis terminer\n"
+"  -F, --freeze-tables       produire un module C contenant toutes les tables\n"
+"  -T, --find-subsets        lister tout charset qui est sous-ensemble d'un autre\n"
 "  -C, --copyright           afficher les conditions de copie, puis terminer\n"
 "      --help                fournir ce message d'aide, puis terminer\n"
 "      --version             identifier la programme, puis terminer\n"
@@ -154,25 +149,21 @@ msgid ""
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
-"Modes d'opération:\n"
-"  -v, --verbose           afficher les étapes prévues, suivre la "
-"progression\n"
-"  -q, --quiet, --silent   taire les messages sur les recodages "
-"irréversibles\n"
-"  -f, --force             effectuer même les recodages irréversibles\n"
-"  -t, --touch             toucher les fichiers après leur remplacement\n"
-"  -i, --sequence=files    fabriquer des fichiers pour ordonnancer les "
-"passes\n"
+"Modes d'opÃ©ration:\n"
+"  -v, --verbose           afficher les Ã©tapes prÃ©vues, suivre la progression\n"
+"  -q, --quiet, --silent   taire les messages sur les recodages irrÃ©versibles\n"
+"  -f, --force             effectuer mÃªme les recodages irrÃ©versibles\n"
+"  -t, --touch             toucher les fichiers aprÃ¨s leur remplacement\n"
+"  -i, --sequence=files    fabriquer des fichiers pour ordonnancer les passes\n"
 "      --sequence=memory   utiliser des tampons pour ordonnancer les passes\n"
 
 #: src/main.c:275
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr ""
-"  -p, --sequence=pipe     utiliser « pipe » pour ordonnancer les passes\n"
+msgstr "  -p, --sequence=pipe     utiliser Â« pipe Â» pour ordonnancer les passes\n"
 
 #: src/main.c:280
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "  -p, --sequence=pipe     même chose que -i (sur cette machine)\n"
+msgstr "  -p, --sequence=pipe     mÃªme chose que -i (sur cette machine)\n"
 
 #: src/main.c:285
 msgid ""
@@ -187,12 +178,12 @@ msgid ""
 msgstr ""
 "\n"
 "Ajustements fins:\n"
-"  -s, --strict           recoder strictement, perte possible de caractères\n"
+"  -s, --strict           recoder strictement, perte possible de caractÃ¨res\n"
 "  -d, --diacritics       se restreindre aux diacritiques pour HTML/LaTeX\n"
-"  -S, --source[=LN]      ne recoder que les chaînes et les commentaires LN\n"
-"  -c, --colons           utiliser « : » plutôt que « \\\" » pour les trémas\n"
-"  -g, --graphics         convertir au mieux possible les « rulers » IBMPC\n"
-"  -x, --ignore=CHARSET   ignorer CHARSET durant le choix des étapes\n"
+"  -S, --source[=LN]      ne recoder que les chaÃ®nes et les commentaires LN\n"
+"  -c, --colons           utiliser Â« : Â» plutÃ´t que Â« \\\" Â» pour les trÃ©mas\n"
+"  -g, --graphics         convertir au mieux possible les Â« rulers Â» IBMPC\n"
+"  -x, --ignore=CHARSET   ignorer CHARSET durant le choix des Ã©tapes\n"
 
 #: src/main.c:296
 msgid ""
@@ -201,63 +192,48 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"L'option « -l » sans FORMAT ni CHARSET donne les charsets et surfaces "
-"disponibles.\n"
-"FORMAT vaut « decimal », « octal », « hexadecimal » ou « full », ou encore "
-"un caractère\n"
-"dans « dohf ».\n"
+"L'option Â« -l Â» sans FORMAT ni CHARSET donne les charsets et surfaces disponibles.\n"
+"FORMAT vaut Â« decimal Â», Â« octal Â», Â« hexadecimal Â» ou Â« full Â», ou encore un caractÃ¨re\n"
+"dans Â« dohf Â».\n"
 
 #: src/main.c:302
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"À moins que DEFAULT_CHARSET ne soit initialisé dans l'environnement,\n"
-"le CHARSET par défaut est locale selon l'encodage, déterminé par LC_ALL, "
-"LC_CTYPE, LANG.\n"
+"Ã€ moins que DEFAULT_CHARSET ne soit initialisÃ© dans l'environnement,\n"
+"le CHARSET par dÃ©faut est locale selon l'encodage, dÃ©terminÃ© par LC_ALL, LC_CTYPE, LANG.\n"
 
 #: src/main.c:307
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Avec -k, les charsets antécédents possibles sont listés pour le CHARSET\n"
-"conséquent, tous deux étant des charsets RFC1345, restreints par les PAIRES\n"
-"dites selon la syntaxe « AVANT1:APRÈS1,AVANT2:APRÈS2,... »; chaque code "
-"AVANT\n"
-"et APRÈS est exprimé en décimal.\n"
+"Avec -k, les charsets antÃ©cÃ©dents possibles sont listÃ©s pour le CHARSET\n"
+"consÃ©quent, tous deux Ã©tant des charsets RFC1345, restreints par les PAIRES\n"
+"dites selon la syntaxe Â« AVANT1:APRÃˆS1,AVANT2:APRÃˆS2,... Â»; chaque code AVANT\n"
+"et APRÃˆS est exprimÃ© en dÃ©cimal.\n"
 
 #: src/main.c:312
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr ""
-"LN est un langage de programmation, valant « c » (implicite), « perl » ou « "
-"po ».\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr "LN est un langage de programmation, valant Â« c Â» (implicite), Â« perl Â» ou Â« po Â».\n"
 
 #: src/main.c:315
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"DEMANDE est SOUS-DEMANDE[,SOUS-DEMANDE]...; SOUS-DEMANDE est CODAGE[.."
-"CODAGE]...\n"
-"CODAGE est [CHARSET][/[SURFACE]]...; DEMANDE ressemble souvent à AVANT.."
-"APRÈs,\n"
-"AVANT et APRÈS étant des charsets.  Un CHARSET omis sous-entend le charset\n"
+"DEMANDE est SOUS-DEMANDE[,SOUS-DEMANDE]...; SOUS-DEMANDE est CODAGE[..CODAGE]...\n"
+"CODAGE est [CHARSET][/[SURFACE]]...; DEMANDE ressemble souvent Ã  AVANT..APRÃˆs,\n"
+"AVANT et APRÃˆS Ã©tant des charsets.  Un CHARSET omis sous-entend le charset\n"
 "habituel; une [/SURFACE]... omise sous-entend les surfaces habituelles pour\n"
-"CHARSET; un / sans surface indique l'absence de toute surface.  Voir le "
-"manuel!\n"
+"CHARSET; un / sans surface indique l'absence de toute surface.  Voir le manuel!\n"
 
 #: src/main.c:323
 msgid ""
@@ -267,11 +243,9 @@ msgid ""
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"En l'absence de « -i » ou « -p », choisir « -i » avec FICHIER, sinon « -p "
-"».\n"
-"Chaque FICHIER est recodé sur lui-même, détruisant l'original.  Si aucun\n"
-"FICHIER n'est donné, alors agir comme un filtre et recoder stdin sur "
-"stdout.\n"
+"En l'absence de Â« -i Â» ou Â« -p Â», choisir Â« -i Â» avec FICHIER, sinon Â« -p Â».\n"
+"Chaque FICHIER est recodÃ© sur lui-mÃªme, dÃ©truisant l'original.  Si aucun\n"
+"FICHIER n'est donnÃ©, alors agir comme un filtre et recoder stdin sur stdout.\n"
 
 #: src/main.c:329
 msgid ""
@@ -279,161 +253,164 @@ msgid ""
 "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
 msgstr ""
 "\n"
-"Rapporter toutes anomalies à <recode-bugs@iro.umontreal.ca>.\n"
+"Rapporter toutes anomalies Ã  <recode-bugs@iro.umontreal.ca>.\n"
 
-#: src/main.c:429
+#: src/main.c:430
 #, c-format
 msgid "Sequence `%s' is ambiguous"
-msgstr "Séquence « %s » est ambiguë"
+msgstr "SÃ©quence Â« %s Â» est ambiguÃ«"
 
-#: src/main.c:433
+#: src/main.c:434
 #, c-format
 msgid "Sequence `%s' is unknown"
-msgstr "Séquence « %s » est inconnue"
+msgstr "SÃ©quence Â« %s Â» est inconnue"
 
-#: src/main.c:463 src/main.c:521
+#: src/main.c:464 src/main.c:522
 #, c-format
 msgid "Language `%s' is ambiguous"
-msgstr "Langage « %s » est ambigu"
+msgstr "Langage Â« %s Â» est ambigu"
 
-#: src/main.c:467 src/main.c:525
+#. -1
+#: src/main.c:468 src/main.c:526
 #, c-format
 msgid "Language `%s' is unknown"
-msgstr "Langage « %s » est inconnu"
+msgstr "Langage Â« %s Â» est inconnu"
 
-#: src/main.c:559
+#: src/main.c:560
 #, c-format
 msgid "Format `%s' is ambiguous"
-msgstr "Format « %s » est ambigu"
+msgstr "Format Â« %s Â» est ambigu"
 
-#: src/main.c:563
+#: src/main.c:564
 #, c-format
 msgid "Format `%s' is unknown"
-msgstr "Format « %s » est inconnu"
+msgstr "Format Â« %s Â» est inconnu"
 
-#: src/main.c:620
+#: src/main.c:621
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
-msgstr "Écrit par François Pinard <pinard@iro.umontreal.ca>.\n"
+msgstr "Ã‰crit par FranÃ§ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:623
-#, fuzzy
+#: src/main.c:624
 msgid ""
 "\n"
-"Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright © 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright Â© 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:627
+#: src/main.c:628
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Ce programme est un logiciel libre; consulter les sources pour connaître\n"
-"les droits de copie.  Il n'y AUCUNE GARANTIE; même pas celle qu'il est\n"
-"DE QUALITÉ LOYALE ET MARCHANDE ou APPROPRIÉ POUR UN BUT PARTICULIER.\n"
+"Ce programme est un logiciel libre; consulter les sources pour connaÃ®tre\n"
+"les droits de copie.  Il n'y AUCUNE GARANTIE; mÃªme pas celle qu'il est\n"
+"DE QUALITÃ‰ LOYALE ET MARCHANDE ou APPROPRIÃ‰ POUR UN BUT PARTICULIER.\n"
 
-#: src/main.c:673
+#: src/main.c:669
 #, c-format
 msgid "Symbol `%s' is unknown"
-msgstr "¨Symbole « %s » est inconnu"
+msgstr "Â¨Symbole Â« %s Â» est inconnu"
 
-#: src/main.c:713 src/main.c:727
+#: src/main.c:709 src/main.c:723
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
-msgstr "Charset « %s » est inconnu ou ambigu"
+msgstr "Charset Â« %s Â» est inconnu ou ambigu"
 
-#: src/main.c:758
+#: src/main.c:754
 msgid "Required argument is missing"
 msgstr "Argument requis est manquant"
 
-#: src/main.c:801
+#: src/main.c:797
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
-msgstr "Syntaxe désuète, veuillez préférer « %s »"
+msgstr "Syntaxe dÃ©suÃ¨te, veuillez prÃ©fÃ©rer Â« %s Â»"
 
-#: src/main.c:807
+#: src/main.c:803
 #, c-format
 msgid "Request `%s' is erroneous"
-msgstr "Requête « %s » est erronée"
+msgstr "RequÃªte Â« %s Â» est erronÃ©e"
 
-#: src/main.c:907
+#: src/main.c:903
 #, c-format
 msgid "Recoding %s..."
-msgstr "Recodage de « %s »..."
+msgstr "Recodage de Â« %s Â»..."
 
-#: src/main.c:917
-#, c-format
+#: src/main.c:913
 msgid " done\n"
-msgstr " complété\n"
+msgstr " complÃ©tÃ©\n"
 
-#: src/main.c:958
+#: src/main.c:954
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
-msgstr " non-réussi: %s dans « %s..%s »\n"
+msgstr " non-rÃ©ussi: %s dans Â« %s..%s Â»\n"
 
-#: src/main.c:965
+#: src/main.c:961
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
-msgstr "%s non-réussi: %s dans « %s..%s »"
+msgstr "%s non-rÃ©ussi: %s dans Â« %s..%s Â»"
 
-#: src/main.c:988
+#: src/main.c:984
 #, c-format
 msgid "%s in step `%s..%s'"
-msgstr "%s dans « %s..%s »"
+msgstr "%s dans Â« %s..%s Â»"
 
-#: src/names.c:342
+#: src/names.c:335
 #, c-format
 msgid "Charset %s already exists and is not %s"
-msgstr "Le charset %s existe déjà, et n'est pas %s"
+msgstr "Le charset %s existe dÃ©jÃ , et n'est pas %s"
 
-#: src/names.c:837
+#: src/names.c:831
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
-msgstr "Incapable de lister « %s »: les noms n'y sont pas disponibles"
+msgstr "Incapable de lister Â« %s Â»: les noms n'y sont pas disponibles"
 
-#: src/names.c:990 src/names.c:1036
+#. code counter
+#. expected value for code counter
+#. insert a while line before printing
+#. Print the long table according to explode data.
+#: src/names.c:984 src/names.c:1030
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
-msgstr "déc  oct hex   UCS2  mné  %s\n"
+msgstr "dÃ©c  oct hex   UCS2  mnÃ©  %s\n"
 
-#: src/names.c:1055
+#: src/names.c:1049
 #, c-format
 msgid "Sorry, no names available for `%s'"
-msgstr "Désolé, aucun nom disponible pour « %s »"
+msgstr "DÃ©solÃ©, aucun nom disponible pour Â« %s Â»"
 
 #: src/outer.c:125
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
-msgstr "Plus d'un re-surfaceur pour « %s »"
+msgstr "Plus d'un re-surfaceur pour Â« %s Â»"
 
 #: src/outer.c:133
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
-msgstr "Plus d'un dé-surfaceur pour « %s »"
+msgstr "Plus d'un dÃ©-surfaceur pour Â« %s Â»"
 
 #: src/recode.c:115 src/recode.c:127
 msgid "Virtual memory exhausted"
-msgstr "Mémoire virtuelle épuisée"
+msgstr "MÃ©moire virtuelle Ã©puisÃ©e"
 
 #: src/recode.c:155
-#, c-format
+#, c-format, ycp-format
 msgid "Codes %3d and %3d both recode to %3d"
 msgstr "Les codes %3d et %3d s'injectent tous deux dans %3d"
 
 #: src/recode.c:169
-#, c-format
+#, c-format, ycp-format
 msgid "No character recodes to %3d"
-msgstr "Aucun caractère ne peut produire %3d"
+msgstr "Aucun caractÃ¨re ne peut produire %3d"
 
 #: src/recode.c:170
 msgid "Cannot invert given one-to-one table"
-msgstr "Incapable d'inverser une table un-à-un"
+msgstr "Incapable d'inverser une table un-Ã -un"
 
 #: src/recode.c:224 src/recode.c:236
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
-msgstr "Les diagnostics suivants s'appliquent pour « %s » vers « %s »"
+msgstr "Les diagnostics suivants s'appliquent pour Â« %s Â» vers Â« %s Â»"
 
 #: src/recode.c:229 src/recode.c:241
 #, c-format
@@ -450,25 +427,26 @@ msgstr "Le recodage est trivial, une table n'est pas requise"
 
 #: src/recode.c:504
 msgid "Recoding is too complex for a mere table"
-msgstr "Recodage plus complexe que ce qu'une table peut décrire"
+msgstr "Recodage plus complexe que ce qu'une table peut dÃ©crire"
 
+#. Print the header of the header file.
 #: src/recode.c:536
-#, fuzzy, c-format
-msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sTable de conversion engendrée mécaniquement par Free « %s » %s"
+#, c-format
+msgid "%sConversion table generated mechanically by Free `%s' %s"
+msgstr "%sTable de conversion engendrÃ©e mÃ©caniquement par Free Â« %s Â» %s"
 
 #: src/recode.c:538
 #, c-format
 msgid "%sfor sequence %s.%s"
-msgstr "%spour séquence « %s ».%s"
+msgstr "%spour sÃ©quence Â« %s Â».%s"
 
 #: src/recode.c:744
 msgid "No table to print"
-msgstr "Aucune table à imprimer"
+msgstr "Aucune table Ã  imprimer"
 
 #: src/request.c:34
 msgid "reversible"
-msgstr "réversible"
+msgstr "rÃ©versible"
 
 #: src/request.c:36
 #, c-format
@@ -489,7 +467,7 @@ msgstr "flottant"
 
 #: src/request.c:111
 msgid "*Unachievable*"
-msgstr "*Irréalisable*"
+msgstr "*IrrÃ©alisable*"
 
 #: src/request.c:113
 msgid "*mere copy*"
@@ -497,15 +475,15 @@ msgstr "*simple copie*"
 
 #: src/request.c:246
 msgid "Virtual memory exhausted!"
-msgstr "Mémoire virtuelle épuisée"
+msgstr "MÃ©moire virtuelle Ã©puisÃ©e"
 
 #: src/request.c:265
 msgid "Step initialisation failed"
-msgstr "L'étape n'a pas été correctement initialisée"
+msgstr "L'Ã©tape n'a pas Ã©tÃ© correctement initialisÃ©e"
 
 #: src/request.c:272
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "L'étape n'a pas été correctement initialisée (options non-traitées)"
+msgstr "L'Ã©tape n'a pas Ã©tÃ© correctement initialisÃ©e (options non-traitÃ©es)"
 
 #: src/request.c:568
 #, c-format
@@ -515,7 +493,7 @@ msgstr "Demande: %s\n"
 #: src/request.c:720
 #, c-format
 msgid "Shrunk to: %s\n"
-msgstr "Réduit à: %s\n"
+msgstr "RÃ©duit Ã : %s\n"
 
 #: src/request.c:823 src/request.c:932
 #, c-format
@@ -529,86 +507,17 @@ msgstr "Pas moyen de recoder %s vers %s"
 
 #: src/request.c:1013
 msgid "Expecting `..' in request"
-msgstr "Chaîne « .. » attendue dans la demande"
+msgstr "ChaÃ®ne Â« .. Â» attendue dans la demande"
 
-#: src/task.c:833 src/task.c:1009
+#: src/task.c:826 src/task.c:1002
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
-msgstr "L'état du processus fils en attente est 0x%0.2x"
+msgstr "L'Ã©tat du processus fils en attente est 0x%0.2x"
 
-#: src/testdump.c:309
+#: src/testdump.c:298
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
 msgstr ""
-"UCS2   Mné   Description\n"
+"UCS2   MnÃ©   Description\n"
 "\n"
-
-#~ msgid "CHARSET has no default, define DEFAULT_CHARSET in the environment.\n"
-#~ msgstr ""
-#~ "CHARSET ne peut être omis, définir DEFAULT_CHARSET dans l'environment.\n"
-
-#~ msgid "Ambiguous sequence `%s'"
-#~ msgstr "La séquence «%s» est ambiguë"
-
-#~ msgid "Unknown sequence `%s'"
-#~ msgstr "Séquence «%s» inconnue"
-
-#~ msgid "Ambiguous language `%s'"
-#~ msgstr "Le langage «%s» est ambigu"
-
-#~ msgid "Unknown language `%s'"
-#~ msgstr "Langage «%s» inconnu"
-
-#~ msgid "Ambiguous format `%s'"
-#~ msgstr "Le format «%s» est ambigu"
-
-#~ msgid "Unknown format `%s'"
-#~ msgstr "Format «%s» inconnu"
-
-#~ msgid "Erroneous request `%s'"
-#~ msgstr "Demande «%s» en erreur"
-
-#~ msgid "   Each input char transforms into an output string,\n"
-#~ msgstr "   Chaque caractère lu devient une chaîne à la sortie,\n"
-
-#~ msgid "   Each input char transforms into an output string.\n"
-#~ msgstr "   Chaque caractère lu devient une chaîne à la sortie.\n"
-
-#~ msgid "   Programming is needed to handle multichar input.\n"
-#~ msgstr "   Il faudra programmer la lecture des multi-caractères.\n"
-
-#~ msgid "   The recoding might not be reversible.\n"
-#~ msgstr "   Ce recodage pourrait être irréversible.\n"
-
-#~ msgid "   The recoding should be reversible.\n"
-#~ msgstr "   Ce recodage est normalement réversible.\n"
-
-#~ msgid "   programming is needed to handle multichar input.\n"
-#~ msgstr "   il faudra programmer la lecture des multi-caractères.\n"
-
-#~ msgid "%s: Recoding is not reversible"
-#~ msgstr "%s: Recodage irréversible"
-
-#~ msgid ", %d saved by merging"
-#~ msgstr ", %d économisés par fusion"
-
-#~ msgid "/* Conversion table from `%s' charset to `%s' charset.\n"
-#~ msgstr "/* Table de conversion du charset «%s» vers le charset «%s».\n"
-
-#~ msgid "Hash stats: %d names using %d buckets out of %d\n"
-#~ msgstr "Statistiques de dispersion: %d noms, dans %d/%d pigeonniers\n"
-
-#~ msgid "Internal error - strategy undecided"
-#~ msgstr "Erreur interne - stragégie non choisie"
-
-#~ msgid "Mere copy for the trivial recoding\n"
-#~ msgstr "Recodage trivial par simple recopie\n"
-
-#~ msgid "Recoding is not reversible"
-#~ msgstr "Recodage irréversible"
-
-#~ msgid "BEFORE and AFTER both default to `%s' when needed.\n"
-#~ msgstr ""
-#~ "AVANT et APRÈS ont implicitement la valeur canonique «%s», "
-#~ "lorsqu'absents.\n"
