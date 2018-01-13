@@ -16,6 +16,10 @@ LT_INIT
 AC_PROG_LEX
 gl_INIT
 
+AC_SUBST([objdir])
+LT_SYS_MODULE_EXT
+AC_SUBST([shlibext], [$libltdl_cv_shlibext])
+
 AC_CONFIG_HEADERS([config.h])
 AC_HEADER_STDC
 AM_ICONV
