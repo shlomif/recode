@@ -3766,11 +3766,6 @@ The first command use the charset prior to @w{RFC 1345} introduction.
 Both methods give different recodings.  These differences are annoying,
 the fuzziness will have to be explained and settle down one day.
 
-@cindex Recode, a Macintosh port
-As a side note, some people ask if there is a Macintosh port of Recode.
-I'm not aware of any.  I presume that if the tool
-fills a need for Macintosh users, someone will port it one of these days?
-
 @node AtariST,  , Apple-Mac, Micros
 @section Atari ST code
 

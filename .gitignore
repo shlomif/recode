@@ -36,7 +36,6 @@ html/
 /src/.libs/
 /src/charname.h
 /src/fr-charname.h
-/src/freeze.c
 /src/iconvdecl.h
 /src/merged.c
 /src/recode

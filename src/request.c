@@ -141,12 +141,6 @@ edit_sequence (RECODE_REQUEST request, bool edit_quality)
 		{
 		  last_charset_printed = step->before;
 		  add_work_string (request, last_charset_printed->name);
-#if 0
-		  if (unsurfacer_start == unsurfacer_end
-		      && last_charset_printed
-		      && last_charset_printed->implied_surfaces)
-		    add_work_character (request, '/');
-#endif
 		}
 	    }
 
@@ -169,14 +163,6 @@ edit_sequence (RECODE_REQUEST request, bool edit_quality)
 	      last_charset_printed = step->after;
 	      add_work_string (request, last_charset_printed->name);
 	      step++;
-#if 0
-	      if ((step == request->sequence_array + request->sequence_length
-		   || (step->before != outer->data_symbol
-		       && step->before != outer->tree_symbol))
-		  && last_charset_printed
-		  && last_charset_printed->implied_surfaces)
-		add_work_character (request, '/');
-#endif
 	    }
 	  else
 	    {
