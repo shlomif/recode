@@ -23,7 +23,7 @@ ACLOCAL = ./aclocal.sh @ACLOCAL@
 ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST = COPYING-LIB aclocal.sh after-patch.py after-patch.sh \
-m4/ChangeLog tables.py \
+m4/ChangeLog m4/gnulib-cache.m4 tables.py \
 keld/NomsSeulsfinal.lst keld/charsets.def keld/control.def \
 keld/iso10646.def keld/mnemonics,ds keld/other.def keld/rfc1345.txt
 SUBDIRS = doc lib po src tests contrib
