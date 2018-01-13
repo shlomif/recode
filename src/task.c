@@ -19,51 +19,10 @@
 
 #include "common.h"
 
-#if HAVE_UNISTD_H
-# include <unistd.h>
-#endif
-
+#include <stdio.h>
+#include <unistd.h>
 #include <sys/types.h>
-
 #include <sys/wait.h>
-/* Bruno suggests the following, from GNU make 3.79.0.2 in `job.c'.  He also
-   remarks that on Linux, WEXITSTATUS are bits 15..8 and WTERMSIG are bits
-   7..0, while BeOS uses the contrary.  */
-#if HAVE_UNION_WAIT
-# define WAIT_T union wait
-# ifndef WTERMSIG
-#  define WTERMSIG(x) ((x).w_termsig)
-# endif
-# ifndef WCOREDUMP
-#  define WCOREDUMP(x) ((x).w_coredump)
-# endif
-# ifndef WEXITSTATUS
-#  define WEXITSTATUS(x) ((x).w_retcode)
-# endif
-# ifndef WIFSIGNALED
-#  define WIFSIGNALED(x) (WTERMSIG(x) != 0)
-# endif
-# ifndef WIFEXITED
-#  define WIFEXITED(x) (WTERMSIG(x) == 0)
-# endif
-#else
-# define WAIT_T int
-# ifndef WTERMSIG
-#  define WTERMSIG(x) ((x) & 0x7f)
-# endif
-# ifndef WCOREDUMP
-#  define WCOREDUMP(x) ((x) & 0x80)
-# endif
-# ifndef WEXITSTATUS
-#  define WEXITSTATUS(x) (((x) >> 8) & 0xff)
-# endif
-# ifndef WIFSIGNALED
-#  define WIFSIGNALED(x) (WTERMSIG (x) != 0)
-# endif
-# ifndef WIFEXITED
-#  define WIFEXITED(x) (WTERMSIG (x) == 0)
-# endif
-#endif
 
 /* Buffer size used in transform_mere_copy.  */
 #define BUFFER_SIZE (16 * 1024)
@@ -394,59 +353,6 @@ perform_memory_sequence (RECODE_TASK task)
 | least one needed recoding step.                                          |
 `-------------------------------------------------------------------------*/
 
-/* tmpnam/tmpname/mktemp/tmpfile and the associate logic has been the
-   main portability headache of Recode :-(.
-
-   People reported that tmpname does not exist everywhere.  Further, on
-   OS/2, recode aborts if the prefix has more than five characters.
-
-   tmpnam seems to exist everywhere so far.  But NeXT's tmpnam() is such
-   that, if called many times in succession, it will always return the
-   same value, one has to really open a file with the returned name first
-   for the next call to tmpnam() to return a different value; even worse,
-   it cycles after 25 unique file names.  I can manage it for a single
-   invocation of recode, but using two recode invocations connected with
-   a shell pipe, on the NeXT, creates a race by which both copies may
-   call tmpnam() in parallel, then getting the same value, and will
-   consequently open the same temporary file.
-
-   Noah Friedman <friedman@gnu.org> suggests opening the file with
-   O_EXCL, and when the open presumably fails, call tmpnam again, or try
-   the mktemp routine in the GNU C library: maybe that will work better.
-
-   Michael I Bushnell <mib@gnu.org> suggests always using tmpfile,
-   which opens the file too, using the O_EXCL option to open.
-
-   I'm trying this last suggestion, but rewinding instead of closing.
-   Someone reported, a long while ago, that rewind did not work on his
-   system, so I reverted to opening and closing the temporary files all
-   the time.  I lost the precise references for this problem.  In any
-   case, I'm reusing rewind with tmpfile, now.  Hopefully, someone will
-   tell me if this still creates a problem somewhere!  */
-
-/* The previous round used tmpnam(3).  This one tries tmpfile(3).  */
-#undef USE_TMPNAM
-#define USE_TMPFILE 1
-
-/* Guarantee some value for L_tmpnam.  */
-#if USE_TMPNAM
-# if DOSWIN
-#  ifndef L_tmpnam
-#   define L_tmpnam 13
-#  endif
-# else
-char *tmpnam ();
-#  ifndef L_tmpnam
-#   include "pathmax.h"
-#   define L_tmpnam PATH_MAX
-#  endif
-# endif
-#endif
-
-#if USE_TMPFILE
-FILE *tmpfile PARAMS ((void));
-#endif
-
 static bool
 perform_pass_sequence (RECODE_TASK task)
 {
@@ -457,28 +363,11 @@ perform_pass_sequence (RECODE_TASK task)
   struct recode_read_write_text output;
   unsigned sequence_index;
   RECODE_CONST_STEP step;
-#if USE_TMPNAM
-  char temporary_name_1[L_tmpnam];
-  char temporary_name_2[L_tmpnam];
-#endif
 
   memset (subtask, 0, sizeof (struct recode_subtask));
   memset (&input, 0, sizeof (struct recode_read_write_text));
   memset (&output, 0, sizeof (struct recode_read_write_text));
   subtask->task = task;
-
-#if USE_TMPNAM
-# if DOSWIN_OR_OS2
-  strcpy (temporary_name_1, "recodex1.tmp");
-  strcpy (temporary_name_2, "recodex2.tmp");
-# else
-  /* Delay name attribution, so NeXT's work.  */
-  temporary_name_1[0] = NUL;
-  temporary_name_2[0] = NUL;
-# endif
-  subtask->input.name = temporary_name_1;
-  subtask->output.name = temporary_name_2;
-#endif
 
   /* Execute one pass for each step of the sequence.  */
 
@@ -511,20 +400,8 @@ perform_pass_sequence (RECODE_TASK task)
 	}
       else
 	{
-#if USE_TMPNAM
-	  if (subtask->input.file = fopen (input.name, "r"),
-	      subtask->input.file == NULL)
-	    {
-	      recode_perror (outer, "fopen (%s)", input.name);
-	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	      return false;
-	    }
-#endif
-
-#if USE_TMPFILE
 	  subtask->input.file = input.file;
 	  rewind (subtask->input.file);
-#endif
 	}
 
       /* Select the output text for this step.  */
@@ -533,28 +410,12 @@ perform_pass_sequence (RECODE_TASK task)
 	{
 	  subtask->output = output;
 
-#if USE_TMPNAM
-# if DOSWIN_OR_OS2
-	  if (*subtask->output.name == NUL)
-	    tmpnam (subtask->output.name);
-# endif
-	  if (subtask->output.file = fopen (subtask->output.name, "w"),
-	      subtask->output.file == NULL)
-	    {
-	      recode_perror (outer, "fopen (%s)", subtask->output.name);
-	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	      return false;
-	    }
-#endif
-
-#if USE_TMPFILE
 	  if (subtask->output.file = tmpfile (), subtask->output.file == NULL)
 	    {
 	      recode_perror (NULL, "tmpfile ()");
 	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
-#endif
 	}
       else
 	{
@@ -596,14 +457,7 @@ perform_pass_sequence (RECODE_TASK task)
       else
 	{
 	  fclose (subtask->input.file);
-#if USE_TMPNAM
-	  unlink (subtask->input.name);
-#endif
 	}
-
-#if USE_TMPNAM
-      fclose (subtask->output.file);
-#endif
 
       /* Prepare for next step.  */
 
@@ -627,61 +481,6 @@ perform_pass_sequence (RECODE_TASK task)
 }
 
 #if HAVE_PIPE
-
-#if !HAVE_DUP2
-
-/*------------------------------------------------------------------------.
-| Duplicate the OLD_FD file descriptor into NEW_FD, closing NEW_FD first  |
-| if it is used.  This implementation presumes both OLD_FD and NEW_FD are |
-| valid file descriptors.						  |
-`------------------------------------------------------------------------*/
-
-/* Overall idea taken from GNU Emacs 18.55 dup2 (), in src/sysdep.c.  */
-
-#include <sys/fcntl.h>
-
-#ifndef F_DUPFD
-
-static bool
-dup2_recursive (int old_fd, int new_fd)
-{
-  int fd;
-
-  /* Attempt to dup OLD_FD to NEW_FD.  If not successful, call dup2
-     recursively, filling the file descriptor table until NEW_FD is
-     reached.  Then close all the spurious file descriptors we created.  */
-
-  if (fd = dup (old_fd) && fd != new_fd)
-    if (fd < 0 || dup2_recursive (old_fd, new_fd) < 0 || close (fd) < 0)
-      return false;
-
-  return true;
-}
-
-#endif /* not F_DUPFD */
-
-static int
-dup2 (int old_fd, int new_fd)
-{
-  /* If OLD_FD or NEW_FD were not valid file descriptors, dup2 should
-     ideally return -1 with errno set to EBADF.  This is not checked.  */
-
-  if (old_fd != new_fd)
-    {
-      close (new_fd);
-
-#ifdef F_DUPFD
-      if (fcntl (old_fd, F_DUPFD, new_fd) != new_fd)
-	return -1;
-#else
-      if (!dup2_recursive (old_fd, new_fd))
-	return -1;
-#endif
-    }
-  return new_fd;
-}
-
-#endif /* not HAVE_DUP2 */
 
 /*-------------------------------------------------------------------------.
 | Execute the conversion sequence, forking the program many times for all  |
@@ -708,7 +507,7 @@ perform_pipe_sequence (RECODE_TASK task)
 
   int pipe_pair[2];		/* pair of file descriptors for a pipe */
   int child_process;		/* child process number, zero if child */
-  WAIT_T wait_status;		/* status returned by wait() */
+  pid_t wait_status;		/* status returned by wait() */
 
   memset (subtask, 0, sizeof (struct recode_subtask));
   subtask->task = task;
@@ -876,7 +675,7 @@ perform_pipe_sequence (RECODE_TASK task)
 
   int pipe_pair[2];		/* pair of file descriptors for a pipe */
   int child_process;		/* child process number, zero if child */
-  WAIT_T wait_status;		/* status returned by wait() */
+  pid_t wait_status;		/* status returned by wait() */
 
   memset (subtask, 0, sizeof (struct recode_subtask));
   subtask->task = task;
@@ -1077,10 +876,8 @@ recode_delete_task (RECODE_TASK task)
   return true;
 }
 
-#if DOSWIN
-# if HAVE_UNISTD_H
-#  include <unistd.h>		/* for isatty */
-# endif
+#if DOSWIN_OR_OS2
+# include <unistd.h>		/* for isatty */
 # include <fcntl.h>		/* for O_BINARY and _fmode */
 # include <io.h>		/* for setmode */
 #endif

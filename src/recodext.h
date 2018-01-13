@@ -88,25 +88,6 @@
 # define get_quoting_style librecode_get_quoting_style
 # define get_ucs2 librecode_get_ucs2
 # define get_ucs4 librecode_get_ucs4
-# define hash_clear librecode_hash_clear
-# define hash_delete librecode_hash_delete
-# define hash_do_for_each librecode_hash_do_for_each
-# define hash_free librecode_hash_free
-# define hash_get_entries librecode_hash_get_entries
-# define hash_get_first librecode_hash_get_first
-# define hash_get_max_bucket_length librecode_hash_get_max_bucket_length
-# define hash_get_n_buckets librecode_hash_get_n_buckets
-# define hash_get_n_buckets_used librecode_hash_get_n_buckets_used
-# define hash_get_n_entries librecode_hash_get_n_entries
-# define hash_get_next librecode_hash_get_next
-# define hash_initialize librecode_hash_initialize
-# define hash_insert librecode_hash_insert
-# define hash_lookup librecode_hash_lookup
-# define hash_print_statistics librecode_hash_print_statistics
-# define hash_rehash librecode_hash_rehash
-# define hash_reset_tuning librecode_hash_reset_tuning
-# define hash_string librecode_hash_string
-# define hash_table_ok librecode_hash_table_ok
 # define init_combine librecode_init_combine
 # define init_explode librecode_init_explode
 # define init_ucs2_to_byte librecode_init_ucs2_to_byte
@@ -114,7 +95,6 @@
 # define list_all_symbols librecode_list_all_symbols
 # define list_concise_charset librecode_list_concise_charset
 # define list_full_charset librecode_list_full_charset
-# define locale_charset librecode_locale_charset
 # define make_argmatch_arrays librecode_make_argmatch_arrays
 # define module_african librecode_module_african
 # define module_afrtran librecode_module_afrtran
@@ -174,17 +154,6 @@
 # define ucs2_to_charname librecode_ucs2_to_charname
 # define ucs2_to_french_charname librecode_ucs2_to_french_charname
 # define ucs2_to_rfc1345 librecode_ucs2_to_rfc1345
-# define x2nrealloc librecode_x2nrealloc
-# define x2realloc librecode_x2realloc
-# define xalloc_die librecode_xalloc_die
-# define xcalloc librecode_xcalloc
-# define xmalloc librecode_xmalloc
-# define xmemdup librecode_xmemdup
-# define xnmalloc librecode_xnmalloc
-# define xnrealloc librecode_xnrealloc
-# define xrealloc librecode_xrealloc
-# define xstrdup librecode_xstrdup
-# define xzalloc librecode_xzalloc
 
 #endif /* ! CLEANER_H_ */
 /* Conversion of files between different charsets and surfaces.
@@ -423,12 +392,12 @@ struct recode_surface_list
 | Description of a single step of recoding.  |
 `-------------------------------------------*/
 
-typedef bool (*Recode_init) PARAMS ((RECODE_STEP, RECODE_CONST_REQUEST,
-				     RECODE_CONST_OPTION_LIST,
-				     RECODE_CONST_OPTION_LIST));
-typedef bool (*Recode_term) PARAMS ((RECODE_STEP, RECODE_CONST_REQUEST));
-typedef bool (*Recode_transform) PARAMS ((RECODE_SUBTASK));
-typedef bool (*Recode_fallback) PARAMS ((RECODE_SUBTASK, unsigned));
+typedef bool (*Recode_init) (RECODE_STEP, RECODE_CONST_REQUEST,
+                             RECODE_CONST_OPTION_LIST,
+                             RECODE_CONST_OPTION_LIST);
+typedef bool (*Recode_term) (RECODE_STEP, RECODE_CONST_REQUEST);
+typedef bool (*Recode_transform) (RECODE_SUBTASK);
+typedef bool (*Recode_fallback) (RECODE_SUBTASK, unsigned);
 
 /* The `single' structure holds data needed to decide of sequences, and is
    invariant over actual requests.  The `step' structure holds data needed for
@@ -756,25 +725,25 @@ extern "C" {
 				       (Count) * sizeof(Type)), \
    Variable)
 
-void recode_error PARAMS ((RECODE_OUTER, const char *, ...));
-void recode_perror PARAMS ((RECODE_OUTER, const char *, ...));
-void *recode_malloc PARAMS ((RECODE_OUTER, size_t));
-void *recode_realloc PARAMS ((RECODE_OUTER, void *, size_t));
+void recode_error (RECODE_OUTER, const char *, ...);
+void recode_perror (RECODE_OUTER, const char *, ...);
+void *recode_malloc (RECODE_OUTER, size_t);
+void *recode_realloc (RECODE_OUTER, void *, size_t);
 
-unsigned char *invert_table PARAMS ((RECODE_OUTER, const unsigned char *));
-bool complete_pairs PARAMS ((RECODE_OUTER, RECODE_STEP,
-			     const struct recode_known_pair *, unsigned,
-			     bool, bool));
-bool transform_byte_to_ucs2 PARAMS ((RECODE_SUBTASK));
-bool init_ucs2_to_byte PARAMS ((RECODE_STEP, RECODE_CONST_REQUEST,
-				RECODE_CONST_OPTION_LIST,
-				RECODE_CONST_OPTION_LIST));
-bool transform_ucs2_to_byte PARAMS ((RECODE_SUBTASK));
+unsigned char *invert_table (RECODE_OUTER, const unsigned char *);
+bool complete_pairs (RECODE_OUTER, RECODE_STEP,
+                     const struct recode_known_pair *, unsigned,
+                     bool, bool);
+bool transform_byte_to_ucs2 (RECODE_SUBTASK);
+bool init_ucs2_to_byte (RECODE_STEP, RECODE_CONST_REQUEST,
+                        RECODE_CONST_OPTION_LIST,
+                        RECODE_CONST_OPTION_LIST);
+bool transform_ucs2_to_byte (RECODE_SUBTASK);
 
 /* charname.c and fr-charname.c.  */
 
-const char *ucs2_to_charname PARAMS ((int));
-const char *ucs2_to_french_charname PARAMS ((int));
+const char *ucs2_to_charname (int);
+const char *ucs2_to_french_charname (int);
 
 /* charset.c.  */
 
@@ -789,73 +758,69 @@ enum alias_find_type
 };
 
 int code_to_ucs2 (RECODE_CONST_SYMBOL, unsigned);
-bool prepare_for_aliases PARAMS ((RECODE_OUTER));
-RECODE_ALIAS declare_alias PARAMS ((RECODE_OUTER,
-				     const char *, const char *));
-bool declare_implied_surface PARAMS ((RECODE_OUTER, RECODE_ALIAS,
-				    RECODE_CONST_SYMBOL));
-bool make_argmatch_arrays PARAMS ((RECODE_OUTER));
-RECODE_ALIAS find_alias PARAMS ((RECODE_OUTER, const char *,
-				   enum alias_find_type));
-bool find_and_report_subsets PARAMS ((RECODE_OUTER));
-bool decode_known_pairs PARAMS ((RECODE_OUTER, const char *));
+bool prepare_for_aliases (RECODE_OUTER);
+RECODE_ALIAS declare_alias (RECODE_OUTER,
+                            const char *, const char *);
+bool declare_implied_surface (RECODE_OUTER, RECODE_ALIAS,
+                              RECODE_CONST_SYMBOL);
+bool make_argmatch_arrays (RECODE_OUTER);
+RECODE_ALIAS find_alias (RECODE_OUTER, const char *,
+                         enum alias_find_type);
+bool find_and_report_subsets (RECODE_OUTER);
+bool decode_known_pairs (RECODE_OUTER, const char *);
 
 /* combine.c.  */
 
 #define DONE NOT_A_CHARACTER
 #define ELSE BYTE_ORDER_MARK_SWAPPED
 
-bool init_explode PARAMS ((RECODE_STEP, RECODE_CONST_REQUEST,
-			   RECODE_CONST_OPTION_LIST,
-			   RECODE_CONST_OPTION_LIST));
-bool explode_byte_byte PARAMS ((RECODE_SUBTASK));
-bool explode_ucs2_byte PARAMS ((RECODE_SUBTASK));
-bool explode_byte_ucs2 PARAMS ((RECODE_SUBTASK));
-bool explode_ucs2_ucs2 PARAMS ((RECODE_SUBTASK));
+bool init_explode (RECODE_STEP, RECODE_CONST_REQUEST,
+                   RECODE_CONST_OPTION_LIST,
+                   RECODE_CONST_OPTION_LIST);
+bool explode_byte_byte (RECODE_SUBTASK);
+bool explode_ucs2_byte (RECODE_SUBTASK);
+bool explode_byte_ucs2 (RECODE_SUBTASK);
+bool explode_ucs2_ucs2 (RECODE_SUBTASK);
 
-bool init_combine PARAMS ((RECODE_STEP, RECODE_CONST_REQUEST,
-			   RECODE_CONST_OPTION_LIST,
-			   RECODE_CONST_OPTION_LIST));
-bool combine_byte_byte PARAMS ((RECODE_SUBTASK));
-bool combine_ucs2_byte PARAMS ((RECODE_SUBTASK));
-bool combine_byte_ucs2 PARAMS ((RECODE_SUBTASK));
-bool combine_ucs2_ucs2 PARAMS ((RECODE_SUBTASK));
+bool init_combine (RECODE_STEP, RECODE_CONST_REQUEST,
+                   RECODE_CONST_OPTION_LIST,
+                   RECODE_CONST_OPTION_LIST);
+bool combine_byte_byte (RECODE_SUBTASK);
+bool combine_ucs2_byte (RECODE_SUBTASK);
+bool combine_byte_ucs2 (RECODE_SUBTASK);
+bool combine_ucs2_ucs2 (RECODE_SUBTASK);
 
 /* freeze.c.  */
 
-void recode_freeze_tables PARAMS ((RECODE_OUTER));
+void recode_freeze_tables (RECODE_OUTER);
 
 /* iconv.c.  */
 
-bool transform_with_iconv PARAMS ((RECODE_SUBTASK));
-
-/* localcharset.c.  */
-
-const char *locale_charset PARAMS ((void));
+bool transform_with_iconv (RECODE_SUBTASK);
 
 /* names.c.  */
 
-bool should_prefer_french PARAMS ((void));
+bool should_prefer_french (void);
 
 /* mixed.c.  */
 
-bool transform_c_source PARAMS ((RECODE_TASK));
-bool transform_po_source PARAMS ((RECODE_TASK));
+bool transform_c_source (RECODE_TASK);
+bool transform_po_source (RECODE_TASK);
 
 /* outer.c.  */
 
-bool reversibility PARAMS ((RECODE_SUBTASK, unsigned));
+bool reversibility (RECODE_SUBTASK, unsigned);
 RECODE_SINGLE declare_single
-  PARAMS ((RECODE_OUTER, const char *, const char *,
-	   struct recode_quality,
-	   bool (*) (RECODE_STEP, RECODE_CONST_REQUEST,
-		     RECODE_CONST_OPTION_LIST, RECODE_CONST_OPTION_LIST),
-	   bool (*) (RECODE_SUBTASK)));
-bool declare_iconv PARAMS ((RECODE_OUTER, const char *, const char *));
-bool declare_explode_data PARAMS ((RECODE_OUTER, const unsigned short *,
-				   const char *, const char *));
-bool declare_strip_data PARAMS ((RECODE_OUTER, struct strip_data *,
-				 const char *));
+  (RECODE_OUTER, const char *, const char *,
+   struct recode_quality,
+   bool (*) (RECODE_STEP, RECODE_CONST_REQUEST,
+             RECODE_CONST_OPTION_LIST, RECODE_CONST_OPTION_LIST),
+   bool (*) (RECODE_SUBTASK));
+bool declare_iconv (RECODE_OUTER, const char *, const char *);
+bool declare_explode_data (RECODE_OUTER, const unsigned short *,
+                           const char *, const char *);
+bool declare_strip_data (RECODE_OUTER, struct strip_data *,
+                         const char *);
 
 /* pool.c.  */
 
@@ -863,21 +828,21 @@ extern const recode_ucs2 ucs2_data_pool[];
 
 /* request.c.  */
 
-char *edit_sequence PARAMS ((RECODE_REQUEST, bool));
+char *edit_sequence (RECODE_REQUEST, bool);
 
 /* rfc1345.c.  */
 
-const char *ucs2_to_rfc1345 PARAMS ((recode_ucs2));
+const char *ucs2_to_rfc1345 (recode_ucs2);
 
 /* task.c.  */
 
 #if USE_HELPERS || !INLINE_HARDER
-int get_byte_helper PARAMS ((RECODE_SUBTASK));
+int get_byte_helper (RECODE_SUBTASK);
 #endif
-void put_byte_helper PARAMS ((int, RECODE_SUBTASK));
-bool recode_if_nogo PARAMS ((enum recode_error, RECODE_SUBTASK));
-bool transform_byte_to_byte PARAMS ((RECODE_SUBTASK));
-bool transform_byte_to_variable PARAMS ((RECODE_SUBTASK));
+void put_byte_helper (int, RECODE_SUBTASK);
+bool recode_if_nogo (enum recode_error, RECODE_SUBTASK);
+bool transform_byte_to_byte (RECODE_SUBTASK);
+bool transform_byte_to_variable (RECODE_SUBTASK);
 
 /* ucs.c.  */
 
@@ -893,10 +858,10 @@ bool transform_byte_to_variable PARAMS ((RECODE_SUBTASK));
 /* Never an UCS-2 character.  */
 #define NOT_A_CHARACTER 0xFFFF
 
-bool get_ucs2 PARAMS ((unsigned *, RECODE_SUBTASK));
-bool get_ucs4 PARAMS ((unsigned *, RECODE_SUBTASK));
-bool put_ucs2 PARAMS ((unsigned, RECODE_SUBTASK));
-bool put_ucs4 PARAMS ((unsigned, RECODE_SUBTASK));
+bool get_ucs2 (unsigned *, RECODE_SUBTASK);
+bool get_ucs4 (unsigned *, RECODE_SUBTASK);
+bool put_ucs2 (unsigned, RECODE_SUBTASK);
+bool put_ucs4 (unsigned, RECODE_SUBTASK);
 
 #ifdef __cplusplus
 }

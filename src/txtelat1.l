@@ -21,7 +21,7 @@
 
 %{
 
-void texte_latin1_diaeresis PARAMS ((void));
+void texte_latin1_diaeresis (void);
 
 %}
 

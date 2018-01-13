@@ -22,14 +22,7 @@
 /* Global declarations and definitions.  */
 
 #include <ctype.h>
-
-#if HAVE_UNISTD_H
-# include <unistd.h>
-#endif
-
-#if WITH_DMALLOC
-# include <dmalloc.h>
-#endif
+#include <unistd.h>
 
 #include "hash.h"
 
@@ -37,70 +30,29 @@ extern const char *program_name;
 
 /* Error handling.  */
 
-#if HAVE_VPRINTF || HAVE_DOPRNT
-# if __STDC__
-#  include <stdarg.h>
-#  define VA_START(args, lastarg) va_start(args, lastarg)
-# else
-#  include <varargs.h>
-#  define VA_START(args, lastarg) va_start(args)
-# endif
-#else
-# define va_alist a1, a2, a3, a4, a5, a6, a7, a8
-# define va_dcl char *a1, *a2, *a3, *a4, *a5, *a6, *a7, *a8;
-#endif
+#include <stdarg.h>
 
 void
-#if defined(VA_START) && __STDC__
 recode_error (RECODE_OUTER outer, const char *format, ...)
-#else
-recode_error (outer, format, va_alist)
-     RECODE_OUTER outer;
-     const char *format;
-     va_dcl
-#endif
 {
-#ifdef VA_START
   va_list args;
 
-  VA_START (args, format);
-# if HAVE_VPRINTF
+  va_start (args, format);
   vfprintf (stderr, format, args);
-# else
-  _doprnt (format, args, stderr);
-# endif
   va_end (args);
-#else
-  fprintf (stderr, format, a1, a2, a3, a4, a5, a6, a7, a8);
-#endif
   putc ('\n', stderr);
   fflush (stderr);
 }
 
 void
-#if defined(VA_START) && __STDC__
 recode_perror (RECODE_OUTER outer, const char *format, ...)
-#else
-recode_perror (outer, format, va_alist)
-     RECODE_OUTER outer;
-     const char *format;
-     va_dcl
-#endif
 {
   int saved_errno = errno;
-#ifdef VA_START
   va_list args;
 
-  VA_START (args, format);
-# if HAVE_VPRINTF
+  va_start (args, format);
   vfprintf (stderr, format, args);
-# else
-  _doprnt (format, args, stderr);
-# endif
   va_end (args);
-#else
-  fprintf (stderr, format, a1, a2, a3, a4, a5, a6, a7, a8);
-#endif
   fprintf (stderr, ": %s\n", strerror (saved_errno));
   fflush (stderr);
 }
