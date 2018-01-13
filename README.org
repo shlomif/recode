@@ -197,11 +197,6 @@ Haible.
 Source files and various distributions (either latest, prestest, or
 archive) are available through [[https://github.com/pinard/Recode/][GitHub]].
 
-File timestamps after checkout may trigger Make difficulties.  As a
-way to avoid these, from the top level of the distribution, execute =sh
-after-patch.sh= before configuring.  If you miss either *sh* or GNU
-*touch*, try =python after-patch.py= instead.
-
 ** Configure options
 Once you have an unpacked distribution, see files:
 
