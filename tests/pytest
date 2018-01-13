@@ -223,7 +223,7 @@ class Main:
                 write('\n' + '=' * WIDTH + '\n')
                 write('%d. %s\n' % (ordinal, prefix))
                 if function and function.__name__ != os.path.basename(prefix):
-                    write("    Fonction %s\n" % function.__name__)
+                    write(u"    Function %s\n" % function.__name__)
                 if arguments:
                     for counter, argument in enumerate(arguments):
                         write("    Arg %d = %r\n" % (counter + 1, argument))
