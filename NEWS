@@ -7,14 +7,31 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-1999, 2000, 2001, 2008 Free Software Foundation, Inc.
 
-Version 3.7-beta2
-=================
+Version 3.7
+===========
 
-:Author: François Pinard, 2008-03.
+:Author: François Pinard, 2008-03; Reuben Thomas, 2018-01.
 
 + Recode does no include libiconv anymore, but uses an external iconv
-  library if one was available at installation time.
+  library if one was available at installation time.  The -x: option
+  to the program, or a new flag to the library recode_new_outer
+  function, inhibits the initialisation and usage of iconv.
 + Many internal changes, for correcting reported bugs.
++ Long ago, I renamed GNU recode to Free recode: the permission for
+  using the GNU prefix mandated a level of obedience to the FSF that
+  once went overboard, in my opinion.  After that change, I realized
+  that some people read Free as a four letter word!  To be peaceful,
+  this version changes the name again, to merely Recode.  recode
+  (no capital) still names the executable program specifically, or
+  the distribution archive itself.
++ make check accepts a LIMIT= option, for limiting tests to one or a
+  few cases.  See tests/Makefile.am.
++ PO files have been updated from the Translation Project.
++ The test system has been overhauled.  Tests now run much faster, and
+  require Python and Cython.
++ Overhauled build system, now using gnulib for portability.  This reduces
+  the amount of code in the Recode tree considerably.
+
 
 Version 3.6
 ===========
