@@ -68,7 +68,7 @@ MNEMONICS_DS = $(KELD)/iso10646.def $(KELD)/other.def $(KELD)/control.def
 RFC1345_TXT = $(KELD)/rfc1345.txt
 NOMS_CARACS = $(ALAIN)/NomsSeulsfinal.lst
 
-AM_CPPFLAGS = -I.. -I$(srcdir) -I$(top_srcdir)/lib
+AM_CPPFLAGS = -I.. -I$(srcdir) $(ISYSTEM)$(top_builddir)/lib $(ISYSTEM)$(top_srcdir)/lib $(WARN_CFLAGS)
 DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
 
 ETAGS_ARGS = $(L_STEPS)

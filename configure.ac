@@ -20,6 +20,51 @@ AC_SUBST([objdir])
 LT_SYS_MODULE_EXT
 AC_SUBST([shlibext], [$libltdl_cv_shlibext])
 
+dnl Extra warnings with GCC and compatible compilers
+AC_ARG_ENABLE([gcc-warnings],
+  [AS_HELP_STRING([--disable-gcc-warnings],
+                  [turn off lots of GCC warnings])],
+  [case $enableval in
+     yes|no) ;;
+     *)      AC_MSG_ERROR([bad value $enableval for gcc-warnings option]) ;;
+   esac
+   gl_gcc_warnings=$enableval],
+  [gl_gcc_warnings=yes]
+)
+if test "$gl_gcc_warnings" = yes; then
+  dnl Set up the list of undesired warnings.
+  nw=
+  nw="$nw -Wsystem-headers"   # Don’t let system headers trigger warnings
+  nw="$nw -Wundef"            # All compiler preprocessors support #if UNDEF
+  nw="$nw -Wtraditional"      # All compilers nowadays support ANSI C
+  nw="$nw -Wdeclaration-after-statement" # We require C99.
+  nw="$nw -Wstrict-overflow"  # Use a lower level (see below).
+  nw="$nw -Wconversion"       # These warnings usually don’t point to mistakes.
+  nw="$nw -Wsign-conversion"  # Likewise.
+
+  gl_MANYWARN_ALL_GCC([warnings])
+
+  dnl Enable all GCC warnings not in this list.
+  gl_MANYWARN_COMPLEMENT([warnings], [$warnings], [$nw])
+  for w in $warnings; do
+    gl_WARN_ADD([$w])
+  done
+
+  dnl Add an extra warning
+  gl_WARN_ADD([-Wstrict-overflow=1])
+  dnl Add some more safety measures
+  gl_WARN_ADD([-D_FORTIFY_SOURCE=2])
+  dnl Remove a warning being promoted to error: we trigger this and can't turn it off with pragmas.
+  gl_WARN_ADD([-Wno-error=format-security])
+
+  # When compiling with GCC, prefer -isystem to -I when including system
+  # include files, to avoid generating useless diagnostics for the files.
+  ISYSTEM='-isystem '
+else
+  ISYSTEM='-I'
+fi
+AC_SUBST([ISYSTEM])
+
 AC_CONFIG_HEADERS([config.h])
 AC_HEADER_STDC
 AM_ICONV
