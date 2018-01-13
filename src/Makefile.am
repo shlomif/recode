@@ -23,9 +23,11 @@ lib_LTLIBRARIES = librecode.la
 man_MANS = recode.1
 include_HEADERS = recode.h recodext.h
 
-noinst_HEADERS = charname.h common.h decsteps.h \
-fr-charname.h inisteps.h iconvdecl.h rfc1345.h tersteps.h \
+H_STEPS = common.h decsteps.h inisteps.h tersteps.h \
 $(H_FALLBACKS) $(H_SURFACES)
+
+noinst_HEADERS = $(H_STEPS) \
+charname.h fr-charname.h iconvdecl.h rfc1345.h
 
 EXTRA_DIST = recodext.h.in stamp-steps stamp-strip \
 $(L_STEPS) mergelex.py $(MANS)
@@ -34,8 +36,9 @@ CLEANFILES = iconvdecl.h
 
 C_STEPS = african.c afrtran.c applemac.c atarist.c bangbang.c cdcnos.c \
 ebcdic.c ibmpc.c iconqnx.c lat1asci.c java.c mule.c strip-data.c \
-testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c \
-$(C_FALLBACKS) $(C_SURFACES) merged.c
+testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c
+
+ALL_STEPS = $(C_STEPS) $(C_FALLBACKS) $(C_SURFACES) merged.c
 
 L_STEPS = ascilat1.l $(L_FALLBACKS) $(L_SURFACES)
 
@@ -51,8 +54,11 @@ recode_SOURCES = main.c freeze.c mixed.c
 recode_LDADD = librecode.la ../lib/libgnu.la
 
 librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
-names.c outer.c recode.c request.c strip-pool.c task.c $(C_STEPS)
+names.c outer.c recode.c request.c strip-pool.c task.c $(ALL_STEPS)
 librecode_la_LDFLAGS = -version-info 0:0:0
+
+loc:
+	cloc $(C_STEPS) $(L_FALLBACKS) $(H_STEPS) $(top_srcdir)/tables.py mergelex.py
 
 # Relative to $(srcdir).
 ALAIN = $(KELD)
@@ -114,9 +120,9 @@ iconvdecl.h: ../tables.py
 	$(TABLES_PY) -i
 
 outer.lo: stamp-steps
-stamp-steps: $(C_STEPS)
+stamp-steps: $(ALL_STEPS)
 	@echo "Updating {dec,ini,ter}steps.h"
-	@(cd $(srcdir) && grep -h '^module_' $(C_STEPS)) \
+	@(cd $(srcdir) && grep -h '^module_' $(ALL_STEPS)) \
 	    | sed 's/ .*//' > liste.tmp
 	@sed 's/\(.*\)/bool \1 (struct recode_outer *);/' \
 	    liste.tmp > decsteps.tmp
