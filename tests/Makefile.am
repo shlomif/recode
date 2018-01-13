@@ -28,12 +28,13 @@ t30_dumps.py t30_quoted.py t40_african.py t40_combine.py t40_testdump.py \
 t40_utf7.py t40_utf8.py t50_methods.py t90_bigauto.py
 
 EXTRA_DIST = Recode.c Recode.pyx pytest common.py $(SUITE)
-CLEANFILES = Recode@shlibext@
+CLEANFILES = Recode@shlibext@ Recode.body.c
+DISTCLEANFILES = Recode.c
 
 PYTHON = python
 
 check-local: Recode@shlibext@
-	export LD_LIBRARY_PATH=$(top_srcdir)/src/@objdir@ && \
+	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@ && \
 	RECODE=$(top_builddir)/src/recode PYTHONPATH=.:$(srcdir) \
 	  $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
@@ -44,6 +45,6 @@ Recode@shlibext@: Recode.c setup.py
 
 Recode.c: Recode.pyx Makefile
 	rm -f Recode.c && \
-	cython -o Recode.body.c Recode.pyx && \
+	cython -o Recode.body.c $(srcdir)/Recode.pyx && \
 	echo '#include "config.h"' > Recode.c && \
 	cat Recode.body.c >> Recode.c
