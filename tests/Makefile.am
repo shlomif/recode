@@ -33,7 +33,8 @@ CLEANFILES = Recode.so
 PYTHON = python
 
 check-local: Recode.so
-	RECODE=../src/recode PYTHONPATH=.:$(srcdir) \
+	export LD_LIBRARY_PATH=$(top_srcdir)/src/.libs && \
+	RECODE=$(top_builddir)/src/recode PYTHONPATH=.:$(srcdir) \
 	  $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
 Recode.so: Recode.c setup.py
@@ -41,5 +42,8 @@ Recode.so: Recode.c setup.py
 	$(PYTHON) setup.py build_ext --inplace
 	rm -fr build
 
-Recode.c: Recode.pyx
-	cd $(srcdir) && cython -3 Recode.pyx
+Recode.c: Recode.pyx Makefile
+	rm -f Recode.c && \
+	cython -o Recode.body.c Recode.pyx && \
+	echo '#include "config.h"' > Recode.c && \
+	cat Recode.body.c >> Recode.c

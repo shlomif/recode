@@ -23,9 +23,9 @@ lib_LTLIBRARIES = librecode.la
 man_MANS = recode.1
 include_HEADERS = recode.h recodext.h
 
-noinst_HEADERS = argmatch.h charname.h common.h decsteps.h exit.h exitfail.h \
-fr-charname.h hash.h inisteps.h iconvdecl.h quotearg.h rfc1345.h tersteps.h \
-xalloc.h $(H_FALLBACKS) $(H_SURFACES)
+noinst_HEADERS = charname.h common.h decsteps.h \
+fr-charname.h inisteps.h iconvdecl.h rfc1345.h tersteps.h \
+$(H_FALLBACKS) $(H_SURFACES)
 
 EXTRA_DIST = recodext.h.in stamp-steps stamp-strip \
 $(L_STEPS) mergelex.py $(MANS)
@@ -36,8 +36,6 @@ C_STEPS = african.c afrtran.c applemac.c atarist.c bangbang.c cdcnos.c \
 ebcdic.c ibmpc.c iconqnx.c lat1asci.c java.c mule.c strip-data.c \
 testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c \
 $(C_FALLBACKS) $(C_SURFACES) merged.c
-
-OLD_C_STEPS = next.c
 
 L_STEPS = ascilat1.l $(L_FALLBACKS) $(L_SURFACES)
 
@@ -52,9 +50,8 @@ L_SURFACES =
 recode_SOURCES = main.c freeze.c mixed.c
 recode_LDADD = librecode.la ../lib/libgnu.la
 
-librecode_la_SOURCES = argmatch.c charname.c combine.c exitfail.c \
-fr-charname.c hash.c iconv.c localcharset.c names.c outer.c quotearg.c \
-recode.c request.c strip-pool.c task.c xalloc-die.c xmalloc.c $(C_STEPS)
+librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
+names.c outer.c recode.c request.c strip-pool.c task.c $(C_STEPS)
 librecode_la_LDFLAGS = -version-info 0:0:0
 
 # Relative to $(srcdir).
@@ -72,7 +69,6 @@ ETAGS_ARGS = $(L_STEPS)
 TAGS_DEPENDENCIES = $(L_STEPS)
 
 # These CFLAGS values are not auto-configured:
-# -DDIFF_HASH		For using GNU diff's hash algorithm instead.
 # -DHASH_STATS		For printing a one-liner hash statistics.
 
 LEX = @LEX@
@@ -122,9 +118,9 @@ stamp-steps: $(C_STEPS)
 	@echo "Updating {dec,ini,ter}steps.h"
 	@(cd $(srcdir) && grep -h '^module_' $(C_STEPS)) \
 	    | sed 's/ .*//' > liste.tmp
-	@sed 's/\(.*\)/bool \1 PARAMS ((struct recode_outer *));/' \
+	@sed 's/\(.*\)/bool \1 (struct recode_outer *);/' \
 	    liste.tmp > decsteps.tmp
-	@sed 's/\(.*\)/void del\1 PARAMS ((struct recode_outer *));/' \
+	@sed 's/\(.*\)/void del\1 (struct recode_outer *);/' \
 	    liste.tmp >> decsteps.tmp
 	@sed 's/\(.*\)/  if (!\1 (outer)) return false;/' \
 	    liste.tmp > inisteps.tmp

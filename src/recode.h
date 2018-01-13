@@ -17,14 +17,6 @@
    If not, write to the Free Software Foundation, Inc., 59 Temple Place -
    Suite 330, Boston, MA 02111-1307, USA.  */
 
-#ifndef PARAMS
-# if __STDC__
-#  define PARAMS(Args) Args
-# else
-#  define PARAMS(Args) ()
-# endif
-#endif
-
 /* Published (opaque) typedefs.  */
 typedef struct recode_outer * 			RECODE_OUTER;
 typedef struct recode_request *			RECODE_REQUEST;
@@ -65,56 +57,56 @@ extern "C" {
 #define RECODE_AUTO_ABORT_FLAG 1
 #define RECODE_NO_ICONV_FLAG 2
 
-RECODE_OUTER recode_new_outer PARAMS ((unsigned));
-bool recode_delete_outer PARAMS ((RECODE_OUTER));
+RECODE_OUTER recode_new_outer (unsigned);
+bool recode_delete_outer (RECODE_OUTER);
 
-bool list_all_symbols PARAMS ((RECODE_OUTER, RECODE_CONST_SYMBOL));
-bool list_concise_charset PARAMS ((RECODE_OUTER, RECODE_CONST_SYMBOL,
-				  const enum recode_list_format));
-bool list_full_charset PARAMS ((RECODE_OUTER, RECODE_CONST_SYMBOL));
+bool list_all_symbols (RECODE_OUTER, RECODE_CONST_SYMBOL);
+bool list_concise_charset (RECODE_OUTER, RECODE_CONST_SYMBOL,
+                           const enum recode_list_format);
+bool list_full_charset (RECODE_OUTER, RECODE_CONST_SYMBOL);
 
 /*----------------------------------.
 | Recode library at REQUEST level.  |
 `----------------------------------*/
 
-RECODE_REQUEST recode_new_request PARAMS ((RECODE_OUTER));
-bool recode_delete_request PARAMS ((RECODE_REQUEST));
-bool recode_scan_request PARAMS ((RECODE_REQUEST, const char *));
+RECODE_REQUEST recode_new_request (RECODE_OUTER);
+bool recode_delete_request (RECODE_REQUEST);
+bool recode_scan_request (RECODE_REQUEST, const char *);
 
-bool recode_format_table PARAMS ((RECODE_REQUEST,
-				  enum recode_programming_language,
-				  const char *));
+bool recode_format_table (RECODE_REQUEST,
+                          enum recode_programming_language,
+                          const char *);
 
-char *recode_string PARAMS ((RECODE_CONST_REQUEST, const char *));
+char *recode_string (RECODE_CONST_REQUEST, const char *);
 
-bool recode_string_to_buffer PARAMS ((RECODE_CONST_REQUEST,
-				      const char *,
-				      char **, size_t *, size_t *));
-bool recode_string_to_file PARAMS ((RECODE_CONST_REQUEST,
-				    const char *,
-				    FILE *));
-bool recode_buffer_to_buffer PARAMS ((RECODE_CONST_REQUEST,
-				      const char *, size_t,
-				      char **, size_t *, size_t *));
-bool recode_buffer_to_file PARAMS ((RECODE_CONST_REQUEST,
-				    const char *, size_t,
-				    FILE *));
-bool recode_file_to_buffer PARAMS ((RECODE_CONST_REQUEST,
-				    FILE *,
-				    char **, size_t *, size_t *));
-bool recode_file_to_file PARAMS ((RECODE_CONST_REQUEST,
-				  FILE *,
-				  FILE *));
+bool recode_string_to_buffer (RECODE_CONST_REQUEST,
+                              const char *,
+                              char **, size_t *, size_t *);
+bool recode_string_to_file (RECODE_CONST_REQUEST,
+                            const char *,
+                            FILE *);
+bool recode_buffer_to_buffer (RECODE_CONST_REQUEST,
+                              const char *, size_t,
+                              char **, size_t *, size_t *);
+bool recode_buffer_to_file (RECODE_CONST_REQUEST,
+                            const char *, size_t,
+                            FILE *);
+bool recode_file_to_buffer (RECODE_CONST_REQUEST,
+                            FILE *,
+                            char **, size_t *, size_t *);
+bool recode_file_to_file (RECODE_CONST_REQUEST,
+                          FILE *,
+                          FILE *);
 
 /*-------------------------------.
 | Recode library at TASK level.  |
 `-------------------------------*/
 
-RECODE_TASK recode_new_task PARAMS ((RECODE_CONST_REQUEST));
-bool recode_delete_task PARAMS ((RECODE_TASK));
-bool recode_perform_task PARAMS ((RECODE_TASK));
-/* FILE *recode_filter_open PARAMS ((RECODE_TASK, FILE *)); */
-/* bool recode_filter_close PARAMS ((RECODE_TASK)); */
+RECODE_TASK recode_new_task (RECODE_CONST_REQUEST);
+bool recode_delete_task (RECODE_TASK);
+bool recode_perform_task (RECODE_TASK);
+/* FILE *recode_filter_open (RECODE_TASK, FILE *); */
+/* bool recode_filter_close (RECODE_TASK); */
 
 #ifdef __cplusplus
 }

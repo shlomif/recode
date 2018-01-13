@@ -19,36 +19,13 @@
 #include "common.h"
 
 #include <ctype.h>
-
 #include <sys/types.h>
 #include <sys/stat.h>
-
-#include "getopt.h"
-
-#if HAVE_UNISTD_H
-# include <unistd.h>
-#endif
-
-#if HAVE_STRUCT_UTIMBUF
-# if HAVE_UTIME_H
-#  include <utime.h>
-# endif
-#else
-
-struct utimbuf
-{
-  time_t actime;
-  time_t modtime;
-};
-
-#endif
-
+#include <unistd.h>
+#include <utime.h>
 #include <setjmp.h>
 
-#if OS2
-# include <io.h>
-# include <fcntl.h>
-#endif
+#include "getopt.h"
 
 /* Variables.  */
 
@@ -173,7 +150,7 @@ static jmp_buf signal_label;	/* where to jump when signal received */
 #endif
 static bool interrupted = 0;	/* set when some signal has been received */
 
-static RETSIGTYPE
+static void
 signal_handler (int number)
 {
   interrupted = 1;
@@ -183,6 +160,8 @@ signal_handler (int number)
 /*------------------------------------------------------------------------.
 | Prepare to handle signals, intercept willingful requests for stopping.  |
 `------------------------------------------------------------------------*/
+
+/* FIXME: Use sigaction */
 
 static void
 setup_signals (void)
@@ -379,7 +358,7 @@ main (int argc, char *const *argv)
   int option_char;		/* option character */
   bool success = true;		/* reversibility of all recodings */
 
-  static bool (*processor) PARAMS ((RECODE_TASK));
+  static bool (*processor) (RECODE_TASK);
   struct recode_outer outer_option;
   struct recode_request request_option;
   struct recode_task task_option;

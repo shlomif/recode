@@ -228,7 +228,7 @@ declare_iconv (RECODE_OUTER outer, const char *name, const char *iconv_name)
 `------------------------------------------------*/
 
 bool register_explode_data
-  PARAMS ((RECODE_OUTER, const char *, const unsigned short *));
+  (RECODE_OUTER, const char *, const unsigned short *);
 
 bool
 register_explode_data (RECODE_OUTER outer,
@@ -435,8 +435,8 @@ estimate_single_cost (RECODE_OUTER outer, RECODE_SINGLE single)
 `----------------------------------------*/
 
 #include "decsteps.h"
-bool module_iconv PARAMS ((struct recode_outer *));
-void delmodule_iconv PARAMS ((struct recode_outer *));
+bool module_iconv (struct recode_outer *);
+void delmodule_iconv (struct recode_outer *);
 
 static bool
 register_all_modules (RECODE_OUTER outer)
