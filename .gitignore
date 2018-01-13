@@ -26,7 +26,6 @@ html/
 /libtool
 /ltmain.sh
 /m4
-!/m4/ChangeLog
 /missing
 /po/.reference/
 /po/Makefile.in
