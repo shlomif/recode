@@ -1,50 +1,54 @@
-# Recode Turkish Translation
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# İrfan Macit <imacit@mail.cu.edu.tr>, 2002.
+# Norwegian Bokmal translations for the recode package.
+# Copyright (C) 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the recode package.
+#
+# Johnny A. Solbu <johnny@solbu.net>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "POT-Creation-Date: 2001-01-02 22:35+0100\n"
-"PO-Revision-Date: 2002-06-20 11:00EET\n"
-"Last-Translator: İrfan Macit <imacit@mail.cu.edu.tr>\n"
-"Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2012-10-14 06:24+0100\n"
+"Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
+"Language-Team: Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb_NO\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/main.c:142
 msgid "No error"
-msgstr "Hata yok"
+msgstr "Ingen feil"
 
 #: src/main.c:145
 msgid "Non canonical input"
-msgstr "Ana biçem olmayan girdi"
+msgstr "Ikke-kanonisk inndata"
 
 #: src/main.c:148
 msgid "Ambiguous output"
-msgstr "Belirsiz çıktı"
+msgstr "Tvetydig utdata"
 
 #: src/main.c:151
 msgid "Untranslatable input"
-msgstr "Çevrilemeyen girdi"
+msgstr "Uoversettelige inndata"
 
 #: src/main.c:154
 msgid "Invalid input"
-msgstr "Geçersiz girdi"
+msgstr "Ugyldig inndata"
 
 #: src/main.c:157
 msgid "System detected problem"
-msgstr "Sistem hata buldu"
+msgstr "Systemet oppdaget et problem"
 
 #: src/main.c:160
 msgid "Misuse of recoding library"
-msgstr "Yeniden kodlama kitaplığı hatalı kullanılmış"
+msgstr "Misbruk av omkodingsbibliotek"
 
 #: src/main.c:163
 msgid "Internal recoding bug"
-msgstr "İçsel yeniden kodlama hatası"
+msgstr "Intern omkodingsfeil"
 
 #: src/main.c:208
 msgid ""
@@ -62,27 +66,28 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
-"Bu bir serbest yazılımdır; Free Software Foundation tarafından yayınlanan\n"
-"GNU Genel Kamu Lisansı'nın 2. veya (sizin tercihinize bağlı olarak) daha\n"
-"sonraki bir sürümü altında yeniden dağıtabilir ve/veya değiştirebilirsiniz\n"
+"Dette programmet er fri programvare; du kan redistribuere det og/eller endre\n"
+"det under vilkårene i GNU General Public License som publisert av\n"
+"Free Software Foundation, enten versjon 2, eller (ved ditt)\n"
+"en nyere versjon.\n"
 "\n"
-"Bu yazılım faydalı olacağı umularak dağıtılmaktadır, fakat\n"
-"HİÇ BİR GARANTİSİ YOKTUR; SATILABİLİRLİĞİ veya\n"
-"HERHANGİ BİR AMACA UYGUNLUĞU için dahi zımni bir garanti\n"
-"içermez. Daha fazla bilgi için GNU Genel Kamu Lisansı'na bakın.\n"
+"Dette programmet er distribuert i håp om at det vil være nyttig,\n"
+"men UTEN NOEN GARANTI, ikke engang implisitt garanti\n"
+"SALGBARHET eller FOR ET SPESIELT FORMÅL. Se\n"
+"GNU General Public License for flere detaljer.\n"
 "\n"
-"Bu yazılımla birlikte GNU Genel Kamu Lisansı'nın bir kopyası gelmiş\n"
-"olmalıdır; eğer yok ise, lütfen Free Software Foundation, Inc., 59 Temple\n"
-"Place - Suite 330, Boston, MA 02111-1307, USA/ABD adresine yazın.\n"
+"Du skal ha mottatt en kopi av GNU General Public License\n"
+"sammen med dette programmet, hvis ikke, skriv til Free Software Foundation,\n"
+"Inc., 59 Temple Place - Suite 330, Boston, 02111-1307 MA, USA\n"
 
 #: src/main.c:233
 #, c-format
 msgid "Try `%s %s' for more information.\n"
-msgstr "Daha fazla bilgi için '%s %s'.\n"
+msgstr "Prøv «%s %s» Prøv for mer informasjon.\n"
 
 #: src/main.c:237
 msgid "Free `recode' converts files between various character sets and surfaces.\n"
-msgstr "Serbest `recode', dosyaları değişik karakter kümeleri ve yüzeylere dönüştürür.\n"
+msgstr "Fri «omkoder» konverterer filer mellom forskjellige tegnsett og overflater.\n"
 
 #: src/main.c:241
 #, c-format
@@ -91,7 +96,7 @@ msgid ""
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 msgstr ""
 "\n"
-"Kullanım: %s [SEÇENEK]...[[KARKÜME] | İSTEK [DOSYA]... ]\n"
+"Bruk: %s [FLAGG] ... [[TEGNSETT] | FORESPØRSEL [FIL] ... ]\n"
 
 #: src/main.c:244
 msgid ""
@@ -100,8 +105,9 @@ msgid ""
 "for the equivalent short option also.  Similarly for optional arguments.\n"
 msgstr ""
 "\n"
-"Uzun seçenekler için zorunlu olan argümanlar kısa seçenekler için de\n"
-"zorunludur. Aynı şey bütün argümanlar için geçerlidir.\n"
+"Dersom et langt flagg viser et argument som obligatorisk, så er det\n"
+"obligatorisk for tilsvarende korte alternativ også. Tilsvarende for\n"
+"valgfrie argumenter.\n"
 
 #: src/main.c:250
 msgid ""
@@ -117,15 +123,15 @@ msgid ""
 "      --version              output version information and exit\n"
 msgstr ""
 "\n"
-"Seçenekler:\n"
-"  -l, --list[=BİÇEM]        bilinen karakter kümeleri ve rumuzların birini ya da hepsini listeler\n"
-"  -k, --known=ÇİFT          karakter kümelerini bilinen ÇİFT listesine göre sınırlar.\n"
-"  -h, --header[=[LN/]İSİM]   standart çıktıya LN'i kullanarak tablonun İSMİ'ni yazar ve çıkar\n"
-"  -F, --freeze-tables        bütün tabloları içeren bir C modülü yazdırır\n"
-"  -T, --find-subsets         bir başka kümenin alt kümesi olan bütün karakter kümelerini raporlar\n"
-"  -C, --copyright            telif hakkı ve kopyalama koşullarını gösterir\n"
-"      --help                 bu yardımı gösterir ve çıkar\n"
-"      --version              sürüm bilgisini gösterir ve çıkar\n"
+"Oppføringer:\n"
+"  -l, --list[=FORMAT]        lister en eller alle kjente tegnsett og aliaser\n"
+"  -k, --known=PAR          begrense tegnsett ifølge kjente PAR-lister\n"
+"  -h, --header[=[LN/]NAVN]   skriv tabellen NAVN på stdout med LN, og avslutt\n"
+"  -F, --freeze-tables      skriv ut en C-modul son holder alle tabeller\n"
+"  -T, --find-subsets         finn alle tegnsett som er undergrupper av andre\n"
+"  -C, --copyright            vis opphavsrett- og kopieringsbetingelser\n"
+"      --help                 vis denne hjelpen og avslutt\n"
+"      --version              vis programversjon og avslutt\n"
 
 #: src/main.c:263
 msgid ""
@@ -139,21 +145,21 @@ msgid ""
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
-"Çalışma Kipleri:\n"
-"  -v, --verbose           adım sıralarını anlatır ve durum bilgisi gösterir\n"
-"  -q, --quiet, --silent   geri dönüşsüz yeniden kodlamalar hakkında bilgi vermez\n"
-"  -f, --force             geri dönüşsüz bile olsa yeniden kodlamaları yapar\n"
-"  -t, --touch             değişiklikten sonra yeniden kodlanmış dosyalara `touch' uygular\n"
-"  -i, --sequence=files    çevrimleri sıralamak için ara dosyalar kullanır\n"
-"      --sequence=memory   çevrimleri sıralamak için bellek yastıkları kullanır\n"
+"Driftsmodus:\n"
+"  -v, --verbose           forklar trinnsekvens og rapporter fremdrift\n"
+"  -q, --quiet, --silent   undertrykk meldinger om irreversible omkodinger\n"
+"  -f, --force             tving omkodinger selv når det ikke er reversibelt\n"
+"  -t, --touch             berør omkodede filer etter erstatning\n"
+"  -i, --sequence=filer    bruk midlertidige filer for sekvenseringspasseringer\n"
+"      --sequence=minne   bruk minnebuffere for sekvenseringspasseringer\n"
 
 #: src/main.c:275
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr "  -p, --sequence=pipe    çevrimleri sıralamak için veriyolu (pipe) kullanır\n"
+msgstr "  -p, --sequence=rør     bruk rør-maskiner for sekvenseringspasseringer\n"
 
 #: src/main.c:280
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "  -p, --sequence=pipe     (bu sistemde) -i ile aynı\n"
+msgstr "  -p, --sequence=rør     samme som -i (på dette systemet)\n"
 
 #: src/main.c:285
 msgid ""
@@ -167,13 +173,14 @@ msgid ""
 "  -x, --ignore=CHARSET   ignore CHARSET while choosing a recoding path\n"
 msgstr ""
 "\n"
-"İnce ayar:\n"
-"  -s, --strict           kesin olmayan harflerde bile kesin eşlemeler kullanır\n"
-"  -d, --diacritics       HTML/LaTeX için yalnız aksan v.b.'yi yeniden kodlar\n"
-"  -S, --source[=LN]      yeniden kodlamayı dizgeler ve LN gibi açıklamalarla sınırlar\n"
-"  -c, --colons           ö,ü'nin iki noktası için çift tırnak yerine iki nokta üstüste kullanır\n"
-"  -g, --graphics         IBMPC cetvellerini ASCII grafikleriyle değiştirir\n"
-"  -x, --ignore=KARKÜME  yeniden kodlama seçilirken KARKÜME dikkate alınmaz\n"
+"Fine tuning:\n"
+"  -s, --strict           bruke strenge koblinger, selv løse tegn\n"
+"  -d, --diacritics       konverter kun diakritiske eller like i HTML/LaTeX\n"
+"  -S, --source[=LN]      begrens omkoding til strenger og kommentarer\n"
+"                         som for LN\n"
+"  -c, --colons           bruk kolon i stedet for doble sitater for trema\n"
+"  -g, --graphics         omtrentlige IBMPC ledere av ASCII-grafikk\n"
+"  -x, --ignore=CHARSET   ignorer TEGNSETT når du velger en omkodingssti\n"
 
 #: src/main.c:296
 msgid ""
@@ -182,18 +189,16 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"-l seçeneği, BİÇEM veya KARKÜME verilmezse mevcut karakter kümelerini listeler\n"
-"BİÇEM, `decimal' (onluk), `octal' (sekizlik), `hexadecimal' (onaltılık), \n"
-"`full' (tam) veya `dohf' seçeneklerinden birisi olabilir.\n"
+"Opsjonen -l uten FORMAT eller tegnsett lister opp tilgjengelige tegnsett og overflater.\n"
+"FORMAT er «desimal», «oktal», «heksadesimal» eller «full» (eller en av «dohf»).\n"
 
 #: src/main.c:302
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"Eğer DEFAULT_CHARSET çevre değişkeni atanmamışsa, KARKÜME yerel\n"
-"ayarlarına bağlı kodlama olarak atanır ve LC_ALL, LC_CTYPE, LANG çevre\n"
-"değişkenlerinden etkilenir.\n"
+"Med mindre STANDARD_TEGNSETT ligger i miljø, TEGNSETT som standard til den lokale\n"
+"avhengighetskodingeb, bestemt ved LC_ALL, LC_CTYPE, LANG.\n"
 
 #: src/main.c:307
 msgid ""
@@ -201,13 +206,13 @@ msgid ""
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"-k seçeneği ile, dönüşecek karakter kümeleri, dönüştürülecek karakter kümeleri\n"
-"ile birlikte ÇİFT'ler halinde listelenir: `ÖNC1:SON1,ÖNC2:SON2,...'\n"
-"ÖNC ve SON karakter kümesi isimleri, ondalık sayı halinde kodlardan oluşur.\n"
+"Med -k viser en liste over mulige pre-koding for gitt etter TEGNSETT,\n"
+"Begge er tabellformtegnsett, med par av type «FØR1:ETTER1,FØR2:ETTER2, ...»\n"
+"FØR og ETTER er koder som oppgis som desimaltall.\n"
 
 #: src/main.c:312
 msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr "LN bir bilgisayar dilidir, `c', `perl' veya `po' olabilir; öntanımlı: `c'\n"
+msgstr "LN er et språk, det kan være «c»,«perl» eller «po»; «c» er standard\n"
 
 #: src/main.c:315
 msgid ""
@@ -219,13 +224,11 @@ msgid ""
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"İSTEK: ALTİSTEK,[ALTİSTEK]...; ALTİSTEK ise KODLAMA[..KODLAMA]...\n"
-"KODLAMA: [KARKÜME][/YÜZEY]]...; İSTEK genelde ÖNCE..SONRA\n"
-"biçeminde olur, ÖNCE ve SONRA karakter kümeleridir. Belirtilmemiş bir\n"
-"karakter kümesi öntanımlı karakter kümesinin kullanılacağına işaret eder.\n"
-"Belirtilmemiş [/YÜZEY]..., o KARKÜME için öntanımlı yüzeyin kullanılacağına\n"
-"işaret eder. Yalnız / kullanılır ve yüzey belirtilmezse, hiç yüzey kullanılmaz.\n"
-"Lütfen el kitabını inceleyin.\n"
+"FORESPØRSEL er UNDERFORESPØRSEL [, UNDERFORESPØRSEL] ...; UNDERFORESPØRSEL er koding [.. KODING] ...\n"
+"KODING er [TEGNSETT] [/ [OVERFLATE]] ...; FORESPØRSEL ofte ser ut som før .. ETTER,\n"
+"med før og etter blir tegnsett. Et utelatt CHARSET innebærer den vanlige\n"
+"tegnsettet, en utelatt [/ OVERFLATE] ... betyr de underforståtte overflater for TEGNSETT, et /\n"
+"med en tom overflatenavn betyr ingen overflater i det hele tatt. Se manualen.\n"
 
 #: src/main.c:323
 msgid ""
@@ -235,10 +238,9 @@ msgid ""
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"Eğer -i ve -p'nin hiç birisi verilmemiş ve DOSYA yok ise, -p, aksi\n"
-"halde -i varsayılır. Her DOSYA kendi üstüne yeniden kodlanır ve orjinali\n"
-"yok edilir. Eğer DOSYA verilmemişse, bir filtre görevi yapar ve standart\n"
-"girdiyi, standart çıktıya yeniden kodlar.\n"
+"Hvis ingen av -i og -p er gitt, anta -p hvis ingen FIL, ellers -i.\n"
+"Hver fil blir omkodet over seg selv, og ødelegger det opprinnelige. Hvis ingen\n"
+"FIL er spesifisert, funger da som et filter og omkode stdin til stdout.\n"
 
 #: src/main.c:329
 msgid ""
@@ -246,43 +248,42 @@ msgid ""
 "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
 msgstr ""
 "\n"
-"Yazılım hatalarını <recode-bugs@iro.umontreal.ca> adresine,\n"
-"Çeviri hatalarını <gnu-tr-u12a@lists.sourceforge.net> adresine yollayın.\n"
+"Rapporter feil til <recode-bugs@iro.umontreal.ca>.\n"
 
 #: src/main.c:430
 #, c-format
 msgid "Sequence `%s' is ambiguous"
-msgstr "`%s' sırası belirsiz"
+msgstr "Sekvensen «%s» er tvetydig"
 
 #: src/main.c:434
 #, c-format
 msgid "Sequence `%s' is unknown"
-msgstr "`%s' sırası bilinmiyor"
+msgstr "Sekvensen «%s» er ukjent"
 
 #: src/main.c:464 src/main.c:522
 #, c-format
 msgid "Language `%s' is ambiguous"
-msgstr "`%s' dili belirsiz"
+msgstr "Språket «%s» er flertydig"
 
 #. -1
 #: src/main.c:468 src/main.c:526
 #, c-format
 msgid "Language `%s' is unknown"
-msgstr "`%s' dili bilinmiyor"
+msgstr "Språket «%s» er ukjent"
 
 #: src/main.c:560
 #, c-format
 msgid "Format `%s' is ambiguous"
-msgstr "`%s' biçemi belirsiz"
+msgstr "Formatet «%s» er tvetydig"
 
 #: src/main.c:564
 #, c-format
 msgid "Format `%s' is unknown"
-msgstr "`%s' biçemi bilinmiyor"
+msgstr "Formatet «%s» er ukjent"
 
 #: src/main.c:621
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
-msgstr "Yazan: François Pinard <pinard@iro.umontreal.ca>.\n"
+msgstr "Skrevet av Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:624
 msgid ""
@@ -290,75 +291,74 @@ msgid ""
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Telif Hakkı (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"opphavsrett (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
 #: src/main.c:628
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Bu bir serbest yazılımdır; kopyalama koşulları için kaynak koduna bakınız.\n"
-"HİÇ BİR GARANTİSİ YOKTUR; SATILABİLİRLİĞİ veya\n"
-"HERHANGİ BİR AMACA UYGUNLUĞU için dahi zımni bir garanti\n"
-"içermez.\n"
+"Dette er fri programvare; se i kildekoden for kopieringsbetingelser.\n"
+"Det er INGEN garanti; ikke en gang for SALGBARHET eller SKIKKETHET\n"
+"FOR ET BESTEMT FORMÅL.\n"
 
 #: src/main.c:669
 #, c-format
 msgid "Symbol `%s' is unknown"
-msgstr "`%s' sembolü bilinmiyor"
+msgstr "Symbolet «%s» er ukjent"
 
 #: src/main.c:709 src/main.c:723
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
-msgstr "`%s' karakter kümesi bilinmiyor veya belirsiz"
+msgstr "Tegnsett «%s» er ukjent eller tvetydig"
 
 #: src/main.c:754
 msgid "Required argument is missing"
-msgstr "Zorunlu argüman eksik"
+msgstr "Påkrevd argument mangler"
 
 #: src/main.c:797
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
-msgstr "Biçem eski, lütfen `%s'i tercih edin"
+msgstr "Syntaksen er foreldet, vennligst foretrekk «%s»"
 
 #: src/main.c:803
 #, c-format
 msgid "Request `%s' is erroneous"
-msgstr "`%s' isteği hatalı"
+msgstr "Forespørsel «%s» er ugyldig"
 
 #: src/main.c:903
 #, c-format
 msgid "Recoding %s..."
-msgstr "%s yeniden kodlanıyor..."
+msgstr "Omkoder %s..."
 
 #: src/main.c:913
 msgid " done\n"
-msgstr " bitti\n"
+msgstr " utført\n"
 
 #: src/main.c:954
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
-msgstr "başarısız: `%2$s..%3$s' adımında %1$s\n"
+msgstr " misslyktes: %s i steg «%s..%s»\n"
 
 #: src/main.c:961
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
-msgstr "%1$s başarısız: `%3$s..%4$s' adımında %2$s"
+msgstr "%s misslyktes: %s i steg «%s..%s»"
 
 #: src/main.c:984
 #, c-format
 msgid "%s in step `%s..%s'"
-msgstr "`%2$s..%3$s' adımında %1$s"
+msgstr "%s i steg «%s..%s»"
 
 #: src/names.c:335
 #, c-format
 msgid "Charset %s already exists and is not %s"
-msgstr "%s karakter kümesi zaten mevcut ve %s değil"
+msgstr "Tegnsettet %s finnes allerede og er ikke %s"
 
 #: src/names.c:831
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
-msgstr "`%s' listelenemiyor, bu karakter kümesi için isim yok"
+msgstr "Kan ikke liste «%s», ingen navn tilgjengelig for dette tegnsettet"
 
 #. code counter
 #. expected value for code counter
@@ -367,90 +367,90 @@ msgstr "`%s' listelenemiyor, bu karakter kümesi için isim yok"
 #: src/names.c:984 src/names.c:1030
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
-msgstr "Ond  Sek OnaltıUCS2 Mne %s\n"
+msgstr "dec  oct hex   UCS2  mne  %s\n"
 
 #: src/names.c:1049
 #, c-format
 msgid "Sorry, no names available for `%s'"
-msgstr "`%s' için hiç isim mevcut değil"
+msgstr "Beklager, ingen navn tilgjengelig for `%s'"
 
 #: src/outer.c:125
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
-msgstr "`%s' için yüzeyleyici birden fazla defa atanmış"
+msgstr "Resurfacer satt mer enn én gang for «%s»"
 
 #: src/outer.c:133
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
-msgstr "`%s' için yüzey yokedici birden fazla defa atanmış"
+msgstr "Unsurfacer satt mer enn én gang for «%s»"
 
 #: src/recode.c:115 src/recode.c:127
 msgid "Virtual memory exhausted"
-msgstr "Sanal bellek tükendi"
+msgstr "Virtuelt minne oppbrukt"
 
 #: src/recode.c:155
 #, c-format, ycp-format
 msgid "Codes %3d and %3d both recode to %3d"
-msgstr "%3d ve %3d kodlarının ikisi de %3d'ye yeniden kodluyor"
+msgstr "Koder %3d og %3d begge omkoder til %3d"
 
 #: src/recode.c:169
 #, c-format, ycp-format
 msgid "No character recodes to %3d"
-msgstr "%3d'ye yeniden kodlanan harf yok"
+msgstr "Ingen tegn omkodes til %3d"
 
 #: src/recode.c:170
 msgid "Cannot invert given one-to-one table"
-msgstr "Verilen birebir eşlemeli tablo tersine çevrilemez"
+msgstr "Kan ikke snu oppgitt en-til-en tabell"
 
 #: src/recode.c:224 src/recode.c:236
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
-msgstr "`%s'den `%s'e durum bildirimleri inceleniyor"
+msgstr "Følgende diagnostikk for `%s' til `%s'"
 
 #: src/recode.c:229 src/recode.c:241
 #, c-format
 msgid "Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "%d no'lu çift <%3d, %3d>, <%3d, %3d> ile çakışıyor"
+msgstr "Par nr. %d: <%3d, %3d> i konflikt med <%3d, %3d>"
 
 #: src/recode.c:272
 msgid "Cannot complete table from set of known pairs"
-msgstr "Tablo bilinen çiftler kümesinden tamamlanamıyor"
+msgstr "Kan ikke fullføre tabellen fra sett med kjente par"
 
 #: src/recode.c:497
 msgid "Identity recoding, not worth a table"
-msgstr "Birebir yeniden kodlama, tabloya gerek yok"
+msgstr "Identitetsomkoding, ikke verdt en tabell"
 
 #: src/recode.c:504
 msgid "Recoding is too complex for a mere table"
-msgstr "Yeniden kodlama bir tablo için fazla karmaşık"
+msgstr "Omkoding er for komplisert for bare en tabell"
 
 #. Print the header of the header file.
 #: src/recode.c:536
 #, c-format
 msgid "%sConversion table generated mechanically by Free `%s' %s"
-msgstr "%sDönüşüm tablosu mekanik olarak Free `%s' %s tarafından oluşturulmuştur"
+msgstr "%sKonverteringstabell generert mekanisk ved Fri «%s» %s"
 
 #: src/recode.c:538
 #, c-format
 msgid "%sfor sequence %s.%s"
-msgstr "%2$s.%3$s sırası için %1$s"
+msgstr "%sfor sekvens %s.%s"
 
 #: src/recode.c:744
 msgid "No table to print"
-msgstr "Yazdırılacak tablo yok"
+msgstr "Ingen tabell å skrive ut"
 
 #: src/request.c:34
 msgid "reversible"
-msgstr "geri dönüşümlü"
+msgstr "reversibel"
 
 #: src/request.c:36
 #, c-format
 msgid "%s to %s"
-msgstr "%s'den %s'e"
+msgstr "%s til %s"
 
 #: src/request.c:37 src/request.c:39
 msgid "byte"
-msgstr "bayt"
+msgstr " byte"
 
 #: src/request.c:38 src/request.c:40
 msgid "ucs2"
@@ -458,61 +458,61 @@ msgstr "ucs2"
 
 #: src/request.c:38 src/request.c:40
 msgid "variable"
-msgstr "değişken"
+msgstr "variabel"
 
 #: src/request.c:111
 msgid "*Unachievable*"
-msgstr "*Ulaşılamaz*"
+msgstr "*Uoppnåelig*"
 
 #: src/request.c:113
 msgid "*mere copy*"
-msgstr "*yalnızca kopya*"
+msgstr "*bare kopier*"
 
 #: src/request.c:246
 msgid "Virtual memory exhausted!"
-msgstr "Sanal bellek tükendi!"
+msgstr "Virtuelt minne oppbrukt!"
 
 #: src/request.c:265
 msgid "Step initialisation failed"
-msgstr "Adım başlangıcı başarısız"
+msgstr "Trinninitialiseringen mislyktes"
 
 #: src/request.c:272
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "Adım başlangıcı başarısız (işlenmemiş seçenekler)"
+msgstr "Trinninitialiseringen mislyktes (ubehandlede alternativer)"
 
 #: src/request.c:568
 #, c-format
 msgid "Request: %s\n"
-msgstr "İstek: %s\n"
+msgstr "Forespørsel: %s\n"
 
 #: src/request.c:720
 #, c-format
 msgid "Shrunk to: %s\n"
-msgstr "%s'e küçüldü\n"
+msgstr "Krympet til: %s\n"
 
 #: src/request.c:823 src/request.c:932
 #, c-format
 msgid "Unrecognised surface name `%s'"
-msgstr "Bilinmeyen yüzey adı `%s'"
+msgstr "Ukjent overflate navn «%s»"
 
 #: src/request.c:903
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
-msgstr "`%s'den `%s'e yeniden kodlamanın yolu yok"
+msgstr "Ingen måte å omkode fra «%s» til «%s»"
 
 #: src/request.c:1013
 msgid "Expecting `..' in request"
-msgstr "İstekte `..' bekleniyordu"
+msgstr "Forventer «..»i forespørselen"
 
 #: src/task.c:826 src/task.c:1002
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
-msgstr "Ast işlem bekleme durumu: 0x%0.2x"
+msgstr "Barneprosessventestatus er 0x%0.2x"
 
 #: src/testdump.c:298
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
 msgstr ""
-"UCS2   Mne   Açıklama\n"
+"UCS2   Mne   beskrivelse\n"
 "\n"

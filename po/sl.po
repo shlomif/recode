@@ -7,11 +7,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
-"Report-Msgid-Bugs-To: recode-bugs@iro.umontreal.ca\n"
-"POT-Creation-Date: 2008-03-09 20:51-0400\n"
+"POT-Creation-Date: 2001-01-02 22:35+0100\n"
 "PO-Revision-Date: 2001-06-08 12:41+02:00\n"
 "Last-Translator: Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>\n"
 "Language-Team: Slovenian <sl@li.org>\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -68,11 +68,9 @@ msgid ""
 msgstr ""
 "Ta program je prosta programska oprema; lahko ga redistribuirate in/ali\n"
 "spreminjate po pogojih, doloèenih v ,,GNU General Public License``, izdani\n"
-"pri Free Software Foundation; 2. izdaja (ali novej¹a, èe razpolagate z "
-"njo).\n"
+"pri Free Software Foundation; 2. izdaja (ali novej¹a, èe razpolagate z njo).\n"
 "\n"
-"Ta program se distribuira v upanju, da je uporaben, vendar BREZ "
-"KAKR©NEGAKOLI\n"
+"Ta program se distribuira v upanju, da je uporaben, vendar BREZ KAKR©NEGAKOLI\n"
 "JAMSTVA; vkljuèno z impliciranim jamstvom prodajnosti ali uporabnosti za\n"
 "izbrani namen.  Za podrobnosti si oglejte ,,GNU General Public License``.\n"
 "\n"
@@ -86,20 +84,13 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Poskusite ,%s %s` za dodatne informacije.\n"
 
 #: src/main.c:237
-#, fuzzy
-msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Prosti ,recode` pretvarja datoteke med razliènimi kodnimi nabori in "
-"preèrkovanji.\n"
+msgid "Free `recode' converts files between various character sets and surfaces.\n"
+msgstr "Prosti ,recode` pretvarja datoteke med razliènimi kodnimi nabori in preèrkovanji.\n"
 
 #: src/main.c:241
 #, c-format
-msgid ""
-"\n"
-"Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
-msgstr ""
-"\n"
-"Uporaba: %s [IZBIRA]... [ [NABOR] | ZAHTEVA [DATOTEKA]... ]\n"
+msgid "\nUsage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
+msgstr "\nUporaba: %s [IZBIRA]... [ [NABOR] | ZAHTEVA [DATOTEKA]... ]\n"
 
 #: src/main.c:244
 msgid ""
@@ -116,8 +107,7 @@ msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -F, --freeze-tables        write out a C module holding all tables\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
@@ -128,13 +118,10 @@ msgstr ""
 "\n"
 "Seznami:\n"
 "  -l, --list[=OBLIKA]        izpi¹i enega ali vse kodirane nabore znakov\n"
-"  -k, --known=PARI           izpi¹i nabore, ki ustrezajo podanim PAROM "
-"pretvorb\n"
-"  -h, --header[=[JEZIK/]IME] izpi¹i pretvorno tabelo z danim IMENOM v prog. "
-"JEZIKU\n"
+"  -k, --known=PARI           izpi¹i nabore, ki ustrezajo podanim PAROM pretvorb\n"
+"  -h, --header[=[JEZIK/]IME] izpi¹i pretvorno tabelo z danim IMENOM v prog. JEZIKU\n"
 "  -F, --freeze-tables        izpi¹i modul v C z vsemi pretvornimi tabelami\n"
-"  -T, --find-subsets         poroèaj o vseh naborih, ki so podmno¾ica "
-"drugih\n"
+"  -T, --find-subsets         poroèaj o vseh naborih, ki so podmno¾ica drugih\n"
 "  -C, --copyright            izpi¹i dovoljenje za uporabo in raz¹irjanje\n"
 "      --help                 ta navodila\n"
 "      --version              razlièica programa\n"
@@ -152,8 +139,7 @@ msgid ""
 msgstr ""
 "\n"
 "Naèini dela:\n"
-"  -v, --verbose           med potekom razlagaj korake in komentiraj "
-"napredek\n"
+"  -v, --verbose           med potekom razlagaj korake in komentiraj napredek\n"
 "  -q, --quiet, --silent   brez opozoril o neobrnljivih pretvorbah\n"
 "  -f, --force             pretvorbo izvedi, èetudi ni obrnljiva\n"
 "  -t, --touch             pretvorjena datoteka naj nosi datum pretvorbe,\n"
@@ -182,16 +168,11 @@ msgid ""
 msgstr ""
 "\n"
 "Natanènej¹e nastavljanje:\n"
-"  -s, --strict           uporabi strogo pretvorbo, celo na raèun izgube "
-"znakov\n"
-"  -d, --diacritics       pretvori samo pregla¹ene in podobne znake za HTML/"
-"LaTeX\n"
-"  -S, --source[=JEZIK]   omeji pretvorbe na nize in komentarje, kot v "
-"JEZIKU\n"
-"  -c, --colons           nadomesti dierezo z dvopièjem, ne z dvojnim "
-"narekovajem\n"
-"  -g, --graphics         semigrafiène znake s PC pribl. nadomestimo z znaki "
-"ASCII\n"
+"  -s, --strict           uporabi strogo pretvorbo, celo na raèun izgube znakov\n"
+"  -d, --diacritics       pretvori samo pregla¹ene in podobne znake za HTML/LaTeX\n"
+"  -S, --source[=JEZIK]   omeji pretvorbe na nize in komentarje, kot v JEZIKU\n"
+"  -c, --colons           nadomesti dierezo z dvopièjem, ne z dvojnim narekovajem\n"
+"  -g, --graphics         semigrafiène znake s PC pribl. nadomestimo z znaki ASCII\n"
 "  -x, --ignore=NABOR     pri pretvorbi se izogni navedenemu vmesnemu NABORU\n"
 
 #: src/main.c:296
@@ -201,16 +182,13 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"Izbira -l brez podane OBLIKE ali NABORA izpi¹e seznam vseh znanih kodnih "
-"naborov\n"
-"in preèrkovalnih shem. OBLIKA je lahko ,decimal` (deseti¹ka), ,octal` "
-"(osmi¹ka),\n"
+"Izbira -l brez podane OBLIKE ali NABORA izpi¹e seznam vseh znanih kodnih naborov\n"
+"in preèrkovalnih shem. OBLIKA je lahko ,decimal` (deseti¹ka), ,octal` (osmi¹ka),\n"
 ",hexadecimal` (¹estnajsti¹ka) ali ,full` (polna), ali ena od èrk ,dohf`.\n"
 
 #: src/main.c:302
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Èe ni doloèena spremenljivka DEFAULT_CHARSET, se privzame NABOR,\n"
@@ -219,8 +197,7 @@ msgstr ""
 #: src/main.c:307
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 "Pri izbiri -k se izpi¹ejo vsi mo¾ni startni nabori za podani ciljni nabor.\n"
@@ -229,30 +206,24 @@ msgstr ""
 "znakov v startnem in ciljnem kodnem naboru.\n"
 
 #: src/main.c:312
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr "JEZIK je lahko ,c`, ,perl` ali ,po`; privzeto je ,c`.\n"
 
 #: src/main.c:315
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
 "ZAHTEVEK ima obliko PODZAHTEVEK[,PODZAHTEVEK]...; PODZAHTEVEK ima obliko\n"
 "KODIRANJE[,KODIRANJE]...; KODIRANJE ima obliko [NABOR][/[SHEMA]]. ZAHTEVEK\n"
-"ima pogosto obliko PREJ..POTEM, kjer sta PREJ in POTEM kodirana nabora "
-"znakov.\n"
+"ima pogosto obliko PREJ..POTEM, kjer sta PREJ in POTEM kodirana nabora znakov.\n"
 "Izpu¹èeni NABOR pomeni privzetega; izpu¹èena [/SHEMA] pomeni privzeto\n"
-"preèrkovalno shemo za dani NABOR. Po¹evnica / brez sheme pomeni brez "
-"preèrkovalne\n"
+"preèrkovalno shemo za dani NABOR. Po¹evnica / brez sheme pomeni brez preèrkovalne\n"
 "sheme. Podrobnosti so v priroèniku.\n"
 
 #: src/main.c:323
@@ -265,135 +236,128 @@ msgstr ""
 "\n"
 "Èe nista podana niti -i niti -p, se uporabi -p, kadar ni podana DATOTEKA, \n"
 "sicer pa -i. Pretvorba vsake DATOTEKE se zapi¹e prek izvorne razlièice. Èe\n"
-"DATOTEKA ni podana, recode deluje kot filter med standardnim vhodom in "
-"izhodom.\n"
+"DATOTEKA ni podana, recode deluje kot filter med standardnim vhodom in izhodom.\n"
 
 #: src/main.c:329
-msgid ""
-"\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
-msgstr ""
-"\n"
-"Sporoèila o napakah javite na <recode-bugs@iro.umontreal.ca>.\n"
+msgid "\nReport bugs to <recode-bugs@iro.umontreal.ca>.\n"
+msgstr "\nSporoèila o napakah javite na <recode-bugs@iro.umontreal.ca>.\n"
 
-#: src/main.c:429
+#: src/main.c:430
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Zaporedje ,%s` je dvoumno"
 
-#: src/main.c:433
+#: src/main.c:434
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Zaporedje ,%s` je neznano"
 
-#: src/main.c:463 src/main.c:521
+#: src/main.c:464 src/main.c:522
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Jezik ,%s` je dvoumen"
 
-#: src/main.c:467 src/main.c:525
+#. -1
+#: src/main.c:468 src/main.c:526
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Jezik ,%s` je neznan"
 
-#: src/main.c:559
+#: src/main.c:560
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Oblika ,%s` je dvoumna"
 
-#: src/main.c:563
+#: src/main.c:564
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Oblika ,%s` je neznana"
 
-#: src/main.c:620
+#: src/main.c:621
 msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Avtor Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:623
-#, fuzzy
-msgid ""
-"\n"
-"Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
-msgstr ""
-"\n"
-"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+#: src/main.c:624
+msgid "\nCopyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+msgstr "\nCopyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:627
+#: src/main.c:628
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"To je prost program; pogoji, pod katerimi ga lahko uporabljate, "
-"razmno¾ujete\n"
+"To je prost program; pogoji, pod katerimi ga lahko uporabljate, razmno¾ujete\n"
 "in raz¹irjate so navedeni v izvorni kodi. Za program ni NOBENEGA jamstva,\n"
 "niti jamstev USTREZNOSTI ZA PRODAJO ali PRIMERNOSTI ZA UPORABO.\n"
 
-#: src/main.c:673
+#: src/main.c:669
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Znak ,%s` je neznan"
 
-#: src/main.c:713 src/main.c:727
+#: src/main.c:709 src/main.c:723
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Nabor znakov ,%s` je neznan ali dvoumen"
 
-#: src/main.c:758
+#: src/main.c:754
 msgid "Required argument is missing"
 msgstr "Zahtevani argument manjka"
 
-#: src/main.c:801
+#: src/main.c:797
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Neodobravana skladnja; prosimo, uporabljajte ,%s`"
 
-#: src/main.c:807
+#: src/main.c:803
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Zahteva ,%s` je napaèna"
 
-#: src/main.c:907
+#: src/main.c:903
 #, c-format
 msgid "Recoding %s..."
 msgstr "Pretvarjamo %s..."
 
-#: src/main.c:917
-#, c-format
+#: src/main.c:913
 msgid " done\n"
 msgstr " opravljeno\n"
 
-#: src/main.c:958
+#: src/main.c:954
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " neuspe¹no: %s v koraku ,%s..%s`\n"
 
-#: src/main.c:965
+#: src/main.c:961
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s neuspe¹no: %s v koraku ,%s..%s`"
 
-#: src/main.c:988
+#: src/main.c:984
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s v koraku ,%s..%s`"
 
-#: src/names.c:342
+#: src/names.c:335
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Nabor %s ¾e obstaja in ni %s"
 
-#: src/names.c:837
+#: src/names.c:831
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Izpis ,%s' ni mogoè, imen za ta nabor ni na voljo"
 
-#: src/names.c:990 src/names.c:1036
+#. code counter
+#. expected value for code counter
+#. insert a while line before printing
+#. Print the long table according to explode data.
+#: src/names.c:984 src/names.c:1030
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "des  osm Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1055
+#: src/names.c:1049
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Imena za ,%s` niso na voljo"
@@ -448,9 +412,10 @@ msgstr "Pretvorba je trivialna, nevredna tabele"
 msgid "Recoding is too complex for a mere table"
 msgstr "Pretvorba je prezapletena za tabelo"
 
+#. Print the header of the header file.
 #: src/recode.c:536
-#, fuzzy, c-format
-msgid "%sConversion table generated mechanically by %s %s"
+#, c-format
+msgid "%sConversion table generated mechanically by Free `%s' %s"
 msgstr "%sPretvorna tabela mehanièno generirana s prostim ,%s` %s"
 
 #: src/recode.c:538
@@ -527,23 +492,17 @@ msgstr "Pretvorba iz ,%s` v ,%s` ni izvedljiva"
 msgid "Expecting `..' in request"
 msgstr "V zahtevku prièakujemo ,..`"
 
-#: src/task.c:833 src/task.c:1009
+#: src/task.c:826 src/task.c:1002
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Èakalni status procesa potomca je 0x%0.2x"
 
-#: src/testdump.c:309
-msgid ""
-"UCS2   Mne   Description\n"
-"\n"
-msgstr ""
-"UCS2   Mne   Opis\n"
-"\n"
+#: src/testdump.c:298
+msgid "UCS2   Mne   Description\n\n"
+msgstr "UCS2   Mne   Opis\n\n"
 
 #~ msgid "CHARSET has no default, define DEFAULT_CHARSET in the environment.\n"
-#~ msgstr ""
-#~ "NABOR nima privzete vrednosti; doloèite spremenljivko okolja "
-#~ "DEFAULT_CHARSET.\n"
+#~ msgstr "NABOR nima privzete vrednosti; doloèite spremenljivko okolja DEFAULT_CHARSET.\n"
 
 #~ msgid "Ambiguous sequence `%s'"
 #~ msgstr "Dvoumno zaporedje ,%s`"
@@ -606,8 +565,7 @@ msgstr ""
 #~ msgstr "Za zdaj je izbira -s ignorirana, kadar je izbrano -g"
 
 #~ msgid "Hash stats: %d names using %d buckets out of %d\n"
-#~ msgstr ""
-#~ "Statistika za razpr¹itveno tabelo: %d imen porabilo %d od %d ko¹ev\n"
+#~ msgstr "Statistika za razpr¹itveno tabelo: %d imen porabilo %d od %d ko¹ev\n"
 
 #~ msgid "Internal error - strategy undecided"
 #~ msgstr "Interna napaka - neodloèen o strategiji"
@@ -642,8 +600,7 @@ msgstr ""
 #~ msgid "  -o, --sequence=popen    same as -i (on this system)\n"
 #~ msgstr "  -o, --sequence=popen    isto kot -I (na tem sistemu)\n"
 
-#~ msgid ""
-#~ "  -o, --sequence=popen    use popen machinery for sequencing passes\n"
+#~ msgid "  -o, --sequence=popen    use popen machinery for sequencing passes\n"
 #~ msgstr "  -o, --sequence=popen    uporabi mehanizem ,popen'\n"
 
 #~ msgid ""
@@ -658,30 +615,25 @@ msgstr ""
 #~ "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 #~ msgstr ""
 #~ "  -q, --quiet, --silent   brez sporoèil o neobrnljivih pretvorbah\n"
-#~ "  -s, --strict            striktna pretvorba, tudi na ¹kodo izgubljenih "
-#~ "znakov\n"
-#~ "  -t, --touch             konèna datoteka naj nosi datum pretvorbe, ne "
-#~ "nastanka\n"
+#~ "  -s, --strict            striktna pretvorba, tudi na ¹kodo izgubljenih znakov\n"
+#~ "  -t, --touch             konèna datoteka naj nosi datum pretvorbe, ne nastanka\n"
 #~ "  -v, --verbose           z razlago poteka pretvorbe\n"
 #~ "  -x, --ignore=NABOR      izpusti NABOR pri izbiri poti pretvorbe\n"
 #~ "\n"
-#~ "Èe ni podan -i, -o, ali -p, se privzame -p, kadar ni podana DATOTEKA, "
-#~ "sicer -i.\n"
+#~ "Èe ni podan -i, -o, ali -p, se privzame -p, kadar ni podana DATOTEKA, sicer -i.\n"
 #~ "Vsaka DATOTEKA se pretvori èez samo sebe in unièi izvirnik.  Èe DATOTEKA\n"
 #~ "ni podana, deluje kot filter in pretvarja podatke z vhoda na izhod.\n"
 
 #~ msgid "BEFORE and AFTER both default to `%s' when needed.\n"
 #~ msgstr "Èe nabor PREJ ali POTEM ni podan, se nadomesti z ,%s'\n"
 
-# POZOR
+#~ # POZOR
 #~ msgid ""
-#~ "Mandatory or optional arguments to long options are mandatory or "
-#~ "optional\n"
+#~ "Mandatory or optional arguments to long options are mandatory or optional\n"
 #~ "for short options too.\n"
 #~ "\n"
 #~ "  -C, --copyright       display Copyright and copying conditions\n"
-#~ "  -a, --auto-check      report about some or all recoding paths, then "
-#~ "exit\n"
+#~ "  -a, --auto-check      report about some or all recoding paths, then exit\n"
 #~ "  -l, --list[=FORMAT]   list one or all known charsets\n"
 #~ "  -k, --known=PAIRS     restrict charsets according to known PAIRS list\n"
 #~ "      --help            display this help and exit\n"
@@ -689,14 +641,11 @@ msgstr ""
 #~ "\n"
 #~ "FORMAT is a word among decimal, octal, hexadecimal or full (which may be\n"
 #~ "abbreviated to one of `dohf'), it defaults to just the canonical name.\n"
-#~ "With -k, possible before charsets are listed for the given after "
-#~ "CHARSET,\n"
-#~ "both being RFC1345 charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-#~ "AFT2,...\n"
+#~ "With -k, possible before charsets are listed for the given after CHARSET,\n"
+#~ "both being RFC1345 charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...\n"
 #~ "and BEFs and AFTs being codes.  All codes are given as decimal numbers.\n"
 #~ msgstr ""
-#~ "Argumenti, ki so obvezni za dolge oblike izbir so obvezni tudi za kratke "
-#~ "oblike,\n"
+#~ "Argumenti, ki so obvezni za dolge oblike izbir so obvezni tudi za kratke oblike,\n"
 #~ "in enako velja za neobvezne argumente.\n"
 #~ "\n"
 #~ "  -C, --copyright       obvestilo avtorskih pravicah\n"
@@ -706,19 +655,14 @@ msgstr ""
 #~ "      --help            ta navodila\n"
 #~ "      --version         verzija programa\n"
 #~ "\n"
-#~ "FORMAT izpisa je eden od naslednjih: decimal, octal, hexadecimal ali full "
-#~ "(mo¾na\n"
-#~ "je okraj¹ava na prvo èrko: dohf), privzeta izbira je samo kanonièno ime "
-#~ "nabora.\n"
-#~ "With -k, possible before charsets are listed for the given after "
-#~ "CHARSET,\n"
-#~ "both being RFC1345 charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-#~ "AFT2,...\n"
+#~ "FORMAT izpisa je eden od naslednjih: decimal, octal, hexadecimal ali full (mo¾na\n"
+#~ "je okraj¹ava na prvo èrko: dohf), privzeta izbira je samo kanonièno ime nabora.\n"
+#~ "With -k, possible before charsets are listed for the given after CHARSET,\n"
+#~ "both being RFC1345 charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...\n"
 #~ "and BEFs and AFTs being codes.  All codes are given as decimal numbers.\n"
 
 #~ msgid ""
-#~ "Option -l with no FORMAT nor CHARSET list all charsets, also see the "
-#~ "Texinfo\n"
+#~ "Option -l with no FORMAT nor CHARSET list all charsets, also see the Texinfo\n"
 #~ "documentation.  My preferred charsets are (each user has preferences):\n"
 #~ "\n"
 #~ "  ascii-bs   ASCII (7-bit), using backspace to apply diacritics\n"
@@ -727,13 +671,10 @@ msgstr ""
 #~ "  latin1     ISO Latin-1 8-bit extension of ASCII\n"
 #~ "  texte      Easy French convention for transmitting email messages\n"
 #~ msgstr ""
-#~ "Izbira -l brez podanih FORMAT ali NABOR dá seznam vseh naborov, oglejte "
-#~ "si ¹e\n"
-#~ "dokumentacijo v Texinfo.  Moji priljubljeni nabori (vsak uporabnik ima "
-#~ "svoje):\n"
+#~ "Izbira -l brez podanih FORMAT ali NABOR dá seznam vseh naborov, oglejte si ¹e\n"
+#~ "dokumentacijo v Texinfo.  Moji priljubljeni nabori (vsak uporabnik ima svoje):\n"
 #~ "\n"
-#~ "  ascii-bs   7-bitni ASCII, z uporabo Backspace za tisk diakritiènih "
-#~ "znakov\n"
+#~ "  ascii-bs   7-bitni ASCII, z uporabo Backspace za tisk diakritiènih znakov\n"
 #~ "  ibmpc      8-bitni nabor IBM-PC, zakljuèek vrstice CR LF\n"
 #~ "  latex      LaTeX-ov zapis diakritiènih znakov\n"
 #~ "  latin1     ISO Latin-1 8-bitna raz¹iritev ASCII\n"
@@ -741,38 +682,25 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "  -c, --colons            use colons instead of double quotes for "
-#~ "diaeresis\n"
-#~ "  -d, --diacritics        limit conversion to diacritics or alike for "
-#~ "LaTeX\n"
-#~ "  -f, --force             force recodings even if they are not "
-#~ "reversible\n"
-#~ "                          (BEWARE: in this version, -f is always "
-#~ "selected)\n"
+#~ "  -c, --colons            use colons instead of double quotes for diaeresis\n"
+#~ "  -d, --diacritics        limit conversion to diacritics or alike for LaTeX\n"
+#~ "  -f, --force             force recodings even if they are not reversible\n"
+#~ "                          (BEWARE: in this version, -f is always selected)\n"
 #~ "  -g, --graphics          approximate IBMPC rulers by ASCII graphics\n"
-#~ "  -h, --header[=NAME]     write C code with table NAME on stdout, then "
-#~ "exit\n"
+#~ "  -h, --header[=NAME]     write C code with table NAME on stdout, then exit\n"
 #~ "  -i, --sequence=files    use intermediate files for sequencing passes\n"
 #~ msgstr ""
 #~ "\n"
 #~ "  -c, --colons            dvopièje namesto narekovajev za preglas\n"
-#~ "  -d, --diacritics        limit conversion to diacritics or alike for "
-#~ "LaTeX\n"
-#~ "  -f, --force             force recodings even if they are not "
-#~ "reversible\n"
-#~ "                          (BEWARE: in this version, -f is always "
-#~ "selected)\n"
+#~ "  -d, --diacritics        limit conversion to diacritics or alike for LaTeX\n"
+#~ "  -f, --force             force recodings even if they are not reversible\n"
+#~ "                          (BEWARE: in this version, -f is always selected)\n"
 #~ "  -g, --graphics          grafiène znake IBMPC aproksimiraj z ASCII\n"
-#~ "  -h, --header[=NAME]     write C code with table NAME on stdout, then "
-#~ "exit\n"
+#~ "  -h, --header[=NAME]     write C code with table NAME on stdout, then exit\n"
 #~ "  -i, --sequence=files    use intermediate files for sequencing passes\n"
 
-#~ msgid ""
-#~ "\n"
-#~ "Usage: %s [OPTION]... [BEFORE]:[AFTER] [FILE]...\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Uporaba: %s [IZBIRA]... [PREJ]:[POTEM] [DATOTEKA]...\n"
+#~ msgid "\nUsage: %s [OPTION]... [BEFORE]:[AFTER] [FILE]...\n"
+#~ msgstr "\nUporaba: %s [IZBIRA]... [PREJ]:[POTEM] [DATOTEKA]...\n"
 
 #~ msgid "many to many"
 #~ msgstr "veè v veè"
