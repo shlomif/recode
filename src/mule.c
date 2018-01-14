@@ -44,11 +44,11 @@ transform_mule_latin (RECODE_SUBTASK subtask,
   while (character = get_byte (subtask), character != EOF)
     if (IS_ASCII (character))
       put_byte (character, subtask);
-    else if ((character & MASK (8)) == prefix)
+    else if ((character & BIT_MASK (8)) == prefix)
       {
 	character = get_byte (subtask);
 
-	while ((character & MASK (8)) == prefix)
+	while ((character & BIT_MASK (8)) == prefix)
 	  {
 	    /* This happens in practice, sometimes, that Emacs goes a bit
 	       berzerk and generates strings of prefix characters.  Remove

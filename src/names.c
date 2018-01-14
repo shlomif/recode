@@ -34,7 +34,7 @@ code_to_ucs2 (RECODE_CONST_SYMBOL charset, unsigned code)
   unsigned offset = data->offset[code / STRIP_SIZE];
   unsigned value = pool[offset + code % STRIP_SIZE];
 
-  return value == MASK (16) ? -1 : (int) value;
+  return value == BIT_MASK (16) ? -1 : (int) value;
 }
 
 /*---------------------------------------------------------.
@@ -1135,7 +1135,7 @@ find_and_report_subsets (RECODE_OUTER outer)
 
 		      if (value1 != value2)
 			{
-			  if (value1 == MASK (16))
+			  if (value1 == BIT_MASK (16))
 			    distance++;
 			  else
 			    {

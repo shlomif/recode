@@ -62,7 +62,7 @@ dump (RECODE_SUBTASK subtask,
 
   while (character != EOF)
     {
-      unsigned value = MASK (8) & character;
+      unsigned value = BIT_MASK (8) & character;
       unsigned byte_count;
       char buffer[14];
       const char *cursor;
@@ -72,7 +72,7 @@ dump (RECODE_SUBTASK subtask,
 	  character = get_byte (subtask);
 	  if (character == EOF)
 	    break;
-	  value = (value << 8) | (MASK (8) & character);
+	  value = (value << 8) | (BIT_MASK (8) & character);
 	}
 
       /* Write delimiters.  */
@@ -284,7 +284,7 @@ undump (RECODE_SUBTASK subtask,
 
 	  /* Produce the output bytes.  */
           for (unsigned shift = size; shift != 0; shift--)
-            put_byte (MASK (8) & value >> ((shift * 8) - 8), subtask);
+            put_byte (BIT_MASK (8) & value >> ((shift * 8) - 8), subtask);
 	}
 
       /* Skip separators.  */

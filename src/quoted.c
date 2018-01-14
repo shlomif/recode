@@ -57,9 +57,9 @@ static const char safe_char_bitnet[1 << 7] =
     unsigned nibble;							\
 								\
     put_byte ('=', subtask);					\
-    nibble = MASK (4) & (Character) >> 4;			\
+    nibble = BIT_MASK (4) & (Character) >> 4;			\
     put_byte ((nibble < 10 ? '0' : 'A' - 10) + nibble, subtask);	\
-    nibble = MASK (4) & (Character);				\
+    nibble = BIT_MASK (4) & (Character);				\
     put_byte ((nibble < 10 ? '0' : 'A' - 10) + nibble, subtask);	\
   } while (false)
 
