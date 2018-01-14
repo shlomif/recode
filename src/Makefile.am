@@ -115,7 +115,12 @@ iconv.lo: iconvdecl.h
 iconvdecl.h: ../tables.py
 	$(TABLES_PY) -i
 
-outer.lo: stamp-steps
+african.lo afrtran.lo applemac.lo atarist.lo bangbang.lo cdcnos.lo \
+ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo java.lo mule.lo strip-data.lo \
+testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo varia.lo vn.lo \
+flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo texinfo.lo \
+base64.lo dump.lo endline.lo permut.lo quoted.lo \
+iconv.lo outer.lo decsteps.h inisteps.h tersteps.h: stamp-steps
 stamp-steps: $(ALL_STEPS)
 	@echo "Updating {dec,ini,ter}steps.h"
 	@(cd $(srcdir) && grep -h '^module_' $(ALL_STEPS)) \
