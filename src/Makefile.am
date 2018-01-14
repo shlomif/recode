@@ -26,11 +26,9 @@ include_HEADERS = recode.h recodext.h
 H_STEPS = common.h decsteps.h inisteps.h tersteps.h \
 $(H_FALLBACKS) $(H_SURFACES)
 
-noinst_HEADERS = $(H_STEPS) \
-charname.h fr-charname.h iconvdecl.h rfc1345.h
+noinst_HEADERS = $(H_STEPS) cleaner.h charname.h fr-charname.h iconvdecl.h rfc1345.h
 
-EXTRA_DIST = recodext.h.in stamp-steps stamp-strip \
-$(L_STEPS) mergelex.py $(MANS)
+EXTRA_DIST = stamp-steps stamp-strip $(L_STEPS) mergelex.py $(MANS)
 
 CLEANFILES = iconvdecl.h
 
@@ -50,11 +48,12 @@ H_SURFACES = base64.h
 C_SURFACES = base64.c dump.c endline.c permut.c quoted.c
 L_SURFACES =
 
-recode_SOURCES = main.c mixed.c
+recode_SOURCES = main.c mixed.c common.h
 recode_LDADD = librecode.la ../lib/libgnu.la
 
 librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
-names.c outer.c recode.c request.c strip-pool.c task.c $(ALL_STEPS)
+names.c outer.c recode.c request.c strip-pool.c task.c $(ALL_STEPS) \
+$(include_HEADERS) $(noinst_HEADERS) $(H_STEPS)
 librecode_la_LDFLAGS = -version-info 0:0:0
 
 loc:
@@ -102,12 +101,9 @@ $(srcdir)/recode.1: recode
 	  echo "         but you may safely and merely ignore this error."; \
 	fi
 
-$(srcdir)/recodext.h: $(top_srcdir)/cleaner.h.in $(srcdir)/recodext.h.in
-	cat $(top_srcdir)/cleaner.h.in $(srcdir)/recodext.h.in > $@
-
 main.o: main.c ../config.status
 
-charname.lo: rfc1345.h
+charname.lo: charname.h
 charname.h: ../tables.py $(MNEMONICS_DS) $(RFC1345_TXT)
 	$(TABLES_PY) -C $(srcdir) -n $(MNEMONICS_DS) $(RFC1345_TXT)
 
