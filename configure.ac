@@ -74,7 +74,5 @@ AM_WITH_DMALLOC
 AM_GNU_GETTEXT_VERSION(0.19)
 AM_GNU_GETTEXT(external)
 
-AM_CONDITIONAL(MES_SITES, [test -f "~/etc/mes-sites/site.mk"])
-
 AC_OUTPUT(Makefile contrib/Makefile doc/Makefile lib/Makefile
           po/Makefile.in src/Makefile tests/Makefile tests/setup.py)
