@@ -146,4 +146,4 @@ rfc1345.h: ../tables.py $(MNEMONICS_DS)
 strip-pool.c strip-data.c: stamp-strip
 stamp-strip: ../tables.py $(MNEMONICS_DS) $(CHARSETS_DEF)
 	$(TABLES_PY) -C $(srcdir) -p $(MNEMONICS_DS) $(CHARSETS_DEF)
-	echo timestamp > $(srcdir)/$@
+	@echo timestamp > $(srcdir)/$@
