@@ -20,7 +20,7 @@ AUTOMAKE_OPTIONS = gnits
 info_TEXINFOS = recode.texi
 MAKEINFO = LANG= LANGUAGE= @MAKEINFO@
 
-EXTRA_DIST = rfc1345.texi File-Latin1 help2man
+EXTRA_DIST = rfc1345.texi File-Latin1
 MOSTLYCLEANFILES = recode.ops
 
 # Relative to $(srcdir).

@@ -25,7 +25,6 @@ html/
 /lib/.deps/
 /libtool
 /ltmain.sh
-/m4
 /missing
 /po/*.gmo
 /po/.reference/
