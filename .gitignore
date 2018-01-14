@@ -9,7 +9,6 @@ html/
 /aclocal.m4
 /autom4te.cache
 /build-aux
-/cleaner.h
 /compile
 /config.guess
 /config.h
@@ -46,7 +45,6 @@ html/
 /src/merged.c
 /src/recode
 /src/recode.1
-/src/recodext.h
 /src/rfc1345.h
 /src/strip-data.c
 /src/strip-pool.c

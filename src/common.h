@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "config.h"
+#include "cleaner.h"
 
 #if MSDOS || WIN32 || _WIN32 || OS2
 # define DOSWIN_OR_OS2 1

@@ -76,9 +76,5 @@ AM_GNU_GETTEXT(external)
 
 AM_CONDITIONAL(MES_SITES, [test -f "~/etc/mes-sites/site.mk"])
 
-AH_BOTTOM([
-#include "cleaner.h"
-])
-
-AC_OUTPUT(Makefile cleaner.h contrib/Makefile doc/Makefile lib/Makefile
+AC_OUTPUT(Makefile contrib/Makefile doc/Makefile lib/Makefile
           po/Makefile.in src/Makefile tests/Makefile tests/setup.py)

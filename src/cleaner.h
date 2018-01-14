@@ -22,13 +22,6 @@
 #ifndef CLEANER_H_
 # define CLEANER_H_
 
-# define __xargmatch_internal librecode_xargmatch_internal
-# define aliases_lookup librecode_aliases_lookup
-# define argcasematch librecode_argcasematch
-# define argmatch librecode_argmatch
-# define argmatch_invalid librecode_argmatch_invalid
-# define argmatch_to_argument librecode_argmatch_to_argument
-# define argmatch_valid librecode_argmatch_valid
 # define clone_quoting_options librecode_clone_quoting_options
 # define code_to_ucs2 librecode_code_to_ucs2
 # define combine_byte_byte librecode_combine_byte_byte
@@ -96,7 +89,6 @@
 # define list_all_symbols librecode_list_all_symbols
 # define list_concise_charset librecode_list_concise_charset
 # define list_full_charset librecode_list_full_charset
-# define make_argmatch_arrays librecode_make_argmatch_arrays
 # define module_african librecode_module_african
 # define module_afrtran librecode_module_afrtran
 # define module_applemac librecode_module_applemac
@@ -134,13 +126,6 @@
 # define prepare_for_aliases librecode_prepare_for_aliases
 # define put_ucs2 librecode_put_ucs2
 # define put_ucs4 librecode_put_ucs4
-# define quotearg librecode_quotearg
-# define quotearg_buffer librecode_quotearg_buffer
-# define quotearg_char librecode_quotearg_char
-# define quotearg_colon librecode_quotearg_colon
-# define quotearg_n librecode_quotearg_n
-# define quotearg_n_style librecode_quotearg_n_style
-# define quotearg_style librecode_quotearg_style
 # define reversibility librecode_reversibility
 # define set_char_quoting librecode_set_char_quoting
 # define set_quoting_style librecode_set_quoting_style

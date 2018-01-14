@@ -27,10 +27,6 @@ keld/NomsSeulsfinal.lst keld/charsets.def keld/control.def \
 keld/iso10646.def keld/mnemonics,ds keld/other.def keld/rfc1345.txt
 SUBDIRS = doc lib po src tests contrib
 
-# All object files should depend on cleaner.h as well on as config.h.
-# For now at least, if you modify cleaner.h.in, make twice!
-all-local: cleaner.h
-
 get-po-files:
 	cd $(top_srcdir) && \
 	  rsync -Lrtvz translationproject.org::tp/latest/recode/ po
