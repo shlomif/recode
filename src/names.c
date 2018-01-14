@@ -26,7 +26,7 @@
 | negative number if this symbol is not defined.			   |
 `-------------------------------------------------------------------------*/
 
-int
+_GL_ATTRIBUTE_PURE int
 code_to_ucs2 (RECODE_CONST_SYMBOL charset, unsigned code)
 {
   const struct strip_data *data = (const struct strip_data *) charset->data;
@@ -41,7 +41,7 @@ code_to_ucs2 (RECODE_CONST_SYMBOL charset, unsigned code)
 | Return true if BEFORE to AFTER is currently restricted.  |
 `---------------------------------------------------------*/
 
-static bool
+static _GL_ATTRIBUTE_PURE bool
 check_restricted (RECODE_CONST_OUTER outer,
 		  RECODE_CONST_SYMBOL before,
 		  RECODE_CONST_SYMBOL after)
@@ -240,6 +240,9 @@ disambiguate_name (RECODE_OUTER outer,
 			      NULL, 0);
 	  result = ordinal < 0 ? NULL : outer->realname_surface_array[ordinal];
 	}
+      break;
+
+    default:
       break;
     }
 
@@ -536,7 +539,7 @@ make_argmatch_arrays (RECODE_OUTER outer)
 | values for run of decimal digits at first.                               |
 `-------------------------------------------------------------------------*/
 
-static int
+static _GL_ATTRIBUTE_PURE int
 compare_strings (const char *stringA, const char *stringB)
 {
   int delayed = 0;
@@ -916,10 +919,13 @@ list_concise_charset (RECODE_OUTER outer,
 
 	    /* FIXME: Trailing space elimination is not always effective.  */
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
 	    if (ucs2 >= 0)
 	      printf (format, code);
 	    else if (mnemonic || counter2 != 112)
 	      fputs (blanks,  stdout);
+#pragma GCC diagnostic pop
 
 	    if (mnemonic)
 	      printf (counter2 == 112 ? " %s\n" : " %-3s", mnemonic);
@@ -942,7 +948,7 @@ list_full_charset_line (int code, recode_ucs2 ucs2, bool french)
   const char *charname;
 
   if (code >= 0)
-    printf ("%3d  %.3o  %.2x", code, code, code);
+    printf ("%3d  %.3o  %.2x", code, (unsigned)code, (unsigned)code);
   else
     fputs (" +    +   + ", stdout);
 
@@ -1148,7 +1154,7 @@ find_and_report_subsets (RECODE_OUTER outer)
 		  printf ("[  0] %s == %s\n",
 			  charset1->name, charset2->name);
 		else
-		  printf ("[%3d] %s < %s\n", distance,
+		  printf ("[%3u] %s < %s\n", distance,
 			  charset1->name, charset2->name);
 
 		success = false;

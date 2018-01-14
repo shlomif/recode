@@ -18,6 +18,8 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
+
 static const bool bitnet_flag = false;
 
 /* Maximum number of characters per MIME line.  */
@@ -358,7 +360,7 @@ module_quoted_printable (RECODE_OUTER outer)
     && declare_alias (outer, "QP", "Quoted-Printable");
 }
 
-void
-delmodule_quoted_printable (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_quoted_printable (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

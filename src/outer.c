@@ -25,8 +25,8 @@
 | coding as a fallback, which is the traditional Recode behaviour.       |
 `-----------------------------------------------------------------------*/
 
-bool
-reversibility (RECODE_SUBTASK subtask, unsigned code)
+_GL_ATTRIBUTE_CONST bool
+reversibility (RECODE_SUBTASK subtask _GL_UNUSED_PARAMETER, unsigned code _GL_UNUSED_PARAMETER)
 {
   return false;
 }
@@ -299,7 +299,7 @@ declare_strip_data (RECODE_OUTER outer, struct strip_data *data,
 `---------------------------------------------------------------*/
 
 static void
-estimate_single_cost (RECODE_OUTER outer, RECODE_SINGLE single)
+estimate_single_cost (RECODE_OUTER outer _GL_UNUSED_PARAMETER, RECODE_SINGLE single)
 {
   int cost;
 
@@ -330,6 +330,9 @@ estimate_single_cost (RECODE_OUTER outer, RECODE_SINGLE single)
     case RECODE_N:
       /* Analysing varysizes is surely much harder than producing them.  */
       cost += 60;
+
+    default:
+      break;
     }
 
   switch (single->quality.out_size)
@@ -352,6 +355,9 @@ estimate_single_cost (RECODE_OUTER outer, RECODE_SINGLE single)
     case RECODE_N:
       /* Writing varysizes requires loops and such.  */
       cost += 35;
+      break;
+
+    default:
       break;
     }
 
@@ -460,7 +466,7 @@ register_all_modules (RECODE_OUTER outer)
   return true;
 }
 
-void static
+static void
 unregister_all_modules (RECODE_OUTER outer)
 {
 #include "tersteps.h"

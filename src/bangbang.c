@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const char *const translation_table[256] =
   {
@@ -283,7 +284,7 @@ static const char *const translation_table[256] =
 
 static bool
 init_latin1_bangbang (RECODE_STEP step,
-		      RECODE_CONST_REQUEST request,
+		      RECODE_CONST_REQUEST request _GL_UNUSED_PARAMETER,
 		      RECODE_CONST_OPTION_LIST before_options,
 		      RECODE_CONST_OPTION_LIST after_options)
 {
@@ -390,7 +391,7 @@ module_bangbang (RECODE_OUTER outer)
 		       NULL, transform_bangbang_latin1);
 }
 
-void
-delmodule_bangbang (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_bangbang (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

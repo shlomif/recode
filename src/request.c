@@ -219,7 +219,7 @@ add_to_sequence (RECODE_REQUEST request, RECODE_SINGLE single,
   RECODE_OUTER outer = request->outer;
   RECODE_STEP step;
 
-  if (request->sequence_length == request->sequence_allocated)
+  if ((unsigned)request->sequence_length == request->sequence_allocated)
     {
       if (request->sequence_allocated == 0)
 	request->sequence_allocated = 16;

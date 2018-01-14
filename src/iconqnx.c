@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 #define DOS_CR 13		/* carriage return */
 #define DOS_LF 10		/* line feed */
@@ -228,7 +229,7 @@ module_iconqnx (RECODE_OUTER outer)
     && declare_alias (outer, "QNX", "Icon-QNX");
 }
 
-void
-delmodule_iconqnx (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_iconqnx (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

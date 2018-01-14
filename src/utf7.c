@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 #include "base64.h"
 
 /* Classification of first 128 UCS-2 characters.  */
@@ -38,10 +39,6 @@ static char classification[128] =
   D, D, D, O, O, O, z, z					/* 120-127 */
 };
 #undef z
-
-/* Should the character be directly represented in message headers?  */
-#define IS_HEADER_DIRECT(Character) \
-  (IS_ASCII (Character) && classification[Character] & (D | W))
 
 /* Should the character be directly represented in message bodies?
    Here, & (D | O | W) is implied, since these are the only flags.  */
@@ -296,7 +293,7 @@ module_utf7 (RECODE_OUTER outer)
 		       NULL, transform_utf16_utf7);
 }
 
-void
-delmodule_utf7 (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_utf7 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

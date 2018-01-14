@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 struct translation
   {
@@ -174,7 +175,7 @@ module_latin1_latex (RECODE_OUTER outer)
     && declare_alias (outer, "ltex", "LaTeX");
 }
 
-void
-delmodule_latin1_latex (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_latin1_latex (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

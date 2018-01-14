@@ -3,6 +3,7 @@
    François Pinard <pinard@iro.umontreal.ca>, 1997.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const unsigned short ful_data[] =
   {
@@ -346,7 +347,7 @@ module_afrtran (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_afrtran (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_afrtran (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

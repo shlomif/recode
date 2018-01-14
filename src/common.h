@@ -37,6 +37,7 @@
 #include "localcharset.h"
 #include "error.h"
 #include "gettext.h"
+#include "unused-parameter.h"
 
 #if ENABLE_NLS
 # define _(Text) gettext (Text)

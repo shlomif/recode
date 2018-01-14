@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static bool
 transform_java_utf16 (RECODE_SUBTASK subtask)
@@ -110,7 +111,7 @@ module_java (RECODE_OUTER outer)
 		       NULL, transform_java_utf16);
 }
 
-void
-delmodule_java (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_java (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

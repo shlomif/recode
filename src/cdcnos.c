@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const char *const translation_table[128] =
   {
@@ -313,6 +314,9 @@ transform_cdcnos_ascii (RECODE_SUBTASK subtask)
 		  SUBTASK_RETURN (subtask);
 	      }
 	  break;
+
+        default:
+          break;
 	}
       put_byte (input_char, subtask);
     }
@@ -332,7 +336,7 @@ module_cdcnos (RECODE_OUTER outer)
     && declare_alias (outer, "NOS", "CDC-NOS");
 }
 
-void
-delmodule_cdcnos (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_cdcnos (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

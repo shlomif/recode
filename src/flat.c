@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static bool
 transform_ascii_flat (RECODE_SUBTASK subtask)
@@ -108,7 +109,7 @@ module_flat (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_flat (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_flat (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

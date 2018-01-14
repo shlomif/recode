@@ -228,7 +228,7 @@ perform_memory_sequence (RECODE_TASK task)
   /* Execute one pass for each step of the sequence.  */
 
   for (sequence_index = 0;
-       sequence_index < request->sequence_length
+       sequence_index < (unsigned)request->sequence_length
 	 && task->error_so_far < task->abort_level;
        sequence_index++)
     {
@@ -259,7 +259,7 @@ perform_memory_sequence (RECODE_TASK task)
 
       /* Select the output text for this step.  */
 
-      if (sequence_index < request->sequence_length - 1)
+      if (sequence_index < (unsigned)request->sequence_length - 1)
 	{
 	  subtask->output = output;
 	  subtask->output.cursor = subtask->output.buffer;
@@ -305,7 +305,7 @@ perform_memory_sequence (RECODE_TASK task)
 
       task->swap_input = RECODE_SWAP_UNDECIDED;
 
-      if (sequence_index < request->sequence_length - 1)
+      if (sequence_index < (unsigned)request->sequence_length - 1)
 	{
 	  output = input;
 	  input = subtask->output;
@@ -357,7 +357,7 @@ perform_pass_sequence (RECODE_TASK task)
   /* Execute one pass for each step of the sequence.  */
 
   for (sequence_index = 0;
-       sequence_index < request->sequence_length
+       sequence_index < (unsigned)request->sequence_length
 	 && task->error_so_far < task->abort_level;
        sequence_index++)
     {
@@ -391,7 +391,7 @@ perform_pass_sequence (RECODE_TASK task)
 
       /* Select the output text for this step.  */
 
-      if (sequence_index < request->sequence_length - 1)
+      if (sequence_index < (unsigned)request->sequence_length - 1)
 	{
 	  subtask->output = output;
 
@@ -448,7 +448,7 @@ perform_pass_sequence (RECODE_TASK task)
 
       task->swap_input = RECODE_SWAP_UNDECIDED;
 
-      if (sequence_index < request->sequence_length - 1)
+      if (sequence_index < (unsigned)request->sequence_length - 1)
 	{
 	  output = input;
 	  input = subtask->output;
@@ -553,7 +553,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	  (*step->transform_routine) (subtask);
 
 	  fclose (subtask->input.file);
-	  if (sequence_index < request->sequence_length - 1
+	  if (sequence_index < (unsigned)request->sequence_length - 1
 	      || *subtask->output.name)
 	    fclose (subtask->output.file);
 
