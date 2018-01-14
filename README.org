@@ -47,11 +47,11 @@ past, pretest or official, as well as individual files.
 You may then try:
 
 #+BEGIN_SRC sh
-  git clone https://github.com/pinard/Recode.git
+  git clone https://github.com/rrthomas/Recode.git
   cd Recode
-  sh after-git.sh
+  ./bootstrap
   ./configure
-  make
+  make check
   make install
 #+END_SRC
 
