@@ -83,7 +83,6 @@ TAGS_DEPENDENCIES = $(L_STEPS)
 # -DHASH_STATS		For printing a one-liner hash statistics.
 
 LEX = @LEX@
-PERL = perl
 PYTHON = python
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
@@ -94,17 +93,12 @@ $(srcdir)/merged.c: mergelex.py $(L_STEPS)
 	grep -v '^# *line [0-9]' merged.tm2 > $(srcdir)/merged.c
 	rm merged.tm1 merged.tm2
 
-$(srcdir)/recode.1: recode
-	@if test -r $@ && test ! -w $@; then \
-	  echo "WARNING: Page \`$@' read only, not updated"; \
-	elif $(PERL) $(top_srcdir)/doc/help2man \
-	    --name="converts files between character sets" \
-	    --output=$@ ./recode; then \
-	  echo "Page \`$@' has been updated"; \
-	else \
-	  echo "WARNING: Page \`$@' has *not* been updated."; \
-	  echo "         It might be that \`Perl' is missing on your system,"; \
-	  echo "         but you may safely and merely ignore this error."; \
+recode.1: main.c $(top_srcdir)/configure.ac
+## Exit gracefully if recode.1 is not writeable, such as during distcheck!
+	$(AM_V_GEN)if ( touch $@.w && rm -f $@.w; ) >/dev/null 2>&1; then \
+	  $(top_srcdir)/build-aux/missing --run $(HELP2MAN) \
+		--name="converts files between character sets" \
+		--output=$@ ./recode; \
 	fi
 
 main.o: main.c ../config.status
