@@ -396,7 +396,7 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
       switch (subtask->task->swap_input)
 	{
 	case RECODE_SWAP_UNDECIDED:
-	  chunk = ((MASK (8) & character1) << 8) | (MASK (8) & character2);
+	  chunk = ((BIT_MASK (8) & character1) << 8) | (BIT_MASK (8) & character2);
 	  switch (chunk)
 	    {
 	    case BYTE_ORDER_MARK:
@@ -417,7 +417,7 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
 	  break;
 
 	case RECODE_SWAP_NO:
-	  chunk = ((MASK (8) & character1) << 8) | (MASK (8) & character2);
+	  chunk = ((BIT_MASK (8) & character1) << 8) | (BIT_MASK (8) & character2);
 	  switch (chunk)
 	    {
 	    case BYTE_ORDER_MARK:
@@ -436,7 +436,7 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
 	  break;
 
 	case RECODE_SWAP_YES:
-	  chunk = ((MASK (8) & character2) << 8) | (MASK (8) & character1);
+	  chunk = ((BIT_MASK (8) & character2) << 8) | (BIT_MASK (8) & character1);
 	  switch (chunk)
 	    {
 	    case BYTE_ORDER_MARK:
@@ -467,8 +467,8 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
 bool
 put_ucs2 (unsigned value, RECODE_SUBTASK subtask)
 {
-  put_byte (MASK (8) & value >> 8, subtask);
-  put_byte (MASK (8) & value, subtask);
+  put_byte (BIT_MASK (8) & value >> 8, subtask);
+  put_byte (BIT_MASK (8) & value, subtask);
   return true;
 }
 
@@ -487,7 +487,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
   character = get_byte (subtask);
   if (character == EOF)
     return false;
-  chunk = (MASK (8) & character) << 24;
+  chunk = (BIT_MASK (8) & character) << 24;
 
   character = get_byte (subtask);
   if (character == EOF)
@@ -495,7 +495,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
       SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
       return false;
     }
-  chunk |= (MASK (8) & character) << 16;
+  chunk |= (BIT_MASK (8) & character) << 16;
 
   character = get_byte (subtask);
   if (character == EOF)
@@ -503,7 +503,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
       SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
       return false;
     }
-  chunk |= (MASK (8) & character) << 8;
+  chunk |= (BIT_MASK (8) & character) << 8;
 
   character = get_byte (subtask);
   if (character == EOF)
@@ -511,7 +511,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
       SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
       return false;
     }
-  chunk |= MASK (8) & character;
+  chunk |= BIT_MASK (8) & character;
 
   *value = chunk;
   return true;
@@ -524,10 +524,10 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
 bool
 put_ucs4 (unsigned value, RECODE_SUBTASK subtask)
 {
-  put_byte (MASK (8) & value >> 24, subtask);
-  put_byte (MASK (8) & value >> 16, subtask);
-  put_byte (MASK (8) & value >> 8, subtask);
-  put_byte (MASK (8) & value, subtask);
+  put_byte (BIT_MASK (8) & value >> 24, subtask);
+  put_byte (BIT_MASK (8) & value >> 16, subtask);
+  put_byte (BIT_MASK (8) & value >> 8, subtask);
+  put_byte (BIT_MASK (8) & value, subtask);
   return true;
 }
 
@@ -569,7 +569,7 @@ transform_latin1_ucs4 (RECODE_SUBTASK subtask)
   int character;
 
   while (character = get_byte (subtask), character != EOF)
-    put_ucs4 (MASK (8) & character, subtask);
+    put_ucs4 (BIT_MASK (8) & character, subtask);
 
   SUBTASK_RETURN (subtask);
 }

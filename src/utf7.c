@@ -96,9 +96,9 @@ transform_utf16_utf7 (RECODE_SUBTASK subtask)
 
 	    /* Process first UCS-2 value of a triplet.  */
 
-	    put_byte (base64_value_to_char[MASK (6) & value >> 10], subtask);
-	    put_byte (base64_value_to_char[MASK (6) & value >> 4], subtask);
-	    split = (value & MASK (4)) << 2;
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value >> 10], subtask);
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value >> 4], subtask);
+	    split = (value & BIT_MASK (4)) << 2;
 	    if (!get_ucs2 (&value, subtask))
 	      {
 		put_byte (base64_value_to_char[split], subtask);
@@ -112,11 +112,11 @@ transform_utf16_utf7 (RECODE_SUBTASK subtask)
 		put_byte (base64_value_to_char[split], subtask);
 		break;
 	      }
-	    put_byte (base64_value_to_char[split | (MASK (2) & value >> 14)],
+	    put_byte (base64_value_to_char[split | (BIT_MASK (2) & value >> 14)],
 		      subtask);
-	    put_byte (base64_value_to_char[MASK (6) & value >> 8], subtask);
-	    put_byte (base64_value_to_char[MASK (6) & value >> 2], subtask);
-	    split = (value & MASK (2)) << 4;
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value >> 8], subtask);
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value >> 2], subtask);
+	    split = (value & BIT_MASK (2)) << 4;
 	    if (!get_ucs2 (&value, subtask))
 	      {
 		put_byte (base64_value_to_char[split], subtask);
@@ -130,10 +130,10 @@ transform_utf16_utf7 (RECODE_SUBTASK subtask)
 		put_byte (base64_value_to_char[split], subtask);
 		break;
 	      }
-	    put_byte (base64_value_to_char[split | (MASK (4) & value >> 12)],
+	    put_byte (base64_value_to_char[split | (BIT_MASK (4) & value >> 12)],
 		      subtask);
-	    put_byte (base64_value_to_char[MASK (6) & value >> 6], subtask);
-	    put_byte (base64_value_to_char[MASK (6) & value], subtask);
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value >> 6], subtask);
+	    put_byte (base64_value_to_char[BIT_MASK (6) & value], subtask);
 	    if (!get_ucs2 (&value, subtask))
 	      SUBTASK_RETURN (subtask);
 	  }
@@ -196,11 +196,11 @@ transform_utf7_utf16 (RECODE_SUBTASK subtask)
 
 	    if (!IS_BASE64 (character))
 	      {
-		if (MASK (2) & split)
+		if (BIT_MASK (2) & split)
 		  RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
 		break;
 	      }
-	    value = ((MASK (2) & split) << 14
+	    value = ((BIT_MASK (2) & split) << 14
 		     | base64_char_to_value[character] << 8);
 	    character = get_byte (subtask);
 
@@ -232,11 +232,11 @@ transform_utf7_utf16 (RECODE_SUBTASK subtask)
 
 	    if (!IS_BASE64 (character))
 	      {
-		if (MASK (4) & split)
+		if (BIT_MASK (4) & split)
 		  RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
 		break;
 	      }
-	    value = ((MASK (4) & split) << 12
+	    value = ((BIT_MASK (4) & split) << 12
 		     | base64_char_to_value[character] << 6);
 	    character = get_byte (subtask);
 

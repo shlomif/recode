@@ -473,7 +473,7 @@ complete_double_ucs2_step (RECODE_OUTER outer, RECODE_STEP step)
 	    {
 	      unsigned code = pool[offset + position_counter];
 
-	      if (code != MASK (16))
+	      if (code != BIT_MASK (16))
 		{
 		  /* Establish a new binding item.  */
 		  item_cursor->byte = byte;

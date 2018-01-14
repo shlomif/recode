@@ -32,14 +32,14 @@ transform_ucs4_utf16 (RECODE_SUBTASK subtask)
 
       while (true)
 	{
-	  if (value & ~MASK (16))
+	  if (value & ~BIT_MASK (16))
 	    if (value < (1 << 16 | 1 << 20))
 	      {
 		/* Double UCS-2 character.  */
 
 		value -= 1 << 16;
-		put_ucs2 (0xD800 | (MASK (10) & value >> 10), subtask);
-		put_ucs2 (0xDC00 | (MASK (10) & value), subtask);
+		put_ucs2 (0xD800 | (BIT_MASK (10) & value >> 10), subtask);
+		put_ucs2 (0xDC00 | (BIT_MASK (10) & value), subtask);
 	      }
 	    else
 	      {

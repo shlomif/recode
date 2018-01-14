@@ -85,9 +85,9 @@ transform_ascii_flat (RECODE_SUBTASK subtask)
 	    RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
 	    put_byte ('M', subtask);
 	    put_byte ('-', subtask);
-	    input_char &= MASK (7);
+	    input_char &= BIT_MASK (7);
 	  }
-	if (input_char < ' ' || input_char == MASK (7))
+	if (input_char < ' ' || input_char == BIT_MASK (7))
 	  {
 	    RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
 	    put_byte ('^', subtask);

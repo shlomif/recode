@@ -98,8 +98,8 @@ transform_data_base64 (RECODE_SUBTASK subtask)
 
       /* Process first byte of a triplet.  */
 
-      put_byte (base64_value_to_char[MASK (6) & character >> 2], subtask);
-      value = (MASK (2) & character) << 4;
+      put_byte (base64_value_to_char[BIT_MASK (6) & character >> 2], subtask);
+      value = (BIT_MASK (2) & character) << 4;
 
       /* Process second byte of a triplet.  */
 
@@ -111,9 +111,9 @@ transform_data_base64 (RECODE_SUBTASK subtask)
 	  put_byte ('=', subtask);
 	  break;
 	}
-      put_byte (base64_value_to_char[value | (MASK (4) & character >> 4)],
+      put_byte (base64_value_to_char[value | (BIT_MASK (4) & character >> 4)],
 		subtask);
-      value = (MASK (4) & character) << 2;
+      value = (BIT_MASK (4) & character) << 2;
 
       /* Process third byte of a triplet.  */
 
@@ -124,9 +124,9 @@ transform_data_base64 (RECODE_SUBTASK subtask)
 	  put_byte ('=', subtask);
 	  break;
 	}
-      put_byte (base64_value_to_char[value | (MASK (2) & character >> 6)],
+      put_byte (base64_value_to_char[value | (BIT_MASK (2) & character >> 6)],
 		subtask);
-      put_byte (base64_value_to_char[MASK (6) & character], subtask);
+      put_byte (base64_value_to_char[BIT_MASK (6) & character], subtask);
     }
 
   /* Complete last partial line.  */
@@ -221,7 +221,7 @@ transform_base64_data (RECODE_SUBTASK subtask)
       else
 	RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
 
-      put_byte (MASK (8) & value >> 8, subtask);
+      put_byte (BIT_MASK (8) & value >> 8, subtask);
 
       /* Process fourth byte of a quadruplet.  */
 
@@ -240,7 +240,7 @@ transform_base64_data (RECODE_SUBTASK subtask)
       else
 	RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
 
-      put_byte (MASK (8) & value, subtask);
+      put_byte (BIT_MASK (8) & value, subtask);
     }
 }
 

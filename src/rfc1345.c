@@ -53,7 +53,7 @@ ucs2_to_rfc1345 (recode_ucs2 code)
 
 /*---------------------------------------------------------------------.
 | Return an UCS-2 value, given an RFC 1345 short form in a CHARSET, or |
-| MASK (16) if the short form is unknown.                              |
+| BIT_MASK (16) if the short form is unknown.                              |
 `---------------------------------------------------------------------*/
 
 static _GL_ATTRIBUTE_PURE recode_ucs2
