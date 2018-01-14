@@ -34,6 +34,10 @@ TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 $(srcdir)/recode.info: rfc1345.texi
 recode.dvi: rfc1345.texi
 
+# Disable dvi target, to avoid needing TeX for make distcheck
+# (and in any case, no-one wants DVI)
+dvi:
+
 # There is duplication of work with making src/strip-{pool,data}.c.
 # This used to be combined, but it seems clearer to keep both separate.
 rfc1345.texi: ../tables.py $(MNEMONICS_DS) $(CHARSETS_DEF)
