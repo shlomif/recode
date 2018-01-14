@@ -38,8 +38,10 @@ html/
 /src/.deps/
 /src/.libs/
 /src/charname.h
+/src/decsteps.h
 /src/fr-charname.h
 /src/iconvdecl.h
+/src/inisteps.h
 /src/merged.c
 /src/recode
 /src/recode.1
@@ -47,6 +49,7 @@ html/
 /src/rfc1345.h
 /src/strip-data.c
 /src/strip-pool.c
+/src/tersteps.h
 /stamp-h1
 /tests/setup.py
 /tests/Recode.body.c
