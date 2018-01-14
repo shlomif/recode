@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 #include "hash.h"
 
 /*------------------------.
@@ -86,7 +87,7 @@ test15_data (RECODE_SUBTASK subtask)
       }
 
   /* Copy the rest verbatim.  */
-  while (value = get_byte (subtask), value != EOF)
+  while (value = get_byte (subtask), value != (unsigned)EOF)
     put_byte (value, subtask);
 
   SUBTASK_RETURN (subtask);
@@ -102,7 +103,7 @@ test16_data (RECODE_SUBTASK subtask)
     put_ucs2 (counter, subtask);
 
   /* Copy the rest verbatim.  */
-  while (value = get_byte (subtask), value != EOF)
+  while (value = get_byte (subtask), value != (unsigned)EOF)
     put_byte (value, subtask);
 
   SUBTASK_RETURN (subtask);
@@ -232,7 +233,7 @@ produce_count (RECODE_SUBTASK subtask)
     for (cursor = array; cursor < array + size; cursor++)
       if ((*cursor)->count > maximum_count)
 	maximum_count = (*cursor)->count;
-    sprintf (buffer, "%d", maximum_count);
+    sprintf (buffer, "%u", maximum_count);
     count_width = strlen (buffer);
 
     for (cursor = array; cursor < array + size; cursor++)
@@ -253,7 +254,7 @@ produce_count (RECODE_SUBTASK subtask)
 	      delayed--;
 	    }
 
-	sprintf (buffer, "%*d  %.4X", count_width, (*cursor)->count, character);
+	sprintf (buffer, "%*u  %.4X", (int)count_width, (*cursor)->count, character);
         put_string (buffer, subtask);
 	if (mnemonic)
 	  {
@@ -394,7 +395,7 @@ module_testdump (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_testdump (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_testdump (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

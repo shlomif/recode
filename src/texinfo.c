@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const unsigned short texinfo_data[] =
   {
@@ -83,7 +84,7 @@ module_texinfo (RECODE_OUTER outer)
     && declare_alias (outer, "ti", "Texinfo");
 }
 
-void
-delmodule_texinfo (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_texinfo (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

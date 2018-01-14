@@ -81,7 +81,7 @@ combined_compare (const void *void_first, const void *void_second)
 
 bool
 init_explode (RECODE_STEP step,
-	      RECODE_CONST_REQUEST request,
+	      RECODE_CONST_REQUEST request _GL_UNUSED_PARAMETER,
 	      RECODE_CONST_OPTION_LIST before_options,
 	      RECODE_CONST_OPTION_LIST after_options)
 {
@@ -124,7 +124,7 @@ explode_byte_byte (RECODE_SUBTASK subtask)
   Hash_table *table = (Hash_table *) subtask->step->step_table;
   unsigned value;
 
-  while (value = get_byte (subtask), value != EOF)
+  while (value = get_byte (subtask), value != (unsigned)EOF)
     {
       unsigned short lookup = value;
       unsigned short *result = (unsigned short *) hash_lookup (table, &lookup);
@@ -178,7 +178,7 @@ explode_byte_ucs2 (RECODE_SUBTASK subtask)
   Hash_table *table = (Hash_table *) subtask->step->step_table;
   unsigned value;
 
-  if (value = get_byte (subtask), value != EOF)
+  if (value = get_byte (subtask), value != (unsigned)EOF)
     {
       if (subtask->task->byte_order_mark)
 	put_ucs2 (BYTE_ORDER_MARK, subtask);
@@ -198,7 +198,7 @@ explode_byte_ucs2 (RECODE_SUBTASK subtask)
 	  else
 	    put_ucs2 (value, subtask);
 
-	  if (value = get_byte (subtask), value == EOF)
+	  if (value = get_byte (subtask), value == (unsigned)EOF)
 	    break;
 	}
     }
@@ -374,7 +374,7 @@ find_shifted_state (struct state *state, unsigned character,
 
 bool
 init_combine (RECODE_STEP step,
-	      RECODE_CONST_REQUEST request,
+	      RECODE_CONST_REQUEST request _GL_UNUSED_PARAMETER,
 	      RECODE_CONST_OPTION_LIST before_options,
 	      RECODE_CONST_OPTION_LIST after_options)
 {
@@ -478,7 +478,7 @@ combine_byte_byte (RECODE_SUBTASK subtask)
   struct state *state = NULL;
   unsigned value;
 
-  if (value = get_byte (subtask), value != EOF)
+  if (value = get_byte (subtask), value != (unsigned)EOF)
     {
       while (true)
 	{
@@ -488,7 +488,7 @@ combine_byte_byte (RECODE_SUBTASK subtask)
 	  if (shift)
 	    {
 	      state = shift;
-	      if (value = get_byte (subtask), value == EOF)
+	      if (value = get_byte (subtask), value == (unsigned)EOF)
 		break;
 	    }
 	  else if (state)
@@ -502,7 +502,7 @@ combine_byte_byte (RECODE_SUBTASK subtask)
 	  else
 	    {
 	      put_byte (value, subtask);
-	      if (value = get_byte (subtask), value == EOF)
+	      if (value = get_byte (subtask), value == (unsigned)EOF)
 		break;
 	    }
 	}
@@ -571,7 +571,7 @@ combine_byte_ucs2 (RECODE_SUBTASK subtask)
 {
   unsigned value;
 
-  if (value = get_byte (subtask), value != EOF)
+  if (value = get_byte (subtask), value != (unsigned)EOF)
     {
       struct state *state = NULL;
 
@@ -586,7 +586,7 @@ combine_byte_ucs2 (RECODE_SUBTASK subtask)
 	  if (shift)
 	    {
 	      state = shift;
-	      if (value = get_byte (subtask), value == EOF)
+	      if (value = get_byte (subtask), value == (unsigned)EOF)
 		break;
 	    }
 	  else if (state)
@@ -600,7 +600,7 @@ combine_byte_ucs2 (RECODE_SUBTASK subtask)
 	  else
 	    {
 	      put_ucs2 (value, subtask);
-	      if (value = get_byte (subtask), value == EOF)
+	      if (value = get_byte (subtask), value == (unsigned)EOF)
 		break;
 	    }
 	}

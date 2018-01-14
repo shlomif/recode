@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const recode_ucs2 tcvn_pool[256] =
   {
@@ -454,7 +455,7 @@ module_vietnamese (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_vietnamese (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_vietnamese (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

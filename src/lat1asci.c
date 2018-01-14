@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static const char *const translation_table[128] =
   {
@@ -196,7 +197,7 @@ module_latin1_ascii (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_latin1_ascii (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_latin1_ascii (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

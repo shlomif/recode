@@ -400,6 +400,9 @@ main (int argc, char *const *argv)
 	  case 2:
 	    task_option.strategy = RECODE_SEQUENCE_WITH_PIPE;
 	    break;
+
+          default:
+            break;
 	  }
 	break;
 
@@ -530,6 +533,9 @@ main (int argc, char *const *argv)
 	    case 3:
 	      list_format = RECODE_FULL_FORMAT;
 	      break;
+
+            default:
+              break;
 	    }
 	break;
 

@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* This file contains various temporary tables.  These would ideally all go
    away once Keld will be given references, solid enough, to really integrate
@@ -594,7 +595,7 @@ module_varia (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_varia (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_varia (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

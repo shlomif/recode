@@ -557,7 +557,7 @@ extern "C" {
 /* recode.c.  */
 
 #define ALLOC_SIZE(Variable, Size, Type) \
-  (Variable = (Type *) recode_malloc (outer, (Size)), Variable)
+  (Variable = (Type *) recode_malloc (outer, (Size)))
 
 #define ALLOC(Variable, Count, Type) \
   ALLOC_SIZE (Variable, (Count) * sizeof (Type), Type)
@@ -639,6 +639,8 @@ void recode_freeze_tables (RECODE_OUTER);
 /* iconv.c.  */
 
 bool transform_with_iconv (RECODE_SUBTASK);
+bool module_iconv (struct recode_outer *);
+void delmodule_iconv (struct recode_outer *);
 
 /* names.c.  */
 

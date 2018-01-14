@@ -21,6 +21,7 @@
 #define USE_RFC1345_STEP 1
 
 #include "common.h"
+#include "decsteps.h"
 
 /* RFC 1345 style description for AtariST (non official).
 
@@ -227,7 +228,7 @@ module_atarist (RECODE_OUTER outer)
 #endif
 }
 
-void
-delmodule_atarist (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_atarist (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

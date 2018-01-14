@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 #include "hash.h"
 
 /* FIXME: An @code{HTML} text which has spurious semi-colons to end entities
@@ -918,7 +919,7 @@ module_html (RECODE_OUTER outer)
     && declare_alias (outer, "h", "HTML_4.0");
 }
 
-void
-delmodule_html (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_html (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

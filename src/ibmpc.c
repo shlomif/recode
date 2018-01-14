@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* Previously, the CR-LF surface was built-in.  It is now handled through a
    separate, optional step.  An optimisation might use a flag to trigger old
@@ -388,7 +389,7 @@ module_ibmpc (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_ibmpc (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_ibmpc (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

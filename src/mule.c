@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static bool
 transform_latin_mule (RECODE_SUBTASK subtask,
@@ -111,7 +112,7 @@ module_mule (RECODE_OUTER outer)
 		       NULL, transform_mule_latin2);
 }
 
-void
-delmodule_mule (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_mule (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

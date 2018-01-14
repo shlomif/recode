@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* Description of some UCS-2 combinings.  */
 
@@ -452,6 +453,9 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
 	      return true;
 	    }
 	  break;
+
+        default:
+          break;
 	}
     }
 }
@@ -621,7 +625,7 @@ module_ucs (RECODE_OUTER outer)
     && declare_alias (outer, "co", "combined-UCS-2");
 }
 
-void
-delmodule_ucs (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_ucs (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

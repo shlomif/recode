@@ -20,6 +20,7 @@
 AUTOMAKE_OPTIONS = gnits
 bin_PROGRAMS = recode
 lib_LTLIBRARIES = librecode.la
+noinst_LTLIBRARIES = libmerged.la
 man_MANS = recode.1
 include_HEADERS = recode.h recodext.h
 
@@ -36,7 +37,7 @@ C_STEPS = african.c afrtran.c applemac.c atarist.c bangbang.c cdcnos.c \
 ebcdic.c ibmpc.c iconqnx.c lat1asci.c java.c mule.c strip-data.c \
 testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c
 
-ALL_STEPS = $(C_STEPS) $(C_FALLBACKS) $(C_SURFACES) merged.c
+ALL_STEPS = $(C_STEPS) $(C_FALLBACKS) $(C_SURFACES)
 
 L_STEPS = ascilat1.l $(L_FALLBACKS) $(L_SURFACES)
 
@@ -55,9 +56,13 @@ librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
 names.c outer.c recode.c request.c strip-pool.c task.c $(ALL_STEPS) \
 $(include_HEADERS) $(noinst_HEADERS) $(H_STEPS)
 librecode_la_LDFLAGS = -version-info 0:0:0
+librecode_la_LIBADD = libmerged.la
+
+libmerged_la_SOURCES = merged.c
+libmerged_la_CPPFLAGS = $(NON_WARN_CFLAGS)
 
 loc:
-	cloc $(C_STEPS) $(L_FALLBACKS) $(H_STEPS) $(top_srcdir)/tables.py mergelex.py
+	cloc $(ALL_STEPS) $(L_STEPS) common.h $(H_FALLBACKS) $(H_SURFACES) $(top_srcdir)/tables.py mergelex.py
 
 # Relative to $(srcdir).
 ALAIN = $(KELD)
@@ -67,7 +72,8 @@ MNEMONICS_DS = $(KELD)/iso10646.def $(KELD)/other.def $(KELD)/control.def
 RFC1345_TXT = $(KELD)/rfc1345.txt
 NOMS_CARACS = $(ALAIN)/NomsSeulsfinal.lst
 
-AM_CPPFLAGS = -I.. -I$(srcdir) $(ISYSTEM)$(top_builddir)/lib $(ISYSTEM)$(top_srcdir)/lib $(WARN_CFLAGS)
+NON_WARN_CFLAGS = -I.. -I$(srcdir) $(ISYSTEM)$(top_builddir)/lib $(ISYSTEM)$(top_srcdir)/lib
+AM_CPPFLAGS = $(NON_WARN_CFLAGS) $(WARN_CFLAGS)
 DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
 
 ETAGS_ARGS = $(L_STEPS)
@@ -121,9 +127,9 @@ testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo varia.lo vn.lo \
 flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo texinfo.lo \
 base64.lo dump.lo endline.lo permut.lo quoted.lo \
 iconv.lo outer.lo decsteps.h inisteps.h tersteps.h: stamp-steps
-stamp-steps: $(ALL_STEPS)
+stamp-steps: $(ALL_STEPS) merged.c
 	@echo "Updating {dec,ini,ter}steps.h"
-	@(cd $(srcdir) && grep -h '^module_' $(ALL_STEPS)) \
+	@(cd $(srcdir) && grep -h '^module_' $(ALL_STEPS) merged.c) \
 	    | sed 's/ .*//' > liste.tmp
 	@sed 's/\(.*\)/bool \1 (struct recode_outer *);/' \
 	    liste.tmp > decsteps.tmp

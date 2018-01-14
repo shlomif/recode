@@ -148,3 +148,4 @@
 /xmalloc.c
 /xsize.c
 /xsize.h
+/unused-parameter.h

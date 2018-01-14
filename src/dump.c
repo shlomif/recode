@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* Constants for the possible bases.  If these are reordered, so should be
    the initialisers for the three tables which follow.  */
@@ -93,7 +94,10 @@ dump (RECODE_SUBTASK subtask,
 
       /* Write formatted value.  */
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
       sprintf (buffer, format_table[base][byte_count], value);
+#pragma GCC diagnostic pop
       for (cursor = buffer; *cursor; cursor++)
 	put_byte (*cursor, subtask);
 
@@ -238,6 +242,9 @@ undump (RECODE_SUBTASK subtask,
 	    else
 	      break;
 	  break;
+
+        default:
+          break;
 	}
 
       if (width == 0 || width > width_table[base][expected_size])
@@ -276,13 +283,8 @@ undump (RECODE_SUBTASK subtask,
 	    size = expected_size;
 
 	  /* Produce the output bytes.  */
-
-	  {
-	    unsigned shift;
-
-	    for (shift = size * 8; shift != 0; shift -= 8)
-	      put_byte (MASK (8) & value >> (shift - 8), subtask);
-	  }
+          for (unsigned shift = size; shift != 0; shift--)
+            put_byte (MASK (8) & value >> ((shift * 8) - 8), subtask);
 	}
 
       /* Skip separators.  */
@@ -460,7 +462,7 @@ module_dump (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_dump (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_dump (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

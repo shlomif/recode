@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 #include "rfc1345.h"
 
 /* This module takes care only of short RFC 1345 forms.  Module charname.c
@@ -28,7 +29,7 @@
 | NULL if this value has no such known short form.		        |
 `----------------------------------------------------------------------*/
 
-const char *
+_GL_ATTRIBUTE_PURE const char *
 ucs2_to_rfc1345 (recode_ucs2 code)
 {
   int first = 0;
@@ -55,7 +56,7 @@ ucs2_to_rfc1345 (recode_ucs2 code)
 | MASK (16) if the short form is unknown.                              |
 `---------------------------------------------------------------------*/
 
-static recode_ucs2
+static _GL_ATTRIBUTE_PURE recode_ucs2
 rfc1345_to_ucs2 (const char *string)
 {
   int first = 0;
@@ -98,7 +99,7 @@ transform_ucs2_rfc1345 (RECODE_SUBTASK subtask)
 
   while (get_ucs2 (&value, subtask))
     if (IS_ASCII (value))
-      if (value == intro)
+      if (value == (unsigned)intro)
 	{
 	  put_byte (intro, subtask);
 	  put_byte (intro, subtask);
@@ -229,7 +230,7 @@ transform_rfc1345_ucs2 (RECODE_SUBTASK subtask)
 static bool
 init_rfc1345 (RECODE_CONST_REQUEST request,
 	      RECODE_STEP step,
-	      RECODE_CONST_OPTION_LIST options)
+	      RECODE_CONST_OPTION_LIST options _GL_UNUSED_PARAMETER)
 {
   RECODE_OUTER outer = request->outer;
   struct local *local;
@@ -286,7 +287,7 @@ module_rfc1345 (RECODE_OUTER outer)
     && declare_alias (outer, "mnemonic", "RFC1345");
 }
 
-void
-delmodule_rfc1345 (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_rfc1345 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

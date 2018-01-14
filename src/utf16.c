@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 static bool
 transform_ucs4_utf16 (RECODE_SUBTASK subtask)
@@ -210,7 +211,7 @@ module_utf16 (RECODE_OUTER outer)
     && declare_alias (outer, "u6", "UTF-16");
 }
 
-void
-delmodule_utf16 (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_utf16 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

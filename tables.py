@@ -443,8 +443,8 @@ class Explodes(Options):
               '  return true;\n'
               '}\n'
               '\n'
-              'void\n'
-              'delmodule_explodes (struct recode_outer *outer)\n'
+              '_GL_ATTRIBUTE_CONST void\n'
+              'delmodule_explodes (struct recode_outer *outer _GL_UNUSED_PARAMETER)\n'
               '{\n'
               '}\n')
 
@@ -736,7 +736,8 @@ class Strips(Options):
             self.write_data = Output(self.DATA).write
             write = self.write_data
             write('\n'
-                  '#include \"common.h\"\n')
+                  '#include "common.h"\n'
+                  '#include "decsteps.h"\n')
 
     # Read the text of RFC 1345, saving all charsets it declares.
     # UCS-2 mnemonics files should have been read in already.
@@ -1059,8 +1060,8 @@ class Strips(Options):
         sys.stdout.write("Completing %s\n" % self.DATA)
         write = self.write_data
         write('\n'
-              'bool\n'
-              'module_strips (struct recode_outer *outer)\n'
+              '_GL_ATTRIBUTE_CONST bool\n'
+              'module_strips (struct recode_outer *outer _GL_UNUSED_PARAMETER)\n'
               '{\n'
               '  RECODE_ALIAS alias;\n'
               '\n')
@@ -1092,8 +1093,8 @@ class Strips(Options):
               '  return true;\n'
               '}\n'
               '\n'
-              'void\n'
-              'delmodule_strips (struct recode_outer *outer)\n'
+              '_GL_ATTRIBUTE_CONST void\n'
+              'delmodule_strips (struct recode_outer *outer _GL_UNUSED_PARAMETER)\n'
               '{\n'
               '}\n')
 

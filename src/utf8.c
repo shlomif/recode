@@ -18,6 +18,7 @@
    Suite 330, Boston, MA 02111-1307, USA.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* Define HANDLE_32_BITS if you want conversion for 2^32 codes instead
    of 2^31.  But this would not be ISO-10646, which says 2^31.  */
@@ -270,7 +271,7 @@ module_utf8 (RECODE_OUTER outer)
 		       NULL, transform_ucs2_utf8);
 }
 
-void
-delmodule_utf8 (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_utf8 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -3,6 +3,7 @@
    François Pinard <pinard@iro.umontreal.ca>, 1997.  */
 
 #include "common.h"
+#include "decsteps.h"
 
 /* Bambara, Ewondo and Fulfude.  */
 
@@ -131,7 +132,7 @@ module_african (RECODE_OUTER outer)
   return true;
 }
 
-void
-delmodule_african (RECODE_OUTER outer)
+_GL_ATTRIBUTE_CONST void
+delmodule_african (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

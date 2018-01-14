@@ -21,6 +21,7 @@
 
 /* Global declarations and definitions.  */
 
+#include <stdio.h>
 #include <ctype.h>
 #include <unistd.h>
 
@@ -32,8 +33,8 @@ extern const char *program_name;
 
 #include <stdarg.h>
 
-void
-recode_error (RECODE_OUTER outer, const char *format, ...)
+_GL_ATTRIBUTE_FORMAT_PRINTF (2, 3) void
+recode_error (RECODE_OUTER outer _GL_UNUSED_PARAMETER, const char *format, ...)
 {
   va_list args;
 
@@ -44,8 +45,8 @@ recode_error (RECODE_OUTER outer, const char *format, ...)
   fflush (stderr);
 }
 
-void
-recode_perror (RECODE_OUTER outer, const char *format, ...)
+_GL_ATTRIBUTE_FORMAT_PRINTF (2, 3) void
+recode_perror (RECODE_OUTER outer _GL_UNUSED_PARAMETER, const char *format, ...)
 {
   int saved_errno = errno;
   va_list args;
@@ -104,7 +105,7 @@ invert_table (RECODE_OUTER outer, const unsigned char *table)
     {
       if (flag[table[counter]])
 	{
-	  recode_error (outer, _("Codes %3d and %3d both recode to %3d"),
+	  recode_error (outer, _("Codes %3d and %3u both recode to %3d"),
 			result[table[counter]], counter, table[counter]);
 	  table_error = true;
 	}
@@ -118,7 +119,7 @@ invert_table (RECODE_OUTER outer, const unsigned char *table)
     {
       for (counter = 0; counter < 256; counter++)
 	if (!flag[counter])
-	  recode_error (outer, _("No character recodes to %3d"), counter);
+	  recode_error (outer, _("No character recodes to %3u"), counter);
       recode_error (outer, _("Cannot invert given one-to-one table"));
     }
   return result;
@@ -180,7 +181,7 @@ complete_pairs (RECODE_OUTER outer, RECODE_STEP step,
 	      table_error = true;
 	    }
 	  recode_error (outer,
-			_("Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"),
+			_("Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"),
 			counter, left, right, left, left_table[left]);
 	}
       else if (right_flag[right])
@@ -192,7 +193,7 @@ complete_pairs (RECODE_OUTER outer, RECODE_STEP step,
 	      table_error = true;
 	    }
 	  recode_error (outer,
-			_("Pair no. %d: <%3d, %3d> conflicts with <%3d, %3d>"),
+			_("Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"),
 			counter, left, right, right_table[right], right);
 	}
       else
@@ -547,12 +548,15 @@ recode_format_table (RECODE_REQUEST request,
 	  printf ("@%s =\n", name);
 	  printf ("  (\n");
 	  break;
+
+        default:
+          break;
 	}
       for (counter = 0; counter < 256; counter++)
 	{
 	  printf ("%s%3d,", counter % 8 == 0 ? "    " : " ", table[counter]);
 	  if (counter % 8 == 7)
-	    printf ("\t%s%3d - %3d%s",
+	    printf ("\t%s%3u - %3u%s",
 		    start_comment, counter - 7, counter, end_comment);
 	}
       switch (header_language)
@@ -567,6 +571,9 @@ recode_format_table (RECODE_REQUEST request,
 	case RECODE_LANGUAGE_PERL:
 	  printf ("  );\n");
 	  break;
+
+        default:
+          break;
 	}
     }
   else if (step->step_type == RECODE_BYTE_TO_STRING)
@@ -589,6 +596,9 @@ recode_format_table (RECODE_REQUEST request,
 	  printf ("@%s =\n", name);
 	  printf ("  (\n");
 	  break;
+
+        default:
+          break;
 	}
       for (counter = 0; counter < 256; counter++)
 	{
@@ -669,6 +679,9 @@ recode_format_table (RECODE_REQUEST request,
 		printf ("''");
 		column += 2;
 		break;
+
+              default:
+                break;
 	      }
 	  printf (",");
 	  column++;
@@ -677,7 +690,7 @@ recode_format_table (RECODE_REQUEST request,
 	      printf ("\t");
 	      column += 8 - column % 8;
 	    }
-	  printf ("%s%3d%s", start_comment, counter, end_comment);
+	  printf ("%s%3u%s", start_comment, counter, end_comment);
 	}
       switch (header_language)
 	{
@@ -691,6 +704,9 @@ recode_format_table (RECODE_REQUEST request,
 	case RECODE_LANGUAGE_PERL:
 	  printf ("  );\n");
 	  break;
+
+        default:
+          break;
 	}
     }
   else
