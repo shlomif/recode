@@ -83,7 +83,7 @@ TAGS_DEPENDENCIES = $(L_STEPS)
 # -DHASH_STATS		For printing a one-liner hash statistics.
 
 LEX = @LEX@
-PYTHON = python
+PYTHON = @PYTHON@
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
 $(srcdir)/merged.c: mergelex.py $(L_STEPS)
