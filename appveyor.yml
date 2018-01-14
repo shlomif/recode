@@ -1,0 +1,20 @@
+version: "{build}"
+clone_folder: c:\projects\recode
+
+environment:
+  global:
+    # Only need one flavour of dictionary
+    VERBOSE: 1 # Get test logs in output
+  matrix:
+    - MSYSTEM: MSYS
+    - MSYSTEM: MINGW64
+    - MSYSTEM: MINGW32
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - C:\msys64\usr\bin\bash.exe -l c:/projects/recode/build-aux/appveyor-install.sh
+
+build_script:
+  - C:\msys64\usr\bin\bash.exe -lc "cd c:/projects/recode && ./bootstrap && ./configure %CONFIGURE_FLAGS% && make && make distcheck"
