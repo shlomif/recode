@@ -21,8 +21,19 @@ AUTOMAKE_OPTIONS = gnits
 
 ACLOCAL_AMFLAGS = -I m4
 
+SUBDIRS = doc lib po src tests contrib
+
 EXTRA_DIST = COPYING-LIB \
 m4/gnulib-cache.m4 tables.py \
 keld/NomsSeulsfinal.lst keld/charsets.def keld/control.def \
 keld/iso10646.def keld/mnemonics,ds keld/other.def keld/rfc1345.txt
-SUBDIRS = doc lib po src tests contrib
+
+release: distcheck
+	git diff --exit-code && \
+	git tag -a -m "Release tag" "v$(VERSION)" && \
+	git push && git push --tags && \
+	woger github \
+		github_user=rrthomas \
+		package=$(PACKAGE) \
+		version=$(VERSION) \
+		dist_type=tar.gz
