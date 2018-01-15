@@ -32,7 +32,7 @@ PYTHON = python
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
 $(srcdir)/recode.info: rfc1345.texi
-recode.dvi: rfc1345.texi
+recode.pdf recode.dvi: rfc1345.texi
 
 # Disable dvi target, to avoid needing TeX for make distcheck
 # (and in any case, no-one wants DVI)

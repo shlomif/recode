@@ -17,7 +17,11 @@ html/
 /config.sub
 /configure
 /depcomp
+/doc/recode.dvi
 /doc/recode.info
+/doc/recode.pdf
+/doc/recode.t2d/
+/doc/recode.t2p/
 /doc/stamp-vti
 /INSTALL
 /install-sh
