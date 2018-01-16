@@ -17,9 +17,6 @@
    If not, write to the Free Software Foundation, Inc., 59 Temple Place -
    Suite 330, Boston, MA 02111-1307, USA.  */
 
-/* Define for using a double step.  */
-#define USE_RFC1345_STEP 1
-
 #include "common.h"
 #include "decsteps.h"
 
@@ -33,8 +30,6 @@
    a'i'o'u'n?N?-a-o?ININO1214!I<<>>a?o?O/o/oeOEA!A?O?':''/-PICoRgTM
    ijIJA+B+G+D+H+W+Z+X+TjJ+K+L+M+N+S+E+P+ZJQ+R+ShT+N%K%M%P%ZjSECa00
    a*b*G*p*S*s*Myt*F*h*Omd*Iof*(-*P=3+->==<IuIl-:?2DGSb.MRTnS2S3S'm */
-
-#if USE_RFC1345_STEP
 
 /* Andreas Schwab writes:
 
@@ -99,133 +94,10 @@ static struct strip_data table =
     }
 };
 
-#else /* not USE_RFC1345_STEP */
-
-/* Data for Atari ST to ISO Latin-1 code conversions.  */
-
-static struct recode_known_pair known_pairs[] =
-  {
-    {128, 199},			/* C, */
-    {129, 252},			/* u" */
-    {130, 233},			/* e' */
-    {131, 226},			/* a^ */
-    {132, 228},			/* a" */
-    {133, 224},			/* a` */
-    {134, 229},			/* aa */
-    {135, 231},			/* c, */
-    {136, 234},			/* e^ */
-    {137, 235},			/* e" */
-    {138, 232},			/* e` */
-    {139, 239},			/* i" */
-    {140, 238},			/* i^ */
-    {141, 236},			/* i` */
-    {142, 196},			/* A" */
-    {143, 197},			/* AA */
-    {144, 201},			/* E' */
-    {145, 230},			/* ae */
-    {146, 198},			/* AE */
-    {147, 244},			/* o^ */
-    {148, 246},			/* o" */
-    {149, 242},			/* o` */
-    {150, 251},			/* u^ */
-    {151, 249},			/* u` */
-    {152, 255},			/* y" */
-    {153, 214},			/* O" */
-    {154, 220},			/* U" */
-    {155, 162},			/* \cent */
-    {156, 163},			/* \pound */
-    {157, 165},			/* \yen */
-    {158, 223},			/* \ss */
-
-    {160, 225},			/* a' */
-    {161, 237},			/* i' */
-    {162, 243},			/* o' */
-    {163, 250},			/* u' */
-    {164, 241},			/* n~ */
-    {165, 209},			/* N~ */
-    {166, 170},			/* a_ */
-    {167, 186},			/* o_ */
-    {168, 191},			/* ?' */
-
-    {170, 172},			/* \neg */
-    {171, 189},			/* 1/2 */
-    {172, 188},			/* 1/4 */
-    {173, 161},			/* !` */
-    {174, 171},			/* `` */
-    {175, 187},			/* '' */
-    {176, 227},			/* a~ */
-    {177, 245},			/* o~ */
-    {178, 216},			/* O/ */
-    {179, 248},			/* o/ */
-
-    {182, 192},			/* A` */
-    {183, 195},			/* A~ */
-    {184, 213},			/* O~ */
-    {185, 168},			/* diaeresis */
-    {186, 180},			/* acute accent */
-
-    {188, 182},			/* pilcrow sign */
-    {189, 169},			/* copyright sign */
-    {190, 174},			/* registered trade mark sign */
-
-    {221, 167},			/* paragraph sign, section sign */
-
-    {230, 181},			/* mu, micro */
-
-    {241, 177},			/* +- */
-
-    {246, 247},			/* \div */
-
-    {248, 176},			/* \deg */
-
-    {250, 183},			/* \cdot */
-
-    {253, 178},			/* ^2 */
-    {254, 179},			/* ^3 */
-    {255, 175},			/* macron */
-  };
-#define NUMBER_OF_PAIRS (sizeof (known_pairs) / sizeof (struct recode_known_pair))
-
-static bool
-init_latin1_atarist (RECODE_STEP step,
-		     RECODE_CONST_REQUEST request)
-{
-  return
-    complete_pairs (request->outer, step,
-		    known_pairs, NUMBER_OF_PAIRS, true, true);
-}
-
-static void
-init_atarist_latin1 (RECODE_STEP step,
-		     RECODE_CONST_REQUEST request)
-{
-  return
-    complete_pairs (request->outer, step,
-		    known_pairs, NUMBER_OF_PAIRS, true, false);
-}
-
-#endif /* not USE_RFC1345_STEP */
-
-/* Have this routine only once, for {dec,ini}steps.h to be proper.  */
-
 bool
 module_atarist (RECODE_OUTER outer)
 {
-#if USE_RFC1345_STEP
-
   return declare_strip_data (outer, &table, "AtariST");
-
-#else
-
-  return
-    declare_single (outer, "Latin-1", "AtariST",
-		    outer->quality_byte_to_variable,
-		    init_latin1_atarist, NULL)
-    && declare_single (outer, "AtariST", "Latin-1",
-		       outer->quality_byte_to_variable,
-		       init_atarist_latin1, NULL);
-
-#endif
 }
 
 _GL_ATTRIBUTE_CONST void
