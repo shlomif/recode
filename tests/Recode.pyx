@@ -442,11 +442,6 @@ cdef extern from "common.h":
     bool recode_scan_request(RECODE_REQUEST, char *)
     bool recode_format_table(
             RECODE_REQUEST, recode_programming_language, char *)
-    char *recode_string(RECODE_CONST_REQUEST, char *)
-    bool recode_string_to_buffer(
-            RECODE_CONST_REQUEST, char *, char **, size_t *, size_t *)
-    bool recode_string_to_file(
-            RECODE_CONST_REQUEST, char *, FILE *)
     bool recode_buffer_to_buffer(
             RECODE_CONST_REQUEST, char *, size_t, char **, size_t *, size_t *)
     bool recode_buffer_to_file(
@@ -647,19 +642,33 @@ cdef class Request:
         if not ok:
             raise error
 
-    def string(self, char *text):
-        cdef char *result
-        result = recode_string(self.request, text)
-        if result is NULL:
+    def string(self, text):
+        cdef char *input = text
+        cdef size_t input_len = len(text)
+        cdef char *output = NULL
+        cdef size_t output_len
+        cdef size_t output_allocated = 0
+        result = recode_buffer_to_buffer(self.request, input, input_len, &output, &output_len, &output_allocated)
+        if result is False or output is NULL:
             raise error
-        return result
+        return output[:output_len]
 
+    # Unexposed APIs:
+
+    # Don't expose recode_string; always check return value
+    #
+    #char *recode_string(
+    #        RECODE_CONST_REQUEST, char *)
+
+    # Prefer buffer APIs, which allow NUL characters.
+    #
     #bool recode_string_to_buffer(
     #        RECODE_CONST_REQUEST, char *, char **, size_t *, size_t *)
     #bool recode_string_to_file(
     #        RECODE_CONST_REQUEST, char *, FILE *)
-    #bool recode_buffer_to_buffer(
-    #        RECODE_CONST_REQUEST, char *, size_t, char **, size_t *, size_t *)
+
+    # FIXME: Expose these?
+    #
     #bool recode_buffer_to_file(
     #        RECODE_CONST_REQUEST, char *, size_t, FILE *)
     #bool recode_file_to_buffer(
