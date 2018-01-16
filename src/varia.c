@@ -28,9 +28,8 @@
 
 /* Lukas Petrlik <luki@pafos.zcu.cz>, 1996-04-02, and Martin Mares
    <mj@ucw.cz>, 1999-01-05, both sent Kamenicky and Cork tables.  The
-   following two macros are used to document the contradicting spots.  */
-#define LUKAS 1			/* define to 1 for Lukas definitions */
-#define MARTIN 0		/* define to 1 for Martin definitions */
+   Kamenicky table was made to conform to Wikipedia:
+   https://en.wikipedia.org/wiki/Kamenick%C3%BD_encoding */
 
 /* These tables use standard latin alphabet with Czech accented letters.
    They use a subset of ISO-8859-2, plus a few strange characters.  */
@@ -41,41 +40,6 @@
 
 static const unsigned short data_kamenicky[] =
   {
-#if MARTIN
-    /* Non-Czech characters copied from IBM charset.  */
-      1, 0x263A, DONE,		/* white smiling face */
-      2, 0x263B, DONE,		/* black smiling face */
-      3, 0x2665, DONE,		/* black heart suit */
-      4, 0x2666, DONE,		/* black diamond suit */
-      5, 0x2663, DONE,		/* black club suit */
-      6, 0x2660, DONE,		/* black spade suit */
-      7, 0x2022, DONE,		/* bullet */
-      8, 0x25D8, DONE,		/* inverse bullet */
-      9, 0x25CB, DONE,		/* white circle */
-     10, 0x25D9, DONE,		/* inverse white circle */
-     11, 0x2642, DONE,		/* male sign */
-     12, 0x2640, DONE,		/* female sign */
-     13, 0x266A, DONE,		/* eighth note */
-     14, 0x266B, DONE,		/* beamed eighth notes */
-     15, 0x263C, DONE,		/* white sun with rays */
-     16, 0x25B6, DONE,		/* black right-pointing triangle */
-     17, 0x25C0, DONE,		/* black left-pointing triangle */
-     18, 0x2195, DONE,		/* up down arrow */
-     19, 0x203C, DONE,		/* double exclamation mark */
-     20, 0x00B6, DONE,		/* pilcrow sign */
-     21, 0x00A7, DONE,		/* section sign */
-     22, 0x25AC, DONE,		/* black rectangle */
-     23, 0x21A8, DONE,		/* up down arrow with base */
-     24, 0x2191, DONE,		/* upwards arrow */
-     25, 0x2193, DONE,		/* downwards arrow */
-     26, 0x2192, DONE,		/* rightwards arrow */
-     27, 0x2190, DONE,		/* leftwards arrow */
-     28, 0x221F, DONE,		/* right angle */
-     29, 0x2194, DONE,		/* left right arrow */
-     30, 0x25B2, DONE,		/* black up-pointing triangle */
-     31, 0x25BC, DONE,		/* black down-pointing triangle */
-    127, 0x2302, DONE,		/* house */
-#endif /* MARTIN */
     128, 0x010C, DONE,
     129, 0x00FC, DONE,
     130, 0x00E9, DONE,
@@ -122,14 +86,8 @@ static const unsigned short data_kamenicky[] =
     171, 0x0154, DONE,
     172, 0x00BC, DONE,
     173, 0x00A7, DONE,
-#if LUKAS
     174, 0x00AB, DONE,
     175, 0x00BB, DONE,
-#endif
-#if MARTIN
-    174, 0x00BB, DONE,		/* right-pointing double angle quotation mark */
-    175, 0x00AB, DONE,		/* left-pointing double angle quotation mark */
-#endif
     176, 0x2591, DONE,
     177, 0x2592, DONE,
     178, 0x2593, DONE,
@@ -180,12 +138,7 @@ static const unsigned short data_kamenicky[] =
     223, 0x2580, DONE,
     224, 0x03B1, DONE,
     225, 0x03B2, DONE,
-#if LUKAS
     226, 0x0393, DONE,
-#endif
-#if MARTIN
-    226, 0x0194, DONE,		/* latin capital letter gamma */
-#endif
     227, 0x03C0, DONE,
     228, 0x03A3, DONE,
     229, 0x03C3, DONE,
@@ -196,18 +149,10 @@ static const unsigned short data_kamenicky[] =
     234, 0x03A9, DONE,
     235, 0x03B4, DONE,
     236, 0x221E, DONE,
-#if LUKAS
-    237, 0x2205, DONE,
-    238, 0x03B5, DONE,
-    239, 0x2229, DONE,
-    240, 0x2261, DONE,
-#endif
-#if MARTIN
     237, 0x03C6, DONE,		/* greek small letter phi */
-    238, 0x2208, DONE,		/* element of */
+    238, 0x03B5, DONE,		/* element of */
     239, 0x2229, DONE,		/* intersection */
     240, 0x224D, DONE,		/* equivalent to */
-#endif
     241, 0x00B1, DONE,
     242, 0x2265, DONE,
     243, 0x2264, DONE,
@@ -215,16 +160,9 @@ static const unsigned short data_kamenicky[] =
     245, 0x2321, DONE,
     246, 0x00F7, DONE,
     247, 0x2248, DONE,
-#if LUKAS
-    248, 0x2218, DONE,
-    249, 0x00B7, DONE,
-    250, 0x2219, DONE,
-#endif
-#if MARTIN
     248, 0x00B0, DONE,		/* degree sign */
     249, 0x2219, DONE,		/* bullet operator */
     250, 0x00B7, DONE,		/* middle dot */
-#endif
     251, 0x221A, DONE,
     252, 0x207F, DONE,
     253, 0x00B2, DONE,
@@ -237,9 +175,8 @@ static const unsigned short data_kamenicky[] =
 
 static const unsigned short data_cork[] =
   {
-#if LUKAS
     /* I suspect Lukas used this mapping to convey T1 and CORK in a single
-       table, which may not be such a good thing.  I'm not sure...  */
+       table, which may not be such a good thing.  (He gave extra code, 0 to 31.)  */
       0, 0x0060, DONE,
       1, 0x00B4, DONE,
       2, 0x005E, DONE,
@@ -266,13 +203,12 @@ static const unsigned short data_cork[] =
      23, DONE,
      24, 0x2080, DONE,
      25, 0x0131, DONE,
-     26, DONE,			/* latin small letter j dotless, FIXME! */
+     26, 0x0237, DONE,
      27, 0xFB00, DONE,
      28, 0xFB01, DONE,
      29, 0xFB02, DONE,
      30, 0xFB03, DONE,
      31, 0xFB04, DONE,
-#endif /* LUKAS */
     127, 0x2010, DONE,
     128, 0x0102, DONE,
     129, 0x0104, DONE,
@@ -339,8 +275,7 @@ static const unsigned short data_cork[] =
     190, 0x00BF, DONE,
     191, 0x00A3, DONE,
     215, 0x0152, DONE,
-    223, DONE,			/* latin capital letter sharp s (german)
-				   (it is the SS ligature), FIXME! */
+    223, 0x1E9E, DONE,
     247, 0x0153, DONE,
     255, 0x00DF, DONE,
     DONE
