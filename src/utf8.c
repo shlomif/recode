@@ -20,9 +20,6 @@
 #include "common.h"
 #include "decsteps.h"
 
-/* Define HANDLE_32_BITS if you want conversion for 2^32 codes instead
-   of 2^31.  But this would not be ISO-10646, which says 2^31.  */
-
 /* Read next data byte and check its value, discard an illegal sequence.
    This macro is meant to be used only within the `while' loop in
    `transform_utf8_ucs[24]'.  */
@@ -85,18 +82,7 @@ transform_ucs4_utf8 (RECODE_SUBTASK subtask)
       if (value & ~BIT_MASK (26))
 	if (value & ~BIT_MASK (31))
 	  {
-#if HANDLE_32_BITS
-	    /* 7 bytes - more than 31 bits (that is, exactly 32 :-).  */
-	    put_byte (BIT_MASK (7) << 1);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value >> 30), subtask);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value >> 24), subtask);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value >> 18), subtask);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value >> 12), subtask);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value >> 6), subtask);
-	    put_byte ((1 << 7) | (BIT_MASK (6) & value), subtask);
-#else
 	    RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
-#endif
 	  }
   	else
 	  {
@@ -166,20 +152,8 @@ transform_utf8_ucs4 (RECODE_SUBTASK subtask)
 	if ((character & BIT_MASK (7) << 1) == BIT_MASK (7) << 1)
 	  {
 	    /* 7 bytes - more than 31 bits (that is, exactly 32 :-).  */
-#if HANDLE_32_BITS
-	    value = 0;
-	    GET_DATA_BYTE_AT (30);
-	    GET_DATA_BYTE_AT (24);
-	    GET_DATA_BYTE_AT (18);
-	    GET_DATA_BYTE_AT (12);
-	    GET_DATA_BYTE_AT (6);
-	    GET_DATA_BYTE_AT (0);
-	    put_ucs4 (value, subtask);
-	    character = get_byte (subtask);
-#else
 	    RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
 	    character = get_byte (subtask);
-#endif
 	  }
 	else
 	  {
