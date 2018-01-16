@@ -18,16 +18,11 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
-cdef enum bool:
-    false = 0
-    true = 1
+from libcpp cimport bool
 
 cdef extern from "stdio.h":
     struct FILE:
         pass
-
-cdef extern from "config.h":
-    ctypedef long size_t
 
 cdef extern from "common.h":
 
@@ -646,7 +641,7 @@ cdef class Request:
         cdef bool saved
         outer = self.request.outer
         saved = outer.iconv_pivot.ignore
-        outer.iconv_pivot.ignore = true
+        outer.iconv_pivot.ignore = True
         ok = recode_format_table(
                 self.request, <recode_programming_language> language, charset)
         outer.iconv_pivot.ignore = saved
