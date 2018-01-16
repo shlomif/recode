@@ -467,10 +467,6 @@ make_argmatch_arrays (RECODE_OUTER outer)
 {
   struct make_argmatch_walk walk; /* wanderer's data */
 
-#if HASH_STATS
-  hash_print_statistics (outer->alias_table, stderr);
-#endif
-
   /* It may happen that new modules are added only once all initialisation
      completed.  To handle that case, free previous arrays if any.  */
 

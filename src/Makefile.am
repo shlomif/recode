@@ -82,9 +82,6 @@ DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
 ETAGS_ARGS = $(L_STEPS)
 TAGS_DEPENDENCIES = $(L_STEPS)
 
-# These CFLAGS values are not auto-configured:
-# -DHASH_STATS		For printing a one-liner hash statistics.
-
 LEX = @LEX@
 PYTHON = @PYTHON@
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
