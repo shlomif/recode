@@ -882,17 +882,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 
 		  if (chmod (output_name, file_stat.st_mode & 07777) < 0)
 		    error (EXIT_FAILURE, errno, "chmod (%s)", output_name);
-#if HAVE_RENAME
 		  if (rename (output_name, input_name) < 0)
 		    error (EXIT_FAILURE, errno, "rename (%s, %s)",
 			   output_name, input_name);
-#else
-		  if (link (output_name, input_name) < 0)
-		    error (EXIT_FAILURE, errno, "link (%s, %s)",
-			   output_name, input_name);
-		  if (unlink (output_name) < 0)
-		    error (EXIT_FAILURE, errno, "unlink (%s)", output_name);
-#endif
 
 		  /* Adjust the time stamp for the new file.  */
 
