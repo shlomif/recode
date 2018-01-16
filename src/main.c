@@ -878,10 +878,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 		  if (unlink (input_name) < 0)
 		    error (EXIT_FAILURE, errno, "unlink (%s)", input_name);
 
-		  /* Preserve the file permissions.  */
+		  /* Preserve the file permissions if possible.  */
 
-		  if (chmod (output_name, file_stat.st_mode & 07777) < 0)
-		    error (EXIT_FAILURE, errno, "chmod (%s)", output_name);
+		  chmod (output_name, file_stat.st_mode & 07777);
+
 		  if (rename (output_name, input_name) < 0)
 		    error (EXIT_FAILURE, errno, "rename (%s, %s)",
 			   output_name, input_name);
