@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import common
-from common import setup_module, teardown_module
+from common import setup_module, teardown_module, Recode, outer, assert_or_diff
 
 input = '''\
 Dear =DEorvard=F0ur,
@@ -26,6 +26,12 @@ class Test:
         common.validate(input, output)
 
     def test_2(self):
-        # Block of lines to Java and back.
-        common.request('l1/qp..java')
-        common.validate_back(input)
+        # Block of lines from Java, without requiring BOM for each Unicode character.
+        request = Recode.Request(outer)
+        request.scan('java..l1/qp')
+        task = Recode.Task(request)
+        task.set_byte_order_mark(False)
+        task.set_input(output)
+        task.perform()
+        task_output = task.get_output()
+        assert_or_diff(task_output, input)
