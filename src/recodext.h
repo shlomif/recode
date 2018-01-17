@@ -44,7 +44,7 @@ typedef const struct recode_task *		RECODE_CONST_TASK;
   recode_if_nogo (Error, Subtask)
 
 /*--------------------------------------------------------------------------.
-| Return from SUBTASK with `false', if the failure level has been reached.  |
+| Return from SUBTASK, with `false' if the failure level has been reached.  |
 `--------------------------------------------------------------------------*/
 
 #define SUBTASK_RETURN(Subtask) \
