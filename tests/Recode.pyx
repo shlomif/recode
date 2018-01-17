@@ -691,6 +691,9 @@ cdef class Task:
         self.task.byte_order_mark = int(flag)
         return previous
 
+    def get_error(self):
+        return self.task.error_so_far
+
     def set_input(self, text):
         cdef char *input = text
         cdef size_t input_len = len(text)
