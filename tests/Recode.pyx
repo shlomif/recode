@@ -695,6 +695,16 @@ cdef class Task:
     def get_error(self):
         return self.task.error_so_far
 
+    def set_fail_level(self, fail_level):
+        previous = self.task.fail_level
+        self.task.fail_level = fail_level
+        return previous
+
+    def set_abort_level(self, abort_level):
+        previous = self.task.abort_level
+        self.task.abort_level = abort_level
+        return previous
+
     def set_input(self, text):
         cdef char *input = text
         cdef size_t input_len = len(text)
