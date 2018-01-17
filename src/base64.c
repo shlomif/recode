@@ -149,19 +149,20 @@ transform_base64_data (RECODE_SUBTASK subtask)
       /* Accept wrapping lines, reversibly if at each 76 characters.  */
 
       character = get_byte (subtask);
+
+    top:
       if (character == EOF)
-	{
-	  if (counter != 0)
-	    RETURN_IF_NOGO (RECODE_NOT_CANONICAL, subtask);
-	  SUBTASK_RETURN (subtask);
-	}
+	SUBTASK_RETURN (subtask);
 
       if (character == '\n')
 	{
+          character = get_byte (subtask);
+	  if (character == EOF)
+            SUBTASK_RETURN (subtask);
 	  if (counter != MIME_LINE_LENGTH / 4)
 	    RETURN_IF_NOGO (RECODE_NOT_CANONICAL, subtask);
 	  counter = 0;
-	  continue;
+	  goto top;
 	}
 
       if (character == '\r')
