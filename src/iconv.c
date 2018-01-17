@@ -102,8 +102,40 @@ wrapped_transform (iconv_t conversion, RECODE_SUBTASK subtask)
 	{
 	  if (saved_errno == EILSEQ)
 	    {
-	      /* Invalid input.  Skip one byte.  */
-	      RETURN_IF_NOGO (RECODE_INVALID_INPUT, subtask);
+	      /* Check whether the input was really just untranslatable.  */
+              enum recode_error recode_error = RECODE_INVALID_INPUT;
+	      RECODE_CONST_STEP step = subtask->step;
+	      iconv_t check_conversion = iconv_open (step->before->iconv_name,
+						     step->before->iconv_name);
+
+	      /* On error, give up and assume input is invalid.  */
+	      if (input_left > 0 && check_conversion != (iconv_t) -1)
+		{
+                  /* Assume iconv does not modify its input.  */
+		  char *check_input = input;
+		  size_t check_input_left = input_left;
+                  size_t check_output_left = input_left;
+		  char *check_output_buffer, *check_output;
+                  RECODE_OUTER outer = subtask->task->request->outer;
+
+                  if ((check_output = ALLOC (check_output_buffer, input_left, char)) != NULL)
+                    {
+                      size_t check_converted = iconv (check_conversion,
+                                                      &check_input, &check_input_left,
+                                                      &check_output, &check_output_left);
+
+                      if (check_converted != (size_t) -1)
+                        recode_error = RECODE_UNTRANSLATABLE;
+
+                      free (check_output_buffer);
+                    }
+		}
+
+	      /* Invalid or untranslatable input.  Skip one byte.  */
+              /* FIXME: We cannot tell how many bytes to skip for
+                 untranslatable input.  The likely result is that we'll
+                 get an "invalid input" error on the next step. */
+	      RETURN_IF_NOGO (recode_error, subtask);
 	      assert (input_left > 0);
 	      input++;
 	      input_left--;

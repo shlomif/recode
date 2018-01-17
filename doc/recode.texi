@@ -2568,6 +2568,13 @@ mode prohibits such attribution of reversible translations: so strict
 mode might often trigger such an error.  Most @code{UCS-2} codes used to
 represent Asian characters cannot be expressed in various Latin charsets.
 
+Since iconv does not distinguish untranslatable from invalid input,
+Recode has to use a workaround to detect when input is untranslatable.
+Unfortunately, it cannot currently tell how much input is untranslatable,
+so it cannot reliably skip such input: typically the input is then diagnosed
+as invalid.  Two possible workarounds are to set the @code{abort_level}
+to @code{RECODE_UNTRANSLATABLE}, or not to use iconv.
+
 @item RECODE_INVALID_INPUT
 @vindex RECODE_INVALID_INPUT
 @cindex invalid input, error message
