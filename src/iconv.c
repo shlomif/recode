@@ -40,7 +40,7 @@ wrapped_transform (iconv_t conversion, RECODE_SUBTASK subtask)
 
   while (true)
     {
-      /* The output buffer is fully avaible at this point.  */
+      /* The output buffer is fully available at this point.  */
 
       char *input = input_buffer;
       char *output = output_buffer;
