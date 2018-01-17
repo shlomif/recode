@@ -187,7 +187,7 @@ module_iconv (RECODE_OUTER outer)
 
       /* Declare all aliases, given they bring something we do not already
 	 know.  Even then, we still declare too many useless aliases, as the
-	 desambiguating tables are not recomputed as we go.  FIXME!  */
+	 disambiguating tables are not recomputed as we go.  FIXME!  */
 
       for (cursor = aliases; *cursor; cursor++)
 	{
