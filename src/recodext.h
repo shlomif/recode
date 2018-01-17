@@ -522,7 +522,7 @@ typedef unsigned short recode_ucs2;
    and 32 needs 25568, so we decided to stick to a strip size of 8.  Change
    $STRIP_SIZE in `doc/tables.pl' if you change the value here.  */
 
-/* "Are we speaking slips, strips or bars?" (of gold press'latinum :-) */
+/* "Are we speaking slips, strips or bars?" (of gold-pressed latinum :-) */
 #define STRIP_SIZE 8
 
 /* An struct strip_data is a pointer to a pool of strips, and an array
