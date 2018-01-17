@@ -674,3 +674,32 @@ cdef class Request:
     #bool recode_file_to_buffer(
     #        RECODE_CONST_REQUEST, FILE *, char **, size_t *, size_t *)
     #bool recode_file_to_file(RECODE_CONST_REQUEST, FILE *, FILE *)
+
+# Recode library at TASK level.
+
+cdef class Task:
+    cdef RECODE_TASK task
+
+    def __init__(self, Request request):
+        self.task = recode_new_task(request.request)
+
+    def __dealloc__(self):
+        recode_delete_task(self.task)
+
+    def set_byte_order_mark(self, flag):
+        previous = self.task.byte_order_mark != 0
+        self.task.byte_order_mark = int(flag)
+        return previous
+
+    def set_input(self, text):
+        cdef char *input = text
+        cdef size_t input_len = len(text)
+        self.task.input.buffer = input
+        self.task.input.cursor = input
+        self.task.input.limit = input + input_len
+
+    def get_output(self):
+        return self.task.output.buffer[:self.task.output.cursor - self.task.output.buffer]
+
+    def perform(self):
+        return recode_perform_task(self.task)
