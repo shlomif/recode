@@ -89,14 +89,14 @@ close_mixed (struct mixed *mixed)
     fclose (mixed->subtask.task->output.file);
 }
 
-static /*inline*/ void
+static void
 start_accumulation (struct mixed *mixed)
 {
   mixed->buffer.cursor = mixed->buffer.buffer;
   mixed->subtask.output = mixed->buffer;
 }
 
-static /*inline*/ bool
+static bool
 recode_accumulated (struct mixed *mixed)
 {
   RECODE_TASK task = mixed->subtask.task;
