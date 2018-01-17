@@ -21,11 +21,11 @@ au r\u00f4le payera son d\u00fb d\u00e8s avant No\u00ebl, qu'il soit na\u00eff o
 class Test:
 
     def test_1(self):
-        # Block of lines to JAVA.
+        # Block of lines to Java.
         common.request('l1/qp..java')
         common.validate(input, output)
 
     def test_2(self):
-        # Block of lines to JAVA and back.
+        # Block of lines to Java and back.
         common.request('l1/qp..java')
         common.validate_back(input)
