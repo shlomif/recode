@@ -519,9 +519,8 @@ go in the next.
 
 @cindex bug reports, where to send
 @cindex reporting bugs
-Please send suggestions, documentation errors and bug reports to
-@email{recode-bugs@@iro.umontreal.ca} or, if you prefer, directly to
-@email{pinard@@iro.umontreal.ca}, Fran@,{c}ois Pinard.  Do not be afraid
+Please leave suggestions, documentation errors and bug reports to
+@uref{https://github.com/rrthomas/Recode}.  Do not be afraid
 to report details, because this program is the mere aggregation of
 hundreds of details.
 
@@ -4964,7 +4963,7 @@ used as a turning template for all charsets in Recode.  Even if
 I think it could help to a certain extent, I'm still not fully sure it
 would be sufficient in all cases.  Moreover, some people disagree about
 using @w{ISO 10646} as the central charset, to the point I cannot totally
-ignore them, and surely, Recode is not a mean for me to force my
+ignore them, and surely, Recode is not a means for me to force my
 own opinions on people.  I would like that Recode be practical
 more than dogmatic, and reflect usage more than religions.
 
