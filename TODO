@@ -2,9 +2,9 @@
 TODO file for Recode
 ====================
 
-Tell recode-bugs@iro.umontreal.ca if you feel like volunteering
+Tell rrt@sc3d.org if you feel like volunteering
 for any of these ideas, listed more or less in decreasing order
-of priority.  Some TODO items are implicit within received email.
+of priority.
 
 Before next official release
 ============================
@@ -13,29 +13,6 @@ Before next official release
 + Update NEWS for latest libiconv and latest Keld tables.
 + Remove TeX edition warnings, rephrase whatever required.
 + Complete inter-node and menu references, as necessary.
-+ See make and configure HAVE_UNION_WAIT, see ``lr /conf-wait-``.
-
-Memory control
-==============
-
-+ Dig
-
-  + ALLOC, ALLOC_SIZE, REALLOC
-  + edit_sequence, init_ucs2_to_byte
-
-+ Revise for leaks
-
-  + combine.c
-  + localcharset.c
-  + names.c (for aliases)
-  + html.c
-  + testdump.c
-  + recode.c
-
-+ Solve
-
-  + src/xalloc.h + src/xmalloc.c .vs. lib/xstrdup.c
-  + xstrdup unused
 
 Keld
 ====
@@ -61,23 +38,11 @@ Keld
 
     + Lithuanian
 
-Linus
-=====
-
-+ ~/méthodes/rtf/
-
 Particular notes
 ================
 
 + feuille Tamil
-+ Autoconf and DOSWIN
 + New RFC 1345 tables, still some diagnostics
-+ Check notes from ORA
-+ ~/libit/rmail/m4
-+ ~/libit/rmail/gettext
-
-ChangeLog
-=========
 
 Charsets
 ========
@@ -88,7 +53,6 @@ Charsets
 + Support VT320 support and related character sets.  (Alain Simon)
 + Support @code{[nt]roff} diacritics.
 + Support Universite de Montreal *accent* convention.
-+ ~/pinard/codes/mule/courriel/
 
 Surfaces
 ========
@@ -112,18 +76,5 @@ Mechanics
 + Rewrite .l converses for lat1{asci,ltex,txte}, for --force.
 + Optimize/merge all one-to-many cases.
 + Write a better ``make check``, not as partial and forgiving.
-+ Modify recode so I can get rid of diacrit.[ch] (elsewhere).
 + Have -l know which output charset to use (Martin Maechler, 93-12-07).
 + Take note that ->RFC1345 recodings are non reversible.
-
-Notes about MSDOS port
-======================
-
-+ I had to ``touch stamp-h``.
-+ @PRODUCT@ and @VERSION@ were not substituted.
-+ Replace PRODUCT by PACKAGE within config_h.*.
-+ One should have -DHAVE_CONFIG_H=1 (the ``=1`` is required).
-+ charset.c:637: Maybe incorrect assignment in init_table_for_rfc1345().
-+ LIBINTL.OBJ and LOCALE.OBJ were not compiled.
-+ Rule to compile LIBINTL.OBJ was missing.
-+ readme.tcc should become README.DOS as things go.
