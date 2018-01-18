@@ -122,3 +122,10 @@ gnulib-comp.m4
 /wchar_t.m4
 /wint_t.m4
 /xsize.m4
+/canonicalize.m4
+/largefile.m4
+/lstat.m4
+/readlink.m4
+/stat-time.m4
+/stat.m4
+/sys_stat_h.m4

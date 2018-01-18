@@ -18,6 +18,7 @@
 
 #include "common.h"
 
+#include <stdlib.h>
 #include <ctype.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -810,7 +811,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      struct stat file_stat;
 	      struct utimbuf file_utime;
 
-	      input_name = argv[optind];
+	      input_name = realpath (argv[optind], NULL);
+	      if (input_name == NULL)
+		error (EXIT_FAILURE, errno, "realpath (%s)", argv[optind]);
+
 	      output_name = xmalloc (strlen (input_name) + 17 + 1); /* 17 is upper limit for rec%d.tmp where %d is pid_t */
 
 	      /* Check if the file can be read and rewritten.  */
