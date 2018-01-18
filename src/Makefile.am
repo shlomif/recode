@@ -27,19 +27,20 @@ include_HEADERS = recode.h recodext.h
 H_STEPS = common.h decsteps.h inisteps.h tersteps.h \
 $(H_FALLBACKS) $(H_SURFACES)
 
-noinst_HEADERS = $(H_STEPS) cleaner.h charname.h fr-charname.h iconvdecl.h rfc1345.h
+noinst_HEADERS = $(H_STEPS) cleaner.h charname.h fr-charname.h iconvdecl.h \
+rfc1345.h lat1iso5426.h lat1ansel.h
 
 EXTRA_DIST = stamp-steps stamp-strip $(L_STEPS) mergelex.py $(MANS)
 
 CLEANFILES = iconvdecl.h
 
 C_STEPS = african.c afrtran.c applemac.c atarist.c bangbang.c cdcnos.c \
-ebcdic.c ibmpc.c iconqnx.c lat1asci.c java.c mule.c strip-data.c \
-testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c
+ebcdic.c ibmpc.c iconqnx.c lat1asci.c lat1iso5426.c lat1ansel.c \
+java.c mule.c strip-data.c testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c
 
 ALL_STEPS = $(C_STEPS) $(C_FALLBACKS) $(C_SURFACES)
 
-L_STEPS = ascilat1.l $(L_FALLBACKS) $(L_SURFACES)
+L_STEPS = ascilat1.l iso5426lat1.l ansellat1.l $(L_FALLBACKS) $(L_SURFACES)
 
 H_FALLBACKS =
 C_FALLBACKS = flat.c html.c lat1ltex.c lat1txte.c rfc1345.c texinfo.c
@@ -86,11 +87,11 @@ LEX = @LEX@
 PYTHON = @PYTHON@
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
-$(srcdir)/merged.c: mergelex.py $(L_STEPS)
+merged.c: mergelex.py $(L_STEPS)
 	(cd $(srcdir) && cat $(L_STEPS)) \
 	| $(PYTHON) $(srcdir)/mergelex.py > merged.tm1
 	$(LEX) -t -8 -Plibrecode_yy merged.tm1 > merged.tm2
-	grep -v '^# *line [0-9]' merged.tm2 > $(srcdir)/merged.c
+	grep -av '^# *line [0-9]' merged.tm2 > $(srcdir)/merged.c
 	rm merged.tm1 merged.tm2
 
 recode.1: main.c $(top_srcdir)/configure.ac
@@ -115,11 +116,17 @@ iconv.lo: iconvdecl.h
 iconvdecl.h: ../tables.py
 	$(TABLES_PY) -i
 
+# lat1ansel.h and lat1iso5426.h
+.l.h:
+	grep '^\\' $< | \
+	perl -npe 's/{ put_byte \(//;s /, subtask\); }//;s%^\\%%' | \
+	perl -ne '($$a,$$b)=split; $$c=substr($$a,0,3);$$d=substr($$a,3);$$e = eval "0$$c"; next if $$b < 0200 ;printf("\t{%d, \"%c%s\"}, %s* %c *%s\n", $$b, $$e, $$d, "/", $$b, "/")' > $@
+
 african.lo afrtran.lo applemac.lo atarist.lo bangbang.lo cdcnos.lo \
-ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo java.lo mule.lo strip-data.lo \
-testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo varia.lo vn.lo \
-flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo texinfo.lo \
-base64.lo dump.lo endline.lo permut.lo quoted.lo \
+ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo lat1iso5426.lo lat1ansel.lo \
+java.lo mule.lo strip-data.lo testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo \
+varia.lo vn.lo flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo \
+texinfo.lo base64.lo dump.lo endline.lo permut.lo quoted.lo \
 iconv.lo outer.lo decsteps.h inisteps.h tersteps.h: stamp-steps
 stamp-steps: $(ALL_STEPS) merged.c
 	@echo "Updating {dec,ini,ter}steps.h"

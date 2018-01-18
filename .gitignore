@@ -44,6 +44,8 @@ html/
 /src/fr-charname.h
 /src/iconvdecl.h
 /src/inisteps.h
+/src/lat1ansel.h
+/src/lat1iso5426.h
 /src/merged.c
 /src/recode
 /src/recode.1
