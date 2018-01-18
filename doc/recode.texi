@@ -904,7 +904,7 @@ This particular option is meant to help identifying an unknown charset,
 using as hints some already identified characters of the charset.  Some
 examples will help introducing the idea.
 
-Let's presume here that Recode is run in an ISO-8859-1 locale, and
+Let's presume here that Recode is run in a UTF-8 locale, and
 that @code{DEFAULT_CHARSET} is unset in the environment.
 Suppose you have guessed that code 130 (decimal) of the unknown charset
 represents a lower case @samp{e} with an acute accent.  That is to say
@@ -919,17 +919,17 @@ recode -k 130:233
 you should obtain a listing similar to:
 
 @example
-AtariST atarist
-CWI cphu cwi cwi2
-IBM437 437 cp437 ibm437
-IBM850 850 cp850 ibm850
-IBM851 851 cp851 ibm851
-IBM852 852 cp852 ibm852
-IBM857 857 cp857 ibm857
-IBM860 860 cp860 ibm860
-IBM861 861 cp861 cpis ibm861
-IBM863 863 cp863 ibm863
-IBM865 865 cp865 ibm865
+AtariST
+CWI cp-hu CWI-2
+IBM437/CR-LF 437/CR-LF CP437/CR-LF
+IBM850/CR-LF 850/CR-LF CP850/CR-LF
+IBM851/CR-LF 851/CR-LF CP851/CR-LF
+IBM852/CR-LF 852/CR-LF CP852/CR-LF pcl2 pclatin2
+IBM857/CR-LF 857/CR-LF CP857/CR-LF
+IBM860/CR-LF 860/CR-LF CP860/CR-LF
+IBM861/CR-LF 861/CR-LF CP861/CR-LF cp-is
+IBM863/CR-LF 863/CR-LF CP863/CR-LF
+IBM865/CR-LF 865/CR-LF CP865/CR-LF
 @end example
 
 You can give more than one clue at once, to restrict the list further.
@@ -945,9 +945,9 @@ recode -k 130:233,211:203
 you should obtain:
 
 @example
-IBM850 850 cp850 ibm850
-IBM852 852 cp852 ibm852
-IBM857 857 cp857 ibm857
+IBM850/CR-LF 850/CR-LF CP850/CR-LF
+IBM852/CR-LF 852/CR-LF CP852/CR-LF pcl2 pclatin2
+IBM857/CR-LF 857/CR-LF CP857/CR-LF
 @end example
 
 The usual charset may be overridden by specifying one non-option argument.
@@ -962,17 +962,17 @@ recode -k 130:142 mac
 and get:
 
 @example
-AtariST atarist
-CWI cphu cwi cwi2
-IBM437 437 cp437 ibm437
-IBM850 850 cp850 ibm850
-IBM851 851 cp851 ibm851
-IBM852 852 cp852 ibm852
-IBM857 857 cp857 ibm857
-IBM860 860 cp860 ibm860
-IBM861 861 cp861 cpis ibm861
-IBM863 863 cp863 ibm863
-IBM865 865 cp865 ibm865
+AtariST
+CWI cp-hu CWI-2
+IBM437/CR-LF 437/CR-LF CP437/CR-LF
+IBM850/CR-LF 850/CR-LF CP850/CR-LF
+IBM851/CR-LF 851/CR-LF CP851/CR-LF
+IBM852/CR-LF 852/CR-LF CP852/CR-LF pcl2 pclatin2
+IBM857/CR-LF 857/CR-LF CP857/CR-LF
+IBM860/CR-LF 860/CR-LF CP860/CR-LF
+IBM861/CR-LF 861/CR-LF CP861/CR-LF cp-is
+IBM863/CR-LF 863/CR-LF CP863/CR-LF
+IBM865/CR-LF 865/CR-LF CP865/CR-LF
 @end example
 
 @noindent
