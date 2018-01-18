@@ -286,7 +286,7 @@ FILE is specified, then act as a filter and recode stdin to stdout.\n"),
 	     stdout);
       fputs (_("\
 \n\
-Report bugs to <recode-bugs@iro.umontreal.ca>.\n"),
+Report bugs at https://github.com/rrthomas/Recode\n"),
 	       stdout);
     }
   exit (status);
