@@ -1,6 +1,9 @@
 #+TITLE: HACKING for Recode
 #+OPTIONS: H:2 toc:2
 
+* Build dependencies
+m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python, Cython, tar and wget.
+
 * Building from git
 
 #+BEGIN_SRC sh
@@ -12,17 +15,8 @@
   make install
 #+END_SRC
 
-* Maintenance tools
-Beyond the usual Unix programs needed for configuring and installing
-any GNU package, you need Cython, Flex and Python to achieve simple
-modifications to Recode.
 
-For more encompassing modifications, you might also need recent
-versions of Autoconf, automake, Flex, Gettext, Help2man, libtool, m4,
-GNU Make, Perl, tar and wget.  Just make sure you install m4 before
-Autoconf, and Perl before automake or Help2man.
-
-** Making a release
+* Making a release
 
 To make a release, you'll need [[https://github.com/rrthomas/woger][woger]] and [[https://github.com/aktau/github-release][github-release]], suitably configured. Having tested and pushed all the changes, update the version number in =configure.ac= and write the =NEWS= entry and push those too.
 
