@@ -577,7 +577,7 @@ main (int argc, char *const *argv)
     {
       printf ("%s %s\n", PACKAGE, VERSION);
       fputs (_("\
-Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"),
+Written by François Pinard <pinard@iro.umontreal.ca>.\n"),
 	     stdout);
       fputs (_("\
 \n\
