@@ -29,6 +29,10 @@
 _GL_ATTRIBUTE_PURE int
 code_to_ucs2 (RECODE_CONST_SYMBOL charset, unsigned code)
 {
+  /* FIXME: if no specific UCS-2 translation, assume an identity map.  */
+  if (charset->data_type != RECODE_STRIP_DATA)
+    return code;
+
   const struct strip_data *data = (const struct strip_data *) charset->data;
   const recode_ucs2 *pool = data->pool;
   unsigned offset = data->offset[code / STRIP_SIZE];
@@ -49,12 +53,6 @@ check_restricted (RECODE_CONST_OUTER outer,
   struct recode_known_pair *pair;
   int left;
   int right;
-
-  /* Reject the charset if no UCS-2 translation known for it.  */
-
-  if (before->data_type != RECODE_STRIP_DATA
-      || after->data_type != RECODE_STRIP_DATA)
-    return true;
 
   for (pair = outer->pair_restriction;
        pair < outer->pair_restriction + outer->pair_restrictions;
