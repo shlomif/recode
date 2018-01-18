@@ -611,13 +611,9 @@ perform_pipe_sequence (RECODE_TASK task)
     {
       /* Diagnose and abort on any abnormally terminating child.  */
 
-#if 0				/* FIXME: Bruno would prefer this.  */
       if (!(WIFEXITED (wait_status)
 	    || (WIFSIGNALED (wait_status)
 		&& WTERMSIG (wait_status) == SIGPIPE)))
-#endif
-      if ((wait_status & BIT_MASK (8)) != 0
-	  && (wait_status & BIT_MASK (8)) != SIGPIPE)
 	{
 	  recode_error (outer, _("Child process wait status is 0x%0.2x"),
 			wait_status);
