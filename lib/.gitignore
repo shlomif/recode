@@ -149,3 +149,13 @@
 /xsize.c
 /xsize.h
 /unused-parameter.h
+/canonicalize-lgpl.c
+/lstat.c
+/readlink.c
+/stat-time.c
+/stat-time.h
+/stat-w32.c
+/stat-w32.h
+/stat.c
+/sys_stat.in.h
+/sys/stat.h
