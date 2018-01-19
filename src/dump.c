@@ -351,115 +351,87 @@ TRANSFORM (hex4_data, undump, HEXADECIMAL, 4)
 bool
 module_dump (RECODE_OUTER outer)
 {
+  return
+
   /* Single bytes.  */
 
-  if (!declare_single (outer, "data", "Octal-1",
-		       outer->quality_variable_to_variable,
-		       NULL, data_oct1))
-    return false;
-  if (!declare_single (outer, "data", "Decimal-1",
-		       outer->quality_variable_to_variable,
-		       NULL, data_dec1))
-    return false;
-  if (!declare_single (outer, "data", "Hexadecimal-1",
-		       outer->quality_variable_to_variable,
-		       NULL, data_hex1))
-    return false;
-  if (!declare_single (outer, "Octal-1", "data",
-		       outer->quality_variable_to_variable,
-		       NULL, oct1_data))
-    return false;
-  if (!declare_single (outer, "Decimal-1", "data",
-		       outer->quality_variable_to_variable,
-		       NULL, dec1_data))
-    return false;
-  if (!declare_single (outer, "Hexadecimal-1", "data",
-		       outer->quality_variable_to_variable,
-		       NULL, hex1_data))
-    return false;
+       declare_single (outer, "data", "Octal-1",
+                       outer->quality_variable_to_variable,
+                       NULL, data_oct1)
+    && declare_single (outer, "data", "Decimal-1",
+                       outer->quality_variable_to_variable,
+                       NULL, data_dec1)
+    && declare_single (outer, "data", "Hexadecimal-1",
+                       outer->quality_variable_to_variable,
+                       NULL, data_hex1)
+    && declare_single (outer, "Octal-1", "data",
+                       outer->quality_variable_to_variable,
+                       NULL, oct1_data)
+    && declare_single (outer, "Decimal-1", "data",
+                       outer->quality_variable_to_variable,
+                       NULL, dec1_data)
+    && declare_single (outer, "Hexadecimal-1", "data",
+                       outer->quality_variable_to_variable,
+                       NULL, hex1_data)
 
-  if (!declare_alias (outer, "o1", "Octal-1"))
-    return false;
-  if (!declare_alias (outer, "d1", "Decimal-1"))
-    return false;
-  if (!declare_alias (outer, "x1", "Hexadecimal-1"))
-    return false;
-  if (!declare_alias (outer, "o", "Octal-1"))
-    return false;
-  if (!declare_alias (outer, "d", "Decimal-1"))
-    return false;
-  if (!declare_alias (outer, "x", "Hexadecimal-1"))
-    return false;
+    && declare_alias (outer, "o1", "Octal-1")
+    && declare_alias (outer, "d1", "Decimal-1")
+    && declare_alias (outer, "x1", "Hexadecimal-1")
+    && declare_alias (outer, "o", "Octal-1")
+    && declare_alias (outer, "d", "Decimal-1")
+    && declare_alias (outer, "x", "Hexadecimal-1")
 
   /* Double bytes.  */
 
-  if (!declare_single (outer, "data", "Octal-2",
+    && declare_single (outer, "data", "Octal-2",
 		       outer->quality_variable_to_variable,
-		       NULL, data_oct2))
-    return false;
-  if (!declare_single (outer, "data", "Decimal-2",
+		       NULL, data_oct2)
+    && declare_single (outer, "data", "Decimal-2",
 		       outer->quality_variable_to_variable,
-		       NULL, data_dec2))
-    return false;
-  if (!declare_single (outer, "data", "Hexadecimal-2",
+		       NULL, data_dec2)
+    && declare_single (outer, "data", "Hexadecimal-2",
 		       outer->quality_variable_to_variable,
-		       NULL, data_hex2))
-    return false;
-  if (!declare_single (outer, "Octal-2", "data",
+		       NULL, data_hex2)
+    && declare_single (outer, "Octal-2", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, oct2_data))
-    return false;
-  if (!declare_single (outer, "Decimal-2", "data",
+		       NULL, oct2_data)
+    && declare_single (outer, "Decimal-2", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, dec2_data))
-    return false;
-  if (!declare_single (outer, "Hexadecimal-2", "data",
+		       NULL, dec2_data)
+    && declare_single (outer, "Hexadecimal-2", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, hex2_data))
-    return false;
+		       NULL, hex2_data)
 
-  if (!declare_alias (outer, "o2", "Octal-2"))
-    return false;
-  if (!declare_alias (outer, "d2", "Decimal-2"))
-    return false;
-  if (!declare_alias (outer, "x2", "Hexadecimal-2"))
-    return false;
+    && declare_alias (outer, "o2", "Octal-2")
+    && declare_alias (outer, "d2", "Decimal-2")
+    && declare_alias (outer, "x2", "Hexadecimal-2")
 
   /* Quadruple bytes.  */
 
-  if (!declare_single (outer, "data", "Octal-4",
+    && declare_single (outer, "data", "Octal-4",
 		       outer->quality_variable_to_variable,
-		       NULL, data_oct4))
-    return false;
-  if (!declare_single (outer, "data", "Decimal-4",
+		       NULL, data_oct4)
+    && declare_single (outer, "data", "Decimal-4",
 		       outer->quality_variable_to_variable,
-		       NULL, data_dec4))
-    return false;
-  if (!declare_single (outer, "data", "Hexadecimal-4",
+		       NULL, data_dec4)
+    && declare_single (outer, "data", "Hexadecimal-4",
 		       outer->quality_variable_to_variable,
-		       NULL, data_hex4))
-    return false;
-  if (!declare_single (outer, "Octal-4", "data",
+		       NULL, data_hex4)
+    && declare_single (outer, "Octal-4", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, oct4_data))
-    return false;
-  if (!declare_single (outer, "Decimal-4", "data",
+		       NULL, oct4_data)
+    && declare_single (outer, "Decimal-4", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, dec4_data))
-    return false;
-  if (!declare_single (outer, "Hexadecimal-4", "data",
+		       NULL, dec4_data)
+    && declare_single (outer, "Hexadecimal-4", "data",
 		       outer->quality_variable_to_variable,
-		       NULL, hex4_data))
-    return false;
+		       NULL, hex4_data)
 
-  if (!declare_alias (outer, "o4", "Octal-4"))
-    return false;
-  if (!declare_alias (outer, "d4", "Decimal-4"))
-    return false;
-  if (!declare_alias (outer, "x4", "Hexadecimal-4"))
-    return false;
+    && declare_alias (outer, "o4", "Octal-4")
+    && declare_alias (outer, "d4", "Decimal-4")
+    && declare_alias (outer, "x4", "Hexadecimal-4")
 
-  return true;
+    ;
 }
 
 _GL_ATTRIBUTE_CONST void
