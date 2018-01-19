@@ -562,8 +562,7 @@ recode_delete_outer (RECODE_OUTER outer)
       outer->number_of_singles--;
       free (single);
     }
-  if (outer->pair_restriction)
-    free (outer->pair_restriction);
+  free (outer->pair_restriction);
   if (outer->alias_table)
     hash_free ((Hash_table *) outer->alias_table);
   if (outer->argmatch_charset_array)
@@ -576,8 +575,7 @@ recode_delete_outer (RECODE_OUTER outer)
        free (*cursor);
       free (outer->argmatch_charset_array);
     }
-  if (outer->one_to_same)
-    free ((void *) outer->one_to_same);
+  free ((void *) outer->one_to_same);
   free (outer);
   return true;
 }

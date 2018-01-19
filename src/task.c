@@ -324,10 +324,8 @@ perform_memory_sequence (RECODE_TASK task)
   /* FIXME: Maybe we should manage this so it could wait, instead, for
      avoiding buffer reallocation each time a new recoding is done?  */
 
-  if (input.buffer)
-    free (input.buffer);
-  if (output.buffer)
-    free (output.buffer);
+  free (input.buffer);
+  free (output.buffer);
 
   SUBTASK_RETURN (subtask);
 }

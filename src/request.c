@@ -1096,10 +1096,8 @@ recode_new_request (RECODE_OUTER outer)
 bool
 recode_delete_request (RECODE_REQUEST request)
 {
-  if (request->sequence_array)
-    free (request->sequence_array);
-  if (request->work_string)
-    free (request->work_string);
+  free (request->sequence_array);
+  free (request->work_string);
   free (request);
   return true;
 }

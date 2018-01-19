@@ -760,8 +760,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 
     if (!recode_scan_request (request, user_request))
       error (EXIT_FAILURE, 0, _("Request `%s' is erroneous"), user_request);
-    if (rewritten_request)
-      free (rewritten_request);
+    free (rewritten_request);
   }
 
   /* If we merely want source code, do it and get out.  */
