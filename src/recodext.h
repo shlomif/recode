@@ -351,7 +351,7 @@ struct recode_request
        to a single step, table production will fail.  */
     bool make_header_flag : 1;
 
-    /* For `latex' charset, it is often convenient to recode the diacritics
+    /* For `latex/bibtex' charsets, it is often convenient to recode the diacritics
        only, while letting other LaTeX code using backslashes unrecoded.  In
        the other charset, one can edit text as well as LaTeX directives.  */
     bool diacritics_only : 1;

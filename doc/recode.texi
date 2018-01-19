@@ -174,6 +174,7 @@ Various other charsets
 
 * HTML::                World Wide Web representations
 * LaTeX::               LaTeX macro calls
+* BibTeX::              BibTeX macro calls
 * Texinfo::             GNU project documentation files
 * Vietnamese::          Vietnamese charsets
 * African::             African charsets
@@ -1527,22 +1528,22 @@ is no @samp{[} in @code{fi}.
 @opindex --diacritics
 @cindex convert a subset of characters
 @cindex partial conversion
-While converting to or from one of @code{HTML} or @code{LaTeX}
+While converting to or from one of @code{HTML}, @code{LaTeX} or @code{BibTeX}
 charset, limit conversion to some subset of all characters.
 For @code{HTML}, limit conversion to the subset of all non-ASCII
-characters.  For @code{LaTeX}, limit conversion to the subset of all
+characters.  For @code{LaTeX} or @code{BibTeX}, limit conversion to the subset of all
 non-English letters.  This is particularly useful, for example, when
 people create what would be valid @code{HTML}, @TeX{} or La@TeX{}
 files, if only they were using provided sequences for applying
 diacritics instead of using the diacriticised characters directly
 from the underlying character set.
 
-While converting to @code{HTML} or @code{LaTeX} charset, this option
+While converting to @code{HTML}, @code{LaTeX} or @code{BibTeX} charset, this option
 assumes that characters not in the said subset are properly coded
-or protected already, Recode then transmit them literally.
+or protected already; Recode then transmits them literally.
 While converting the other way, this option prevents translating back
 coded or protected versions of characters not in the said subset.
-@xref{HTML}.  @xref{LaTeX}.
+@xref{HTML}.  @xref{LaTeX}.  @xref{BibTeX}.
 
 @ignore
 @item -M
@@ -2061,7 +2062,7 @@ will fail.
 
 @item diacritics_only
 @vindex diacritics_only
-This field is initially @code{false}.  For @code{HTML} and @code{LaTeX}
+This field is initially @code{false}.  For @code{HTML}, @code{LaTeX} and @code{BibTeX}
 charset, it is often convenient to recode the diacriticized characters
 only, while just not recoding other HTML code using ampersands or angular
 brackets, or La@TeX{} code using backslashes.  Set the field to @code{true}
@@ -3804,6 +3805,7 @@ wider @code{Unicode}, but this is being corrected as Recode evolves.
 @menu
 * HTML::                World Wide Web representations
 * LaTeX::               LaTeX macro calls
+* BibTeX::              BibTeX macro calls
 * Texinfo::             GNU project documentation files
 * Vietnamese::          Vietnamese charsets
 * African::             African charsets
@@ -3971,7 +3973,7 @@ recode h3..u2,u2..h3 < @var{input}
 @noindent
 then @samp{&AE;} should be normalised into @samp{&AElig;} by the operation.
 
-@node LaTeX, Texinfo, HTML, Miscellaneous
+@node LaTeX, BibTeX, HTML, Miscellaneous
 @section La@TeX{} macro calls
 
 @tindex LaTeX@r{, a charset}
@@ -3990,7 +3992,22 @@ it is not pure @TeX{}, nor it is pure other charset.  This translation
 of backslashes into @samp{\backslash@{@}} can be rather inconvenient,
 it may be inhibited through the command option @samp{-d} (@pxref{Mixed}).
 
-@node Texinfo, Vietnamese, LaTeX, Miscellaneous
+@node BibTeX, Texinfo, LaTeX, Miscellaneous
+@section Bib@TeX{} macro calls
+
+@tindex BibTeX@r{, a charset}
+@tindex btex
+@cindex Bib@TeX{} files
+@cindex @TeX{} files
+This charset is available in Recode under the name @code{BibTeX}
+with aliases @code{bibtex} and @code{btex}.  It is used for ASCII files coded to be
+read by Bib@TeX{} or, in certain cases, by La@TeX{} or @TeX{}.
+
+This charset is very similar to @code{LaTeX}. The only difference is that
+diacritics are enclosed between @samp{@{@}}. Refer to @code{LaTeX}
+charset for further information.  @xref{LaTeX}.
+
+@node Texinfo, Vietnamese, BibTeX, Miscellaneous
 @section GNU project documentation files
 
 @tindex Texinfo@r{, a charset}

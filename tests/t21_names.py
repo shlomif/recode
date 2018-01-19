@@ -36,6 +36,7 @@ ASMO_449 arabic7 iso-ir-89 ISO_9036
 AtariST
 baltic iso-ir-179
 Bang-Bang
+BibTeX bibtex btex
 BS_4730 gb ISO646-GB iso-ir-4 uk
 BS_viewdata iso-ir-47
 CDC-NOS NOS
