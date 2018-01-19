@@ -43,8 +43,8 @@ ALL_STEPS = $(C_STEPS) $(C_FALLBACKS) $(C_SURFACES)
 L_STEPS = ascilat1.l iso5426lat1.l ansellat1.l $(L_FALLBACKS) $(L_SURFACES)
 
 H_FALLBACKS =
-C_FALLBACKS = flat.c html.c lat1ltex.c lat1txte.c rfc1345.c texinfo.c
-L_FALLBACKS = ltexlat1.l txtelat1.l
+C_FALLBACKS = flat.c html.c lat1ltex.c lat1btex.c lat1txte.c rfc1345.c texinfo.c
+L_FALLBACKS = ltexlat1.l btexlat1.l txtelat1.l
 
 H_SURFACES = base64.h
 C_SURFACES = base64.c dump.c endline.c permut.c quoted.c
