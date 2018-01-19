@@ -484,50 +484,38 @@ static unsigned char const koi8r_to_iso8859_5[256-128] =
 bool
 module_varia (RECODE_OUTER outer)
 {
+  return
+
   /* Czech tables.  */
 
-  if (!declare_explode_data (outer, data_kamenicky, "KEYBCS2", NULL))
-    return false;
-  if (!declare_explode_data (outer, data_cork, "CORK", NULL))
-    return false;
-  if (!declare_explode_data (outer, data_koi8cs2, "KOI-8_CS2", NULL))
-    return false;
+       declare_explode_data (outer, data_kamenicky, "KEYBCS2", NULL)
+    && declare_explode_data (outer, data_cork, "CORK", NULL)
+    && declare_explode_data (outer, data_koi8cs2, "KOI-8_CS2", NULL)
 
-  if (!declare_alias (outer, "Kamenicky", "KEYBCS2"))
-    return false;
-  if (!declare_alias (outer, "T1", "CORK"))
-    return false;
+    && declare_alias (outer, "Kamenicky", "KEYBCS2")
+    && declare_alias (outer, "T1", "CORK")
 
 #if NOT_ACTIVE_YET
-  return
-    && declare_single(outer, "KOI8-R", "IBM866",
-		      outer->quality_byte_reversible,
-		      NULL, transform_byte_to_byte);
+    && declare_single (outer, "KOI8-R", "IBM866",
+                       outer->quality_byte_reversible,
+                       NULL, transform_byte_to_byte);
 
-    /* Suggested by Alexander L. Belikoff.  */
-    if (!declare_alias("866", "IBM866"))
-      return false;
-    if (!declare_alias("CP866", "IBM866"))
-      return false;
-    if (!declare_alias("alt", "IBM866"))
-      return false;
+  /* Suggested by Alexander L. Belikoff.  */
+    && declare_alias("866", "IBM866")
+    && declare_alias("CP866", "IBM866")
+    && declare_alias("alt", "IBM866")
 
-    /* Suggested by Alexander L. Belikoff.  */
-    if (!declare_alias ("1489", "KOI8-R"))
-      return false;
-    if (!declare_alias ("RFC1489", "KOI8-R"))
-      return false;
+  /* Suggested by Alexander L. Belikoff.  */
+    && declare_alias ("1489", "KOI8-R")
+    && declare_alias ("RFC1489", "KOI8-R")
 
-    /* Suggested by Alexander L. Belikoff.  */
-    if (!declare_alias ("878", "KOI8-R"))
-      return false;
-    if (!declare_alias ("CP878", "KOI8-R"))
-      return false;
-    if (!declare_alias ("IBM878", "KOI8-R");)
-      return false;
+  /* Suggested by Alexander L. Belikoff.  */
+    && declare_alias ("878", "KOI8-R")
+    && declare_alias ("CP878", "KOI8-R")
+    && declare_alias ("IBM878", "KOI8-R")
 #endif
 
-  return true;
+  ;
 }
 
 _GL_ATTRIBUTE_CONST void

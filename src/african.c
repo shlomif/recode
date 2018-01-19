@@ -108,28 +108,16 @@ static const unsigned short lin_data[] =
 bool
 module_african (RECODE_OUTER outer)
 {
-  if (!declare_explode_data (outer, ful_data, "AFRFUL-102-BPI_OCIL", NULL))
-    return false;
-  if (!declare_alias (outer, "bambara", "AFRFUL-102-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "bra", "AFRFUL-102-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "ewondo", "AFRFUL-102-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "fulfulde", "AFRFUL-102-BPI_OCIL"))
-    return false;
-  if (!declare_explode_data (outer, lin_data, "AFRLIN-104-BPI_OCIL", NULL))
-    return false;
-  if (!declare_alias (outer, "lingala", "AFRLIN-104-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "lin", "AFRLIN-104-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "sango", "AFRLIN-104-BPI_OCIL"))
-    return false;
-  if (!declare_alias (outer, "wolof", "AFRLIN-104-BPI_OCIL"))
-    return false;
-
-  return true;
+  return declare_explode_data (outer, ful_data, "AFRFUL-102-BPI_OCIL", NULL)
+    && declare_alias (outer, "bambara", "AFRFUL-102-BPI_OCIL")
+    && declare_alias (outer, "bra", "AFRFUL-102-BPI_OCIL")
+    && declare_alias (outer, "ewondo", "AFRFUL-102-BPI_OCIL")
+    && declare_alias (outer, "fulfulde", "AFRFUL-102-BPI_OCIL")
+    && declare_explode_data (outer, lin_data, "AFRLIN-104-BPI_OCIL", NULL)
+    && declare_alias (outer, "lingala", "AFRLIN-104-BPI_OCIL")
+    && declare_alias (outer, "lin", "AFRLIN-104-BPI_OCIL")
+    && declare_alias (outer, "sango", "AFRLIN-104-BPI_OCIL")
+    && declare_alias (outer, "wolof", "AFRLIN-104-BPI_OCIL");
 }
 
 _GL_ATTRIBUTE_CONST void
