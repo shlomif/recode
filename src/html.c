@@ -28,7 +28,7 @@
 /* Tables.  */
 
 /* The following entities, said to be from Emacs-w3, are ignored for the
-   time being, as recode is not too fond on graphical approximations:
+   time being, as recode is not too fond of graphical approximations:
 
 	&ensp;          \
 	&emsp;          \ \
@@ -382,7 +382,7 @@ static struct ucs2_to_string translations [] =
 
 #undef ENTRY
 
-/* UCS-2 towards HTML.  */
+/* UCS-2 to HTML.  */
 
 /*-------------------------------------.
 | Return hash value given TABLE_SIZE.  |
@@ -559,7 +559,7 @@ transform_ucs2_html (RECODE_SUBTASK subtask)
   SUBTASK_RETURN (subtask);
 }
 
-/* HTML towards UCS-2.  */
+/* HTML to UCS-2.  */
 
 #define ENTITY_BUFFER_LENGTH 20
 
