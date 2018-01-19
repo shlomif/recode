@@ -821,7 +821,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      if (file = fopen (input_name, "r+"), file == NULL)
 		error (EXIT_FAILURE, errno, "fopen (%s)", input_name);
 
-	      /* Save the input file attrobites.  */
+	      /* Save the input file attributes.  */
 
 	      fstat (fileno (file), &file_stat);
 	      fclose (file);
