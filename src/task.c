@@ -52,14 +52,15 @@ void
 put_byte (int byte, RECODE_SUBTASK subtask)
 {
   if (subtask->output.file)
-    putc (byte, subtask->output.file);
+    {
+      if (putc (byte, subtask->output.file) == EOF)
+        recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+    }
   else if (subtask->output.cursor == subtask->output.limit)
     {
       RECODE_OUTER outer = subtask->task->request->outer;
       size_t old_size = subtask->output.limit - subtask->output.buffer;
       size_t new_size = old_size * 3 / 2 + 40;
-
-      /* FIXME: Rethink about how the error should be reported.  */
 
       if (REALLOC (subtask->output.buffer, new_size, char))
 	{
@@ -67,6 +68,8 @@ put_byte (int byte, RECODE_SUBTASK subtask)
 	  subtask->output.limit = subtask->output.buffer + new_size;
 	  *subtask->output.cursor++ = byte;
 	}
+      else
+        recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
     }
   else
     *subtask->output.cursor++ = byte;
@@ -113,12 +116,14 @@ transform_mere_copy (RECODE_SUBTASK subtask)
 	if (fwrite (buffer, BUFFER_SIZE, 1, subtask->output.file) != 1)
 	  {
 	    recode_perror (NULL, "fwrite ()");
+	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	    return false;
 	  }
       if (size > 0)
 	if (fwrite (buffer, size, 1, subtask->output.file) != 1)
 	  {
 	    recode_perror (NULL, "fwrite ()");
+	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	    return false;
 	  }
     }
@@ -143,6 +148,7 @@ transform_mere_copy (RECODE_SUBTASK subtask)
 	    != 1)
 	  {
 	    recode_perror (NULL, "fwrite ()");
+	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	    return false;
 	  }
     }
@@ -205,20 +211,18 @@ transform_byte_to_variable (RECODE_SUBTASK subtask)
 
 /*---------------------------------------------------------------------.
 | Execute the conversion sequence for a recoding TASK, using several   |
-| passes with two alternating memory buffers.  This routine assumes at |
-| least one needed recoding step.                                      |
+| passes with two alternating memory buffers or intermediate files.    |
+| This routine assumes at least one needed recoding step.              |
 `---------------------------------------------------------------------*/
 
 static bool
-perform_memory_sequence (RECODE_TASK task)
+perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 {
   RECODE_CONST_REQUEST request = task->request;
   struct recode_subtask subtask_block;
   RECODE_SUBTASK subtask = &subtask_block;
   struct recode_read_write_text input;
   struct recode_read_write_text output;
-  unsigned sequence_index;
-  RECODE_CONST_STEP step;
 
   memset (subtask, 0, sizeof (struct recode_subtask));
   memset (&input, 0, sizeof (struct recode_read_write_text));
@@ -227,11 +231,14 @@ perform_memory_sequence (RECODE_TASK task)
 
   /* Execute one pass for each step of the sequence.  */
 
-  for (sequence_index = 0;
+  for (unsigned sequence_index = 0;
        sequence_index < (unsigned)request->sequence_length
 	 && task->error_so_far < task->abort_level;
        sequence_index++)
     {
+      RECODE_CONST_STEP step = request->sequence_array + sequence_index;
+      subtask->step = step;
+
       /* Select the input text for this step.  */
 
       if (sequence_index == 0)
@@ -246,7 +253,8 @@ perform_memory_sequence (RECODE_TASK task)
 		       subtask->input.file == NULL)
 		{
 		  recode_perror (NULL, "fopen (%s)", subtask->input.name);
-		  return false;
+		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                  goto exit;
 		}
 	    }
 	}
@@ -255,6 +263,15 @@ perform_memory_sequence (RECODE_TASK task)
 	  subtask->input.buffer = input.buffer;
 	  subtask->input.cursor = input.buffer;
 	  subtask->input.limit = input.cursor;
+	  subtask->input.file = input.file;
+
+	  if (strategy == RECODE_SEQUENCE_WITH_FILES &&
+	      fseek (subtask->input.file, 0L, SEEK_SET) != 0)
+	    {
+	      recode_perror (NULL, "fseek (%s)", subtask->input.name);
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      goto exit;
+	    }
 	}
 
       /* Select the output text for this step.  */
@@ -262,7 +279,27 @@ perform_memory_sequence (RECODE_TASK task)
       if (sequence_index < (unsigned)request->sequence_length - 1)
 	{
 	  subtask->output = output;
-	  subtask->output.cursor = subtask->output.buffer;
+
+	  switch (strategy)
+	    {
+	    case RECODE_SEQUENCE_IN_MEMORY:
+	      subtask->output = output;
+	      subtask->output.cursor = subtask->output.buffer;
+	      break;
+
+	    case RECODE_SEQUENCE_WITH_FILES:
+	      if (subtask->output.file = tmpfile (), subtask->output.file == NULL)
+		{
+		  recode_perror (NULL, "tmpfile ()");
+		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+		  goto exit;
+		}
+	      break;
+
+	    default: /* Should never happen */
+	      recode_if_nogo (RECODE_INTERNAL_ERROR, subtask);
+	      break;
+	    }
 	}
       else
 	{
@@ -272,33 +309,39 @@ perform_memory_sequence (RECODE_TASK task)
 	    {
 	      if (!*subtask->output.name)
 		subtask->output.file = stdout;
-	      else if (subtask->output.file = fopen (subtask->output.name,
-						     "w"),
+	      else if (subtask->output.file = fopen (subtask->output.name, "w"),
 		       subtask->output.file == NULL)
 		{
 		  recode_perror (NULL, "fopen (%s)", subtask->output.name);
-		  return false;
+		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                  goto exit;
 		}
 	    }
 	}
 
       /* Execute one recoding step.  */
 
-      step = request->sequence_array + sequence_index;
-      subtask->step = step;
       (*step->transform_routine) (subtask);
 
       /* Post-step clean up.  */
 
+      if (subtask->input.file)
+	{
+	  FILE *fp = subtask->input.file;
+
+	  subtask->input.file = NULL;
+	  if (fclose (fp) != 0)
+	    {
+	      recode_perror (NULL, "fclose (%s)", subtask->input.name);
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      goto exit;
+	    }
+	}
+
       if (sequence_index == 0)
 	{
-	  if (subtask->input.name && *subtask->input.name)
-	    fclose (subtask->input.file);
-
 	  task->input = subtask->input;
-
-	  subtask->input.name = NULL;
-	  subtask->input.file = NULL;
+	  memset (&subtask->input, 0, sizeof (struct recode_read_write_text));
 	}
 
       /* Prepare for next step.  */
@@ -309,157 +352,28 @@ perform_memory_sequence (RECODE_TASK task)
 	{
 	  output = input;
 	  input = subtask->output;
-	}
-      else
-	{
-	  if (subtask->output.name && *subtask->output.name)
-	    fclose (subtask->output.file);
-
-	  task->output = subtask->output;
 	}
     }
 
   /* Final clean up.  */
+ exit:
 
-  /* FIXME: Maybe we should manage this so it could wait, instead, for
-     avoiding buffer reallocation each time a new recoding is done?  */
+  if (subtask->input.file && fclose (subtask->input.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->input.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+    }
+
+  if (subtask->output.file && fclose (subtask->output.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->output.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+    }
 
   free (input.buffer);
   free (output.buffer);
 
-  SUBTASK_RETURN (subtask);
-}
-
-/*-------------------------------------------------------------------------.
-| Execute the conversion sequence for a recoding TASK, using several       |
-| passes with two alternating intermediate files.  This routine assumes at |
-| least one needed recoding step.                                          |
-`-------------------------------------------------------------------------*/
-
-static bool
-perform_pass_sequence (RECODE_TASK task)
-{
-  RECODE_CONST_REQUEST request = task->request;
-  struct recode_subtask subtask_block;
-  RECODE_SUBTASK subtask = &subtask_block;
-  struct recode_read_write_text input;
-  struct recode_read_write_text output;
-  unsigned sequence_index;
-  RECODE_CONST_STEP step;
-
-  memset (subtask, 0, sizeof (struct recode_subtask));
-  memset (&input, 0, sizeof (struct recode_read_write_text));
-  memset (&output, 0, sizeof (struct recode_read_write_text));
-  subtask->task = task;
-
-  /* Execute one pass for each step of the sequence.  */
-
-  for (sequence_index = 0;
-       sequence_index < (unsigned)request->sequence_length
-	 && task->error_so_far < task->abort_level;
-       sequence_index++)
-    {
-      step = request->sequence_array + sequence_index;
-      subtask->step = step;
-
-      /* Select the input text for this step.  */
-
-      if (sequence_index == 0)
-	{
-	  subtask->input = task->input;
-
-	  if (subtask->input.name)
-	    {
-	      if (!*subtask->input.name)
-		subtask->input.file = stdin;
-	      else if (subtask->input.file = fopen (subtask->input.name, "r"),
-		       subtask->input.file == NULL)
-		{
-		  recode_perror (NULL, "fopen (%s)", subtask->input.name);
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  return false;
-		}
-	    }
-	}
-      else
-	{
-	  subtask->input.file = input.file;
-	  rewind (subtask->input.file);
-	}
-
-      /* Select the output text for this step.  */
-
-      if (sequence_index < (unsigned)request->sequence_length - 1)
-	{
-	  subtask->output = output;
-
-	  if (subtask->output.file = tmpfile (), subtask->output.file == NULL)
-	    {
-	      recode_perror (NULL, "tmpfile ()");
-	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	      return false;
-	    }
-	}
-      else
-	{
-	  subtask->output = task->output;
-
-	  if (subtask->output.name)
-	    {
-	      if (!*subtask->output.name)
-		subtask->output.file = stdout;
-	      else if (subtask->output.file = fopen (subtask->output.name,
-						     "w"),
-		       subtask->output.file == NULL)
-		{
-		  recode_perror (NULL, "fopen (%s)", subtask->output.name);
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  return false;
-		}
-	    }
-	}
-
-      /* Execute one recoding step.  */
-
-      (*step->transform_routine) (subtask);
-
-      /* Post-step clean up.  */
-
-      if (sequence_index == 0)
-	{
-	  if (subtask->input.name && *subtask->input.name)
-	    fclose (subtask->input.file);
-
-	  task->input = subtask->input;
-
-	  subtask->input.name = NULL;
-	  subtask->input.buffer = NULL;
-	  subtask->input.cursor = NULL;
-	  subtask->input.limit = NULL;
-	}
-      else
-	{
-	  fclose (subtask->input.file);
-	}
-
-      /* Prepare for next step.  */
-
-      task->swap_input = RECODE_SWAP_UNDECIDED;
-
-      if (sequence_index < (unsigned)request->sequence_length - 1)
-	{
-	  output = input;
-	  input = subtask->output;
-	}
-      else
-	{
-	  if (subtask->output.name && *subtask->output.name)
-	    fclose (subtask->output.file);
-
-	  task->output = subtask->output;
-	}
-    }
-
+  task->output = subtask->output;
   SUBTASK_RETURN (subtask);
 }
 
@@ -522,12 +436,14 @@ perform_pipe_sequence (RECODE_TASK task)
       if (pipe (pipe_pair) < 0)
 	{
 	  recode_perror (outer, "pipe ()");
-	  return false;
+	  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	  SUBTASK_RETURN (subtask);
 	}
       if (child_process = fork (), child_process < 0)
 	{
 	  recode_perror (outer, "fork ()");
-	  return false;
+	  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	  SUBTASK_RETURN (subtask);
 	}
       if (child_process == 0)
 	{
@@ -537,23 +453,31 @@ perform_pipe_sequence (RECODE_TASK task)
 	  if (close (pipe_pair[1]) < 0)
 	    {
 	      recode_perror (outer, "close ()");
-	      return false;
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      SUBTASK_RETURN (subtask);
 	    }
 	  if (subtask->input.file = fdopen (pipe_pair[0], "r"),
 	      subtask->input.file == NULL)
 	    {
 	      recode_perror (outer, "fdopen ()");
-	      return false;
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      SUBTASK_RETURN (subtask);
 	    }
 
 	  step = request->sequence_array + sequence_index;
 	  subtask->step = step;
 	  (*step->transform_routine) (subtask);
 
-	  fclose (subtask->input.file);
-	  if (sequence_index < (unsigned)request->sequence_length - 1
-	      || *subtask->output.name)
-	    fclose (subtask->output.file);
+	  if (fclose (subtask->input.file) != 0)
+	    {
+              recode_perror (NULL, "fclose (%s)", subtask->input.name);
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	    }
+	  if (subtask->output.file && fclose (subtask->output.file) != 0)
+            {
+              recode_perror (NULL, "fclose (%s)", subtask->output.name);
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+            }
 
 	  exit (task->error_so_far < task->fail_level ? EXIT_SUCCESS
 		: EXIT_FAILURE);
@@ -565,17 +489,20 @@ perform_pipe_sequence (RECODE_TASK task)
 	  if (dup2 (pipe_pair[1], fileno (subtask->output.file)) < 0)
 	    {
 	      recode_perror (outer, "dup2 ()");
-	      return false;
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      SUBTASK_RETURN (subtask);
 	    }
 	  if (close (pipe_pair[0]) < 0)
 	    {
 	      recode_perror (outer, "close ()");
-	      return false;
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      SUBTASK_RETURN (subtask);
 	    }
 	  if (close (pipe_pair[1]) < 0)
 	    {
 	      recode_perror (outer, "close ()");
-	      return false;
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+	      SUBTASK_RETURN (subtask);
 	    }
 	}
     }
@@ -589,17 +516,23 @@ perform_pipe_sequence (RECODE_TASK task)
 	   subtask->input.file == NULL)
     {
       recode_perror (outer, "fopen (%s)", subtask->input.name);
-      return false;
+      SUBTASK_RETURN (subtask);
     }
 
   step = request->sequence_array;
   subtask->step = step;
   (*step->transform_routine) (subtask);
 
-  if (*subtask->input.name)
-    fclose (subtask->input.file);
-
-  fclose (subtask->output.file);
+  if (subtask->input.file && fclose (subtask->input.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->input.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+    }
+  if (subtask->output.file && fclose (subtask->output.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->output.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+    }
 
   /* Wait on all children, mainly to avoid synchronisation problems on
      output file contents, but also to reduce the number of zombie
@@ -724,10 +657,18 @@ perform_pipe_sequence (RECODE_TASK task)
 	  subtask->step = step;
 	  (*step->transform_routine) (subtask);
 
-	  fclose (subtask->input.file);
-	  if (sequence_index < request->sequence_length - 1
-	      || *subtask->output.name)
-	    fclose (subtask->output.file);
+	  if (subtask->input.file && fclose (subtask->input.file) != 0)
+	    {
+              recode_perror (NULL, "fclose (%s)", subtask->input.name);
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+              return false;
+	    }
+	  if (subtask->output.file && fclose (subtask->output.file) != 0)
+            {
+              recode_perror (NULL, "fclose (%s)", subtask->output.name);
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+              return false;
+            }
 
 	  exit (task->error_so_far < task->fail_level ? EXIT_SUCCESS
 		: EXIT_FAILURE);
@@ -739,16 +680,19 @@ perform_pipe_sequence (RECODE_TASK task)
 	  if (dup2 (pipe_pair[1], fileno (subtask->output.file)) < 0)
 	    {
 	      recode_perror (outer, "dup2 ()");
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
 	  if (close (pipe_pair[0]) < 0)
 	    {
 	      recode_perror (outer, "close ()");
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
 	  if (close (pipe_pair[1]) < 0)
 	    {
 	      recode_perror (outer, "close ()");
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
 	}
@@ -766,6 +710,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	   subtask->input.file == NULL)
     {
       recode_perror (outer, "fopen (%s)", subtask->input.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
       return false;
     }
 
@@ -773,10 +718,19 @@ perform_pipe_sequence (RECODE_TASK task)
   subtask->step = step;
   (*step->transform_routine) (subtask);
 
-  if (*subtask->input.name)
-    fclose (subtask->input.file);
+  if (subtask->input.file && fclose (subtask->input.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->input.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+      return false;
+    }
 
-  fclose (subtask->output.file);
+  if (subtask->output.file && fclose (subtask->output.file) != 0)
+    {
+      recode_perror (NULL, "fclose (%s)", subtask->output.name);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+      return false;
+    }
 
   /* Wait on all children, mainly to avoid synchronisation problems on
      output file contents, but also to reduce the number of zombie
@@ -792,6 +746,7 @@ perform_pipe_sequence (RECODE_TASK task)
 	{
 	  recode_error (outer, _("Child process wait status is 0x%0.2x"),
 			wait_status);
+	  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	  return false;
 	}
 
@@ -919,13 +874,13 @@ recode_perform_task (RECODE_TASK task)
 
 	if ((task->input.name || task->input.file)
 	    && (task->output.name || task->output.file))
-	  success = perform_pass_sequence (task);
+	  success = perform_sequence (task, RECODE_SEQUENCE_WITH_FILES);
 	else
-	  success = perform_memory_sequence (task);
+	  success = perform_sequence (task, RECODE_SEQUENCE_IN_MEMORY);
 	break;
 
       case RECODE_SEQUENCE_IN_MEMORY:
-	success = perform_memory_sequence (task);
+	success = perform_sequence (task, RECODE_SEQUENCE_IN_MEMORY);
 	break;
 
       case RECODE_SEQUENCE_WITH_PIPE:
@@ -937,7 +892,7 @@ recode_perform_task (RECODE_TASK task)
 #endif
 
       case RECODE_SEQUENCE_WITH_FILES:
-	success = perform_pass_sequence (task);
+	success = perform_sequence (task, RECODE_SEQUENCE_WITH_FILES);
 	break;
 
       default:
@@ -963,6 +918,7 @@ recode_perform_task (RECODE_TASK task)
 		   subtask->input.file == NULL)
 	    {
 	      recode_perror (NULL, "fopen (%s)", subtask->input.name);
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
 	}
@@ -975,6 +931,7 @@ recode_perform_task (RECODE_TASK task)
 		   subtask->output.file == NULL)
 	    {
 	      recode_perror (NULL, "fopen (%s)", subtask->output.name);
+	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 	      return false;
 	    }
 	}
@@ -991,10 +948,18 @@ recode_perform_task (RECODE_TASK task)
 
       task->output = subtask->output;
 
-      if (subtask->input.name && *subtask->input.name)
-	fclose (subtask->input.file);
-      if (subtask->output.name && *subtask->output.name)
-	fclose (subtask->output.file);
+      if (subtask->input.file && fclose (subtask->input.file) != 0)
+	{
+          recode_perror (NULL, "fclose (%s)", subtask->input.name);
+          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+          return false;
+	}
+      if (subtask->output.file && fclose (subtask->output.file) != 0)
+        {
+          recode_perror (NULL, "fclose (%s)", subtask->output.name);
+          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+          return false;
+        }
     }
 
   return success;
