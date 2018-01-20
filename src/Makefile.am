@@ -63,7 +63,10 @@ libmerged_la_SOURCES = merged.c
 libmerged_la_CPPFLAGS = $(NON_WARN_CFLAGS)
 
 loc:
-	cloc $(ALL_STEPS) $(L_STEPS) common.h $(H_FALLBACKS) $(H_SURFACES) \
+	cloc \
+	charname.c combine.c fr-charname.c iconv.c \
+	names.c outer.c recode.c request.c task.c \
+	$(ALL_STEPS) $(L_STEPS) common.h $(H_FALLBACKS) $(H_SURFACES) \
 	$(top_srcdir)/tables.py mergelex.py $(top_srcdir)/tests/Recode.pyx \
 	Makefile.am $(top_srcdir)/configure.ac $(top_srcdir)/Makefile.am \
 	$(top_srcdir)/doc/Makefile.am $(top_srcdir)/tests/Makefile.am $(top_srcdir)/bootstrap.conf
