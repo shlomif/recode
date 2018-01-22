@@ -134,12 +134,10 @@ task_perror (RECODE_CONST_TASK task)
 | Signal handler.  |
 `-----------------*/
 
-static bool interrupted = 0;	/* set when some signal has been received */
-
 static void
 signal_handler (int number)
 {
-  interrupted = 1;
+  recode_interrupted = 1;
   signal (number, signal_handler);
 }
 

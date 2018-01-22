@@ -234,6 +234,8 @@ struct recode_surface_list
 | Description of a single step of recoding.  |
 `-------------------------------------------*/
 
+extern bool recode_interrupted;
+
 typedef bool (*Recode_init) (RECODE_STEP, RECODE_CONST_REQUEST,
                              RECODE_CONST_OPTION_LIST,
                              RECODE_CONST_OPTION_LIST);
