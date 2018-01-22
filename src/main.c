@@ -227,7 +227,6 @@ Operation modes:\n\
   -q, --quiet, --silent   inhibit messages about irreversible recodings\n\
   -f, --force             force recodings even when not reversible\n\
   -t, --touch             touch the recoded files after replacement\n\
-  -i, --sequence=files    use intermediate files for sequencing passes\n\
       --sequence=memory   use memory buffers for sequencing passes\n\
 "),
 	     stdout);
@@ -393,11 +392,8 @@ main (int argc, char *const *argv)
 	    usage (EXIT_FAILURE, 0);
 
 	  case 0:
-	    task_option.strategy = RECODE_SEQUENCE_IN_MEMORY;
-	    break;
-
 	  case 1:
-	    task_option.strategy = RECODE_SEQUENCE_WITH_FILES;
+	    task_option.strategy = RECODE_SEQUENCE_IN_MEMORY;
 	    break;
 
 	  case 2:
@@ -501,7 +497,7 @@ main (int argc, char *const *argv)
 	break;
 
       case 'i':
-	task_option.strategy = RECODE_SEQUENCE_WITH_FILES;
+	task_option.strategy = RECODE_SEQUENCE_IN_MEMORY;
 	break;
 
       case 'k':
@@ -789,13 +785,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
     if (optind < argc)
       {
 	/* When reading and writing files, unless the user selected
-	   otherwise, avoid forking and use intermediate files.  */
-
-	/* FIXME: On a file per file basis, force recoding to be done in
-	   memory whenever files are small, which is the usual case.  */
+	   otherwise, avoid forking and use memory.  */
 
 	if (task->strategy == RECODE_STRATEGY_UNDECIDED)
-	  task->strategy = RECODE_SEQUENCE_WITH_FILES;
+	  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
 
 	/* In case files are recoded over themselves and there is no
 	   recoding step at all, do not even try to touch the files.  */

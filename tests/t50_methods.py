@@ -11,64 +11,48 @@ def test_1():
     # No step at all.
     yield validate, 'texte..texte', 'memory', 'filter'
     yield validate, 'texte..texte', 'memory', 'squash'
-    yield validate, 'texte..texte', 'files', 'filter'
-    yield validate, 'texte..texte', 'files', 'squash'
     yield validate, 'texte..texte', 'pipe', 'filter'
     yield validate, 'texte..texte', 'pipe', 'squash'
 
     # One single step.
     yield validate, 'latin1..ibmpc/', 'memory', 'filter'
     yield validate, 'latin1..ibmpc/', 'memory', 'squash'
-    yield validate, 'latin1..ibmpc/', 'files', 'filter'
-    yield validate, 'latin1..ibmpc/', 'files', 'squash'
     yield validate, 'latin1..ibmpc/', 'pipe', 'filter'
     yield validate, 'latin1..ibmpc/', 'pipe', 'squash'
 
     # One single step and a surface
     yield validate, 'latin1..ibmpc', 'memory', 'filter'
     yield validate, 'latin1..ibmpc', 'memory', 'squash'
-    yield validate, 'latin1..ibmpc', 'files', 'filter'
-    yield validate, 'latin1..ibmpc', 'files', 'squash'
     yield validate, 'latin1..ibmpc', 'pipe', 'filter'
     yield validate, 'latin1..ibmpc', 'pipe', 'squash'
 
     # One single step.
     yield validate, 'texte..latin1', 'memory', 'filter'
     yield validate, 'texte..latin1', 'memory', 'squash'
-    yield validate, 'texte..latin1', 'files', 'filter'
-    yield validate, 'texte..latin1', 'files', 'squash'
     yield validate, 'texte..latin1', 'pipe', 'filter'
     yield validate, 'texte..latin1', 'pipe', 'squash'
 
     # Two single steps.
     yield validate, 'texte..bangbang', 'memory', 'filter'
     yield validate, 'texte..bangbang', 'memory', 'squash'
-    yield validate, 'texte..bangbang', 'files', 'filter'
-    yield validate, 'texte..bangbang', 'files', 'squash'
     yield validate, 'texte..bangbang', 'pipe', 'filter'
     yield validate, 'texte..bangbang', 'pipe', 'squash'
 
     # Two single steps and a surface.
     yield validate, 'texte..ibmpc', 'memory', 'filter'
     yield validate, 'texte..ibmpc', 'memory', 'squash'
-    yield validate, 'texte..ibmpc', 'files', 'filter'
-    yield validate, 'texte..ibmpc', 'files', 'squash'
     yield validate, 'texte..ibmpc', 'pipe', 'filter'
     yield validate, 'texte..ibmpc', 'pipe', 'squash'
 
     # Three single steps.
     yield validate, 'texte..iconqnx', 'memory', 'filter'
     yield validate, 'texte..iconqnx', 'memory', 'squash'
-    yield validate, 'texte..iconqnx', 'files', 'filter'
-    yield validate, 'texte..iconqnx', 'files', 'squash'
     yield validate, 'texte..iconqnx', 'pipe', 'filter'
     yield validate, 'texte..iconqnx', 'pipe', 'squash'
 
     # Four single steps, optimized into three (with iconv) or two (without).
     yield validate, 'ascii-bs..ebcdic', 'memory', 'filter'
     yield validate, 'ascii-bs..ebcdic', 'memory', 'squash'
-    yield validate, 'ascii-bs..ebcdic', 'files', 'filter'
-    yield validate, 'ascii-bs..ebcdic', 'files', 'squash'
     yield validate, 'ascii-bs..ebcdic', 'pipe', 'filter'
     yield validate, 'ascii-bs..ebcdic', 'pipe', 'squash'
 

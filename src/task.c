@@ -260,7 +260,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
       child_process = -1;
       subtask->output = task->output;
 
-      if (strategy == RECODE_SEQUENCE_IN_MEMORY || strategy == RECODE_SEQUENCE_WITH_FILES)
+      if (strategy == RECODE_SEQUENCE_IN_MEMORY)
 	if (sequence_index > 0)
 	  {
 	    /* Select the input text for this step.  */
@@ -269,14 +269,6 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	    subtask->input.cursor = input.buffer;
 	    subtask->input.limit = input.cursor;
 	    subtask->input.file = input.file;
-
-	    if (strategy == RECODE_SEQUENCE_WITH_FILES &&
-		fseek (subtask->input.file, 0L, SEEK_SET) != 0)
-	      {
-		recode_perror (NULL, "fseek (%s)", subtask->input.name);
-		recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		goto exit;
-	      }
 	  }
 
       /* Select the output text for this step.  */
@@ -288,15 +280,6 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	    case RECODE_SEQUENCE_IN_MEMORY:
 	      subtask->output = output;
 	      subtask->output.cursor = subtask->output.buffer;
-	      break;
-
-	    case RECODE_SEQUENCE_WITH_FILES:
-	      if (subtask->output.file = tmpfile (), subtask->output.file == NULL)
-		{
-		  recode_perror (NULL, "tmpfile ()");
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  goto exit;
-		}
 	      break;
 
 #if HAVE_PIPE
@@ -401,7 +384,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	    break;	/* parent process: escape from loop */
 	}
 
-      if (strategy != RECODE_SEQUENCE_WITH_PIPE)
+      if (strategy == RECODE_SEQUENCE_IN_MEMORY)
 	{
 	  /* Post-step clean up.  */
 
@@ -572,21 +555,14 @@ recode_perform_task (RECODE_TASK task)
     {
     case RECODE_SEQUENCE_WITH_PIPE:
 #if !HAVE_PIPE
-      strategy = RECODE_SEQUENCE_WITH_FILES;
+      strategy = RECODE_SEQUENCE_IN_MEMORY;
 #endif
     case RECODE_SEQUENCE_IN_MEMORY:
-    case RECODE_SEQUENCE_WITH_FILES:
       break;
 
-    case RECODE_STRATEGY_UNDECIDED:
     default: /* This should not happen, but if it does, try to recover.  */
-      /* Let's use only memory if either end is memory, or only temporary
-	 files if both ends are files.  This is a crude choice, FIXME! */
-      if ((task->input.name || task->input.file)
-	  && (task->output.name || task->output.file))
-	strategy = RECODE_SEQUENCE_WITH_FILES;
-      else
-	strategy = RECODE_SEQUENCE_IN_MEMORY;
+    case RECODE_STRATEGY_UNDECIDED:
+      strategy = RECODE_SEQUENCE_IN_MEMORY;
       break;
     }
 
