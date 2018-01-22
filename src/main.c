@@ -69,7 +69,7 @@ static bool quiet_flag = false;
 
 /* If the recoding yields some problems in reversibility in some file, this
    file replacement is denied and it is left unrecoded or, if recode is used
-   as a mere filter, the recoding is interrupted.  The following flag forces
+   as a mere filter, the recoding is aborted.  The following flag forces
    the recoding to run to completion and the replacement to be done even if
    the recoding is not reversible.  */
 static bool force_flag = false;
