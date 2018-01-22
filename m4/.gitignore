@@ -129,3 +129,5 @@ gnulib-comp.m4
 /stat-time.m4
 /stat.m4
 /sys_stat_h.m4
+/fcntl_h.m4
+/isatty.m4
