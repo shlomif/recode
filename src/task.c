@@ -26,6 +26,8 @@
 
 #include "xbinary-io.h"
 
+bool recode_interrupted = 0;	/* set by signal handler when some signal has been received */
+
 /* Buffer size used in transform_mere_copy.  */
 #define BUFFER_SIZE (16 * 1024)
 
@@ -275,15 +277,15 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
       if (sequence_index + 1 < (unsigned)request->sequence_length)
 	{
-	  switch (strategy)
-	    {
-	    case RECODE_SEQUENCE_IN_MEMORY:
+          if (strategy == RECODE_SEQUENCE_IN_MEMORY)
+            {
 	      subtask->output = output;
 	      subtask->output.cursor = subtask->output.buffer;
-	      break;
+            }
 
 #if HAVE_PIPE
-	    case RECODE_SEQUENCE_WITH_PIPE:
+          if (strategy == RECODE_SEQUENCE_WITH_PIPE)
+            {
 	      /* Create all subprocesses, from the first to the last, and
 		 interconnect them.  */
 
@@ -339,13 +341,8 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		      SUBTASK_RETURN (subtask);
 		    }
 		}
-	      break;
+            }
 #endif
-
-	    default: /* Should never happen */
-	      recode_if_nogo (RECODE_INTERNAL_ERROR, subtask);
-	      break;
-	    }
 	}
       else
 	{
@@ -382,11 +379,8 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
 	  if (strategy == RECODE_SEQUENCE_WITH_PIPE)
 	    break;	/* parent process: escape from loop */
-	}
 
-      if (strategy == RECODE_SEQUENCE_IN_MEMORY)
-	{
-	  /* Post-step clean up.  */
+	  /* Post-step clean up for memory sequence.  */
 
 	  if (subtask->input.file)
 	    {
@@ -472,15 +466,13 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		  }
 	    }
 
-#if 0
-	  if (interrupted) /* FIXME: interrupted is static in main.c */
+	  if (recode_interrupted)
 	    /* FIXME: It is not very clear what happened in sub-processes.  */
 	    if (task->error_so_far < task->fail_level)
 	      {
 		task->error_so_far = task->fail_level;
 		task->error_at_step = request->sequence_array + (unsigned)request->sequence_length - 1;
 	      }
-#endif
 	}
     }
   else
