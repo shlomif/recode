@@ -415,7 +415,6 @@ enum recode_sequence_strategy
   {
     RECODE_STRATEGY_UNDECIDED,	/* sequencing strategy is undecided yet */
     RECODE_SEQUENCE_IN_MEMORY,	/* keep intermediate recodings in memory */
-    RECODE_SEQUENCE_WITH_FILES,	/* do not fork, use intermediate files */
     RECODE_SEQUENCE_WITH_PIPE	/* fork processes connected with `pipe(2)' */
   };
 

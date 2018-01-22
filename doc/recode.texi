@@ -1439,21 +1439,18 @@ behaviour, which is also explained below.
 @cindex memory sequencing
 When the recoding requires a combination of two or more elementary
 recoding steps, this option forces many passes over the data, using
-in-memory buffers to hold all intermediary results.
-@c This should be the default behaviour when
-@c files to be recoded are @emph{small} enough.
+in-memory buffers to hold all intermediate results.
+If this option is selected in filter
+mode, that is, when the program reads standard input and writes standard
+output, it might take longer for programs further down the pipe chain to
+start receiving some recoded data.
 
 @item -i
 @itemx --sequence=files
 @opindex -i
 @cindex file sequencing
-When the recoding requires a combination of two or more elementary
-recoding steps, this option forces many passes over the data, using
-intermediate files between passes.  This is the default behaviour when
-files are recoded over themselves.  If this option is selected in filter
-mode, that is, when the program reads standard input and writes standard
-output, it might take longer for programs further down the pipe chain to
-start receiving some recoded data.
+This option is accepted for backwards compatibility, and acts like
+@samp{--sequence=memory}.
 
 @item -p
 @itemx --sequence=pipe
@@ -2405,9 +2402,6 @@ the header file @file{recodext.h}.  Other possible values are:
 @item RECODE_SEQUENCE_IN_MEMORY
 @vindex RECODE_SEQUENCE_IN_MEMORY
 Keep intermediate recodings in memory.
-@item RECODE_SEQUENCE_WITH_FILES
-@vindex RECODE_SEQUENCE_WITH_FILES
-Do not fork, use intermediate files.
 @item RECODE_SEQUENCE_WITH_PIPE
 @vindex RECODE_SEQUENCE_WITH_PIPE
 Fork processes connected with @code{pipe(2)}.
