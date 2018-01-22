@@ -20,10 +20,6 @@
 #include "config.h"
 #include "cleaner.h"
 
-#if MSDOS || WIN32 || _WIN32 || OS2
-# define DOSWIN_OR_OS2 1
-#endif
-
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>

@@ -131,3 +131,10 @@ gnulib-comp.m4
 /sys_stat_h.m4
 /fcntl_h.m4
 /isatty.m4
+/gettimeofday.m4
+/localtime-buffer.m4
+/mkstemps.m4
+/sys_time_h.m4
+/tempname.m4
+/xstrndup.m4
+/vasprintf.m4

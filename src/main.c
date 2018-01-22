@@ -19,10 +19,12 @@
 #include "common.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <ctype.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <libgen.h>
 #include <utime.h>
 #include <setjmp.h>
 
@@ -805,7 +807,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	  for (; optind < argc; optind++)
 	    {
 	      const char *input_name;
-	      char *output_name;
 	      FILE *file;
 	      struct stat file_stat;
 	      struct utimbuf file_utime;
@@ -813,8 +814,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      input_name = realpath (argv[optind], NULL);
 	      if (input_name == NULL)
 		error (EXIT_FAILURE, errno, "realpath (%s)", argv[optind]);
-
-	      output_name = xmalloc (strlen (input_name) + 17 + 1); /* 17 is upper limit for rec%d.tmp where %d is pid_t */
 
 	      /* Check if the file can be read and rewritten.  */
 
@@ -826,39 +825,24 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      fstat (fileno (file), &file_stat);
 	      fclose (file);
 
-	      {
-		char *cursor;
+	      /* Choose an output file in the same directory.  */
 
-		/* Choose an output file in the same directory.  */
-
-		/* FIXME: Scott Schwartz <schwartz@bio.cse.psu.edu> writes:
-		   "There's no reason to think that that name is unique."  */
-
-		strcpy (output_name, input_name);
-#if DOSWIN_OR_OS2
-		for (cursor = output_name + strlen (output_name);
-		     cursor > output_name && cursor[-1] != '/'
-		       && cursor[-1] != '\\' && cursor[-1] != ':';
-		     cursor--)
-		  ;
-# if __DJGPP__
-		sprintf (cursor, "rec%d.tmp", getpid ());
-# else
-		strcpy (cursor, "recodeXX.TMP");
-# endif
-#else
-		for (cursor = output_name + strlen (output_name);
-		     cursor > output_name && cursor[-1] != '/';
-		     cursor--)
-		  ;
-		sprintf (cursor, "rec%d.tmp", getpid ());
-#endif
-	      }
+	      char *input_name_copy = xstrdup (input_name);
+	      char *output_dir = dirname (input_name_copy);
+	      char *output_name;
+	      if (asprintf (&output_name, "%s/recode-XXXXXX.tmp", output_dir) == -1)
+		error (EXIT_FAILURE, errno, "asprintf");
+	      int fd = mkstemps (output_name, 4);
+	      if (fd == -1)
+		error (EXIT_FAILURE, errno, "mkstemps (%s)", output_name);
 
 	      /* Recode the file.  */
 
 	      task->input.name = input_name;
-	      task->output.name = output_name;
+	      task->output.name = NULL;
+	      task->output.file = fdopen (fd, "w+");
+	      if (task->output.file == NULL)
+	      	error (EXIT_FAILURE, errno, "fdopen ()");
 
 	      if (verbose_flag)
 		{
@@ -920,6 +904,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 		  unlink (output_name);
 		}
 	      free (output_name);
+	      free (input_name_copy);
 	    }
       }
     else

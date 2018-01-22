@@ -166,3 +166,17 @@
 /isatty.c
 /xbinary-io.c
 /xbinary-io.h
+/basename.c
+/dirname.c
+/gettimeofday.c
+/localtime-buffer.c
+/localtime-buffer.h
+/mkstemps.c
+/sys_time.in.h
+/sys/time.h
+/tempname.c
+/tempname.h
+/xstrndup.c
+/xstrndup.h
+/asprintf.c
+/vasprintf.c
