@@ -101,7 +101,7 @@ recode_if_nogo (enum recode_error new_error, RECODE_SUBTASK subtask)
 | Copy a file.  |
 `--------------*/
 
-static bool
+static void
 transform_mere_copy (RECODE_SUBTASK subtask)
 {
   if (subtask->input.file && subtask->output.file)
@@ -162,8 +162,6 @@ transform_mere_copy (RECODE_SUBTASK subtask)
       while (character = get_byte (subtask), character != EOF)
 	put_byte (character, subtask);
     }
-
-  return true;
 }
 
 /*--------------------------------------------------.
@@ -254,8 +252,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
   int child_process = -1;	/* child process number, -1 if process has not forked */
   for (unsigned sequence_index = 0;
-       sequence_index < (unsigned)request->sequence_length
-	 && task->error_so_far < task->abort_level;
+       task->error_so_far < task->abort_level;
        sequence_index++)
     {
       child_process = -1;
@@ -282,7 +279,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
       /* Select the output text for this step.  */
 
-      if (sequence_index < (unsigned)request->sequence_length - 1)
+      if (sequence_index + 1 < (unsigned)request->sequence_length)
 	{
 	  switch (strategy)
 	    {
@@ -385,6 +382,11 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
       /* Execute one recoding step.  */
 
+      if (request->sequence_length == 0) {
+	transform_mere_copy (subtask);
+	break;
+      }
+
       if (child_process <= 0)
 	{
 	  RECODE_CONST_STEP step;	/* pointer into single_steps */
@@ -418,12 +420,15 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
 	  task->swap_input = RECODE_SWAP_UNDECIDED;
 
-	  if (sequence_index < (unsigned)request->sequence_length - 1)
+	  if (sequence_index + 1 < (unsigned)request->sequence_length)
 	    {
 	      output = input;
 	      input = subtask->output;
 	    }
 	}
+
+      if (sequence_index + 1 == (unsigned)request->sequence_length)
+	break;
     }
 
   /* Final clean up.  */
@@ -440,7 +445,6 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
       recode_perror (NULL, "fclose (%s)", subtask->output.name ? subtask->output.name : "stdout");
       recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
     }
-
 
 #if HAVE_PIPE
   if (strategy == RECODE_SEQUENCE_WITH_PIPE)
@@ -563,8 +567,32 @@ recode_delete_task (RECODE_TASK task)
 bool
 recode_perform_task (RECODE_TASK task)
 {
-  RECODE_CONST_REQUEST request = task->request;
-  bool success;
+  /* Leave task->strategy alone, as the same task may be used many
+     times differently, and the fact the strategy is undecided is a
+     clue we want to protect between calls.  */
+  enum recode_sequence_strategy strategy = task->strategy;
+
+  switch (strategy)
+    {
+    case RECODE_SEQUENCE_WITH_PIPE:
+#if !HAVE_PIPE
+      strategy = RECODE_SEQUENCE_WITH_FILES;
+#endif
+    case RECODE_SEQUENCE_IN_MEMORY:
+    case RECODE_SEQUENCE_WITH_FILES:
+      break;
+
+    case RECODE_STRATEGY_UNDECIDED:
+    default: /* This should not happen, but if it does, try to recover.  */
+      /* Let's use only memory if either end is memory, or only temporary
+	 files if both ends are files.  This is a crude choice, FIXME! */
+      if ((task->input.name || task->input.file)
+	  && (task->output.name || task->output.file))
+	strategy = RECODE_SEQUENCE_WITH_FILES;
+      else
+	strategy = RECODE_SEQUENCE_IN_MEMORY;
+      break;
+    }
 
 #if DOSWIN_OR_OS2
   /* Don't switch the console device to binary mode.  On several DOSish
@@ -588,105 +616,5 @@ recode_perform_task (RECODE_TASK task)
 # endif
 #endif
 
-  if (request->sequence_length > 1)
-    switch (task->strategy)
-      {
-      case RECODE_STRATEGY_UNDECIDED:
-	/* Let's use only memory if either end is memory, or only temporary
-	   files if both ends are files.  This is a crude choice, FIXME!
-	   Leave task->strategy alone, as the same task may be used many
-	   times differently, and the fact the strategy is undecided is a
-	   clue we want to protect between calls.  */
-
-	if ((task->input.name || task->input.file)
-	    && (task->output.name || task->output.file))
-	  success = perform_sequence (task, RECODE_SEQUENCE_WITH_FILES);
-	else
-	  success = perform_sequence (task, RECODE_SEQUENCE_IN_MEMORY);
-	break;
-
-      case RECODE_SEQUENCE_IN_MEMORY:
-	success = perform_sequence (task, RECODE_SEQUENCE_IN_MEMORY);
-	break;
-
-      case RECODE_SEQUENCE_WITH_PIPE:
-#if HAVE_PIPE
-	success = perform_sequence (task, RECODE_SEQUENCE_WITH_PIPE);
-	break;
-#else
-	/* Fall through on files if there are no pipes.  */
-#endif
-
-      case RECODE_SEQUENCE_WITH_FILES:
-	success = perform_sequence (task, RECODE_SEQUENCE_WITH_FILES);
-	break;
-
-      default:
-	success = false;	/* for lint */
-      }
-  else
-    {
-      struct recode_subtask subtask_block;
-      RECODE_SUBTASK subtask = &subtask_block;
-
-      /* Execute a simple recoding (a single step, or no step at all).  */
-
-      memset (subtask, 0, sizeof (struct recode_subtask));
-      subtask->task = task;
-      subtask->input = task->input;
-      subtask->output = task->output;
-
-      if (subtask->input.name)
-	{
-	  if (!*subtask->input.name)
-	    subtask->input.file = stdin;
-	  else if (subtask->input.file = fopen (subtask->input.name, "r"),
-		   subtask->input.file == NULL)
-	    {
-	      recode_perror (NULL, "fopen (%s)", subtask->input.name);
-	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	      return false;
-	    }
-	}
-
-      if (subtask->output.name)
-	{
-	  if (!*subtask->output.name)
-	    subtask->output.file = stdout;
-	  else if (subtask->output.file = fopen (subtask->output.name, "w"),
-		   subtask->output.file == NULL)
-	    {
-	      recode_perror (NULL, "fopen (%s)", subtask->output.name);
-	      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	      return false;
-	    }
-	}
-
-      if (request->sequence_length == 1)
-	{
-	  RECODE_CONST_STEP step = request->sequence_array;
-
-	  subtask->step = step;
-	  success = (*step->transform_routine) (subtask);
-	}
-      else
-	success = transform_mere_copy (subtask);
-
-      task->output = subtask->output;
-
-      if (subtask->input.file && fclose (subtask->input.file) != 0)
-	{
-          recode_perror (NULL, "fclose (%s)", subtask->input.name);
-          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-          return false;
-	}
-      if (subtask->output.file && fclose (subtask->output.file) != 0)
-        {
-          recode_perror (NULL, "fclose (%s)", subtask->output.name);
-          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-          return false;
-        }
-    }
-
-  return success;
+  return perform_sequence (task, strategy);
 }
