@@ -24,6 +24,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+#include "xbinary-io.h"
+
 /* Buffer size used in transform_mere_copy.  */
 #define BUFFER_SIZE (16 * 1024)
 
@@ -547,12 +549,6 @@ recode_delete_task (RECODE_TASK task)
   return true;
 }
 
-#if DOSWIN_OR_OS2
-# include <unistd.h>		/* for isatty */
-# include <fcntl.h>		/* for O_BINARY and _fmode */
-# include <io.h>		/* for setmode */
-#endif
-
 /*------------------------------------------------------------------------.
 | Execute the conversion sequence for a recoding TASK, using the selected |
 | strategy whenever more than one conversion step is needed.  If no       |
@@ -594,27 +590,17 @@ recode_perform_task (RECODE_TASK task)
       break;
     }
 
-#if DOSWIN_OR_OS2
-  /* Don't switch the console device to binary mode.  On several DOSish
-     systems this has unpleasant side effects.  For example, the Ctrl-Z
+  /* Switch stdin and stdout to binary mode unless they are ttys, as this has
+     nasty side-effects on several DOSish systems.  For example, the Ctrl-Z
      character is no longer interpreted as EOF, and thus the poor user cannot
      signal end of input; the INTR character also doesn't work, so they cannot
      even interrupt the program, and are stuck.  On the other hand, output to
      the screen doesn't have to follow the end-of-line format exactly, since
      it is going to be discarded anyway.  */
   if (task->input.name && !*task->input.name && !isatty (fileno (stdin)))
-    setmode (fileno (stdin), O_BINARY);
+    xset_binary_mode (fileno (stdin), O_BINARY);
   if (task->output.name && !*task->output.name && !isatty (fileno (stdout)))
-    setmode (fileno (stdout), O_BINARY);
-# ifdef __EMX__
-  {
-    extern int _fmode_bin;
-    _fmode_bin = 1;
-  }
-# else
-  _fmode = O_BINARY;
-# endif
-#endif
+    xset_binary_mode (fileno (stdout), O_BINARY);
 
   return perform_sequence (task, strategy);
 }

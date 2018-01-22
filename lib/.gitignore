@@ -159,3 +159,10 @@
 /stat.c
 /sys_stat.in.h
 /sys/stat.h
+/binary-io.c
+/binary-io.h
+/fcntl.in.h
+/fcntl.h
+/isatty.c
+/xbinary-io.c
+/xbinary-io.h
