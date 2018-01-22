@@ -382,7 +382,7 @@ struct recode_request
    BUFFER.  Moreover, if NAME is not NULL at start of recoding, this is
    interpreted as a request for the library to open the named file, either
    in read or write mode, and also to close it afterwards.  Standard input
-   or output is denoted by NAME being non-NULL, but otherwise empty.
+   or output is denoted by NAME being an empty string.
 
    If FILE is NULL in input mode, the in-memory read-only text extends from
    BUFFER to LIMIT.  There is no clue about if the buffer has been allocated
