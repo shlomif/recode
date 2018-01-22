@@ -565,7 +565,7 @@ recode_perform_task (RECODE_TASK task)
 {
   /* Leave task->strategy alone, as the same task may be used many
      times differently, and the fact the strategy is undecided is a
-     clue we want to protect between calls.  */
+     clue we want to preserve between calls.  */
   enum recode_sequence_strategy strategy = task->strategy;
 
   switch (strategy)
