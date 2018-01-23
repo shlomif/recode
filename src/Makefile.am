@@ -34,7 +34,7 @@ EXTRA_DIST = stamp-steps stamp-strip $(L_STEPS) mergelex.py $(MANS)
 
 CLEANFILES = iconvdecl.h
 
-C_STEPS = african.c afrtran.c applemac.c atarist.c bangbang.c cdcnos.c \
+C_STEPS = african.c afrtran.c atarist.c bangbang.c cdcnos.c \
 ebcdic.c ibmpc.c iconqnx.c lat1asci.c lat1iso5426.c lat1ansel.c \
 java.c mule.c strip-data.c testdump.c ucs.c utf16.c utf7.c utf8.c varia.c vn.c
 
@@ -125,7 +125,7 @@ iconvdecl.h: ../tables.py
 	perl -npe 's/{ put_byte \(//;s /, subtask\); }//;s%^\\%%' | \
 	perl -ne '($$a,$$b)=split; $$c=substr($$a,0,3);$$d=substr($$a,3);$$e = eval "0$$c"; next if $$b < 0200 ;printf("\t{%d, \"%c%s\"}, %s* %c *%s\n", $$b, $$e, $$d, "/", $$b, "/")' > $@
 
-african.lo afrtran.lo applemac.lo atarist.lo bangbang.lo cdcnos.lo \
+african.lo afrtran.lo atarist.lo bangbang.lo cdcnos.lo \
 ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo lat1iso5426.lo lat1ansel.lo \
 java.lo mule.lo strip-data.lo testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo \
 varia.lo vn.lo flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo \

@@ -167,7 +167,7 @@ Charsets for CDC machines
 
 Other micro-computer charsets
 
-* Apple-Mac::           Apple's Macintosh code
+* Mac OS::              Apple's Macintosh code
 * AtariST::             Atari ST code
 
 Various other charsets
@@ -3632,35 +3632,14 @@ ASCII character.
 @chapter Other micro-computer charsets
 
 @menu
-* Apple-Mac::           Apple's Macintosh code
+* Mac OS::           Apple's Macintosh code
 * AtariST::             Atari ST code
 @end menu
 
-@node Apple-Mac, AtariST, Micros, Micros
+@node Mac OS, AtariST, Micros, Micros
 @section Apple's Macintosh code
 
-@tindex Apple-Mac
-@cindex Macintosh charset
-This charset is available in Recode under the name @code{Apple-Mac}.
-The shortest way of specifying it in Recode is @code{ap}.
-
-The charset is aimed towards a Macintosh micro-computer from Apple.
-This is an eight bit code.  The file is the data fork only.  This charset
-is fairly old in Recode, its tables were produced a long while ago
-by mere inspection of a printed chart of the Macintosh codes and glyph.
-
-@cindex CR surface, in Macintosh charsets
-It has @code{CR} as its implied surface.  This means that, if the original
-end of lines have to be preserved while going out of @code{Apple-Mac}, they
-should currently be added back through the usage of a surface on the other
-charset, or better, just never removed.  Here are examples for both cases:
-
-@example
-recode ap..l2/cr < @var{input} > @var{output}
-recode ap/..l2 < @var{input} > @var{output}
-@end example
-
-@w{RFC 1345} brings into Recode 2 other Macintosh charsets.  You can
+@w{RFC 1345} brings 2 Macintosh charsets.  You can
 discover them by using @code{grep} over the output of @samp{recode -l}:
 
 @example
@@ -3673,25 +3652,9 @@ recode -l | grep -i mac
 @tindex mac
 @tindex macce
 Charsets @code{macintosh} and @code{macintosh_ce}, as well as their aliases
-@code{mac} and @code{macce} also have @code{CR} as their implied surface.
+@code{mac} and @code{macce} have @code{CR} as their implied surface.
 
-There are a few discrepancies between the @code{Apple-Mac} charset and
-the very similar @w{RFC 1345} charset @code{macintosh}, which have not been
-analysed yet, so the charsets are being kept separate for now.  This might
-change in the future, and the @code{Apple-Mac} charset might disappear.
-Wizards would be interested in comparing the output of these two commands:
-
-@example
-recode -vh Apple-Mac..Latin-1
-recode -vh macintosh..Latin-1
-@end example
-
-@noindent
-The first command use the charset prior to @w{RFC 1345} introduction.
-Both methods give different recodings.  These differences are annoying,
-the fuzziness will have to be explained and settle down one day.
-
-@node AtariST,  , Apple-Mac, Micros
+@node AtariST,  , Mac OS, Micros
 @section Atari ST code
 
 @tindex AtariST

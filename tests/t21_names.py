@@ -30,7 +30,6 @@ AFRL1-101-BPI_OCIL t-fra t-francais
 AFRLIN-104-BPI_OCIL lin lingala sango wolof
 AFRLIN-105-BPI_OCIL t-lin t-lingala t-sango t-wolof
 ANSI_X3.4-1968 367/CR-LF ANSI_X3.4-1986 ASCII CP367/CR-LF IBM367/CR-LF ISO646-US iso-ir-6 ISO_646.irv:1991 us US-ASCII
-Apple-Mac/CR
 ASCII-BS BS
 ASMO_449 arabic7 iso-ir-89 ISO_9036
 AtariST
@@ -197,7 +196,7 @@ LaTeX ltex TeX
 latin-greek iso-ir-19
 Latin-greek-1 iso-ir-27
 mac-is
-macintosh/CR mac/CR
+macintosh/CR Apple-Mac/CR mac/CR
 macintosh_ce/CR macce/CR
 MSZ_7795.3 hu ISO646-HU iso-ir-86
 Mule
