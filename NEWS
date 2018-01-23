@@ -5,17 +5,21 @@ Recode NEWS - User visible changes
 .. contents::
 .. sectnum::
 
-:Copyright: © 1993-1999, 2000, 2001, 2008 Free Software Foundation, Inc.
+:Copyright: © 1993-1999, 2000, 2001, 2008, 2018 Free Software Foundation, Inc.
 
 Version 3.7
 ===========
 
 :Author: François Pinard, 2008-03; Reuben Thomas, 2018-01.
 
-+ Recode does no include libiconv anymore, but uses an external iconv
++ Recode does not include libiconv anymore, but uses an external iconv
   library if one was available at installation time.  The -x: option
   to the program, or a new flag to the library recode_new_outer
   function, inhibits the initialisation and usage of iconv.
++ Converters for BibTeX (from Vincent Danjean) and the ANSEL and ISO 5426
+character sets (from Wolfram Schneider) have been added.
++ The option --sequence=file (short option -i) is now an (undocumented)
+synonym for --sequence=memory.
 + Many internal changes, for correcting reported bugs.
 + Long ago, I renamed GNU recode to Free recode: the permission for
   using the GNU prefix mandated a level of obedience to the FSF that
