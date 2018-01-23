@@ -28,10 +28,13 @@ Braces			[ \t]*(\{\})?
 \\"$"				{ PUT_NON_DIACRITIC_BYTE ('$', subtask); }
 \\"%"				{ PUT_NON_DIACRITIC_BYTE ('%', subtask); }
 \\"&"				{ PUT_NON_DIACRITIC_BYTE ('&', subtask); }
+\\mbox"{$<$}"			{ PUT_NON_DIACRITIC_BYTE ('<', subtask); }
+\\mbox"{$>$}"			{ PUT_NON_DIACRITIC_BYTE ('>', subtask); }
 \\"_"				{ PUT_NON_DIACRITIC_BYTE ('_', subtask); }
 \\"{"				{ PUT_NON_DIACRITIC_BYTE ('{', subtask); }
 \\"}"				{ PUT_NON_DIACRITIC_BYTE ('}', subtask); }
 
+\\textasciicircum{Braces}	{ PUT_NON_DIACRITIC_BYTE ('^', subtask); }
 \\backslash{Braces}		{ PUT_NON_DIACRITIC_BYTE ('\\', subtask); }
 
 "~"				{ PUT_NON_DIACRITIC_BYTE (160, subtask); }
