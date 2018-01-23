@@ -790,13 +790,12 @@ not very useful, as the recoding reduces to a mere copy in that case.}
 @tindex CHAR
 When a charset name is omitted or left empty, the value of the
 @code{DEFAULT_CHARSET} variable in the environment is used instead.
-If this variable is not defined, the Recode library (from version
-3.6 and up) uses the current locale's encoding.  On POSIX compliant
-systems, this depends on the first non-empty value among the environment
-variables LC_ALL, LC_CTYPE, LANG, and can be determined through the
+If this variable is not defined, the Recode library uses the current locale's
+encoding.  On POSIX systems, this depends on the first non-empty value
+among the environment variables @code{LC_ALL}, @code{LC_CTYPE},
+and @code{LANG}, and can be determined through the
 command @samp{locale charmap}.  If the current locale's encoding may not
-be resolved, then Recode presumes @code{ASCII} (or, for Recode
-3.6 only: @code{CHAR}).
+be resolved, then Recode presumes @code{ASCII}.
 
 If the charset name is omitted but followed by surfaces, the surfaces
 then qualify the usual or default charset.  For example, the request
@@ -1233,11 +1232,6 @@ When the program is merely used as a filter, standard output will have
 received a partially recoded copy of standard input, up to the first
 error point.  After all recodings have been done or attempted, and if
 some recoding has been aborted, @code{recode} exits with a non-zero status.
-
-In releases of Recode prior to version 3.5, this option was always
-selected, so it was rather meaningless.  Nevertheless, users were invited
-to start using @samp{-f} right away in scripts calling Recode
-whenever convenient, in preparation for the current behaviour.
 
 @item -q
 @itemx --quiet
@@ -3205,8 +3199,7 @@ is followed by an underline (@kbd{_}), the mmemonic, and another underline.
 Conversions to this charset are usually reversible.
 
 Currently, Recode does not offer any of the many other possible
-variations of this family of representations.  They will likely be
-implemented in some future version, however.
+variations of this family of representations.
 
 @table @code
 @include rfc1345.texi
@@ -3692,10 +3685,6 @@ ASCII character.
 
 @node Micros, Miscellaneous, CDC, Top
 @chapter Other micro-computer charsets
-
-@cindex NeXT charsets
-The @code{NeXT} charset, which used to be especially provided in releases of
-Recode before 3.5, has been integrated since as one @w{RFC 1345} table.
 
 @menu
 * Apple-Mac::           Apple's Macintosh code
@@ -4947,10 +4936,8 @@ There is a locality problem I did not address yet.  Currently, the
 Recode library takes many cycles to initialise itself, calling
 each module in turn for it to set up associated knowledge about charsets,
 aliases, elementary steps, recoding weights, etc.  @emph{Then}, the
-recoding sequence is decided out of the command given.  I would not be
-surprised if initialisation was taking a perceivable fraction of a second
-on slower machines.  One thing to do, most probably not right in version
-3.5, but the version after, would have Recode to pre-load all tables
+recoding sequence is decided out of the command given.
+One thing to do would have Recode to pre-load all tables
 and dump them at installation time.  The result would then be compiled and
 added to the library.  This would spare many initialisation cycles, but more
 importantly, would avoid calling all library modules, scattered through the
