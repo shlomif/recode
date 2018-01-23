@@ -275,16 +275,26 @@ init_rfc1345_ucs2 (RECODE_STEP step,
 bool
 module_rfc1345 (RECODE_OUTER outer)
 {
-  return
-    declare_single (outer, "ISO-10646-UCS-2", "RFC1345",
-		    outer->quality_variable_to_variable,
-		    init_ucs2_rfc1345, transform_ucs2_rfc1345)
-    && declare_single (outer, "RFC1345", "ISO-10646-UCS-2",
-		       outer->quality_variable_to_variable,
-		       init_rfc1345_ucs2, transform_rfc1345_ucs2)
+  RECODE_ALIAS alias;
 
-    && declare_alias (outer, "1345", "RFC1345")
-    && declare_alias (outer, "mnemonic", "RFC1345");
+  if
+    (!declare_single (outer, "ISO-10646-UCS-2", "RFC1345",
+                      outer->quality_variable_to_variable,
+                      init_ucs2_rfc1345, transform_ucs2_rfc1345)
+     || !declare_single (outer, "RFC1345", "ISO-10646-UCS-2",
+                         outer->quality_variable_to_variable,
+                         init_rfc1345_ucs2, transform_rfc1345_ucs2)
+     || !declare_alias (outer, "1345", "RFC1345")
+     || !declare_alias (outer, "mnemonic", "RFC1345"))
+    return false;
+
+  /* Aliases for obsolete built-in encodings */
+  if (alias = declare_alias (outer, "Apple-Mac", "macintosh"), !alias)
+    return false;
+  if (!declare_implied_surface (outer, alias, outer->cr_surface))
+    return false;
+
+  return true;
 }
 
 _GL_ATTRIBUTE_CONST void
