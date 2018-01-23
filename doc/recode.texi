@@ -3926,7 +3926,7 @@ This charset is very similar to @code{LaTeX}. The only difference is that
 diacritics are enclosed between @samp{@{@}}. Refer to @code{LaTeX}
 charset for further information.  @xref{LaTeX}.
 
-@node Texinfo, Bibliographic, BibTeX, Miscellaneous
+@node Texinfo, ISO 5426 and ANSEL, BibTeX, Miscellaneous
 @section GNU project documentation files
 
 @tindex Texinfo@r{, a charset}
@@ -3945,7 +3945,7 @@ between versions of Texinfo, and Recode only partially succeeds
 in correctly following these changes.  So, for now, Texinfo support in
 Recode should be considered as work still in progress (!).
 
-@node Bibliographic, Vietnamese, Texinfo, Miscellaneous
+@node ISO 5426 and ANSEL, Vietnamese, Texinfo, Miscellaneous
 @section Bibliographic character sets
 
 @tindex ISO 5426@r{, a charset}
@@ -3954,7 +3954,7 @@ Recode should be considered as work still in progress (!).
 These two character sets are intended to work with ASCII for exchange of
 bibliographic information.
 
-@node Vietnamese, African, Texinfo, Miscellaneous
+@node Vietnamese, African, ISO 5426 and ANSEL, Miscellaneous
 @section Vietnamese charsets
 
 @cindex Vietnamese charsets
