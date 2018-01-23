@@ -176,6 +176,7 @@ Various other charsets
 * LaTeX::               LaTeX macro calls
 * BibTeX::              BibTeX macro calls
 * Texinfo::             GNU project documentation files
+* ISO 5426 and ANSEL::  Bibliographic character sets
 * Vietnamese::          Vietnamese charsets
 * African::             African charsets
 * Others::              Cyrillic and other charsets
@@ -420,7 +421,7 @@ French conventions for electronic mail;
 
 @item
 8-bit extensions to ASCII: ISO @w{Latin-1}, Atari ST code, IBM's code for
-the PC, Apple's code for the Macintosh;
+the PC, Apple's code for the Macintosh, ISO 5426 and ANSEL library codes;
 
 @item
 8-bit non-ASCII codes: three flavours of EBCDIC;
@@ -3724,6 +3725,7 @@ wider @code{Unicode}, but this is being corrected as Recode evolves.
 * LaTeX::               LaTeX macro calls
 * BibTeX::              BibTeX macro calls
 * Texinfo::             GNU project documentation files
+* ISO 5426 and ANSEL::  Bibliographic character sets
 * Vietnamese::          Vietnamese charsets
 * African::             African charsets
 * Others::              Cyrillic and other charsets
@@ -3924,7 +3926,7 @@ This charset is very similar to @code{LaTeX}. The only difference is that
 diacritics are enclosed between @samp{@{@}}. Refer to @code{LaTeX}
 charset for further information.  @xref{LaTeX}.
 
-@node Texinfo, Vietnamese, BibTeX, Miscellaneous
+@node Texinfo, Bibliographic, BibTeX, Miscellaneous
 @section GNU project documentation files
 
 @tindex Texinfo@r{, a charset}
@@ -3942,6 +3944,15 @@ not read Texinfo files yet.  In these times, usages are also changing
 between versions of Texinfo, and Recode only partially succeeds
 in correctly following these changes.  So, for now, Texinfo support in
 Recode should be considered as work still in progress (!).
+
+@node Bibliographic, Vietnamese, Texinfo, Miscellaneous
+@section Bibliographic character sets
+
+@tindex ISO 5426@r{, a charset}
+@tindex ANSEL@r{, a charset}
+@cindex Bibliographic charsets
+These two character sets are intended to work with ASCII for exchange of
+bibliographic information.
 
 @node Vietnamese, African, Texinfo, Miscellaneous
 @section Vietnamese charsets
