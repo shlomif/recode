@@ -47,8 +47,8 @@ def teardown_module(module):
 def assert_or_diff(output, expected):
     if output != expected:
         import difflib
-        diff = difflib.ndiff(output.splitlines(True),
-                             expected.splitlines(True))
+        diff = difflib.ndiff(expected.splitlines(True),
+                             output.splitlines(True))
         import sys
         sys.stdout.write(''.join(diff))
         assert False, (len(output), len(expected))
