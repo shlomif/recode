@@ -509,7 +509,7 @@ are familiar to you.  Once again, I'm no expert, and you have to help me.
 Your explanations could well find their way into this documentation, too.
 Also, for contributing new charsets or new surfaces, as much as possible,
 please provide good, solid, verifiable references for the tables you
-used@footnote{I'm not prone at accepting a charset you just invented,
+used@footnote{I'm not prone to accept a charset you just invented,
 and which nobody uses yet: convince your friends and community first!}.
 
 Many users contributed to Recode already, I am grateful to them for
@@ -520,7 +520,7 @@ go in the next.
 
 @cindex bug reports, where to send
 @cindex reporting bugs
-Please leave suggestions, documentation errors and bug reports to
+Please report suggestions, documentation errors and bugs at
 @uref{https://github.com/rrthomas/Recode}.  Do not be afraid
 to report details, because this program is the mere aggregation of
 hundreds of details.
@@ -4014,13 +4014,13 @@ Recode should be considered as work still in progress (!).
 @section Vietnamese charsets
 
 @cindex Vietnamese charsets
-We are currently experimenting the implementation, in Recode, of a few
+We are currently trying the implementation, in Recode, of a few
 character sets and transliterated forms to handle the Vietnamese language.
 They are quite briefly summarised, here.
 
 @table @code
 @item TCVN
-@tindex TCVN@r{, for Vienamese}
+@tindex TCVN@r{, for Vietnamese}
 @tindex VN1@r{, maybe not available}
 @tindex VN2@r{, maybe not available}
 @tindex VN3@r{, maybe not available}
@@ -4314,7 +4314,7 @@ super-charsets, that is, those encoding methods by which a single text
 stream may contain a combination of more than one constituent charset.
 The only multiplexed charset in Recode is @code{Mule}, and even
 then, it is only very partially implemented: the only correspondence
-available is with @code{Latin-1}.  The author fastly implemented this
+available is with @code{Latin-1}.  The author quickly implemented this
 only because he needed this for himself.  However, it is intended that
 Mule support to become more real in subsequent releases of Recode.
 
@@ -4326,7 +4326,7 @@ multiplexed charsets are @emph{designed} to be interpreted fairly precisely,
 and quite independently of any informational context.
 
 @cindex MULE, in Emacs
-The spelling @code{Mule} originally stands for @cite{@emph{mul}tilingual
+The spelling @code{Mule} originally stood for @cite{@emph{mul}tilingual
 @emph{e}nhancement to GNU Emacs}, it is the result of a collective
 effort orchestrated by Handa Ken'ichi since 1993.  When @code{Mule} got
 rewritten in the main development stream of GNU Emacs 20, the FSF renamed
@@ -4339,7 +4339,7 @@ of @emph{e}macs @emph{i}nput @emph{m}ethods}.  One of these libraries is
 named @code{quail}@footnote{Usually, quail means quail egg in Japanese,
 while egg alone is usually chicken egg.  Both quail egg and chicken
 egg are popular food in Japan.  The @code{quail} input system has
-been named because it is smaller that the previous @code{EGG} system.
+been named because it is smaller than the previous @code{EGG} system.
 As for @code{EGG}, it is the translation of @code{TAMAGO}.  This word
 comes from the Japanese sentence @cite{@emph{ta}kusan @emph{ma}tasete
 @emph{go}mennasai}, meaning @cite{sorry to have let you wait so long}.
