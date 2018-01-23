@@ -446,9 +446,6 @@ register_all_modules (RECODE_OUTER outer)
     return false;
   if (!declare_alias (outer, "Latin-1", "ISO-8859-1"))
     return false;
-  /* Needed for compatibility with Recode 3.2.  */
-  if (!declare_alias (outer, "lat1", "Latin-1"))
-    return false;
 
 #include "inisteps.h"
 
