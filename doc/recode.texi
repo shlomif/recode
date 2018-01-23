@@ -1415,23 +1415,21 @@ would recover all characters in cycles of length 1, 2, 3 or 6.
 @section Selecting sequencing methods
 
 @cindex sequencing
-This program uses a few techniques when it is discovered that many
-passes are needed to comply with the @var{request}.  For example,
-suppose that four elementary steps were selected at recoding path
-optimisation time.  Then Recode will split itself into four
-different interconnected tasks, logically equivalent to:
+Recode can split itself into multiple parallel processes when it is
+discovered that many passes are needed to comply with the @var{request}.
+For example, suppose that four elementary steps were selected at
+recoding path optimisation time.  Then Recode will split itself into
+four different interconnected tasks, logically equivalent to:
 
 @example
 @var{step1} <@var{input} | @var{step2} | @var{step3} | @var{step4} >@var{output}
 @end example
 
-The splitting into subtasks is often done using Unix pipes.
-But the splitting may also be completely avoided, and rather
-simulated by using memory buffer, or intermediate files.  The various
+By default, the splitting is simulated by using memory buffers.  The
 @samp{--sequence=@var{strategy}} options gives you control over the flow
-methods, by replacing @var{strategy} with @samp{memory}, @samp{pipe}
-or @samp{files}.  So, these options may be used to override the default
-behaviour, which is also explained below.
+methods, by replacing @var{strategy} with @samp{memory} or @samp{pipe}.
+On systems where the pipes method is not available, strategy selection
+is ignored.
 
 @table @samp
 @item --sequence=memory
@@ -1445,13 +1443,6 @@ mode, that is, when the program reads standard input and writes standard
 output, it might take longer for programs further down the pipe chain to
 start receiving some recoded data.
 
-@item -i
-@itemx --sequence=files
-@opindex -i
-@cindex file sequencing
-This option is accepted for backwards compatibility, and acts like
-@samp{--sequence=memory}.
-
 @item -p
 @itemx --sequence=pipe
 @opindex -p
@@ -1464,9 +1455,12 @@ behaviour in filter mode.  If this option is used when files are recoded
 over themselves, this should also save disk space because some temporary
 files might not be needed, at the cost of more system overhead.
 
-If, at installation time, the @code{pipe(2)} call is said to be
-unavailable, selecting option @samp{-p} is equivalent to selecting
-option @samp{-i}.  (This happens, for example, on MS-DOS systems.)
+@item -i
+@itemx --sequence=files
+@opindex -i
+@cindex file sequencing
+This option is accepted for backwards compatibility, and acts like
+@samp{--sequence=memory}.
 @end table
 
 @node Mixed, Emacs, Sequencing, Invoking recode
@@ -2404,12 +2398,8 @@ the header file @file{recodext.h}.  Other possible values are:
 Keep intermediate recodings in memory.
 @item RECODE_SEQUENCE_WITH_PIPE
 @vindex RECODE_SEQUENCE_WITH_PIPE
-Fork processes connected with @code{pipe(2)}.
+Fork processes connected with pipes.
 @end table
-
-@c FIXME
-The best for now is to leave this field alone, and let the recoding
-library decide its strategy, as many combinations have not been tested yet.
 
 @item byte_order_mark
 @vindex byte_order_mark
