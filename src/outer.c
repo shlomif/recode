@@ -435,11 +435,6 @@ register_all_modules (RECODE_OUTER outer)
   alias->symbol->type = RECODE_DATA_SURFACE;
   outer->cr_surface = alias->symbol;
 
-#if 0
-  /* `.' might be later used for asking recode to guess the charset.  */
-  if (!declare_alias (outer, ".", "RFC 1345"))
-    return false;
-#endif
   if (!declare_alias (outer, "ASCII", "ANSI_X3.4-1968"))
     return false;
   if (!declare_alias (outer, "BS", "ASCII-BS"))
