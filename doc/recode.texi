@@ -1720,6 +1720,7 @@ To use the recoding library once it is installed, a C program needs to
 have the following lines:
 
 @example
+#include <stdlib.h>
 #include <stdbool.h>
 #include <recode.h>
 
@@ -1730,64 +1731,7 @@ const char *program_name;
 near its beginning, and the user should have @samp{-lrecode} on the
 linking call, so modules from the recoding library are found.
 
-@cindex @code{stdbool.h} header
-@cindex @code{bool} data type
-The @code{recode.h} header file uses the Boolean type setup by the
-system header file @code{stdbool.h}.  This header file, which is now
-part of C standards, does not likely exist everywhere.  If you system
-does not offer this system header file yet, the proper compilation of
-the @code{recode.h} file could be guaranteed through the replacement
-of the inclusion line by:
-
-@example
-typedef enum @{false = 0, true = 1@} bool;
-@end example
-
-@cindex Autoconf
-@cindex portability
-@cindex @file{configure.ac}
-People wanting wider portability, or Autoconf lovers, might arrange
-their @file{configure.ac} for being able to write something more
-general.  In such contexts, a typical beginning of a program using the
-Recode library might look something like:
-
-@example
-@group
-#if STDC_HEADERS
-# include <stdlib.h>
-#endif
-
-/* Some systems do not define EXIT_*, even with STDC_HEADERS.  */
-#ifndef EXIT_SUCCESS
-# define EXIT_SUCCESS 0
-#endif
-#ifndef EXIT_FAILURE
-# define EXIT_FAILURE 1
-#endif
-/* The following test is to work around the gross typo in systems like Sony
-   NEWS-OS Release 4.0C, whereby EXIT_FAILURE is defined to 0, not 1.  */
-#if !EXIT_FAILURE
-# undef EXIT_FAILURE
-# define EXIT_FAILURE 1
-#endif
-
-#if HAVE_STDBOOL_H
-# include <stdbool.h>
-#else
-typedef enum @{false = 0, true = 1@} bool;
-#endif
-
-#include <recode.h>
-
-const char *program_name;
-@end group
-@end example
-
-Yet, for the remainder of the discussion below, we will ignore all these
-configuration matters, and merely presume that both @code{stdlib.h}
-and @code{stdbool.h} system header files are available.
-
-The library is still under development.  As it stands, it contains
+The library contains
 four identifiable sets of routines: the outer level functions, the
 request level functions, the task level functions and the charset level
 functions.  There are discussed in separate sections.  For effectively
