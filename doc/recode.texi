@@ -3440,20 +3440,14 @@ same tabular data as @code{819}.
 
 @tindex ibm437
 There are a few discrepancies between this @code{IBM-PC} charset and the
-very similar @w{RFC 1345} charset @code{ibm437}, which have not been analysed
-yet, so the charsets are being kept separate for now.  This might change in
-the future, and the @code{IBM-PC} charset might disappear.  Wizards would
-be interested in comparing the output of these two commands:
-
-@example
-recode -vh IBM-PC..Latin-1
-recode -vh IBM437..Latin-1
-@end example
-
-@noindent
-The first command uses the charset prior to @w{RFC 1345} introduction.
-Both methods give different recodings.  These differences are annoying,
-the fuzziness will have to be explained and settle down one day.
+very similar @w{RFC 1345} charset @code{ibm437}.  The @code{IBM-PC} charset
+has two extra characters at positions 20 (Latin-1 @code{0xB6}, Pilcrow)
+and 21 (Latin-1 @code{0xA7}, Section sign); further, it has position 250
+as @code{0xB7}, middle dot, while @code{ibm437} has middle dot at position
+249.  According to this comparison of code tables:
+@uref{https://www.haible.de/bruno/charsets/conversion-tables/CP437.html}
+the source for @w{RFC 1345}, @file{dkuug.dk/IBM437.TXT} is the only
+source that thus defines this mapping.
 
 @node Icon-QNX,  , IBM-PC, IBM and MS
 @section Unisys' Icon code

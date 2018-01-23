@@ -381,11 +381,7 @@ module_ibmpc (RECODE_OUTER outer)
     return false;
   if (!declare_implied_surface (outer, alias, outer->crlf_surface))
     return false;
-#if 0
-  /* FIXME!  */
-  if (!declare_alias (outer, "IBM-PC", "ibm437"))
-    return false;
-#endif
+
   return true;
 }
 
