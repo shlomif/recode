@@ -682,7 +682,9 @@ const char *ucs2_to_rfc1345 (recode_ucs2);
 /* task.c.  */
 
 int get_byte (RECODE_SUBTASK);
-void put_byte (int, RECODE_SUBTASK);
+size_t get_bytes (RECODE_SUBTASK, char *, size_t);
+void put_byte (char, RECODE_SUBTASK);
+void put_bytes (const char *, size_t, RECODE_SUBTASK);
 bool recode_if_nogo (enum recode_error, RECODE_SUBTASK);
 bool transform_byte_to_byte (RECODE_SUBTASK);
 bool transform_byte_to_variable (RECODE_SUBTASK);

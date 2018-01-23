@@ -24,17 +24,16 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+#include "minmax.h"
 #include "xbinary-io.h"
 
 bool recode_interrupted = 0;	/* set by signal handler when some signal has been received */
 
-/* Buffer size used in transform_mere_copy.  */
-#define BUFFER_SIZE (16 * 1024)
 
 /* Input and output helpers.  */
 
 /*-------------------------------------------------------------------.
-| Read one byte from the input text of TASK, or EOF is none remain.  |
+| Read one byte from the input text of TASK, or EOF if none remain.  |
 `-------------------------------------------------------------------*/
 
 int
@@ -48,12 +47,32 @@ get_byte (RECODE_SUBTASK subtask)
     return (unsigned char) *subtask->input.cursor++;
 }
 
+/*-------------------------------------------------------------------.
+| Read N bytes from the input text of TASK into DATA; return number  |
+| of bytes read.                                                     |
+`-------------------------------------------------------------------*/
+
+size_t
+get_bytes (RECODE_SUBTASK subtask, char *data, size_t n)
+{
+  if (subtask->input.file)
+    return fread (data, 1, n, subtask->input.file);
+  else
+    {
+      size_t bytes_left = subtask->output.limit - subtask->output.cursor;
+      size_t bytes_to_copy = MIN (n, bytes_left);
+      memcpy (data, subtask->output.cursor, bytes_to_copy);
+      subtask->output.cursor += bytes_to_copy;
+      return bytes_to_copy;
+    }
+}
+
 /*-----------------------------------------.
 | Write BYTE on the output text for TASK.  |
 `-----------------------------------------*/
 
 void
-put_byte (int byte, RECODE_SUBTASK subtask)
+put_byte (char byte, RECODE_SUBTASK subtask)
 {
   if (subtask->output.file)
     {
@@ -61,22 +80,44 @@ put_byte (int byte, RECODE_SUBTASK subtask)
         recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
     }
   else if (subtask->output.cursor == subtask->output.limit)
-    {
-      RECODE_OUTER outer = subtask->task->request->outer;
-      size_t old_size = subtask->output.limit - subtask->output.buffer;
-      size_t new_size = old_size * 3 / 2 + 40;
-
-      if (REALLOC (subtask->output.buffer, new_size, char))
-	{
-	  subtask->output.cursor = subtask->output.buffer + old_size;
-	  subtask->output.limit = subtask->output.buffer + new_size;
-	  *subtask->output.cursor++ = byte;
-	}
-      else
-        recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-    }
+    put_bytes (&byte, 1, subtask);
   else
     *subtask->output.cursor++ = byte;
+}
+
+/*-----------------------------------------------------.
+| Write N bytes of DATA on the output text for TASK.   |
+`-----------------------------------------------------*/
+
+void
+put_bytes (const char *data, size_t n, RECODE_SUBTASK subtask)
+{
+  if (subtask->output.file)
+    {
+      if (fwrite (data, n, 1, subtask->output.file) != 1)
+        {
+          recode_perror (NULL, "fwrite ()");
+          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+        }
+    }
+  else {
+    if (subtask->output.cursor + n > subtask->output.limit)
+      {
+        RECODE_OUTER outer = subtask->task->request->outer;
+        size_t old_size = subtask->output.limit - subtask->output.buffer;
+        size_t new_size = old_size * 3 / 2 + 40 + n;
+
+        if (REALLOC (subtask->output.buffer, new_size, char))
+          {
+            subtask->output.cursor = subtask->output.buffer + old_size;
+            subtask->output.limit = subtask->output.buffer + new_size;
+          }
+        else
+          recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+      }
+    memcpy (subtask->output.cursor, data, n);
+    subtask->output.cursor += n;
+  }
 }
 
 /* Error processing.  */
@@ -108,64 +149,26 @@ recode_if_nogo (enum recode_error new_error, RECODE_SUBTASK subtask)
 static void
 transform_mere_copy (RECODE_SUBTASK subtask)
 {
-  if (subtask->input.file && subtask->output.file)
+  if (subtask->input.file)
     {
-      /* File to file.  */
+      /* Reading from file.  */
 
-      char buffer[BUFFER_SIZE];
+      char buffer[BUFSIZ];
       size_t size;
 
-      while (size = fread (buffer, 1, BUFFER_SIZE, subtask->input.file),
-	     size == BUFFER_SIZE)
-	if (fwrite (buffer, BUFFER_SIZE, 1, subtask->output.file) != 1)
-	  {
-	    recode_perror (NULL, "fwrite ()");
-	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	    return false;
-	  }
+      while (size = get_bytes (subtask, buffer, BUFSIZ),
+	     size == BUFSIZ)
+	put_bytes (buffer, BUFSIZ, subtask);
       if (size > 0)
-	if (fwrite (buffer, size, 1, subtask->output.file) != 1)
-	  {
-	    recode_perror (NULL, "fwrite ()");
-	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	    return false;
-	  }
-    }
-  else if (subtask->input.file)
-    {
-      /* File to buffer.  */
-
-      int character;
-
-      /* FIXME: buy now, pay (optimise) only later.   */
-      while (character = get_byte (subtask), character != EOF)
-	put_byte (character, subtask);
-    }
-  else if (subtask->output.file)
-    {
-      /* Buffer to file.  */
-
-      if (subtask->input.cursor < subtask->input.limit)
-	if (fwrite (subtask->input.cursor,
-		    (unsigned) (subtask->input.limit - subtask->input.cursor),
-		    1, subtask->output.file)
-	    != 1)
-	  {
-	    recode_perror (NULL, "fwrite ()");
-	    recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-	    return false;
-	  }
+	put_bytes (buffer, size, subtask);
     }
   else
-    {
-      /* Buffer to buffer.  */
+    /* Reading from buffer.  */
 
-      int character;
-
-      /* FIXME: buy now, pay (optimise) only later.  */
-      while (character = get_byte (subtask), character != EOF)
-	put_byte (character, subtask);
-    }
+    if (subtask->input.cursor < subtask->input.limit)
+      put_bytes (subtask->input.cursor,
+                 (unsigned) (subtask->input.limit - subtask->input.cursor),
+                 subtask);
 }
 
 /*--------------------------------------------------.
