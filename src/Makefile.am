@@ -30,7 +30,7 @@ $(H_FALLBACKS) $(H_SURFACES)
 noinst_HEADERS = $(H_STEPS) cleaner.h charname.h fr-charname.h iconvdecl.h \
 rfc1345.h lat1iso5426.h lat1ansel.h
 
-EXTRA_DIST = stamp-steps stamp-strip $(L_STEPS) mergelex.py $(MANS)
+EXTRA_DIST = stamp-steps stamp-strip $(L_STEPS) mergelex.py $(MANS) lat1ansel.h lat1iso5426.h
 
 CLEANFILES = iconvdecl.h
 
