@@ -27,16 +27,15 @@ SUITE = t21_names.py t22_lists.py t25_subsets.py t30_base64.py \
 t30_dumps.py t30_quoted.py t40_african.py t40_combine.py t40_testdump.py \
 t40_utf7.py t40_utf8.py t50_methods.py t90_bigauto.py
 
-EXTRA_DIST = Recode.c Recode.pyx pytest common.py $(SUITE)
-CLEANFILES = Recode@shlibext@ Recode.body.c
+EXTRA_DIST = Recode.c Recode.pyx pytest common.py valgrind-python.supp $(SUITE)
+CLEANFILES = Recode@shlibext@ Recode_d@shlibext@ Recode.body.c
 DISTCLEANFILES = Recode.c
 
-PYTHON = python
-
 check-local: Recode@shlibext@
-	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@ && \
+	if test -n "$(VALGRIND)"; then export VALGRIND='$(VALGRIND) --suppressions=$(srcdir)/valgrind-python.supp'; fi; \
+	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
 	RECODE=$(top_builddir)/src/recode PYTHONPATH=.:$(srcdir) \
-	  $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
+	  $$VALGRIND $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
 Recode@shlibext@: Recode.c setup.py
 	rm -f *@shlibext@

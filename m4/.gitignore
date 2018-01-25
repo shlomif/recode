@@ -138,3 +138,4 @@ gnulib-comp.m4
 /tempname.m4
 /xstrndup.m4
 /vasprintf.m4
+/valgrind-tests.m4
