@@ -18,10 +18,8 @@
 # 02111-1307, USA.
 
 from libcpp cimport bool
-
-cdef extern from "stdio.h":
-    struct FILE:
-        pass
+from libc.stdlib cimport free
+from libc.stdio cimport FILE
 
 cdef extern from "common.h":
 
@@ -649,7 +647,11 @@ cdef class Request:
         result = recode_buffer_to_buffer(self.request, input, input_len, &output, &output_len, &output_allocated)
         if result is False or output is NULL:
             raise error
-        return output[:output_len]
+        try:
+            py_string = output[:output_len]
+        finally:
+            free (output)
+        return py_string
 
     # Unexposed APIs:
 
@@ -682,6 +684,7 @@ cdef class Task:
         self.task = recode_new_task(request.request)
 
     def __dealloc__(self):
+        free (self.task.output.buffer)
         recode_delete_task(self.task)
 
     def set_byte_order_mark(self, flag):
