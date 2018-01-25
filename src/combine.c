@@ -39,7 +39,7 @@
    hash coding.
 
    The less satisfactory aspects are that the user interface is still very
-   rude.  For the time being, I merely added a "combined" charset: combining
+   crude.  For the time being, I merely added a "combined" charset: combining
    is done by `u2..co', exploding is done by `co..u2'.  We surely could do
    much better, and build on the concept of options (introduced by `+' in the
    request syntax), Options are probably going to be used for other
@@ -49,7 +49,7 @@
    foresee is that, contrarily to surfaces, options like transliteration or
    combining _require_ specific charsets (like UCS-2) as a vehicle, and if
    UCS-2 is not otherwise mandated in the request, we would have to create
-   such an UCS-2 intermediate.  On the other hand, if UCS-2 is sandwidched
+   such an UCS-2 intermediate.  On the other hand, if UCS-2 is sandwiched
    somewhere in a complex series of steps, we should implicitly propagate
    options towards the UCS-2 step.  Even if nothing looks utterly difficult, I
    guess that for doing it right, a lot of attention and care is needed.
