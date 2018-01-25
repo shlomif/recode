@@ -1053,8 +1053,7 @@ decode_request (RECODE_REQUEST request, const char *string)
 `--------------------------*/
 
 /* Guarantee four NULs at the end of the output memory buffer for TASK, yet
-   not counting them as data.  The number of NULs should depend on the goal
-   charset: often one, but two for UCS-2 and four for UCS-4.  FIXME!  */
+   not counting them as data.  (Four is the maximum, needed for UCS-4.)  */
 
 static void
 guarantee_nul_terminator (RECODE_TASK task)
