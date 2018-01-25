@@ -330,7 +330,7 @@ prepare_shifted_state (struct state *state, unsigned character,
       state = (struct state *) hash_lookup (table, &lookup);
       if (!state)
 	{
-	  if (state= (struct state *) malloc (sizeof (struct state)), !state)
+	  if (state = (struct state *) malloc (sizeof (struct state)), !state)
 	    return NULL;
 
 	  state->character = character;
