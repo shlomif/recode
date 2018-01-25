@@ -15,9 +15,9 @@ addons:
       - texinfo
       - g++-5
 
-env:
-  global:
-    - VERBOSE=1 # Get test logs in Travis logs
+# env:
+#   global:
+#     - VERBOSE=1
 
 matrix:
   include:
