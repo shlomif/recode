@@ -60,3 +60,4 @@ html/
 /tests/Recode.body.c
 /tests/Recode.c
 /tests/Recode.so
+/tests/Recode_d.so
