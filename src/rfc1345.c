@@ -228,6 +228,13 @@ transform_rfc1345_ucs2 (RECODE_SUBTASK subtask)
 `-----------------------*/
 
 static bool
+term_rfc1345 (RECODE_STEP step)
+{
+  free (step->local);
+  return true;
+}
+
+static bool
 init_rfc1345 (RECODE_CONST_REQUEST request,
 	      RECODE_STEP step,
 	      RECODE_CONST_OPTION_LIST options _GL_UNUSED_PARAMETER)
@@ -241,6 +248,7 @@ init_rfc1345 (RECODE_CONST_REQUEST request,
   local->intro = '&';
 
   step->local = local;
+  step->term_routine = term_rfc1345;
   return true;
 }
 

@@ -210,6 +210,7 @@ init_latin1_texte (RECODE_STEP step,
 
   step->step_type = RECODE_BYTE_TO_STRING;
   step->step_table = table;
+  step->step_table_term_routine = free;
   return true;
 }
 

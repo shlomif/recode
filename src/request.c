@@ -238,10 +238,12 @@ add_to_sequence (RECODE_REQUEST request, RECODE_SINGLE single,
   step->before = single->before;
   step->after = single->after;
   step->step_table = single->initial_step_table;
+  step->step_table_term_routine = NULL;
   step->step_type
     = step->step_table ? RECODE_COMBINE_EXPLODE : RECODE_NO_STEP_TABLE;
   step->transform_routine = single->transform_routine;
   step->fallback_routine = single->fallback_routine;
+  step->term_routine = NULL;
 
   if (single->init_routine)
     {
@@ -529,6 +531,24 @@ complete_double_ucs2_step (RECODE_OUTER outer, RECODE_STEP step)
 		    pair_array, pair_cursor - pair_array, false, reversed);
 }
 
+static bool
+delete_compressed_one_to_many (RECODE_STEP step)
+{
+  free (step->local);
+  return true;
+}
+
+static void
+delete_step (RECODE_STEP step)
+{
+  /* Run step destructor, and delete step_table if allocated.  */
+  if (step->term_routine)
+    (*step->term_routine) (step);
+
+  if (step->step_table_term_routine != NULL)
+    (*step->step_table_term_routine) (step->step_table);
+}
+
 /*---------------------------------------------------------------------.
 | Optimize a SEQUENCE of single steps by creating new single steps, if |
 | this can be done by merging adjacent steps which are simple enough.  |
@@ -568,6 +588,10 @@ simplify_sequence (RECODE_REQUEST request)
 	&& in[1].before == outer->ucs2_charset
 	&& in[1].after->data_type == RECODE_STRIP_DATA)
       {
+        /* Free old steps before overwriting anything.  */
+        delete_step (in);
+        delete_step (in + 1);
+
 	/* This is a double UCS-2 step.  */
 	out->before = in[0].before;
 	out->after = in[1].after;
@@ -588,6 +612,10 @@ simplify_sequence (RECODE_REQUEST request)
 	     && in[0].after == outer->iconv_pivot
 	     && in[1].before == outer->iconv_pivot)
       {
+        /* Free old steps before overwriting anything.  */
+        delete_step (in);
+        delete_step (in + 1);
+
 	/* This is a double `iconv' step.  */
 	out->before = in[0].before;
 	out->after = in[1].after;
@@ -628,7 +656,7 @@ simplify_sequence (RECODE_REQUEST request)
 	out->before = in->before;
 	out->after = in->after;
 	out->quality = in->quality;
-	in++;
+	delete_step (in++);
 
 	/* Merge in all consecutive one-to-one recodings.  */
 
@@ -643,7 +671,7 @@ simplify_sequence (RECODE_REQUEST request)
 
 	    out->after = in->after;
 	    merge_qualities (&out->quality, in->quality);
-	    in++;
+	    delete_step (in++);
 	    saved_steps++;
 	  }
 
@@ -663,6 +691,12 @@ simplify_sequence (RECODE_REQUEST request)
 	    free (accum);
 	    out->step_type = RECODE_BYTE_TO_STRING;
 	    out->step_table = string;
+            if (in->step_table_term_routine)
+              {
+                out->local = (void *) table;   /* Save reference to old table for destructor.  */
+                out->term_routine = delete_compressed_one_to_many;
+              }
+            out->step_table_term_routine = free;
 	    out->transform_routine = transform_byte_to_variable;
 	    out->after = in->after;
 	    merge_qualities (&out->quality, in->quality);
@@ -698,6 +732,7 @@ simplify_sequence (RECODE_REQUEST request)
     {
       request->sequence_length = 0;
       saved_steps++;
+      delete_step (in);
     }
 
   /* Tell the user if something changed.  */
@@ -1095,6 +1130,10 @@ recode_new_request (RECODE_OUTER outer)
 bool
 recode_delete_request (RECODE_REQUEST request)
 {
+  for (RECODE_STEP step = request->sequence_array;
+       step < request->sequence_array + request->sequence_length;
+       step++)
+    delete_step (step);
   free (request->sequence_array);
   free (request->work_string);
   free (request);

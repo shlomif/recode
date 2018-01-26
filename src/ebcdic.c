@@ -164,6 +164,7 @@ init_ebcdic_ascii (RECODE_STEP step,
       step->step_table)
     {
       step->step_type = RECODE_BYTE_TO_BYTE;
+      step->step_table_term_routine = free;
       return true;
     }
   else
@@ -199,6 +200,7 @@ init_ebcdic_ccc_ascii (RECODE_STEP step,
       step->step_table)
     {
       step->step_type = RECODE_BYTE_TO_BYTE;
+      step->step_table_term_routine = free;
       return true;
     }
   else
@@ -233,6 +235,7 @@ init_ebcdic_ibm_ascii (RECODE_STEP step,
       step->step_table)
     {
       step->step_type = RECODE_BYTE_TO_BYTE;
+      step->step_table_term_routine = free;
       return true;
     }
   else
