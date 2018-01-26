@@ -602,6 +602,7 @@ RECODE_ALIAS declare_alias (RECODE_OUTER,
 bool declare_implied_surface (RECODE_OUTER, RECODE_ALIAS,
                               RECODE_CONST_SYMBOL);
 bool make_argmatch_arrays (RECODE_OUTER);
+void delete_alias (RECODE_ALIAS alias);
 RECODE_ALIAS find_alias (RECODE_OUTER, const char *,
                          enum alias_find_type);
 bool find_and_report_subsets (RECODE_OUTER);

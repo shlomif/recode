@@ -244,6 +244,17 @@ disambiguate_name (RECODE_OUTER outer,
 }
 
 /*----------------------------------------------------------------------------.
+| Delete the given alias.                                                     |
+`----------------------------------------------------------------------------*/
+
+void
+delete_alias (RECODE_ALIAS alias)
+{
+  free (alias->symbol);
+  free (alias);
+}
+
+/*----------------------------------------------------------------------------.
 | Return the alias from its given NAME, possibly abbreviated.  If FIND_TYPE   |
 | is any of SYMBOL_CREATE_*, NAME is not abbreviated, create a new symbol if  |
 | it does not exist, or return NULL if any problem happens at creation time.  |
@@ -317,8 +328,7 @@ find_alias (RECODE_OUTER outer, const char *name,
   alias->implied_surfaces = NULL;
   if (!hash_insert ((Hash_table *) outer->alias_table, alias))
     {
-      free (symbol);
-      free (alias);
+      delete_alias (alias);
       return NULL;
     }
 

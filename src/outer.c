@@ -68,6 +68,7 @@ declare_single (RECODE_OUTER outer,
 		Recode_init init_routine, Recode_transform transform_routine)
 {
   RECODE_SINGLE single = new_single_step (outer);
+  RECODE_ALIAS before = NULL, after = NULL;
 
   if (!single)
     return NULL;
@@ -75,44 +76,45 @@ declare_single (RECODE_OUTER outer,
   if (strcmp (before_name, "data") == 0)
     {
       single->before = outer->data_symbol;
-      single->after = find_alias (outer, after_name,
-				  SYMBOL_CREATE_DATA_SURFACE)->symbol;
+      after = find_alias (outer, after_name, SYMBOL_CREATE_DATA_SURFACE);
+      single->after = after->symbol;
     }
   else if (strcmp(after_name, "data") == 0)
     {
-      single->before = find_alias (outer, before_name,
-				   SYMBOL_CREATE_DATA_SURFACE)->symbol;
+      before = find_alias (outer, before_name, SYMBOL_CREATE_DATA_SURFACE);
+      single->before = before->symbol;
       single->after = outer->data_symbol;
     }
   else if (strcmp (before_name, "tree") == 0)
     {
       single->before = outer->tree_symbol;
-      single->after = find_alias (outer, after_name,
-				  SYMBOL_CREATE_TREE_SURFACE)->symbol;
+      after = find_alias (outer, after_name, SYMBOL_CREATE_TREE_SURFACE);
+      single->after = after->symbol;
     }
   else if (strcmp(after_name, "tree") == 0)
     {
-      single->before = find_alias (outer, before_name,
-				   SYMBOL_CREATE_TREE_SURFACE)->symbol;
+      before = find_alias (outer, before_name, SYMBOL_CREATE_TREE_SURFACE);
+      single->before = before->symbol;
       single->after = outer->tree_symbol;
     }
   else
     {
-      single->before = find_alias (outer, before_name,
-				   SYMBOL_CREATE_CHARSET)->symbol;
-      single->after = find_alias (outer, after_name,
-				  SYMBOL_CREATE_CHARSET)->symbol;
+      before = find_alias (outer, before_name, SYMBOL_CREATE_CHARSET);
+      single->before = before->symbol;
+      after = find_alias (outer, after_name, SYMBOL_CREATE_CHARSET);
+      single->after = after->symbol;
     }
 
-#if 0
-  /* FIXME: We should delink from the list of charsets before freeing.
-     The alias should also be freed. */
-  if (!before || !after)
+  if (!single->before || !single->after)
     {
-      free (single->before);
+      if (before)
+        delete_alias (before);
+      if (after)
+        delete_alias (after);
+      outer->single_list = single->next;
+      free (single);
       return NULL;
     }
-#endif
 
   single->quality = quality;
   single->init_routine = init_routine;
