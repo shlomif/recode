@@ -205,32 +205,22 @@ disambiguate_name (RECODE_OUTER outer,
       abort ();
 
     case ALIAS_FIND_AS_CHARSET:
-      /* FIXME: How to avoid those ugly casts?  */
-      ordinal = argmatch (hashname,
-			  (const char *const *) outer->argmatch_charset_array,
-			  NULL, 0);
+      ordinal = argmatch (hashname, outer->argmatch_charset_array, NULL, 0);
       result = ordinal < 0 ? NULL : outer->realname_charset_array[ordinal];
       break;
 
     case ALIAS_FIND_AS_SURFACE:
-      ordinal = argmatch (hashname,
-			  (const char *const *) outer->argmatch_surface_array,
-			  NULL, 0);
+      ordinal = argmatch (hashname, outer->argmatch_surface_array, NULL, 0);
       result = ordinal < 0 ? NULL : outer->realname_surface_array[ordinal];
       break;
 
     case ALIAS_FIND_AS_EITHER:
-      ordinal = argmatch (hashname,
-			  (const char *const *) outer->argmatch_charset_array,
-			  NULL, 0);
+      ordinal = argmatch (hashname, outer->argmatch_charset_array, NULL, 0);
       if (ordinal >= 0)
 	result = outer->realname_charset_array[ordinal];
       else
 	{
-	  ordinal = argmatch (hashname,
-			      (const char *const *)
-			      outer->argmatch_surface_array,
-			      NULL, 0);
+	  ordinal = argmatch (hashname, outer->argmatch_surface_array, NULL, 0);
 	  result = ordinal < 0 ? NULL : outer->realname_surface_array[ordinal];
 	}
       break;
@@ -480,12 +470,12 @@ make_argmatch_arrays (RECODE_OUTER outer)
 
   if (outer->argmatch_charset_array)
     {
-      char **cursor;
+      const char **cursor;
 
       for (cursor = outer->argmatch_charset_array; *cursor; cursor++)
-	free (*cursor);
+	free ((char *) *cursor);
       for (cursor = outer->argmatch_surface_array; *cursor; cursor++)
-	free (*cursor);
+	free ((char *) *cursor);
       free (outer->argmatch_charset_array);
     }
 
@@ -500,10 +490,10 @@ make_argmatch_arrays (RECODE_OUTER outer)
   /* Allocate the argmatch and realname arrays, each with a NULL sentinel.  */
 
   {
-    char **cursor;
+    const char **cursor;
 
     if (!ALLOC (cursor, 2*walk.charset_counter + 2*walk.surface_counter + 4,
-		char *))
+		const char *))
       return false;
 
     outer->argmatch_charset_array = cursor;
