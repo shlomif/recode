@@ -387,100 +387,6 @@ static const unsigned short data_koi8cs2[] =
     DONE
   };
 
-/* Cyrillic tables?  */
-
-/* Helping people.
-
-   "Alexander L. Belikoff" <abel@bfr.co.il>
-   Andrey A. Chernov <ache@null.net>
-   Andries Brouwer <Andries.Brouwer@cwi.nl>
-   Roman Czyborra <czyborra@cs.tu-berlin.de>
-*/
-
-/* What is apparently still missing, from various mail I got, is:
-
-   IBM866		CP866, alt
-   KOI8-Unified
-
-   Here are various sources of information.
-
-   Andrey A. Chernov <ache@null.net>
-   http://www.nagual.pp.ru/~ache/
-
-   &charset KOI8-Unified
-   &rem source: http://www.cyrillic.com/ref/cyrillic/koi8-uni.html
-*/
-
-/* @item IBM866
-   @code{866}, @code{cp866}, and @code{alt} are aliases for this charset.
-   source: unknown
-
-   @item KOI8-R
-   @code{878}, @code{cp878}, @code{ibm878}, @code{koi8r}, and
-   @code{rfc1489} are aliases for this charset.
-   source: RFC1489
-*/
-
-static unsigned char const koi8r_to_ibm866[256-128] =
-{
-    196, 179, 218, 191, 192, 217, 195, 180, /* 128 - 135 */
-    194, 193, 197, 223, 220, 219, 221, 222, /* 136 - 143 */
-    176, 177, 178, 244, 254, 249, 251, 247, /* 144 - 151 */
-    243, 242, 255, 245, 248, 253, 250, 246, /* 152 - 159 */
-    205, 186, 213, 241, 214, 201, 184, 183, /* 160 - 167 */
-    187, 212, 211, 200, 190, 189, 188, 198, /* 168 - 175 */
-    199, 204, 181, 240, 182, 185, 209, 210, /* 176 - 183 */
-    203, 207, 208, 202, 216, 215, 206, 252, /* 184 - 191 */
-    238, 160, 161, 230, 164, 165, 228, 163, /* 192 - 199 */
-    229, 168, 169, 170, 171, 172, 173, 174, /* 200 - 207 */
-    175, 239, 224, 225, 226, 227, 166, 162, /* 208 - 215 */
-    236, 235, 167, 232, 237, 233, 231, 234, /* 216 - 223 */
-    158, 128, 129, 150, 132, 133, 148, 131, /* 224 - 231 */
-    149, 136, 137, 138, 139, 140, 141, 142, /* 232 - 239 */
-    143, 159, 144, 145, 146, 147, 134, 130, /* 240 - 247 */
-    156, 155, 135, 152, 157, 153, 151, 154  /* 248 - 255 */
-};
-
-static unsigned char const koi8r_to_cp1251[256-128] =
-{
-    128, 129, 130, 131, 132, 133, 134, 135, /* 128 - 135 */
-    136, 137, 138, 139, 140, 141, 142, 143, /* 136 - 143 */
-    144, 145, 146, 147, 148, 149, 150, 151, /* 144 - 151 */
-    152, 153, 154, 155, 156, 157, 158, 159, /* 152 - 159 */
-    160, 161, 162, 163, 164, 165, 166, 167, /* 160 - 167 */
-    168, 169, 170, 171, 172, 173, 174, 175, /* 168 - 175 */
-    176, 177, 178, 179, 180, 181, 182, 183, /* 176 - 183 */
-    184, 185, 186, 187, 188, 189, 190, 191, /* 184 - 191 */
-    254, 224, 225, 246, 228, 229, 244, 227, /* 192 - 199 */
-    245, 232, 233, 234, 235, 236, 237, 238, /* 200 - 207 */
-    239, 255, 240, 241, 242, 243, 230, 226, /* 208 - 215 */
-    252, 251, 231, 248, 253, 249, 247, 250, /* 216 - 223 */
-    222, 192, 193, 214, 196, 197, 212, 195, /* 224 - 231 */
-    213, 200, 201, 202, 203, 204, 205, 206, /* 232 - 239 */
-    207, 223, 208, 209, 210, 211, 198, 194, /* 240 - 247 */
-    220, 219, 199, 216, 221, 217, 215, 218  /* 248 - 255 */
-};
-
-static unsigned char const koi8r_to_iso8859_5[256-128] =
-{
-    128, 129, 130, 131, 132, 133, 134, 135, /* 128 - 135 */
-    136, 137, 138, 139, 140, 141, 142, 143, /* 136 - 143 */
-    144, 145, 146, 147, 148, 149, 150, 151, /* 144 - 151 */
-    152, 153, 154, 155, 156, 157, 158, 159, /* 152 - 159 */
-    160, 161, 162, 163, 164, 165, 166, 167, /* 160 - 167 */
-    168, 169, 170, 171, 172, 173, 174, 175, /* 168 - 175 */
-    240, 241, 242, 243, 244, 245, 246, 247, /* 176 - 183 */
-    248, 249, 250, 251, 252, 253, 254, 255, /* 184 - 191 */
-    238, 208, 209, 230, 212, 213, 228, 211, /* 192 - 199 */
-    229, 216, 217, 218, 219, 220, 221, 222, /* 200 - 207 */
-    223, 239, 224, 225, 226, 227, 214, 210, /* 208 - 215 */
-    236, 235, 215, 232, 237, 233, 231, 234, /* 216 - 223 */
-    206, 176, 177, 198, 180, 181, 196, 179, /* 224 - 231 */
-    197, 184, 185, 186, 187, 188, 189, 190, /* 232 - 239 */
-    191, 207, 192, 193, 194, 195, 182, 178, /* 240 - 247 */
-    204, 203, 183, 200, 205, 201, 199, 202  /* 248 - 255 */
-};
-
 bool
 module_varia (RECODE_OUTER outer)
 {
@@ -495,25 +401,14 @@ module_varia (RECODE_OUTER outer)
     && declare_alias (outer, "Kamenicky", "KEYBCS2")
     && declare_alias (outer, "T1", "CORK")
 
-#if NOT_ACTIVE_YET
-    && declare_single (outer, "KOI8-R", "IBM866",
-                       outer->quality_byte_reversible,
-                       NULL, transform_byte_to_byte);
+  /* Russian aliases.  */
 
-  /* Suggested by Alexander L. Belikoff.  */
-    && declare_alias("866", "IBM866")
-    && declare_alias("CP866", "IBM866")
-    && declare_alias("alt", "IBM866")
+    && declare_alias (outer, "1489", "KOI8-R")
+    && declare_alias (outer, "RFC1489", "KOI8-R")
 
-  /* Suggested by Alexander L. Belikoff.  */
-    && declare_alias ("1489", "KOI8-R")
-    && declare_alias ("RFC1489", "KOI8-R")
-
-  /* Suggested by Alexander L. Belikoff.  */
-    && declare_alias ("878", "KOI8-R")
-    && declare_alias ("CP878", "KOI8-R")
-    && declare_alias ("IBM878", "KOI8-R")
-#endif
+    && declare_alias (outer, "878", "KOI8-R")
+    && declare_alias (outer, "CP878", "KOI8-R")
+    && declare_alias (outer, "IBM878", "KOI8-R")
 
   ;
 }
