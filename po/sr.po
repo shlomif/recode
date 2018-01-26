@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode-3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-15 14:25+0000\n"
+"POT-Creation-Date: 2018-01-26 13:28+0000\n"
 "PO-Revision-Date: 2012-03-25 13:12+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -18,39 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/main.c:105
+#: src/main.c:108
 msgid "No error"
 msgstr "Нема грешака"
 
-#: src/main.c:108
+#: src/main.c:111
 msgid "Non canonical input"
 msgstr "Неправилан улаз"
 
-#: src/main.c:111
+#: src/main.c:114
 msgid "Ambiguous output"
 msgstr "Нејасан излаз"
 
-#: src/main.c:114
+#: src/main.c:117
 msgid "Untranslatable input"
 msgstr "Непреводив улаз"
 
-#: src/main.c:117
+#: src/main.c:120
 msgid "Invalid input"
 msgstr "Неисправан улаз"
 
-#: src/main.c:120
+#: src/main.c:123
 msgid "System detected problem"
 msgstr "Систем је открио проблем"
 
-#: src/main.c:123
+#: src/main.c:126
 msgid "Misuse of recoding library"
 msgstr "Неправилна употреба библиотеке рекодирања"
 
-#: src/main.c:126
+#: src/main.c:129
 msgid "Internal recoding bug"
 msgstr "Унутрашња грешка рекодирања"
 
-#: src/main.c:166
+#: src/main.c:167
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -81,19 +81,19 @@ msgstr ""
 "софтвера на адресу: „Free Software Foundation, Inc.,\n"
 "59 Temple Place - Suite 330, Boston, MA 02111-1307, USA“.\n"
 
-#: src/main.c:191
+#: src/main.c:192
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Пробајте „%s %s“ за више информација.\n"
 
-#: src/main.c:195
+#: src/main.c:196
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "Слободан „recode“ претвара датотеке између различитих знаковних скупова и "
 "површина.\n"
 
-#: src/main.c:199
+#: src/main.c:200
 #, c-format
 msgid ""
 "\n"
@@ -102,7 +102,7 @@ msgstr ""
 "\n"
 "Употреба: %s [ОПЦИЈА]... [ [СКУПЗНАКОВА] | ЗАХТЕВ [ДАТОТЕКА]... ]\n"
 
-#: src/main.c:202
+#: src/main.c:203
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -112,7 +112,7 @@ msgstr ""
 "Ако је у дугој опцији неки аргумент обавезан, онда је обавезан\n"
 "и за одговарајућу кратку опцију.  Слично и за аргументе опције.\n"
 
-#: src/main.c:208
+#: src/main.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -141,7 +141,8 @@ msgstr ""
 "      --help                 приказује помоћ и излази\n"
 "      --version              приказује податке о издању и излази\n"
 
-#: src/main.c:220
+#: src/main.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -149,7 +150,6 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"  -i, --sequence=files    use intermediate files for sequencing passes\n"
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
@@ -174,11 +174,13 @@ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=спојка      исто као -i (на овом систему)\n"
 
 #: src/main.c:242
+#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings, even loose characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -281,10 +283,8 @@ msgstr ""
 #: src/main.c:286
 msgid ""
 "\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+"Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
-"\n"
-"Грешке пријавите на <recode-bugs@iro.umontreal.ca>.\n"
 
 #: src/main.c:385
 #, c-format
@@ -296,31 +296,32 @@ msgstr "Секвенца „%s“ је нејасна"
 msgid "Sequence `%s' is unknown"
 msgstr "Секвенца „%s“ је непозната"
 
-#: src/main.c:418 src/main.c:476
+#: src/main.c:415 src/main.c:473
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Језик „%s“ је нејасан"
 
-#: src/main.c:422 src/main.c:480
+#: src/main.c:419 src/main.c:477
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Језик „%s“ је непознат"
 
-#: src/main.c:514
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Формат „%s“ је нејасан"
 
-#: src/main.c:518
+#: src/main.c:515
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Формат „%s“ је непознат"
 
-#: src/main.c:578
-msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
+#: src/main.c:575
+#, fuzzy
+msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Програм је написао Франсуа Пинар <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:581
+#: src/main.c:578
 #, fuzzy
 msgid ""
 "\n"
@@ -330,7 +331,7 @@ msgstr ""
 "Ауторска права (C) 1990, 92, 93, 94, 96, 97, 99 Задужбина слободног "
 "софтвера\n"
 
-#: src/main.c:585
+#: src/main.c:582
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -339,82 +340,82 @@ msgstr ""
 "НИКАКВА гаранција; чак ни за ТРЖИШНУ ВРЕДНОСТ или за ИСПУЊАВАЊЕ ОДРЕЂЕНЕ "
 "ПОТРЕБЕ.\n"
 
-#: src/main.c:627
+#: src/main.c:624
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Симбол „%s“ је непознат"
 
-#: src/main.c:667 src/main.c:681
+#: src/main.c:664 src/main.c:678
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Скуп знакова „%s“ је непознат или нејасан"
 
-#: src/main.c:712
+#: src/main.c:709
 #, c-format
 msgid "Required argument is missing"
 msgstr "Недостаје захтевани аргумент"
 
-#: src/main.c:755
+#: src/main.c:752
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Синтакса је застарела, користите првенствено „%s“"
 
-#: src/main.c:761
+#: src/main.c:758
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Захтев „%s“ је погрешан"
 
-#: src/main.c:861
+#: src/main.c:840
 #, c-format
 msgid "Recoding %s..."
 msgstr "Рекодирам %s..."
 
-#: src/main.c:871
+#: src/main.c:850
 #, c-format
 msgid " done\n"
 msgstr " урађено\n"
 
-#: src/main.c:912
+#: src/main.c:883
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " нисам успео: %s при кораку „%s..%s“\n"
 
-#: src/main.c:919
+#: src/main.c:890
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s није успео: %s при кораку „%s..%s“"
 
-#: src/main.c:942
+#: src/main.c:915
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s при кораку „%s..%s“"
 
-#: src/names.c:362
+#: src/names.c:365
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Скуп знакова „%s“ већ постоји и није „%s“"
 
-#: src/names.c:861
+#: src/names.c:860
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Не могу да наведем „%s“, нема доступних назива за овај скуп знакова"
 
-#: src/names.c:1013 src/names.c:1059
+#: src/names.c:1012 src/names.c:1058
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Дец  Окт Хекс   УСЦ2  Мне  %s\n"
 
-#: src/names.c:1078
+#: src/names.c:1077
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Извините, нема доступних назива за „%s“"
 
-#: src/outer.c:125
+#: src/outer.c:127
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr "Понављач површине је подешен више од једном за „%s“"
 
-#: src/outer.c:133
+#: src/outer.c:135
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Уклањач површине је подешен више од једном за „%s“"
@@ -451,25 +452,25 @@ msgstr "Пар број %d: <%3d, %3d> је у сукобу са <%3d, %3d>"
 msgid "Cannot complete table from set of known pairs"
 msgstr "Не могу да попуним табелу из скупа познатих парова"
 
-#: src/recode.c:452
+#: src/recode.c:484
 msgid "Identity recoding, not worth a table"
 msgstr "Рекодирање идентитета, табела је непотребна"
 
-#: src/recode.c:459
+#: src/recode.c:491
 msgid "Recoding is too complex for a mere table"
 msgstr "Рекодирање је сувише сложено за коришћење једне табеле"
 
-#: src/recode.c:491
+#: src/recode.c:523
 #, fuzzy, c-format
 msgid "%sConversion table generated mechanically by %s %s"
 msgstr "%sТабелу претварања је механички створио Слободни „%s“ %s"
 
-#: src/recode.c:493
+#: src/recode.c:525
 #, c-format
 msgid "%sfor sequence %s.%s"
 msgstr "%sза секвенцу %s.%s"
 
-#: src/recode.c:714
+#: src/recode.c:746
 msgid "No table to print"
 msgstr "Нема табеле за штампање"
 
@@ -506,39 +507,39 @@ msgstr "*прост умножак*"
 msgid "Virtual memory exhausted!"
 msgstr "Нема више виртуелне меморије!"
 
-#: src/request.c:251
+#: src/request.c:253
 msgid "Step initialisation failed"
 msgstr "Корак покретања није успео"
 
-#: src/request.c:258
+#: src/request.c:260
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Корак покретања није успео (необрађене опције)"
 
-#: src/request.c:554
+#: src/request.c:574
 #, c-format
 msgid "Request: %s\n"
 msgstr "Захтев: %s\n"
 
-#: src/request.c:706
+#: src/request.c:741
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Прошири на: %s\n"
 
-#: src/request.c:812 src/request.c:921
+#: src/request.c:847 src/request.c:956
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Непрепознатљив назив површине „%s“"
 
-#: src/request.c:892
+#: src/request.c:927
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Није могуће рекодирање из „%s“ у „%s“"
 
-#: src/request.c:1002
+#: src/request.c:1037
 msgid "Expecting `..' in request"
 msgstr "Очекујем „..“ у захтеву"
 
-#: src/task.c:622 src/task.c:799
+#: src/task.c:453
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Стање чекања проистеклог процеса је 0x%0.2x"
@@ -550,3 +551,10 @@ msgid ""
 msgstr ""
 "УСЦ2   Мне   Опис\n"
 "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Грешке пријавите на <recode-bugs@iro.umontreal.ca>.\n"
