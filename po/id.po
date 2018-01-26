@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-15 14:25+0000\n"
+"POT-Creation-Date: 2018-01-26 13:28+0000\n"
 "PO-Revision-Date: 2002-10-08 14:29GMT+0700\n"
 "Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -17,39 +17,39 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Generator: KBabel 0.9.5\n"
 
-#: src/main.c:105
+#: src/main.c:108
 msgid "No error"
 msgstr "Tidak ada kesalahan"
 
-#: src/main.c:108
+#: src/main.c:111
 msgid "Non canonical input"
 msgstr "Input non kanonikal"
 
-#: src/main.c:111
+#: src/main.c:114
 msgid "Ambiguous output"
 msgstr "Output ambigu"
 
-#: src/main.c:114
+#: src/main.c:117
 msgid "Untranslatable input"
 msgstr "Input tak dapat diterjemahkan"
 
-#: src/main.c:117
+#: src/main.c:120
 msgid "Invalid input"
 msgstr "Input tidak valid"
 
-#: src/main.c:120
+#: src/main.c:123
 msgid "System detected problem"
 msgstr "Sistem mendeteksi masalah"
 
-#: src/main.c:123
+#: src/main.c:126
 msgid "Misuse of recoding library"
 msgstr "Kesalahan penggunaan library recoding"
 
-#: src/main.c:126
+#: src/main.c:129
 msgid "Internal recoding bug"
 msgstr "Bug recoding internal"
 
-#: src/main.c:166
+#: src/main.c:167
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -79,18 +79,18 @@ msgstr ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:191
+#: src/main.c:192
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Coba `%s %s' untuk informasi lengkap.\n"
 
-#: src/main.c:195
+#: src/main.c:196
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "Free `recode' mengkonversi file antar berbagai set karakter dan permukaan.\n"
 
-#: src/main.c:199
+#: src/main.c:200
 #, c-format
 msgid ""
 "\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 
-#: src/main.c:202
+#: src/main.c:203
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -110,7 +110,7 @@ msgstr ""
 "mandatori\n"
 "juga option short yang ekivalen. Demikian pula untuk argumen optional.\n"
 
-#: src/main.c:208
+#: src/main.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -140,7 +140,8 @@ msgstr ""
 "      --help                 tampilkan bantuan ini dan keluar\n"
 "      --version              tampilkan informasi versi dan keluar\n"
 
-#: src/main.c:220
+#: src/main.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -148,7 +149,6 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"  -i, --sequence=files    use intermediate files for sequencing passes\n"
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
@@ -171,11 +171,13 @@ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=pipe     sama seperti -i (pada sistem ini)\n"
 
 #: src/main.c:242
+#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings, even loose characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -272,10 +274,8 @@ msgstr ""
 #: src/main.c:286
 msgid ""
 "\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+"Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
-"\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
 
 #: src/main.c:385
 #, c-format
@@ -287,31 +287,32 @@ msgstr "Urutan `%s' ambigu"
 msgid "Sequence `%s' is unknown"
 msgstr "Urutan `%s' tidak dikenal"
 
-#: src/main.c:418 src/main.c:476
+#: src/main.c:415 src/main.c:473
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Bahasa `%s' ambigu"
 
-#: src/main.c:422 src/main.c:480
+#: src/main.c:419 src/main.c:477
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Bahasa `%s' tidak dikenal"
 
-#: src/main.c:514
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Format `%s' ambigu"
 
-#: src/main.c:518
+#: src/main.c:515
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Format `%s' tidak dikenal"
 
-#: src/main.c:578
-msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
+#: src/main.c:575
+#, fuzzy
+msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Ditulis oleh Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:581
+#: src/main.c:578
 #, fuzzy
 msgid ""
 "\n"
@@ -320,7 +321,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:585
+#: src/main.c:582
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -328,83 +329,83 @@ msgstr ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 
-#: src/main.c:627
+#: src/main.c:624
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Simbol `%s' tidak dikenal"
 
-#: src/main.c:667 src/main.c:681
+#: src/main.c:664 src/main.c:678
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Charset `%s' tidak dikenal atau ambigu"
 
-#: src/main.c:712
+#: src/main.c:709
 #, c-format
 msgid "Required argument is missing"
 msgstr "Argumen yang dibutuhkan hilang"
 
-#: src/main.c:755
+#: src/main.c:752
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Sintaks tidak digunakan lagi, silakan pilih `%s'"
 
-#: src/main.c:761
+#: src/main.c:758
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Permintaan `%s' salah"
 
-#: src/main.c:861
+#: src/main.c:840
 #, c-format
 msgid "Recoding %s..."
 msgstr "Merecoding %s..."
 
-#: src/main.c:871
+#: src/main.c:850
 #, c-format
 msgid " done\n"
 msgstr " selesai\n"
 
-#: src/main.c:912
+#: src/main.c:883
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " gagal: %s di langkah `%s..%s'\n"
 
-#: src/main.c:919
+#: src/main.c:890
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s gagal: %s di langkah `%s..%s'"
 
-#: src/main.c:942
+#: src/main.c:915
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s di langkah `%s..%s'"
 
-#: src/names.c:362
+#: src/names.c:365
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Charset %s sudah ada dan bukan %s"
 
-#: src/names.c:861
+#: src/names.c:860
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr ""
 "Tidak dapat medaftarkan `%s', tidak ada nama yang tersedia untuk charset ini"
 
-#: src/names.c:1013 src/names.c:1059
+#: src/names.c:1012 src/names.c:1058
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1078
+#: src/names.c:1077
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Maaf, tidak ada tersedia untuk `%s'"
 
-#: src/outer.c:125
+#: src/outer.c:127
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr "Resurfacer set lebih dari satu untuk `%s'"
 
-#: src/outer.c:133
+#: src/outer.c:135
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Unsurfacer set lebih dari satu untuk `%s'"
@@ -441,25 +442,25 @@ msgstr "Pasangan no %d: <%3d,%3d> konflik dengan <%3d, %3d>"
 msgid "Cannot complete table from set of known pairs"
 msgstr "Tidak dapat menyelesaikan tabel dari sejumlah pasangan dikenal"
 
-#: src/recode.c:452
+#: src/recode.c:484
 msgid "Identity recoding, not worth a table"
 msgstr "Recoding identitas, tidak perlu tabel"
 
-#: src/recode.c:459
+#: src/recode.c:491
 msgid "Recoding is too complex for a mere table"
 msgstr "Recoding terlalu kompleks untuk tabel"
 
-#: src/recode.c:491
+#: src/recode.c:523
 #, fuzzy, c-format
 msgid "%sConversion table generated mechanically by %s %s"
 msgstr "%sTabel konversi dihasilkan secara mekanis dengan Free `%s' %s"
 
-#: src/recode.c:493
+#: src/recode.c:525
 #, c-format
 msgid "%sfor sequence %s.%s"
 msgstr "%suntuk urutan %s.%s"
 
-#: src/recode.c:714
+#: src/recode.c:746
 msgid "No table to print"
 msgstr "Tidak ada tabel untuk dicetak"
 
@@ -496,39 +497,39 @@ msgstr "*mere copy*"
 msgid "Virtual memory exhausted!"
 msgstr "Memori virtual habis!"
 
-#: src/request.c:251
+#: src/request.c:253
 msgid "Step initialisation failed"
 msgstr "Gagal langkah inisialisasi"
 
-#: src/request.c:258
+#: src/request.c:260
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Gagal langkah inisialisasi (option tidak diproses)"
 
-#: src/request.c:554
+#: src/request.c:574
 #, c-format
 msgid "Request: %s\n"
 msgstr "Permintaan: %s\n"
 
-#: src/request.c:706
+#: src/request.c:741
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Diperkecil jadi: %s\n"
 
-#: src/request.c:812 src/request.c:921
+#: src/request.c:847 src/request.c:956
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Nama surface tidak dikenal `%s'"
 
-#: src/request.c:892
+#: src/request.c:927
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Tidak ada cara merecode dari `%s' ke `%s'"
 
-#: src/request.c:1002
+#: src/request.c:1037
 msgid "Expecting `..' in request"
 msgstr "Mengharapkan `..' dalam permintaan"
 
-#: src/task.c:622 src/task.c:799
+#: src/task.c:453
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Status tunggu proses anak adalah 0x%0.2x"
@@ -540,3 +541,10 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Description\n"
 "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"

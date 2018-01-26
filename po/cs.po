@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-15 14:25+0000\n"
+"POT-Creation-Date: 2018-01-26 13:28+0000\n"
 "PO-Revision-Date: 2009-07-26 20:49+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -19,39 +19,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: src/main.c:105
+#: src/main.c:108
 msgid "No error"
 msgstr "Žádná chyba"
 
-#: src/main.c:108
+#: src/main.c:111
 msgid "Non canonical input"
 msgstr "Nekanonický vstup"
 
-#: src/main.c:111
+#: src/main.c:114
 msgid "Ambiguous output"
 msgstr "Nejednoznačný výstup"
 
-#: src/main.c:114
+#: src/main.c:117
 msgid "Untranslatable input"
 msgstr "Nepřeložitelný vstup"
 
-#: src/main.c:117
+#: src/main.c:120
 msgid "Invalid input"
 msgstr "Neplatný vstup"
 
-#: src/main.c:120
+#: src/main.c:123
 msgid "System detected problem"
 msgstr "Problém nalezený systémem"
 
-#: src/main.c:123
+#: src/main.c:126
 msgid "Misuse of recoding library"
 msgstr "Nesprávné použití převodní knihovny"
 
-#: src/main.c:126
+#: src/main.c:129
 msgid "Internal recoding bug"
 msgstr "Vnitřní chyba převodu"
 
-#: src/main.c:166
+#: src/main.c:167
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -80,19 +80,19 @@ msgstr ""
 "(GPL). Není-li tomu tak, napište na adresu Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:191
+#: src/main.c:192
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Podrobnosti získáte pomocí „%s %s“.\n"
 
-#: src/main.c:195
+#: src/main.c:196
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "Svobodný „recode“ převádí soubory mezi rozličnými znakovými sadami a "
 "povrchy.\n"
 
-#: src/main.c:199
+#: src/main.c:200
 #, c-format
 msgid ""
 "\n"
@@ -101,7 +101,7 @@ msgstr ""
 "\n"
 "Použití: %s [PŘEPÍNAČE…] [ [ZNAKOVÁ_SADA] | POŽADAVEK [SOUBOR…] ]\n"
 
-#: src/main.c:202
+#: src/main.c:203
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -112,7 +112,7 @@ msgstr ""
 "odpovídající krátký přepínač. Obdobné pravidlo platí pro volitelné "
 "argumenty.\n"
 
-#: src/main.c:208
+#: src/main.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -139,7 +139,8 @@ msgstr ""
 "      --help                 zobrazí tuto nápovědu a skončí\n"
 "      --version              vypíše informace o verzi a skončí\n"
 
-#: src/main.c:220
+#: src/main.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -147,7 +148,6 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"  -i, --sequence=files    use intermediate files for sequencing passes\n"
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
@@ -169,11 +169,13 @@ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=pipe     stejné jako -i (na tomto systému)\n"
 
 #: src/main.c:242
+#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings, even loose characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -271,11 +273,8 @@ msgstr ""
 #: src/main.c:286
 msgid ""
 "\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+"Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
-"\n"
-"Chyby programu hlaste anglicky na <recode-bugs@iro.umontreal.ca>, chyby\n"
-"v překladu česky na <translation-team-cs@lists.sourceforge.net>\n"
 
 #: src/main.c:385
 #, c-format
@@ -287,31 +286,32 @@ msgstr "Posloupnost „%s“ není jednoznačná"
 msgid "Sequence `%s' is unknown"
 msgstr "Posloupnost „%s“ není známa"
 
-#: src/main.c:418 src/main.c:476
+#: src/main.c:415 src/main.c:473
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Jazyk „%s“ není jednoznačný"
 
-#: src/main.c:422 src/main.c:480
+#: src/main.c:419 src/main.c:477
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Jazyk „%s“ není znám"
 
-#: src/main.c:514
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Formát „%s“ není jednoznačný"
 
-#: src/main.c:518
+#: src/main.c:515
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Formát „%s“ není znám"
 
-#: src/main.c:578
-msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
+#: src/main.c:575
+#, fuzzy
+msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Napsal François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:581
+#: src/main.c:578
 #, fuzzy
 msgid ""
 "\n"
@@ -320,7 +320,7 @@ msgstr ""
 "\n"
 "Copyright © 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:585
+#: src/main.c:582
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -330,82 +330,82 @@ msgstr ""
 "kódy. Není zde ŽÁDNÁ záruka, ani na OBCHODOVATELNOST, ani na VHODNOST PRO\n"
 "URČITÝ ÚČEL.\n"
 
-#: src/main.c:627
+#: src/main.c:624
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Symbol „%s“ není znám"
 
-#: src/main.c:667 src/main.c:681
+#: src/main.c:664 src/main.c:678
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Znaková sada „%s“ není známa nebo není jednoznačná"
 
-#: src/main.c:712
+#: src/main.c:709
 #, c-format
 msgid "Required argument is missing"
 msgstr "Požadovaný argument chybí"
 
-#: src/main.c:755
+#: src/main.c:752
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Syntaxe je zastaralá, prosím, používejte „%s“"
 
-#: src/main.c:761
+#: src/main.c:758
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Požadavek „%s“ chybný"
 
-#: src/main.c:861
+#: src/main.c:840
 #, c-format
 msgid "Recoding %s..."
 msgstr "%s se převádí…"
 
-#: src/main.c:871
+#: src/main.c:850
 #, c-format
 msgid " done\n"
 msgstr " hotovo\n"
 
-#: src/main.c:912
+#: src/main.c:883
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " chyba: %s v kroku „%s..%s“\n"
 
-#: src/main.c:919
+#: src/main.c:890
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s selhalo: %s v kroku „%s..%s“"
 
-#: src/main.c:942
+#: src/main.c:915
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s v kroku „%s..%s“"
 
-#: src/names.c:362
+#: src/names.c:365
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Znaková sada %s již existuje a není %s"
 
-#: src/names.c:861
+#: src/names.c:860
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "„%s“ nelze vypsat, pro tuto sadu neexistují žádná jména"
 
-#: src/names.c:1013 src/names.c:1059
+#: src/names.c:1012 src/names.c:1058
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Des  Osm Šest  UCS2  Mne  %s\n"
 
-#: src/names.c:1078
+#: src/names.c:1077
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Je nám líto, ale pro „%s“ není žádný název"
 
-#: src/outer.c:125
+#: src/outer.c:127
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr "Změna povrchu u %s“ nastavena více než jednou"
 
-#: src/outer.c:133
+#: src/outer.c:135
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Odstranění povrchu u „%s“ nastaveno více než jednou"
@@ -442,25 +442,25 @@ msgstr "Pár č. %d: <%3d, %3d> je v rozporu s <%3d, %3d>"
 msgid "Cannot complete table from set of known pairs"
 msgstr "Z množiny známých párů nelze sestavit tabulku"
 
-#: src/recode.c:452
+#: src/recode.c:484
 msgid "Identity recoding, not worth a table"
 msgstr "Tabulka identity, ne příliš užitečná tabulka"
 
-#: src/recode.c:459
+#: src/recode.c:491
 msgid "Recoding is too complex for a mere table"
 msgstr "Převod je na pouhou tabulku příliš složitý"
 
-#: src/recode.c:491
+#: src/recode.c:523
 #, fuzzy, c-format
 msgid "%sConversion table generated mechanically by %s %s"
 msgstr "%sPřevodní tabulka mechanicky vytvořena pomocí svobodného „%s“ %s"
 
-#: src/recode.c:493
+#: src/recode.c:525
 #, c-format
 msgid "%sfor sequence %s.%s"
 msgstr "%spro posloupnost %s.%s"
 
-#: src/recode.c:714
+#: src/recode.c:746
 msgid "No table to print"
 msgstr "Žádná tabulka na vytištění"
 
@@ -497,39 +497,39 @@ msgstr "čistá kopie"
 msgid "Virtual memory exhausted!"
 msgstr "Virtuální paměť vyčerpána!"
 
-#: src/request.c:251
+#: src/request.c:253
 msgid "Step initialisation failed"
 msgstr "Inicializace kroku selhala"
 
-#: src/request.c:258
+#: src/request.c:260
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Inicializace kroku selhala (nezpracované přepínače)"
 
-#: src/request.c:554
+#: src/request.c:574
 #, c-format
 msgid "Request: %s\n"
 msgstr "Požadavek: %s\n"
 
-#: src/request.c:706
+#: src/request.c:741
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Zkráceno na: %s\n"
 
-#: src/request.c:812 src/request.c:921
+#: src/request.c:847 src/request.c:956
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Nerozpoznaný název povrchu „%s“"
 
-#: src/request.c:892
+#: src/request.c:927
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Neexistuje způsob, jak převést „%s“ na „%s“"
 
-#: src/request.c:1002
+#: src/request.c:1037
 msgid "Expecting `..' in request"
 msgstr "V požadavku očekáváno „..“"
 
-#: src/task.c:622 src/task.c:799
+#: src/task.c:453
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Proces potomka zakončen ve stavu 0x%0.2x"
@@ -541,3 +541,11 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Popis\n"
 "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Chyby programu hlaste anglicky na <recode-bugs@iro.umontreal.ca>, chyby\n"
+#~ "v překladu česky na <translation-team-cs@lists.sourceforge.net>\n"

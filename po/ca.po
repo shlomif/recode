@@ -1,63 +1,63 @@
 # Catalan translation of GNU recode.
-# Copyright © 2002, 2003 Free Software Foundation, Inc.
+# Copyright Â© 2002, 2003 Free Software Foundation, Inc.
 # Jordi Mallach <jordi@gnu.org>, 2002, 2003.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-15 14:25+0000\n"
+"POT-Creation-Date: 2018-01-26 13:28+0000\n"
 "PO-Revision-Date: 2003-08-30 16:48+0200\n"
 "Last-Translator: Jordi Mallach <jordi@gnu.org>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Generator: KBabel 0.9.6\n"
 
-#: src/main.c:105
+#: src/main.c:108
 msgid "No error"
 msgstr "No hi ha cap error"
 
-#: src/main.c:108
-msgid "Non canonical input"
-msgstr "L'entrada no és canònica"
-
 #: src/main.c:111
-msgid "Ambiguous output"
-msgstr "L'eixida és ambigua"
+msgid "Non canonical input"
+msgstr "L'entrada no Ã©s canÃ²nica"
 
 #: src/main.c:114
-msgid "Untranslatable input"
-msgstr "L'entrada no és convertible"
+msgid "Ambiguous output"
+msgstr "L'eixida Ã©s ambigua"
 
 #: src/main.c:117
-msgid "Invalid input"
-msgstr "L'entrada és invàlida"
+msgid "Untranslatable input"
+msgstr "L'entrada no Ã©s convertible"
 
 #: src/main.c:120
+msgid "Invalid input"
+msgstr "L'entrada Ã©s invÃ lida"
+
+#: src/main.c:123
 msgid "System detected problem"
 msgstr "El sistema ha detectat un problema"
 
-# El verb "to misuse" vol dir "desaprofitar" o també "fer mal ús". Crec 
-# que en aquest cas la traducció més correcta seria: "Mal ús de la 
-# biblioteca de recodificació" o, si es prefereix, "Ús incorrecte de 
-# la biblioteca de recodificació". mvs
-# Bé, les teues frases són en "indi", que diem Ivan i jo...
-# es a dir, no són frases completes. No veig massa diferència entre
-# «Ús incorrecte de la biblioteca de recodificació» i la forma que he
+# El verb "to misuse" vol dir "desaprofitar" o tambÃ© "fer mal Ãºs". Crec 
+# que en aquest cas la traducciÃ³ mÃ©s correcta seria: "Mal Ãºs de la 
+# biblioteca de recodificaciÃ³" o, si es prefereix, "Ãšs incorrecte de 
+# la biblioteca de recodificaciÃ³". mvs
+# BÃ©, les teues frases sÃ³n en "indi", que diem Ivan i jo...
+# es a dir, no sÃ³n frases completes. No veig massa diferÃ¨ncia entre
+# Â«Ãšs incorrecte de la biblioteca de recodificaciÃ³Â» i la forma que he
 # fet servir jo... jm
-#: src/main.c:123
-msgid "Misuse of recoding library"
-msgstr "L'ús de la biblioteca de recodificació és incorrecte"
-
 #: src/main.c:126
-msgid "Internal recoding bug"
-msgstr "S'ha produït un error intern de recodificació"
+msgid "Misuse of recoding library"
+msgstr "L'Ãºs de la biblioteca de recodificaciÃ³ Ã©s incorrecte"
 
-#: src/main.c:166
+#: src/main.c:129
+msgid "Internal recoding bug"
+msgstr "S'ha produÃ¯t un error intern de recodificaciÃ³"
+
+#: src/main.c:167
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -73,72 +73,72 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
-"Açò és programari lliure; podeu redistribuir-lo i/o modificar-lo\n"
-"sota els termes de la Llicència Pública General GNU tal i com ha estat\n"
-"publicada per la Free Software Foundation; bé sota la versió 2 de la\n"
-"Llicència o bé (si ho preferiu) sota qualsevol versió posterior.\n"
+"AÃ§Ã² Ã©s programari lliure; podeu redistribuir-lo i/o modificar-lo\n"
+"sota els termes de la LlicÃ¨ncia PÃºblica General GNU tal i com ha estat\n"
+"publicada per la Free Software Foundation; bÃ© sota la versiÃ³ 2 de la\n"
+"LlicÃ¨ncia o bÃ© (si ho preferiu) sota qualsevol versiÃ³ posterior.\n"
 "\n"
-"Aquest programa es distribueix amb l'expectativa de que serà útil,\n"
-"però SENSE CAP GARANTIA; ni tan sols la garantia implícita de\n"
-"COMERCIABILITAT o ADEQUACIÓ PER UN PROPÒSIT PARTICULAR.  Vegeu la\n"
-"Llicència Pública General GNU per obtenir-ne més detalls.\n"
+"Aquest programa es distribueix amb l'expectativa de que serÃ  Ãºtil,\n"
+"perÃ² SENSE CAP GARANTIA; ni tan sols la garantia implÃ­cita de\n"
+"COMERCIABILITAT o ADEQUACIÃ“ PER UN PROPÃ’SIT PARTICULAR.  Vegeu la\n"
+"LlicÃ¨ncia PÃºblica General GNU per obtenir-ne mÃ©s detalls.\n"
 "\n"
-"Hauríeu d'haver rebut una còpia de la Llicència Pública General GNU\n"
+"HaurÃ­eu d'haver rebut una cÃ²pia de la LlicÃ¨ncia PÃºblica General GNU\n"
 "juntament amb aquest programa; en cas contrari, escriviu a la Free\n"
 "Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,\n"
 "MA  02111, USA.\n"
 
-#: src/main.c:191
+#: src/main.c:192
 #, c-format
 msgid "Try `%s %s' for more information.\n"
-msgstr "Proveu «%s %s» per a obtindre més informació.\n"
+msgstr "Proveu Â«%s %sÂ» per a obtindre mÃ©s informaciÃ³.\n"
 
-# On posa "entre varios", açò no és un castellanisme?.
-# Em sembla que seria més correcte posar "diversos" en voltes de "varios". mvs
+# On posa "entre varios", aÃ§Ã² no Ã©s un castellanisme?.
+# Em sembla que seria mÃ©s correcte posar "diversos" en voltes de "varios". mvs
 # I tant... jm
-#: src/main.c:195
+#: src/main.c:196
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
-"El «recode» lliure converteix fitxers entre diversos jocs de caràcters i "
-"superfícies.\n"
+"El Â«recodeÂ» lliure converteix fitxers entre diversos jocs de carÃ cters i "
+"superfÃ­cies.\n"
 
-#: src/main.c:199
+#: src/main.c:200
 #, c-format
 msgid ""
 "\n"
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 msgstr ""
 "\n"
-"Forma d'ús: %s [OPCIÓ]... [ [JOC DE CARÀCTERS] | PETICIÓ [FITXER]... ]\n"
+"Forma d'Ãºs: %s [OPCIÃ“]... [ [JOC DE CARÃ€CTERS] | PETICIÃ“ [FITXER]... ]\n"
 
 # Aquest programa s'executa en terminal o en un
-# servidor x?. Si és per a una terminal potser caldria respectar
-# un salt de línia fins la columna núm. 70. S'edita el missatge
-# a un editor de textos que aplique salt de línia automàticament,
+# servidor x?. Si Ã©s per a una terminal potser caldria respectar
+# un salt de lÃ­nia fins la columna nÃºm. 70. S'edita el missatge
+# a un editor de textos que aplique salt de lÃ­nia automÃ ticament,
 # i el copiem al programa traductor (si feu servir kbabel, no
-# oblideu d'afegir "\n" al final de cada línia). mvs
-# Sí, és en mode text, i corregit. El kbabel us fa ficar el salt
-# de línia a ma? Què mal... :) jm
-#: src/main.c:202
+# oblideu d'afegir "\n" al final de cada lÃ­nia). mvs
+# SÃ­, Ã©s en mode text, i corregit. El kbabel us fa ficar el salt
+# de lÃ­nia a ma? QuÃ¨ mal... :) jm
+#: src/main.c:203
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
 "for the equivalent short option also.  Similarly for optional arguments.\n"
 msgstr ""
 "\n"
-"Si una opció llarga mostra un argument com requerit, aleshores també és\n"
-"requerit per a l'opció curta equivalent, i de forma similar per als\n"
+"Si una opciÃ³ llarga mostra un argument com requerit, aleshores tambÃ© Ã©s\n"
+"requerit per a l'opciÃ³ curta equivalent, i de forma similar per als\n"
 "arguments opcionals.\n"
 
 # Que tal si traduim "copyright", per "drets reservats"?.
-# També on posa "copying conditions", ¿això no vol dir
-# "condicions de l'autor" en voltes de "condicions de còpia"? mvs
-# «copyright» != «drets reservats», això seria «all rights reserved»
-# o similar. Crec que «copying conditions» és l'evident: «condicions
-# de còpia». El tema de traduir o no «copyright» s'ha discutit alguna
+# TambÃ© on posa "copying conditions", Â¿aixÃ² no vol dir
+# "condicions de l'autor" en voltes de "condicions de cÃ²pia"? mvs
+# Â«copyrightÂ» != Â«drets reservatsÂ», aixÃ² seria Â«all rights reservedÂ»
+# o similar. Crec que Â«copying conditionsÂ» Ã©s l'evident: Â«condicions
+# de cÃ²piaÂ». El tema de traduir o no Â«copyrightÂ» s'ha discutit alguna
 # vegada si no recorde mal, i sempre s'ha preferit no traduir-ho. jm
-#: src/main.c:208
+#: src/main.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -154,29 +154,30 @@ msgid ""
 msgstr ""
 "\n"
 "Llistats:\n"
-"  -l, --list[=FORMAT]        llista un o tots els jocs de caràcters i àlies\n"
+"  -l, --list[=FORMAT]        llista un o tots els jocs de carÃ cters i Ã lies\n"
 "                             coneguts\n"
-"  -k, --known=PARELLES       limita els jocs de caràcters d'acord amb la\n"
+"  -k, --known=PARELLES       limita els jocs de carÃ cters d'acord amb la\n"
 "                             llista de PARELLES conegudes\n"
-"  -h, --header=[={LN/}NOM}   mostra la taula NOM a l'eixida estàndard\n"
-"                             utilitzant LN, i surt a continuació\n"
-"  -F, --freeze-tables        mostra un mòdul de C contenint totes les "
+"  -h, --header=[={LN/}NOM}   mostra la taula NOM a l'eixida estÃ ndard\n"
+"                             utilitzant LN, i surt a continuaciÃ³\n"
+"  -F, --freeze-tables        mostra un mÃ²dul de C contenint totes les "
 "taules\n"
-"  -T, --find-subsets         informa de tots els jocs de caràcters que són\n"
+"  -T, --find-subsets         informa de tots els jocs de carÃ cters que sÃ³n\n"
 "                             subconjunts d'altres\n"
-"  -C, --copyright            mostra el Copyright i les condicions de còpia\n"
+"  -C, --copyright            mostra el Copyright i les condicions de cÃ²pia\n"
 "      --help                 mostra aquesta ajuda i ix\n"
-"      --version              mostra la informació sobre la versió i ix\n"
+"      --version              mostra la informaciÃ³ sobre la versiÃ³ i ix\n"
 
-# Una "passa" no és un "pas". "Passa" es un sinònim de
-# epidèmia. Per tant, hauria de posar-se "passos" i no "passes".
+# Una "passa" no Ã©s un "pas". "Passa" es un sinÃ²nim de
+# epidÃ¨mia. Per tant, hauria de posar-se "passos" i no "passes".
 # Concretant:
-# "step" és "pas" ("passos") o "iteració"
-# "pass" és "passi" ("passis"), sinònim de permís
-# ("cinema session pass" = "passi de sessió de cinema"). mvs
+# "step" Ã©s "pas" ("passos") o "iteraciÃ³"
+# "pass" Ã©s "passi" ("passis"), sinÃ²nim de permÃ­s
+# ("cinema session pass" = "passi de sessiÃ³ de cinema"). mvs
 # Uff. Aquesta errada l'arrossegue en altres traduccions, aleshores.
-# Caldrà fer una bonica sessió de greps. jm
-#: src/main.c:220
+# CaldrÃ  fer una bonica sessiÃ³ de greps. jm
+#: src/main.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -184,44 +185,45 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"  -i, --sequence=files    use intermediate files for sequencing passes\n"
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
-"Modes d'operació:\n"
-"  -v, --verbose           explica la seqüència de passos i informa del "
-"progrés\n"
+"Modes d'operaciÃ³:\n"
+"  -v, --verbose           explica la seqÃ¼Ã¨ncia de passos i informa del "
+"progrÃ©s\n"
 "  -q, --quiet, --silent   inhabilita els missatges sobre recodificacions\n"
 "                          irreversibles\n"
-"  -f, --force             força les recodificacions inclús si són "
+"  -f, --force             forÃ§a les recodificacions inclÃºs si sÃ³n "
 "irreversibles\n"
-"  -t, --touch             toca els fitxers recodificats després del "
-"reemplaç\n"
+"  -t, --touch             toca els fitxers recodificats desprÃ©s del "
+"reemplaÃ§\n"
 "  -i, --sequence=files    utilitza fitxers intermedis per als passos\n"
-"      --sequence=memory   utilitza búfers de memòria per als passos\n"
+"      --sequence=memory   utilitza bÃºfers de memÃ²ria per als passos\n"
 
-# Vegeu la mateixa observació que vaig fer al missatge núm 15. mvs
+# Vegeu la mateixa observaciÃ³ que vaig fer al missatge nÃºm 15. mvs
 #: src/main.c:232
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
 msgstr ""
 "  -p, --sequence=pipe     utilitza conductes per als passos de\n"
-"                          seqüències\n"
+"                          seqÃ¼Ã¨ncies\n"
 
 #: src/main.c:237
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 msgstr "  -p, --sequence=pipe     el mateix que -i (en aquest sistema)\n"
 
-# A l'opció "-g" has obviat la paraula "rules", que
-# voldria dir "normes". Així, "IBMPC rulers" voldria dir
+# A l'opciÃ³ "-g" has obviat la paraula "rules", que
+# voldria dir "normes". AixÃ­, "IBMPC rulers" voldria dir
 # "normes IBMPC", encara que no estic del tot segur. mvs
-# No, he traduït «rules» per «gràfics». Es refereix als caràcters
+# No, he traduÃ¯t Â«rulesÂ» per Â«grÃ ficsÂ». Es refereix als carÃ cters
 # amb els que es dibuixen les caixetes i tal. jm
 #: src/main.c:242
+#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings, even loose characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -229,18 +231,18 @@ msgid ""
 msgstr ""
 "\n"
 "Ajustament afinat:\n"
-"  -s, --strict           utilitza coincidències estrictes, encara que es\n"
-"                         perden caràcters\n"
-"  -d, --diacritics       converteix només els accents o pareguts per a\n"
+"  -s, --strict           utilitza coincidÃ¨ncies estrictes, encara que es\n"
+"                         perden carÃ cters\n"
+"  -d, --diacritics       converteix nomÃ©s els accents o pareguts per a\n"
 "                         HTML/LaTeX\n"
-"  -S, --source[=LN]      limita la recodificació a cadenes i comentaris\n"
+"  -S, --source[=LN]      limita la recodificaciÃ³ a cadenes i comentaris\n"
 "                         segons LN\n"
 "  -c, --colons           utilitza dos punts en comptes de cometes dobles\n"
-"                         per a la dièresis\n"
-"  -g, --graphics         aproxima els gràfics IBMPC amb gràfics ASCII\n"
-"  -x, --ignore=JOC       descarta JOC al escollir un camí de recodificació\n"
+"                         per a la diÃ¨resis\n"
+"  -g, --graphics         aproxima els grÃ fics IBMPC amb grÃ fics ASCII\n"
+"  -x, --ignore=JOC       descarta JOC al escollir un camÃ­ de recodificaciÃ³\n"
 
-# "L'opció "-l" sense cap FORMAT ni JOC DE CARACTERS llista..." mvs
+# "L'opciÃ³ "-l" sense cap FORMAT ni JOC DE CARACTERS llista..." mvs
 # Fet. jm
 #: src/main.c:253
 msgid ""
@@ -249,14 +251,14 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"L'opció -l sense cap FORMAT o JOC DE CARÀCTERS llista els jocs de caràcters\n"
-"i facetes disponibles. FORMAT és «decimal», «octal», «hexadecimal» o «full»\n"
-"(o un de «dohf»).\n"
+"L'opciÃ³ -l sense cap FORMAT o JOC DE CARÃ€CTERS llista els jocs de carÃ cters\n"
+"i facetes disponibles. FORMAT Ã©s Â«decimalÂ», Â«octalÂ», Â«hexadecimalÂ» o Â«fullÂ»\n"
+"(o un de Â«dohfÂ»).\n"
 
-# "... de la que depén...", això és un castellanisme.
-# El correcte és dir: "... de la qual depèn...", o
-# "... de què depèn...", (ull!: amb laccent tancat). mvs
-# Oops. Volia haver ficat «de la qual». jm
+# "... de la que depÃ©n...", aixÃ² Ã©s un castellanisme.
+# El correcte Ã©s dir: "... de la qual depÃ¨n...", o
+# "... de quÃ¨ depÃ¨n...", (ull!: amb laccent tancat). mvs
+# Oops. Volia haver ficat Â«de la qualÂ». jm
 #: src/main.c:259
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
@@ -264,7 +266,7 @@ msgid ""
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "A no ser que s'establisca DEFAULT_CHARSET a l'entorn, el valor\n"
-"predeterminat de CHARSET és la codificació de la qual depen el locale,\n"
+"predeterminat de CHARSET Ã©s la codificaciÃ³ de la qual depen el locale,\n"
 "determinat per LC_ALL, LC_CTYPE, LANG.\n"
 
 #: src/main.c:264
@@ -274,16 +276,16 @@ msgid ""
 "AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Amb -k, es mostren els possibles jocs de caràcters «abans» per al JOC\n"
-"«després» donat, sent ambdós jocs de caràcters tabulars, amb PARELLES de la\n"
-"forma «ABAN1:DESP1,ABAN2:DESP2,...» i sent els ABAN i DESP codis donats com\n"
-"números decimals.\n"
+"Amb -k, es mostren els possibles jocs de carÃ cters Â«abansÂ» per al JOC\n"
+"Â«desprÃ©sÂ» donat, sent ambdÃ³s jocs de carÃ cters tabulars, amb PARELLES de la\n"
+"forma Â«ABAN1:DESP1,ABAN2:DESP2,...Â» i sent els ABAN i DESP codis donats com\n"
+"nÃºmeros decimals.\n"
 
 #: src/main.c:269
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
-"LN és un llenguatge, pot ser «c», «perl» o «po; «c» és el predeterminat.\n"
+"LN Ã©s un llenguatge, pot ser Â«cÂ», Â«perlÂ» o Â«po; Â«cÂ» Ã©s el predeterminat.\n"
 
 #: src/main.c:272
 msgid ""
@@ -298,13 +300,13 @@ msgid ""
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"PETICIÓ és SUBPETICIÓ[,SUBPETICIÓ]...;\n"
-"SUBPETICIÓ és CODIFICACIÓ[..CODIFICACIÓ]...\n"
-"CODIFICACIÓ és [JOC DE CARÀCTERS[/[FACETA]]...;\n"
-"PETICIÓ sovint és ABANS..DESPRÉS,\n"
-"amb ABANS i DESPRÉS sent jocs de caràcters. Un JOC DE CARÀCTERS omés\n"
-"implica el joc de caràcters habitual; una [/FACETA] omesa vol dir la faceta\n"
-"implícita per al JOC DE CARÀCTERS; un / amb una faceta buida vol dir que no\n"
+"PETICIÃ“ Ã©s SUBPETICIÃ“[,SUBPETICIÃ“]...;\n"
+"SUBPETICIÃ“ Ã©s CODIFICACIÃ“[..CODIFICACIÃ“]...\n"
+"CODIFICACIÃ“ Ã©s [JOC DE CARÃ€CTERS[/[FACETA]]...;\n"
+"PETICIÃ“ sovint Ã©s ABANS..DESPRÃ‰S,\n"
+"amb ABANS i DESPRÃ‰S sent jocs de carÃ cters. Un JOC DE CARÃ€CTERS omÃ©s\n"
+"implica el joc de carÃ cters habitual; una [/FACETA] omesa vol dir la faceta\n"
+"implÃ­cita per al JOC DE CARÃ€CTERS; un / amb una faceta buida vol dir que no\n"
 "hi ha faceta. Vegeu el manual.\n"
 
 #: src/main.c:280
@@ -317,165 +319,164 @@ msgstr ""
 "\n"
 "Si no es dona cap de -i i -p, es suposa -p si no hi ha cap FITXER, si no, -"
 "i.\n"
-"Cada FITXER es recodifica damunt d'ell mateix, destruïnt l'original. Si no\n"
+"Cada FITXER es recodifica damunt d'ell mateix, destruÃ¯nt l'original. Si no\n"
 "s'especifica cap FITXER, aleshores actua com un filtre i recodifica\n"
-"l'entrada estàndard a l'eixida estàndard.\n"
+"l'entrada estÃ ndard a l'eixida estÃ ndard.\n"
 
 #: src/main.c:286
 msgid ""
 "\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+"Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
-"\n"
-"Informeu dels errors a <recode-bugs@iro.umontreal.ca>.\n"
 
 #: src/main.c:385
 #, c-format
 msgid "Sequence `%s' is ambiguous"
-msgstr "La seqüència «%s» és ambígua"
+msgstr "La seqÃ¼Ã¨ncia Â«%sÂ» Ã©s ambÃ­gua"
 
 #: src/main.c:389
 #, c-format
 msgid "Sequence `%s' is unknown"
-msgstr "La seqüència «%s» és desconeguda"
+msgstr "La seqÃ¼Ã¨ncia Â«%sÂ» Ã©s desconeguda"
 
-#: src/main.c:418 src/main.c:476
+#: src/main.c:415 src/main.c:473
 #, c-format
 msgid "Language `%s' is ambiguous"
-msgstr "El llenguatge «%s» és ambigu"
+msgstr "El llenguatge Â«%sÂ» Ã©s ambigu"
 
-#: src/main.c:422 src/main.c:480
+#: src/main.c:419 src/main.c:477
 #, c-format
 msgid "Language `%s' is unknown"
-msgstr "El llenguatge «%s» és desconegut"
+msgstr "El llenguatge Â«%sÂ» Ã©s desconegut"
 
-#: src/main.c:514
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is ambiguous"
-msgstr "El format «%s» és ambigu"
+msgstr "El format Â«%sÂ» Ã©s ambigu"
 
-#: src/main.c:518
+#: src/main.c:515
 #, c-format
 msgid "Format `%s' is unknown"
-msgstr "El format «%s» és desconegut"
+msgstr "El format Â«%sÂ» Ã©s desconegut"
+
+#: src/main.c:575
+#, fuzzy
+msgid "Written by FranÃ§ois Pinard <pinard@iro.umontreal.ca>.\n"
+msgstr "Escrit per FranÃ§ois Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:578
-msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
-msgstr "Escrit per François Pinard <pinard@iro.umontreal.ca>.\n"
-
-#: src/main.c:581
 #, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright © 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright Â© 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:585
+#: src/main.c:582
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Açò és Programari Lliure; vegeu el codi font per les condicions de\n"
-"còpia. NO hi ha CAP garantia; ni tan sols de COMERCIABILITAT o ADEQUACIÓ\n"
-"PER UN PROPÒSIT DETERMINAT.\n"
+"AÃ§Ã² Ã©s Programari Lliure; vegeu el codi font per les condicions de\n"
+"cÃ²pia. NO hi ha CAP garantia; ni tan sols de COMERCIABILITAT o ADEQUACIÃ“\n"
+"PER UN PROPÃ’SIT DETERMINAT.\n"
 
-#: src/main.c:627
+#: src/main.c:624
 #, c-format
 msgid "Symbol `%s' is unknown"
-msgstr "El símbol «%s» és desconegut"
+msgstr "El sÃ­mbol Â«%sÂ» Ã©s desconegut"
 
-#: src/main.c:667 src/main.c:681
+#: src/main.c:664 src/main.c:678
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
-msgstr "El joc de caràcters «%s» és desconegut o ambigu"
+msgstr "El joc de carÃ cters Â«%sÂ» Ã©s desconegut o ambigu"
 
-#: src/main.c:712
+#: src/main.c:709
 #, c-format
 msgid "Required argument is missing"
 msgstr "Manca un argument requerit"
 
-#: src/main.c:755
+#: src/main.c:752
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
-msgstr "Aquesta sintaxi és desaconsellada, si us plau, utilitzeu «%s»"
+msgstr "Aquesta sintaxi Ã©s desaconsellada, si us plau, utilitzeu Â«%sÂ»"
 
-#: src/main.c:761
+#: src/main.c:758
 #, c-format
 msgid "Request `%s' is erroneous"
-msgstr "La petició «%s» és errònia"
+msgstr "La peticiÃ³ Â«%sÂ» Ã©s errÃ²nia"
 
-#: src/main.c:861
+#: src/main.c:840
 #, c-format
 msgid "Recoding %s..."
-msgstr "S'està recodificant %s..."
+msgstr "S'estÃ  recodificant %s..."
 
-#: src/main.c:871
+#: src/main.c:850
 #, c-format
 msgid " done\n"
 msgstr " fet\n"
 
-#: src/main.c:912
+#: src/main.c:883
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
-msgstr " ha fallat: %s al pas «%s..%s»\n"
+msgstr " ha fallat: %s al pas Â«%s..%sÂ»\n"
 
-#: src/main.c:919
+#: src/main.c:890
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
-msgstr "%s ha fallat: %s al pas «%s..%s»"
+msgstr "%s ha fallat: %s al pas Â«%s..%sÂ»"
 
-#: src/main.c:942
+#: src/main.c:915
 #, c-format
 msgid "%s in step `%s..%s'"
-msgstr "%s al pas «%s..%s»"
+msgstr "%s al pas Â«%s..%sÂ»"
 
-#: src/names.c:362
+#: src/names.c:365
 #, c-format
 msgid "Charset %s already exists and is not %s"
-msgstr "El joc de caràcters %s ja existeix i no és %s"
+msgstr "El joc de carÃ cters %s ja existeix i no Ã©s %s"
 
-#: src/names.c:861
+#: src/names.c:860
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr ""
-"No es pot llistar «%s», no hi ha noms disponibles per a aquest\n"
-"joc de caràcters"
+"No es pot llistar Â«%sÂ», no hi ha noms disponibles per a aquest\n"
+"joc de carÃ cters"
 
-#: src/names.c:1013 src/names.c:1059
+#: src/names.c:1012 src/names.c:1058
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1078
+#: src/names.c:1077
 #, c-format
 msgid "Sorry, no names available for `%s'"
-msgstr "No hi ha noms disponibles per a «%s»"
+msgstr "No hi ha noms disponibles per a Â«%sÂ»"
 
-#: src/outer.c:125
+#: src/outer.c:127
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
-msgstr "S'ha establert «resurfacer» més d'una vegada per a «%s»"
+msgstr "S'ha establert Â«resurfacerÂ» mÃ©s d'una vegada per a Â«%sÂ»"
 
-#: src/outer.c:133
+#: src/outer.c:135
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
-msgstr "S'ha establert «unsurfacer» més d'una vegada per a «%s»"
+msgstr "S'ha establert Â«unsurfacerÂ» mÃ©s d'una vegada per a Â«%sÂ»"
 
 #: src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
-msgstr "La memòria virtual s'ha exhaurit"
+msgstr "La memÃ²ria virtual s'ha exhaurit"
 
 #: src/recode.c:108
 #, fuzzy, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "Els codis %3d i %3d es recodifiquen ambdós a %3d"
+msgstr "Els codis %3d i %3d es recodifiquen ambdÃ³s a %3d"
 
 #: src/recode.c:122
 #, fuzzy, c-format
 msgid "No character recodes to %3u"
-msgstr "Cap caràcter es recodifica a %3d"
+msgstr "Cap carÃ cter es recodifica a %3d"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
@@ -484,36 +485,36 @@ msgstr "No es pot invertir la taula un-a-un donada"
 #: src/recode.c:179 src/recode.c:191
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
-msgstr "S'estan seguint els diagnòstics per «%s» a «%s»"
+msgstr "S'estan seguint els diagnÃ²stics per Â«%sÂ» a Â«%sÂ»"
 
 #: src/recode.c:184 src/recode.c:196
 #, fuzzy, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "La parella no. %d: <%3d, %3d> és conflictiu amb <%3d, %3d>"
+msgstr "La parella no. %d: <%3d, %3d> Ã©s conflictiu amb <%3d, %3d>"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
 msgstr "No es pot completar la taula des del joc de parelles conegudes"
 
-#: src/recode.c:452
+#: src/recode.c:484
 msgid "Identity recoding, not worth a table"
-msgstr "Recodificació identitat, no mereix una taula"
-
-#: src/recode.c:459
-msgid "Recoding is too complex for a mere table"
-msgstr "La recodificació és massa complexa per a una simple taula"
+msgstr "RecodificaciÃ³ identitat, no mereix una taula"
 
 #: src/recode.c:491
+msgid "Recoding is too complex for a mere table"
+msgstr "La recodificaciÃ³ Ã©s massa complexa per a una simple taula"
+
+#: src/recode.c:523
 #, fuzzy, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sTaula de conversió generada mecànicament per Free «%s» %s"
+msgstr "%sTaula de conversiÃ³ generada mecÃ nicament per Free Â«%sÂ» %s"
 
-#: src/recode.c:493
+#: src/recode.c:525
 #, c-format
 msgid "%sfor sequence %s.%s"
-msgstr "%sper la seqüència %s.%s"
+msgstr "%sper la seqÃ¼Ã¨ncia %s.%s"
 
-#: src/recode.c:714
+#: src/recode.c:746
 msgid "No table to print"
 msgstr "No hi ha cap taula a imprimir"
 
@@ -544,51 +545,58 @@ msgstr "*Impossible*"
 
 #: src/request.c:113
 msgid "*mere copy*"
-msgstr "*simple còpia*"
+msgstr "*simple cÃ²pia*"
 
 #: src/request.c:232
 msgid "Virtual memory exhausted!"
-msgstr "La memòria virtual s'ha exhaurit!"
+msgstr "La memÃ²ria virtual s'ha exhaurit!"
 
-#: src/request.c:251
+#: src/request.c:253
 msgid "Step initialisation failed"
-msgstr "L'inicialització del pas ha fallat"
+msgstr "L'inicialitzaciÃ³ del pas ha fallat"
 
-#: src/request.c:258
+#: src/request.c:260
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "L'inicialització del pas ha fallat (opcions no processades)"
+msgstr "L'inicialitzaciÃ³ del pas ha fallat (opcions no processades)"
 
-#: src/request.c:554
+#: src/request.c:574
 #, c-format
 msgid "Request: %s\n"
-msgstr "Petició: %s\n"
+msgstr "PeticiÃ³: %s\n"
 
-#: src/request.c:706
+#: src/request.c:741
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Encogit a: %s\n"
 
-#: src/request.c:812 src/request.c:921
+#: src/request.c:847 src/request.c:956
 #, c-format
 msgid "Unrecognised surface name `%s'"
-msgstr "El nom de faceta «%s» és desconegut"
+msgstr "El nom de faceta Â«%sÂ» Ã©s desconegut"
 
-#: src/request.c:892
+#: src/request.c:927
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
-msgstr "No hi ha manera de recodificar de «%s» a «%s»"
+msgstr "No hi ha manera de recodificar de Â«%sÂ» a Â«%sÂ»"
 
-#: src/request.c:1002
+#: src/request.c:1037
 msgid "Expecting `..' in request"
-msgstr "S'esperava «..» a la petició"
+msgstr "S'esperava Â«..Â» a la peticiÃ³"
 
-#: src/task.c:622 src/task.c:799
+#: src/task.c:453
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
-msgstr "L'estat d'espera del procés fill és 0x%0.2x"
+msgstr "L'estat d'espera del procÃ©s fill Ã©s 0x%0.2x"
 
 #: src/testdump.c:314
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
-msgstr "UCS2   Mne   Descripció\n"
+msgstr "UCS2   Mne   DescripciÃ³\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Informeu dels errors a <recode-bugs@iro.umontreal.ca>.\n"

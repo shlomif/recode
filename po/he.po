@@ -6,49 +6,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Free recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-15 14:25+0000\n"
+"POT-Creation-Date: 2018-01-26 13:28+0000\n"
 "PO-Revision-Date: 2001-05-27 17:06+0300\n"
 "Last-Translator: Eli Zaretskii <eliz@gnu.org>\n"
 "Language-Team: Hebrew <eliz@gnu.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: src/main.c:105
-msgid "No error"
-msgstr "ϊεΰιβω οιΰ"
-
 #: src/main.c:108
-msgid "Non canonical input"
-msgstr "ιπχϊ επιΰ θμχ"
+msgid "No error"
+msgstr "ΧªΧ•ΧΧ™Χ’Χ© ΧΧ™Χ"
 
 #: src/main.c:111
-msgid "Ambiguous output"
-msgstr "ιςξωξ-γη επιΰ θμτ"
+msgid "Non canonical input"
+msgstr "Χ™Χ Χ§Χª Χ•Χ Χ™Χ ΧΧΧ§"
 
 #: src/main.c:114
-msgid "Untranslatable input"
-msgstr "δψξϊδμ οϊιπ επιΰ θμχ"
+msgid "Ambiguous output"
+msgstr "Χ™ΧΆΧΧ©Χ-Χ“Χ— Χ•Χ Χ™Χ ΧΧΧ¤"
 
 #: src/main.c:117
-msgid "Invalid input"
-msgstr "νιψλεξ νπιΰω νιγεχ μμελ θμχ"
+msgid "Untranslatable input"
+msgstr "Χ”Χ¨ΧΧªΧ”Χ ΧΧªΧ™Χ  Χ•Χ Χ™Χ ΧΧΧ§"
 
 #: src/main.c:120
-msgid "System detected problem"
-msgstr "ϊλψςξ ϊμχϊ"
+msgid "Invalid input"
+msgstr "ΧΧ™Χ¨Χ›Χ•Χ ΧΧ Χ™ΧΧ© ΧΧ™Χ“Χ•Χ§ ΧΧΧ•Χ› ΧΧΧ§"
 
 #: src/main.c:123
-msgid "Misuse of recoding library"
-msgstr "γεγιχ ϊεψξϊδ ϊιιψτρα ιεβω ωεξιω"
+msgid "System detected problem"
+msgstr "ΧªΧ›Χ¨ΧΆΧ ΧªΧΧ§Χª"
 
 #: src/main.c:126
-msgid "Internal recoding bug"
-msgstr "γεγιχ ϊψξϊδ κιμδϊα ϊιξιπτ δμχϊ"
+msgid "Misuse of recoding library"
+msgstr "Χ“Χ•Χ“Χ™Χ§ ΧªΧ•Χ¨ΧΧªΧ” ΧªΧ™Χ™Χ¨Χ¤Χ΅Χ‘ Χ™Χ•Χ’Χ© Χ©Χ•ΧΧ™Χ©"
 
-#: src/main.c:166
+#: src/main.c:129
+msgid "Internal recoding bug"
+msgstr "Χ“Χ•Χ“Χ™Χ§ ΧªΧ¨ΧΧªΧ” ΧΧ™ΧΧ”ΧªΧ‘ ΧªΧ™ΧΧ™Χ Χ¤ Χ”ΧΧ§Χª"
+
+#: src/main.c:167
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -64,51 +64,51 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
-"       σετλα δϊεπωμ εΰ/ε δφιτδμ κϊελζ ;ϊιωτη δπλϊ δπιδ εζ ϊιπλϊ\n"
-"       ι\"ς ψεΰμ ΰφειδ ,GNU General Public License οειωψδ ιΰπϊμ\n"
-"           νΰε ,οειωψδ μω 2 ΰρψβα νΰ  ;Free Software Foundation\n"
-"                      .ψϊει ϊψηεΰξ ΰρψβ μλα (κμ δψεξωδ διφτεΰλ)\n"
+"       Χ£Χ•Χ¤Χ›Χ‘ Χ”ΧªΧ•Χ Χ©Χ Χ•Χ/Χ• Χ”Χ¦Χ™Χ¤Χ”Χ ΧΧªΧ•Χ›Χ– ;ΧªΧ™Χ©Χ¤Χ— Χ”Χ Χ›Χª Χ”Χ Χ™Χ” Χ•Χ– ΧªΧ™Χ Χ›Χª\n"
+"       Χ™\"ΧΆ Χ¨Χ•ΧΧ ΧΧ¦Χ•Χ™Χ” ,GNU General Public License ΧΧ•Χ™Χ©Χ¨Χ” Χ™ΧΧ ΧªΧ\n"
+"           ΧΧΧ• ,ΧΧ•Χ™Χ©Χ¨Χ” ΧΧ© 2 ΧΧ΅Χ¨Χ’Χ‘ ΧΧ  ;Free Software Foundation\n"
+"                      .Χ¨ΧªΧ•Χ™ ΧªΧ¨Χ—Χ•ΧΧ ΧΧ΅Χ¨Χ’ ΧΧ›Χ‘ (ΧΧ Χ”Χ¨Χ•ΧΧ©Χ” Χ”Χ™Χ¦Χ¤Χ•ΧΧ›)\n"
 "\n"
-"                     ,ϊμςεϊ ΰιαϊ ΰιδω δεεχϊ κεϊξ ϊφτεξ εζ ϊιπλϊ\n"
-"                 ςξϊωξα-ϊειψηΰ ΰμ εμιτΰ ;ϊειψηΰ αϊλ μλ ΰμμ νμεΰ\n"
-"                 ,νιθψτμ .ϊξιερξ ϊιμλϊ εζιΰμ δξΰϊδ εΰ ϊεψιηρ μω\n"
-"                         .GNU General Public License-α οιις ΰπΰ\n"
+"                     ,ΧªΧΧΆΧ•Χª ΧΧ™Χ‘Χª ΧΧ™Χ”Χ© Χ”Χ•Χ•Χ§Χª ΧΧ•ΧªΧ ΧªΧ¦Χ¤Χ•Χ Χ•Χ– ΧªΧ™Χ Χ›Χª\n"
+"                 ΧΆΧΧªΧ©ΧΧ‘-ΧªΧ•Χ™Χ¨Χ—Χ ΧΧ Χ•ΧΧ™Χ¤Χ ;ΧªΧ•Χ™Χ¨Χ—Χ Χ‘ΧªΧ› ΧΧ› ΧΧΧ ΧΧΧ•Χ\n"
+"                 ,ΧΧ™ΧΧ¨Χ¤Χ .ΧªΧΧ™Χ•Χ΅Χ ΧªΧ™ΧΧ›Χª Χ•Χ–Χ™ΧΧ Χ”ΧΧΧªΧ” Χ•Χ ΧªΧ•Χ¨Χ™Χ—Χ΅ ΧΧ©\n"
+"                         .GNU General Public License-Χ‘ ΧΧ™Χ™ΧΆ ΧΧ Χ\n"
 "\n"
-";GNU General Public License μω χϊεςα δεεμξ ϊειδμ δψεξΰ εζ ϊιπλϊ\n"
-"    Free Software Foundation, Inc.-μ αεϊλ ΰπΰ ,εϊεΰ ϊμαιχ ΰμ νΰ\n"
+";GNU General Public License ΧΧ© Χ§ΧªΧ•ΧΆΧ‘ Χ”Χ•Χ•ΧΧ ΧªΧ•Χ™Χ”Χ Χ”Χ¨Χ•ΧΧ Χ•Χ– ΧªΧ™Χ Χ›Χª\n"
+"    Free Software Foundation, Inc.-Χ Χ‘Χ•ΧªΧ› ΧΧ Χ ,Χ•ΧªΧ•Χ ΧªΧΧ‘Χ™Χ§ ΧΧ ΧΧ\n"
 "      .59 Temple Place - Suite 330, Boston, MA  02111-1307, USA\n"
 
-#: src/main.c:191
+#: src/main.c:192
 #, c-format
 msgid "Try `%s %s' for more information.\n"
-msgstr ".`%s %s' γμχδ ,εζ δπλεϊα ωεξιω μς σρεπ ςγιξ ϊμαχμ\n"
+msgstr ".`%s %s' Χ“ΧΧ§Χ” ,Χ•Χ– Χ”Χ Χ›Χ•ΧªΧ‘ Χ©Χ•ΧΧ™Χ© ΧΧΆ Χ£Χ΅Χ•Χ  ΧΆΧ“Χ™Χ ΧªΧΧ‘Χ§Χ\n"
 
-#: src/main.c:195
+#: src/main.c:196
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
-"        .ϊεπεω ϊετιθςε νιεεϊ ϊεφεαχ οια νιφαχ δψιξϊξ Free `recode' ϊιπλεϊ\n"
+"        .ΧªΧ•Χ Χ•Χ© ΧªΧ•Χ¤Χ™ΧΧΆΧ• ΧΧ™Χ•Χ•Χª ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ™Χ‘ ΧΧ™Χ¦Χ‘Χ§ Χ”Χ¨Χ™ΧΧªΧ Free `recode' ΧªΧ™Χ Χ›Χ•Χª\n"
 
-#: src/main.c:199
+#: src/main.c:200
 #, c-format
 msgid ""
 "\n"
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 msgstr ""
 "\n"
-"%s [νιπιιτΰξ]... [ [δξιωξ | νιεεϊ ϊφεαχ [υαεχ]... ]         :ωεξιωδ οτεΰ\n"
+"%s [ΧΧ™Χ Χ™Χ™Χ¤ΧΧ]... [ [Χ”ΧΧ™Χ©Χ | ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ [Χ¥Χ‘Χ•Χ§]... ]         :Χ©Χ•ΧΧ™Χ©Χ” ΧΧ¤Χ•Χ\n"
 
-#: src/main.c:202
+#: src/main.c:203
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
 "for the equivalent short option also.  Similarly for optional arguments.\n"
 msgstr ""
 "\n"
-"   ψεας νβ ιηψλδ ΰεδ ζΰ ,ιηψλδλ θπξεβψΰδ ϊΰ δΰψξ δλεψΰδ εϊψεφα οιιτΰξ νΰ\n"
-"      .νιιηψλδ νπιΰω νιθπξεβψΰ ψεας νβ κλε .οιιτΰξ εϊεΰ μω ϊψφεχξδ δψεφδ\n"
+"   Χ¨Χ•Χ‘ΧΆ ΧΧ’ Χ™Χ—Χ¨Χ›Χ” ΧΧ•Χ” Χ–Χ ,Χ™Χ—Χ¨Χ›Χ”Χ› ΧΧ ΧΧ•Χ’Χ¨ΧΧ” ΧªΧ Χ”ΧΧ¨Χ Χ”Χ›Χ•Χ¨ΧΧ” Χ•ΧªΧ¨Χ•Χ¦Χ‘ ΧΧ™Χ™Χ¤ΧΧ ΧΧ\n"
+"      .ΧΧ™Χ™Χ—Χ¨Χ›Χ” ΧΧ Χ™ΧΧ© ΧΧ™ΧΧ ΧΧ•Χ’Χ¨Χ Χ¨Χ•Χ‘ΧΆ ΧΧ’ ΧΧ›Χ• .ΧΧ™Χ™Χ¤ΧΧ Χ•ΧªΧ•Χ ΧΧ© ΧªΧ¨Χ¦Χ•Χ§ΧΧ” Χ”Χ¨Χ•Χ¦Χ”\n"
 
-#: src/main.c:208
+#: src/main.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -123,17 +123,18 @@ msgid ""
 "      --version              output version information and exit\n"
 msgstr ""
 "\n"
-"                                                                    :ϊεξιωψ\n"
-" νιιτεμη ϊεξωε νιεεϊδ ϊεφεαχ μλ εΰ ϊηΰ δφεαχ βφδ   -l, --list[=θξψετ]\n"
-"νιςεγι ϊεβεζ ϊξιωψμ ϊεξιΰϊξδ νιεεϊ ϊεφεαχ χψ βφδ   -k, --known=ϊεβεζ\n"
-"        LN ϊεπλϊ ϊτωμ δξιΰϊξδ NAME νωα δμαθ νεωψ   -h, --header[=[LN/]NAME]\n"
-"       ϊεΰμαθδ μλ ϊΰ μιλξδ C ϊτωα ψεχξ υαεχ νεωψ   -F, --freeze-tables\n"
-"ϊεψηΰ ϊεφεαχ μω ϊεφεαχ-ϊϊ οπιδω νιεεϊ ϊεφεαχ βφδ   -T, --find-subsets\n"
-"                   δχϊςδ ιΰπϊε νιψφει ϊειελζ βφδ   -C, --copyright\n"
-"                                 δζ δψζς κρξ βφδ       --help\n"
-"                             ϊιπλϊδ ϊρψιβ ϊΰ βφδ       --version\n"
+"                                                                    :ΧªΧ•ΧΧ™Χ©Χ¨\n"
+" ΧΧ™Χ™Χ¤Χ•ΧΧ— ΧªΧ•ΧΧ©Χ• ΧΧ™Χ•Χ•ΧªΧ” ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ› Χ•Χ ΧªΧ—Χ Χ”Χ¦Χ•Χ‘Χ§ Χ’Χ¦Χ”   -l, --list[=ΧΧΧ¨Χ•Χ¤]\n"
+"ΧΧ™ΧΆΧ•Χ“Χ™ ΧªΧ•Χ’Χ•Χ– ΧªΧΧ™Χ©Χ¨Χ ΧªΧ•ΧΧ™ΧΧªΧΧ” ΧΧ™Χ•Χ•Χª ΧªΧ•Χ¦Χ•Χ‘Χ§ Χ§Χ¨ Χ’Χ¦Χ”   -k, --known=ΧªΧ•Χ’Χ•Χ–\n"
+"        LN ΧªΧ•Χ Χ›Χª ΧªΧ¤Χ©Χ Χ”ΧΧ™ΧΧªΧΧ” NAME ΧΧ©Χ‘ Χ”ΧΧ‘Χ ΧΧ•Χ©Χ¨   -h, --header[=[LN/]NAME]\n"
+"       ΧªΧ•ΧΧΧ‘ΧΧ” ΧΧ› ΧªΧ ΧΧ™Χ›ΧΧ” C ΧªΧ¤Χ©Χ‘ Χ¨Χ•Χ§Χ Χ¥Χ‘Χ•Χ§ ΧΧ•Χ©Χ¨   -F, --freeze-tables\n"
+"ΧªΧ•Χ¨Χ—Χ ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ© ΧªΧ•Χ¦Χ•Χ‘Χ§-ΧªΧª ΧΧ Χ™Χ”Χ© ΧΧ™Χ•Χ•Χª ΧªΧ•Χ¦Χ•Χ‘Χ§ Χ’Χ¦Χ”   -T, --find-subsets\n"
+"                   Χ”Χ§ΧªΧΆΧ” Χ™ΧΧ ΧªΧ• ΧΧ™Χ¨Χ¦Χ•Χ™ ΧªΧ•Χ™Χ•Χ›Χ– Χ’Χ¦Χ”   -C, --copyright\n"
+"                                 Χ”Χ– Χ”Χ¨Χ–ΧΆ ΧΧ΅Χ Χ’Χ¦Χ”       --help\n"
+"                             ΧªΧ™Χ Χ›ΧªΧ” ΧªΧ΅Χ¨Χ™Χ’ ΧªΧ Χ’Χ¦Χ”       --version\n"
 
-#: src/main.c:220
+#: src/main.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -141,45 +142,46 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"  -i, --sequence=files    use intermediate files for sequencing passes\n"
 "      --sequence=memory   use memory buffers for sequencing passes\n"
 msgstr ""
 "\n"
-"                                                               :δμεςτ ιπτεΰ\n"
-"              ϊεξγχϊδ ηεεγε ϊεμεςτδ ϊψγρ ϊΰ ψαρδ   -v, --verbose\n"
-"           ϊελιτδ-ιϊμα ϊεψξϊδ μς ϊεςγεδ ριτγϊ μΰ   -q, --quiet, --silent\n"
-"                      δλιτδ δπιΰ νΰ νβ δψξϊδ ςφα   -f, --force\n"
-"           ναεϊλιω ιψηΰ νιφαχ μω οξζδ ϊξιϊη ολγς   -t, --touch\n"
-"ϊεψξϊδ ϊψγρ μω νιιπια ϊεΰφεϊ ϊψιβΰμ νιφαχα ωξϊωδ   -i, --sequence=files\n"
-"       οεψλζα ϊεψξϊδ ϊψγρ μω νιιπιαδ ϊεΰφεϊ ψεβΰ       --sequence=memory\n"
+"                                                               :Χ”ΧΧ•ΧΆΧ¤ Χ™Χ Χ¤Χ•Χ\n"
+"              ΧªΧ•ΧΧ“Χ§ΧªΧ” Χ—Χ•Χ•Χ“Χ• ΧªΧ•ΧΧ•ΧΆΧ¤Χ” ΧªΧ¨Χ“Χ΅ ΧªΧ Χ¨Χ‘Χ΅Χ”   -v, --verbose\n"
+"           ΧªΧ•Χ›Χ™Χ¤Χ”-Χ™ΧªΧΧ‘ ΧªΧ•Χ¨ΧΧªΧ” ΧΧΆ ΧªΧ•ΧΆΧ“Χ•Χ” Χ΅Χ™Χ¤Χ“Χª ΧΧ   -q, --quiet, --silent\n"
+"                      Χ”Χ›Χ™Χ¤Χ” Χ”Χ Χ™Χ ΧΧ ΧΧ’ Χ”Χ¨ΧΧªΧ” ΧΆΧ¦Χ‘   -f, --force\n"
+"           ΧΧ‘Χ•ΧªΧ›Χ™Χ© Χ™Χ¨Χ—Χ ΧΧ™Χ¦Χ‘Χ§ ΧΧ© ΧΧΧ–Χ” ΧªΧΧ™ΧªΧ— ΧΧ›Χ“ΧΆ   -t, --touch\n"
+"ΧªΧ•Χ¨ΧΧªΧ” ΧªΧ¨Χ“Χ΅ ΧΧ© ΧΧ™Χ™Χ Χ™Χ‘ ΧªΧ•ΧΧ¦Χ•Χª ΧªΧ¨Χ™Χ’ΧΧ ΧΧ™Χ¦Χ‘Χ§Χ‘ Χ©ΧΧªΧ©Χ”   -i, --sequence=files\n"
+"       ΧΧ•Χ¨Χ›Χ–Χ‘ ΧªΧ•Χ¨ΧΧªΧ” ΧªΧ¨Χ“Χ΅ ΧΧ© ΧΧ™Χ™Χ Χ™Χ‘Χ” ΧªΧ•ΧΧ¦Χ•Χª Χ¨Χ•Χ’Χ       --sequence=memory\n"
 
 #: src/main.c:232
 msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr "    ϊεψξϊδ ϊψγρ ςεφιαμ (pipe) χιτΰα ωξϊωδ   -p, --sequence=pipe\n"
+msgstr "    ΧªΧ•Χ¨ΧΧªΧ” ΧªΧ¨Χ“Χ΅ ΧΆΧ•Χ¦Χ™Χ‘Χ (pipe) Χ§Χ™Χ¤ΧΧ‘ Χ©ΧΧªΧ©Χ”   -p, --sequence=pipe\n"
 
 #: src/main.c:237
 msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "                       (εζ ϊλψςξα) -i εξλ   -p, --sequence=pipe\n"
+msgstr "                       (Χ•Χ– ΧªΧ›Χ¨ΧΆΧΧ‘) -i Χ•ΧΧ›   -p, --sequence=pipe\n"
 
 #: src/main.c:242
+#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings, even loose characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
 "  -x, --ignore=CHARSET   ignore CHARSET while choosing a recoding path\n"
 msgstr ""
 "\n"
-"                                                               οιγς οεπεειλ\n"
-"     νιεεϊ γεαιΰ ψιηξα εμιτΰ ,ψιξηξ ιετιξα ωξϊωδ   -s, --strict\n"
-"    LaTeX-ε HTML ψεας νιθιψχΰιγ νς νιεεϊ χψ ψξϊδ   -d, --diacritics\n"
-"   LN ϊεπλϊ ϊτω ϊηπδα ϊεψςδε ϊεζεψηξμ δψξϊδ μαβδ   -S, --source[=LN]\n"
-"    ριρψΰιγ οεξιρμ νιιωψβ νεχξα νιιϊεγεχπα ωξϊωδ   -c, --colons\n"
-"     ASCII ιεεϊ δξλ ι\"ς IBM μω νιιτψβ νιεεϊ αψχ   -g, --graphics\n"
-" δψξϊδ αιϊπ ϊψιηα ϊςα CHARSET νιεεϊ ϊφεαχξ νμςϊδ   -x, --ignore=CHARSET\n"
+"                                                               ΧΧ™Χ“ΧΆ ΧΧ•Χ Χ•Χ•Χ™Χ›\n"
+"     ΧΧ™Χ•Χ•Χª Χ“Χ•Χ‘Χ™Χ Χ¨Χ™Χ—ΧΧ‘ Χ•ΧΧ™Χ¤Χ ,Χ¨Χ™ΧΧ—Χ Χ™Χ•Χ¤Χ™ΧΧ‘ Χ©ΧΧªΧ©Χ”   -s, --strict\n"
+"    LaTeX-Χ• HTML Χ¨Χ•Χ‘ΧΆ ΧΧ™ΧΧ™Χ¨Χ§ΧΧ™Χ“ ΧΧΆ ΧΧ™Χ•Χ•Χª Χ§Χ¨ Χ¨ΧΧªΧ”   -d, --diacritics\n"
+"   LN ΧªΧ•Χ Χ›Χª ΧªΧ¤Χ© ΧªΧ—Χ Χ”Χ‘ ΧªΧ•Χ¨ΧΆΧ”Χ• ΧªΧ•Χ–Χ•Χ¨Χ—ΧΧ Χ”Χ¨ΧΧªΧ” ΧΧ‘Χ’Χ”   -S, --source[=LN]\n"
+"    Χ΅Χ™Χ΅Χ¨ΧΧ™Χ“ ΧΧ•ΧΧ™Χ΅Χ ΧΧ™Χ™Χ©Χ¨Χ’ ΧΧ•Χ§ΧΧ‘ ΧΧ™Χ™ΧªΧ•Χ“Χ•Χ§Χ Χ‘ Χ©ΧΧªΧ©Χ”   -c, --colons\n"
+"     ASCII Χ™Χ•Χ•Χª Χ”ΧΧ› Χ™\"ΧΆ IBM ΧΧ© ΧΧ™Χ™Χ¤Χ¨Χ’ ΧΧ™Χ•Χ•Χª Χ‘Χ¨Χ§   -g, --graphics\n"
+" Χ”Χ¨ΧΧªΧ” Χ‘Χ™ΧªΧ  ΧªΧ¨Χ™Χ—Χ‘ ΧªΧΆΧ‘ CHARSET ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§Χ ΧΧΧΆΧªΧ”   -x, --ignore=CHARSET\n"
 
 #: src/main.c:253
 msgid ""
@@ -188,9 +190,9 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-".ϊετιθςδε νιεεϊδ ϊεφεαχ μλ ϊΰ βιφξ νιεεϊ ϊφεαχ εΰ θξψετ οειφ ΰμμ -l οιιτΰξ\n"
-"  ϊηΰ ϊεΰ εΰ) `full' εΰ `hexadecimal' ,`octal' ,`decimal' ϊειδμ μελι θξψετ\n"
-"                                                      .(`dohf' δφεαχδ κεϊξ\n"
+".ΧªΧ•Χ¤Χ™ΧΧΆΧ”Χ• ΧΧ™Χ•Χ•ΧªΧ” ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ› ΧªΧ Χ’Χ™Χ¦Χ ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ Χ•Χ ΧΧΧ¨Χ•Χ¤ ΧΧ•Χ™Χ¦ ΧΧΧ -l ΧΧ™Χ™Χ¤ΧΧ\n"
+"  ΧªΧ—Χ ΧªΧ•Χ Χ•Χ) `full' Χ•Χ `hexadecimal' ,`octal' ,`decimal' ΧªΧ•Χ™Χ”Χ ΧΧ•Χ›Χ™ ΧΧΧ¨Χ•Χ¤\n"
+"                                                      .(`dohf' Χ”Χ¦Χ•Χ‘Χ§Χ” ΧΧ•ΧªΧ\n"
 
 #: src/main.c:259
 msgid ""
@@ -198,8 +200,8 @@ msgid ""
 "locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"     νιεεϊ ϊφεαχ μω μγηξδ ϊψιψα ,ψγβεξ επιΰ DEFAULT_CHARSET δαιαρ δπϊωξ νΰ\n"
-".LANG, LC_CTYPE, LC_ALL νιπϊωξ ιλψς κεϊξ ςξϊωξλ ϊειμΰχεμ ϊεπελϊ ι\"ς ϊςαχπ\n"
+"     ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ ΧΧ© ΧΧ“Χ—ΧΧ” ΧªΧ¨Χ™Χ¨Χ‘ ,Χ¨Χ“Χ’Χ•Χ Χ•Χ Χ™Χ DEFAULT_CHARSET Χ”Χ‘Χ™Χ‘Χ΅ Χ”Χ ΧªΧ©Χ ΧΧ\n"
+".LANG, LC_CTYPE, LC_ALL ΧΧ™Χ ΧªΧ©Χ Χ™Χ›Χ¨ΧΆ ΧΧ•ΧªΧ ΧΆΧΧªΧ©ΧΧ› ΧªΧ•Χ™ΧΧΧ§Χ•Χ ΧªΧ•Χ Χ•Χ›Χª Χ™\"ΧΆ ΧªΧΆΧ‘Χ§Χ \n"
 
 #: src/main.c:264
 msgid ""
@@ -208,14 +210,14 @@ msgid ""
 "AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-" ϊεβεζ ϊΰ ϊξΰεϊ γςιδ ϊφεαχμ οϊψξϊδ ψωΰ νιεεϊδ ϊεφεαχ μλ δπβφεϊ ,-k ϊεηλεπα\n"
-".νιιπεψως νιγεχ νδ AFT-ε BEF-ε ,`BEF1:AFT1,BEF2:AFT2,...'-λ νιπεϊπδ νιεεϊδ\n"
+" ΧªΧ•Χ’Χ•Χ– ΧªΧ ΧªΧΧΧ•Χª Χ“ΧΆΧ™Χ” ΧªΧ¦Χ•Χ‘Χ§Χ ΧΧªΧ¨ΧΧªΧ” Χ¨Χ©Χ ΧΧ™Χ•Χ•ΧªΧ” ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ› Χ”Χ Χ’Χ¦Χ•Χª ,-k ΧªΧ•Χ—Χ›Χ•Χ Χ‘\n"
+".ΧΧ™Χ™Χ Χ•Χ¨Χ©ΧΆ ΧΧ™Χ“Χ•Χ§ ΧΧ” AFT-Χ• BEF-Χ• ,`BEF1:AFT1,BEF2:AFT2,...'-Χ› ΧΧ™Χ Χ•ΧªΧ Χ” ΧΧ™Χ•Χ•ΧªΧ”\n"
 
 #: src/main.c:269
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
-"            .`c' ΰιδ μγηξδ ϊψιψα ;`po' εΰ ,`perl' ,`c' :ϊεπλϊ ϊτω οιιφξ LN\n"
+"            .`c' ΧΧ™Χ” ΧΧ“Χ—ΧΧ” ΧªΧ¨Χ™Χ¨Χ‘ ;`po' Χ•Χ ,`perl' ,`c' :ΧªΧ•Χ Χ›Χª ΧªΧ¤Χ© ΧΧ™Χ™Χ¦Χ LN\n"
 
 #: src/main.c:272
 msgid ""
@@ -230,12 +232,12 @@ msgid ""
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-":εϊψεφ SUBREQUEST μλε SUBREQUEST[,SUBREQUEST]...:εϊψεφ (REQUEST) δξιωξ οειφ\n"
-" .[CHARSET][/[SURFACE]]... :εϊψεφ (γεγιχ) ENCODING .ENCODING[..ENCODING]...\n"
-" ϊθξωδ .νιεεϊ ϊεφεαχ οπιδ AFTER-ε BEFORE ;BEFORE..AFTER-λ δπεϊπ δξιωξ λ\"γα\n"
-" δωεψιτ [/SURFACE] δτιθς ϊθξωδ ;δμιβψ νιεεϊ ϊφεαχ δωεψιτ CHARSET νιεϊ ϊφεαχ\n"
-" μλ ψγςιδ εωεψιτ δτιθς νω ΰμμ / οειφ .δπεϊπ νιεεϊ ϊφεαχ ψεας ϊμαεχξδ δτιθςδ\n"
-"                                     .ωξϊωξμ κιψγξα οιις ,θεψιτ ψϊιμ .δτιθς\n"
+":Χ•ΧªΧ¨Χ•Χ¦ SUBREQUEST ΧΧ›Χ• SUBREQUEST[,SUBREQUEST]...:Χ•ΧªΧ¨Χ•Χ¦ (REQUEST) Χ”ΧΧ™Χ©Χ ΧΧ•Χ™Χ¦\n"
+" .[CHARSET][/[SURFACE]]... :Χ•ΧªΧ¨Χ•Χ¦ (Χ“Χ•Χ“Χ™Χ§) ENCODING .ENCODING[..ENCODING]...\n"
+" ΧªΧΧΧ©Χ” .ΧΧ™Χ•Χ•Χª ΧªΧ•Χ¦Χ•Χ‘Χ§ ΧΧ Χ™Χ” AFTER-Χ• BEFORE ;BEFORE..AFTER-Χ› Χ”Χ Χ•ΧªΧ  Χ”ΧΧ™Χ©Χ Χ›\"Χ“Χ‘\n"
+" Χ”Χ©Χ•Χ¨Χ™Χ¤ [/SURFACE] Χ”Χ¤Χ™ΧΧΆ ΧªΧΧΧ©Χ” ;Χ”ΧΧ™Χ’Χ¨ ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ Χ”Χ©Χ•Χ¨Χ™Χ¤ CHARSET ΧΧ™Χ•Χª ΧªΧ¦Χ•Χ‘Χ§\n"
+" ΧΧ› Χ¨Χ“ΧΆΧ™Χ” Χ•Χ©Χ•Χ¨Χ™Χ¤ Χ”Χ¤Χ™ΧΧΆ ΧΧ© ΧΧΧ / ΧΧ•Χ™Χ¦ .Χ”Χ Χ•ΧªΧ  ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ Χ¨Χ•Χ‘ΧΆ ΧªΧΧ‘Χ•Χ§ΧΧ” Χ”Χ¤Χ™ΧΧΆΧ”\n"
+"                                     .Χ©ΧΧªΧ©ΧΧ ΧΧ™Χ¨Χ“ΧΧ‘ ΧΧ™Χ™ΧΆ ,ΧΧ•Χ¨Χ™Χ¤ Χ¨ΧªΧ™Χ .Χ”Χ¤Χ™ΧΧΆ\n"
 
 #: src/main.c:280
 msgid ""
@@ -245,210 +247,209 @@ msgid ""
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-".-i ιτμ ϊψηΰ ,FILE θπξεβψΰ ψγςιδα -p ιτμ μςτ ,-p ΰμ σΰε -i ΰμ νιπεϊπ ΰμ νΰ\n"
-"   σΰ νιπιιφξ οιΰ νΰ .ϊξμςπ ϊιψεχξδ εϊμελϊε ,δψξϊδ κεϊ αϊλεωξ FILE υαεχ μλ\n"
-"    .ιπχϊ θμτ υεψςμ δψξϊδ ϊεΰφεϊ αεϊλε ιπχϊ θμχ υεψς ΰψχ :ψθμιτλ μςτ ,FILE\n"
+".-i Χ™Χ¤Χ ΧªΧ¨Χ—Χ ,FILE ΧΧ ΧΧ•Χ’Χ¨Χ Χ¨Χ“ΧΆΧ™Χ”Χ‘ -p Χ™Χ¤Χ ΧΧΆΧ¤ ,-p ΧΧ Χ£ΧΧ• -i ΧΧ ΧΧ™Χ Χ•ΧªΧ  ΧΧ ΧΧ\n"
+"   Χ£Χ ΧΧ™Χ Χ™Χ™Χ¦Χ ΧΧ™Χ ΧΧ .ΧªΧΧΧΆΧ  ΧªΧ™Χ¨Χ•Χ§ΧΧ” Χ•ΧªΧΧ•Χ›ΧªΧ• ,Χ”Χ¨ΧΧªΧ” ΧΧ•Χª Χ‘ΧªΧ›Χ•Χ©Χ FILE Χ¥Χ‘Χ•Χ§ ΧΧ›\n"
+"    .Χ™Χ Χ§Χª ΧΧΧ¤ Χ¥Χ•Χ¨ΧΆΧ Χ”Χ¨ΧΧªΧ” ΧªΧ•ΧΧ¦Χ•Χª Χ‘Χ•ΧªΧ›Χ• Χ™Χ Χ§Χª ΧΧΧ§ Χ¥Χ•Χ¨ΧΆ ΧΧ¨Χ§ :Χ¨ΧΧΧ™Χ¤Χ› ΧΧΆΧ¤ ,FILE\n"
 
 #: src/main.c:286
 msgid ""
 "\n"
-"Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+"Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
-"\n"
-"        .<recode-bugs@iro.umontreal.ca> ϊαεϊλμ (bugs) δμχϊ ιηεειγ ηεμωμ ΰπ\n"
 
 #: src/main.c:385
 #, c-format
 msgid "Sequence `%s' is ambiguous"
-msgstr "--sequence οιιτΰξμ θπξεβψΰ μω ιςξωξ-γη ψεφιχ επιΰ `%s'"
+msgstr "--sequence ΧΧ™Χ™Χ¤ΧΧΧ ΧΧ ΧΧ•Χ’Χ¨Χ ΧΧ© Χ™ΧΆΧΧ©Χ-Χ“Χ— Χ¨Χ•Χ¦Χ™Χ§ Χ•Χ Χ™Χ `%s'"
 
 #: src/main.c:389
 #, c-format
 msgid "Sequence `%s' is unknown"
-msgstr "--sequence οιιτΰξμ ψλεξ θπξεβψΰ επιΰ `%s'"
+msgstr "--sequence ΧΧ™Χ™Χ¤ΧΧΧ Χ¨Χ›Χ•Χ ΧΧ ΧΧ•Χ’Χ¨Χ Χ•Χ Χ™Χ `%s'"
 
-#: src/main.c:418 src/main.c:476
+#: src/main.c:415 src/main.c:473
 #, c-format
 msgid "Language `%s' is ambiguous"
-msgstr "ϊεπλϊ ϊτω μω ιςξωξ-γη ψεφιχ επιΰ `%s'"
+msgstr "ΧªΧ•Χ Χ›Χª ΧªΧ¤Χ© ΧΧ© Χ™ΧΆΧΧ©Χ-Χ“Χ— Χ¨Χ•Χ¦Χ™Χ§ Χ•Χ Χ™Χ `%s'"
 
-#: src/main.c:422 src/main.c:480
+#: src/main.c:419 src/main.c:477
 #, c-format
 msgid "Language `%s' is unknown"
-msgstr "ϊψλεξ ϊεπλϊ ϊτω δπιΰ `%s'"
+msgstr "ΧªΧ¨Χ›Χ•Χ ΧªΧ•Χ Χ›Χª ΧªΧ¤Χ© Χ”Χ Χ™Χ `%s'"
 
-#: src/main.c:514
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is ambiguous"
-msgstr "θξψετ μω ιςξωξ-γη ψεφιχ επιΰ `%s'"
+msgstr "ΧΧΧ¨Χ•Χ¤ ΧΧ© Χ™ΧΆΧΧ©Χ-Χ“Χ— Χ¨Χ•Χ¦Χ™Χ§ Χ•Χ Χ™Χ `%s'"
 
-#: src/main.c:518
+#: src/main.c:515
 #, c-format
 msgid "Format `%s' is unknown"
-msgstr "ψλεξ θξψετ επιΰ `%s'"
+msgstr "Χ¨Χ›Χ•Χ ΧΧΧ¨Χ•Χ¤ Χ•Χ Χ™Χ `%s'"
+
+#: src/main.c:575
+#, fuzzy
+msgid "Written by FranΓ§ois Pinard <pinard@iro.umontreal.ca>.\n"
+msgstr ".Franc,ois Pinard <pinard@iro.umontreal.ca> Χ™\"ΧΆ Χ”Χ‘ΧªΧ›Χ  Χ•Χ– ΧªΧ™Χ Χ›Χª\n"
 
 #: src/main.c:578
-msgid "Written by Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
-msgstr ".Franc,ois Pinard <pinard@iro.umontreal.ca> ι\"ς δαϊλπ εζ ϊιπλϊ\n"
-
-#: src/main.c:581
 #, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990, 92-94, 96, 97, 99, 08 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Free Software Foundation-μ ϊεψεξω ϊειελζδ μλ (C) 1990,92,93,94,96,97,99\n"
+"Free Software Foundation-Χ ΧªΧ•Χ¨Χ•ΧΧ© ΧªΧ•Χ™Χ•Χ›Χ–Χ” ΧΧ› (C) 1990,92,93,94,96,97,99\n"
 
-#: src/main.c:585
+#: src/main.c:582
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"εμιτΰ ;ϊειψηΰ μλ οιΰ .ψεχξ ιφαχα οιις ,δχϊςδ ιΰπϊ μς ςγιξμ ;ϊιωτη δπλϊ ιδεζ\n"
-"                    .ϊξιερξ ϊιμλϊ εζιΰμ δξΰϊδ εΰ ϊεψιηρ μω ςξϊωξα-ϊειψηΰ ΰμ\n"
+"Χ•ΧΧ™Χ¤Χ ;ΧªΧ•Χ™Χ¨Χ—Χ ΧΧ› ΧΧ™Χ .Χ¨Χ•Χ§Χ Χ™Χ¦Χ‘Χ§Χ‘ ΧΧ™Χ™ΧΆ ,Χ”Χ§ΧªΧΆΧ” Χ™ΧΧ Χª ΧΧΆ ΧΆΧ“Χ™ΧΧ ;ΧªΧ™Χ©Χ¤Χ— Χ”Χ Χ›Χª Χ™Χ”Χ•Χ–\n"
+"                    .ΧªΧΧ™Χ•Χ΅Χ ΧªΧ™ΧΧ›Χª Χ•Χ–Χ™ΧΧ Χ”ΧΧΧªΧ” Χ•Χ ΧªΧ•Χ¨Χ™Χ—Χ΅ ΧΧ© ΧΆΧΧªΧ©ΧΧ‘-ΧªΧ•Χ™Χ¨Χ—Χ ΧΧ\n"
 
-#: src/main.c:627
+#: src/main.c:624
 #, c-format
 msgid "Symbol `%s' is unknown"
-msgstr "ϊψλεξ νιεεϊ ϊφεαχ δπιΰ `%s'"
+msgstr "ΧªΧ¨Χ›Χ•Χ ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ Χ”Χ Χ™Χ `%s'"
 
-#: src/main.c:667 src/main.c:681
+#: src/main.c:664 src/main.c:678
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
-msgstr "ϊψλεξ νιεεϊ ϊφεαχ μω ιςξωξ-γη ψεφιχ επιΰ `%s'"
+msgstr "ΧªΧ¨Χ›Χ•Χ ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ ΧΧ© Χ™ΧΆΧΧ©Χ-Χ“Χ— Χ¨Χ•Χ¦Χ™Χ§ Χ•Χ Χ™Χ `%s'"
 
-#: src/main.c:712
+#: src/main.c:709
 #, c-format
 msgid "Required argument is missing"
-msgstr "επιιφμ ηψλδω θπξεβψΰ ψρη"
+msgstr "Χ•Χ Χ™Χ™Χ¦Χ Χ—Χ¨Χ›Χ”Χ© ΧΧ ΧΧ•Χ’Χ¨Χ Χ¨Χ΅Χ—"
 
-#: src/main.c:755
+#: src/main.c:752
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
-msgstr "`%s' σγςδ ΰπΰ ΰαδμ ,οωειξ ψιαηϊα ϊωξϊωδ"
+msgstr "`%s' Χ£Χ“ΧΆΧ” ΧΧ Χ ΧΧ‘Χ”Χ ,ΧΧ©Χ•Χ™Χ Χ¨Χ™Χ‘Χ—ΧªΧ‘ ΧªΧ©ΧΧªΧ©Χ”"
 
-#: src/main.c:761
+#: src/main.c:758
 #, c-format
 msgid "Request `%s' is erroneous"
-msgstr "ιεβω επιδ `%s' δξιωξ οειφ"
+msgstr "Χ™Χ•Χ’Χ© Χ•Χ Χ™Χ” `%s' Χ”ΧΧ™Χ©Χ ΧΧ•Χ™Χ¦"
 
-#: src/main.c:861
+#: src/main.c:840
 #, c-format
 msgid "Recoding %s..."
-msgstr "`%s' ϊψξϊδ"
+msgstr "`%s' ΧªΧ¨ΧΧªΧ”"
 
 # FIXME: this is lame!  The method of printing "Frobbing...done"
 # does not lend itself to good translations into languages where
 # such sentences have a different structure, and should be rethought.
-#: src/main.c:871
+#: src/main.c:850
 #, c-format
 msgid " done\n"
-msgstr " δημφδα δξιιϊρδ\n"
+msgstr " Χ”Χ—ΧΧ¦Χ”Χ‘ Χ”ΧΧ™Χ™ΧªΧ΅Χ”\n"
 
-#: src/main.c:912
+#: src/main.c:883
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
-msgstr "%s :μωλπ `%s..%s' δψξϊδ αμω\n"
+msgstr "%s :ΧΧ©Χ›Χ  `%s..%s' Χ”Χ¨ΧΧªΧ” Χ‘ΧΧ©\n"
 
-#: src/main.c:919
+#: src/main.c:890
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
-msgstr "%s υαεχ ψεας %s αχς μωλπ `%s..%s' δψξϊδ αμω"
+msgstr "%s Χ¥Χ‘Χ•Χ§ Χ¨Χ•Χ‘ΧΆ %s Χ‘Χ§ΧΆ ΧΧ©Χ›Χ  `%s..%s' Χ”Χ¨ΧΧªΧ” Χ‘ΧΧ©"
 
-#: src/main.c:942
+#: src/main.c:915
 #, c-format
 msgid "%s in step `%s..%s'"
-msgstr "%s :`%s..%s' δψξϊδ αμωα"
+msgstr "%s :`%s..%s' Χ”Χ¨ΧΧªΧ” Χ‘ΧΧ©Χ‘"
 
-#: src/names.c:362
+#: src/names.c:365
 #, c-format
 msgid "Charset %s already exists and is not %s"
-msgstr "νιεεϊ ϊφεαχ μω (alias) ιτεμη ιεπιλλ %s μω ϊξγεχ δψγβδ ψθερ %s"
+msgstr "ΧΧ™Χ•Χ•Χª ΧªΧ¦Χ•Χ‘Χ§ ΧΧ© (alias) Χ™Χ¤Χ•ΧΧ— Χ™Χ•Χ Χ™Χ›Χ› %s ΧΧ© ΧªΧΧ“Χ•Χ§ Χ”Χ¨Χ“Χ’Χ” Χ¨ΧΧ•Χ΅ %s"
 
-#: src/names.c:861
+#: src/names.c:860
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
-msgstr "νιιπχϊ ϊεξω οιΰ εζ δφεαχξ νιεεϊμ ολω ,`%s' ϊΰ βιφδμ οϊιπ ΰμ"
+msgstr "ΧΧ™Χ™Χ Χ§Χª ΧªΧ•ΧΧ© ΧΧ™Χ Χ•Χ– Χ”Χ¦Χ•Χ‘Χ§Χ ΧΧ™Χ•Χ•ΧªΧ ΧΧ›Χ© ,`%s' ΧªΧ Χ’Χ™Χ¦Χ”Χ ΧΧªΧ™Χ  ΧΧ"
 
-#: src/names.c:1013 src/names.c:1059
+#: src/names.c:1012 src/names.c:1058
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1078
+#: src/names.c:1077
 #, c-format
 msgid "Sorry, no names available for `%s'"
-msgstr "νιιπχϊ ϊεξω οιΰ `%s' δφεαχξ νιεεϊμ ,νιψςθφξ"
+msgstr "ΧΧ™Χ™Χ Χ§Χª ΧªΧ•ΧΧ© ΧΧ™Χ `%s' Χ”Χ¦Χ•Χ‘Χ§Χ ΧΧ™Χ•Χ•ΧªΧ ,ΧΧ™Χ¨ΧΆΧΧ¦Χ"
 
-#: src/outer.c:125
+#: src/outer.c:127
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
-msgstr "`%s' ψεας ϊηΰ νςτξ ψϊει δςαχπ δτιθς ϊψξϊδ"
+msgstr "`%s' Χ¨Χ•Χ‘ΧΆ ΧªΧ—Χ ΧΧΆΧ¤Χ Χ¨ΧªΧ•Χ™ Χ”ΧΆΧ‘Χ§Χ  Χ”Χ¤Χ™ΧΧΆ ΧªΧ¨ΧΧªΧ”"
 
-#: src/outer.c:133
+#: src/outer.c:135
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
-msgstr "`%s' ψεας ϊηΰ νςτξ ψϊει δςαχπ δτιθς ϊγψεδ"
+msgstr "`%s' Χ¨Χ•Χ‘ΧΆ ΧªΧ—Χ ΧΧΆΧ¤Χ Χ¨ΧªΧ•Χ™ Χ”ΧΆΧ‘Χ§Χ  Χ”Χ¤Χ™ΧΧΆ ΧªΧ“Χ¨Χ•Χ”"
 
 #: src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
-msgstr "μζΰ ιμΰεθψιε οεψλζ"
+msgstr "ΧΧ–Χ Χ™ΧΧΧ•ΧΧ¨Χ™Χ• ΧΧ•Χ¨Χ›Χ–"
 
 #: src/recode.c:108
 #, fuzzy, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "%3d-ξ οδε %3d ϊψξϊδξ οδ μαχϊξ %3d γεχ μςα εϊ"
+msgstr "%3d-Χ ΧΧ”Χ• %3d ΧªΧ¨ΧΧªΧ”Χ ΧΧ” ΧΧ‘Χ§ΧªΧ %3d Χ“Χ•Χ§ ΧΧΆΧ‘ Χ•Χª"
 
 #: src/recode.c:122
 #, fuzzy, c-format
 msgid "No character recodes to %3u"
-msgstr "%3d-μ ψξϊεξ επιΰ εϊ νεω"
+msgstr "%3d-Χ Χ¨ΧΧªΧ•Χ Χ•Χ Χ™Χ Χ•Χª ΧΧ•Χ©"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
-msgstr "δλιτδμ ϊπϊιπ δπιΰ δψγβεδω δψξϊδ ϊμαθ"
+msgstr "Χ”Χ›Χ™Χ¤Χ”Χ ΧªΧ ΧªΧ™Χ  Χ”Χ Χ™Χ Χ”Χ¨Χ“Χ’Χ•Χ”Χ© Χ”Χ¨ΧΧªΧ” ΧªΧΧ‘Χ"
 
 #: src/recode.c:179 src/recode.c:191
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
-msgstr "`%s'-ξ `%s'-μ δψξϊδ ψεας δπιδ δΰαδ δμχϊδ ϊςγεδ"
+msgstr "`%s'-Χ `%s'-Χ Χ”Χ¨ΧΧªΧ” Χ¨Χ•Χ‘ΧΆ Χ”Χ Χ™Χ” Χ”ΧΧ‘Χ” Χ”ΧΧ§ΧªΧ” ΧªΧΆΧ“Χ•Χ”"
 
 #: src/recode.c:184 src/recode.c:196
 #, fuzzy, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "%d εψτρξω <%3d, %3d> βεζδ ϊΰ ψθερ <%3d, %3d> βεζδ"
+msgstr "%d Χ•Χ¨Χ¤Χ΅ΧΧ© <%3d, %3d> Χ’Χ•Χ–Χ” ΧªΧ Χ¨ΧΧ•Χ΅ <%3d, %3d> Χ’Χ•Χ–Χ”"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
-msgstr "νιςεγιδ ϊεβεζδ ϊφεαχ κεϊξ δμαθ νιμωδμ ϊεψωτΰ οιΰ"
+msgstr "ΧΧ™ΧΆΧ•Χ“Χ™Χ” ΧªΧ•Χ’Χ•Χ–Χ” ΧªΧ¦Χ•Χ‘Χ§ ΧΧ•ΧªΧ Χ”ΧΧ‘Χ ΧΧ™ΧΧ©Χ”Χ ΧªΧ•Χ¨Χ©Χ¤Χ ΧΧ™Χ"
 
-#: src/recode.c:452
+#: src/recode.c:484
 msgid "Identity recoding, not worth a table"
-msgstr "δμαθμ δχγφδ οιΰ ,(ϊεδζ) δγιηι ϊψξϊδ"
+msgstr "Χ”ΧΧ‘ΧΧ Χ”Χ§Χ“Χ¦Χ” ΧΧ™Χ ,(ΧªΧ•Χ”Χ–) Χ”Χ“Χ™Χ—Χ™ ΧªΧ¨ΧΧªΧ”"
 
-#: src/recode.c:459
+#: src/recode.c:491
 msgid "Recoding is too complex for a mere table"
-msgstr "δμαθλ δβιφδμ διδι ψωτΰω ιγλξ ϊαλψεξ δψξϊδ"
+msgstr "Χ”ΧΧ‘ΧΧ› Χ”Χ’Χ™Χ¦Χ”Χ Χ”Χ™Χ”Χ™ Χ¨Χ©Χ¤ΧΧ© Χ™Χ“Χ›Χ ΧªΧ‘Χ›Χ¨Χ•Χ Χ”Χ¨ΧΧªΧ”"
 
 # FIXME: this goes into a comment; is it really worth translating?
-#: src/recode.c:491
+#: src/recode.c:523
 #, fuzzy, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sFree `%s' ϊιπλεϊ μω %s ΰρψιβ ι\"ς δαωεηω δψξϊδ ϊμαθ"
+msgstr "%sFree `%s' ΧªΧ™Χ Χ›Χ•Χª ΧΧ© %s ΧΧ΅Χ¨Χ™Χ’ Χ™\"ΧΆ Χ”Χ‘Χ©Χ•Χ—Χ© Χ”Χ¨ΧΧªΧ” ΧªΧΧ‘Χ"
 
-#: src/recode.c:493
+#: src/recode.c:525
 #, c-format
 msgid "%sfor sequence %s.%s"
-msgstr "%s                               .%s ϊεψξϊδ ϊψγρ ψεας%s"
+msgstr "%s                               .%s ΧªΧ•Χ¨ΧΧªΧ” ΧªΧ¨Χ“Χ΅ Χ¨Χ•Χ‘ΧΆ%s"
 
-#: src/recode.c:714
+#: src/recode.c:746
 msgid "No table to print"
-msgstr "δρτγδμ δμαθ οιΰ"
+msgstr "Χ”Χ΅Χ¤Χ“Χ”Χ Χ”ΧΧ‘Χ ΧΧ™Χ"
 
 #: src/request.c:34
 msgid "reversible"
-msgstr "κιτδ"
+msgstr "ΧΧ™Χ¤Χ”"
 
 # FIXME: these assume left-to-right direction.  What else can I do?
 #: src/request.c:36
@@ -470,57 +471,65 @@ msgstr "variable"
 
 #: src/request.c:111
 msgid "*Unachievable*"
-msgstr "δβωδμ οϊιπ-ιϊμα*"
+msgstr "Χ”Χ’Χ©Χ”Χ ΧΧªΧ™Χ -Χ™ΧªΧΧ‘*"
 
 #: src/request.c:113
 msgid "*mere copy*"
-msgstr "*δθεωτ δχϊςδ*"
+msgstr "*Χ”ΧΧ•Χ©Χ¤ Χ”Χ§ΧªΧΆΧ”*"
 
 #: src/request.c:232
 msgid "Virtual memory exhausted!"
-msgstr "!μζΰ ιμΰεθψιε οεψλζ"
+msgstr "!ΧΧ–Χ Χ™ΧΧΧ•ΧΧ¨Χ™Χ• ΧΧ•Χ¨Χ›Χ–"
 
-#: src/request.c:251
+#: src/request.c:253
 msgid "Step initialisation failed"
-msgstr "μωλπ αμωδ μεηϊΰ"
+msgstr "ΧΧ©Χ›Χ  Χ‘ΧΧ©Χ” ΧΧ•Χ—ΧªΧ"
 
-#: src/request.c:258
+#: src/request.c:260
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "(εγαες ΰμ νιπιιτΰξ δξλ) μωλπ αμωδ μεηϊΰ"
+msgstr "(Χ•Χ“Χ‘Χ•ΧΆ ΧΧ ΧΧ™Χ Χ™Χ™Χ¤ΧΧ Χ”ΧΧ›) ΧΧ©Χ›Χ  Χ‘ΧΧ©Χ” ΧΧ•Χ—ΧªΧ"
 
-#: src/request.c:554
+#: src/request.c:574
 #, c-format
 msgid "Request: %s\n"
-msgstr "%s :δξιωξ\n"
+msgstr "%s :Χ”ΧΧ™Χ©Χ\n"
 
-#: src/request.c:706
+#: src/request.c:741
 #, c-format
 msgid "Shrunk to: %s\n"
-msgstr "%s -:μ δξφξθφδ\n"
+msgstr "%s -:Χ Χ”ΧΧ¦ΧΧΧ¦Χ”\n"
 
-#: src/request.c:812 src/request.c:921
+#: src/request.c:847 src/request.c:956
 #, c-format
 msgid "Unrecognised surface name `%s'"
-msgstr "ψλεξ δτιθς νω επιΰ `%s'"
+msgstr "Χ¨Χ›Χ•Χ Χ”Χ¤Χ™ΧΧΆ ΧΧ© Χ•Χ Χ™Χ `%s'"
 
-#: src/request.c:892
+#: src/request.c:927
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
-msgstr "`%s'-ξ `%s'-μ δψξϊδ ϊεψωτΰ οιΰ"
+msgstr "`%s'-Χ `%s'-Χ Χ”Χ¨ΧΧªΧ” ΧªΧ•Χ¨Χ©Χ¤Χ ΧΧ™Χ"
 
-#: src/request.c:1002
+#: src/request.c:1037
 msgid "Expecting `..' in request"
-msgstr "`..' μεμλμ διδ ψεξΰ δξιωξδ οειφ"
+msgstr "`..' ΧΧ•ΧΧ›Χ Χ”Χ™Χ” Χ¨Χ•ΧΧ Χ”ΧΧ™Χ©ΧΧ” ΧΧ•Χ™Χ¦"
 
-#: src/task.c:622 src/task.c:799
+#: src/task.c:453
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
-msgstr "0x%0.2x ΰεδ ϊα-ϊιπλϊ νειρ γεχ"
+msgstr "0x%0.2x ΧΧ•Χ” ΧªΧ‘-ΧªΧ™Χ Χ›Χª ΧΧ•Χ™Χ΅ Χ“Χ•Χ§"
 
 #: src/testdump.c:314
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
 msgstr ""
-"UCS2  ιπεξπξ     ψεΰιϊ\n"
+"UCS2  Χ™Χ Χ•ΧΧ Χ     Χ¨Χ•ΧΧ™Χª\n"
 "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "        .<recode-bugs@iro.umontreal.ca> ΧªΧ‘Χ•ΧªΧ›Χ (bugs) Χ”ΧΧ§Χª Χ™Χ—Χ•Χ•Χ™Χ“ Χ—Χ•ΧΧ©Χ "
+#~ "ΧΧ \n"
