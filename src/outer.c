@@ -484,7 +484,7 @@ recode_new_outer (unsigned flags)
 
   if (!outer)
     {
-      /* Diagnostic?  FIXME!  */
+      recode_error (NULL, _("Virtual memory exhausted"));
       if (flags & RECODE_AUTO_ABORT_FLAG)
 	exit (1);
       return NULL;
