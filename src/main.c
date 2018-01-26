@@ -135,23 +135,31 @@ task_perror (RECODE_CONST_TASK task)
 `-----------------*/
 
 static void
+sig_catch(int sig, void (*handler) (int))
+{
+  struct sigaction sa;
+  sa.sa_handler = handler;
+  sa.sa_flags = 0;
+  sigemptyset (&sa.sa_mask);
+  sigaction (sig, &sa, NULL);  /* ignore error: none possible */
+}
+
+static void
 signal_handler (int number)
 {
   recode_interrupted = 1;
-  signal (number, signal_handler);
+  sig_catch (number, signal_handler);
 }
 
 /*------------------------------------------------------------------------.
 | Prepare to handle signals, intercept willingful requests for stopping.  |
 `------------------------------------------------------------------------*/
 
-/* FIXME: Use sigaction */
-
 static void
 setup_signals (void)
 {
 #ifdef SIGPIPE
-  signal (SIGPIPE, signal_handler);
+  sig_catch (SIGPIPE, signal_handler);
 #endif
 }
 
