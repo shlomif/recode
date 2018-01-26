@@ -762,9 +762,10 @@ scan_identifier (RECODE_REQUEST request)
   return true;
 }
 
-/*---------------------------------------------.
-| Scan all options and return a list of them.  |
-`---------------------------------------------*/
+/*----------------------------------------------------------------.
+| Scan all options and return a list of them.                     |
+| FIXME: Need to be able to differentiate empty list from error.  |
+`----------------------------------------------------------------*/
 
 static RECODE_OPTION_LIST
 scan_options (RECODE_REQUEST request)
@@ -1090,7 +1091,7 @@ decode_request (RECODE_REQUEST request, const char *string)
 /* Guarantee four NULs at the end of the output memory buffer for TASK, yet
    not counting them as data.  (Four is the maximum, needed for UCS-4.)  */
 
-static void
+static bool
 guarantee_nul_terminator (RECODE_TASK task)
 {
   if (task->output.cursor + 4 >= task->output.limit)
@@ -1098,17 +1099,20 @@ guarantee_nul_terminator (RECODE_TASK task)
       RECODE_OUTER outer = task->request->outer;
       size_t size = task->output.cursor - task->output.buffer;
 
-      /* FIXME: Rethink about how the error should be reported.  */
       if (REALLOC (task->output.buffer, size + 4, char))
 	{
 	  task->output.cursor = task->output.buffer + size;
 	  task->output.limit = task->output.buffer + size + 4;
 	}
+      else
+        return false;
     }
   task->output.cursor[0] = NUL;
   task->output.cursor[1] = NUL;
   task->output.cursor[2] = NUL;
   task->output.cursor[3] = NUL;
+
+  return true;
 }
 
 RECODE_REQUEST
@@ -1205,8 +1209,7 @@ recode_buffer_to_buffer (RECODE_CONST_REQUEST request,
   task->output.limit = *output_buffer_pointer + *output_allocated_pointer;
 
   task->strategy = RECODE_SEQUENCE_IN_MEMORY;
-  success = recode_perform_task (task);
-  guarantee_nul_terminator (task);
+  success = recode_perform_task (task) && guarantee_nul_terminator (task);
   *output_buffer_pointer = task->output.buffer;
   *output_length_pointer = task->output.cursor - task->output.buffer;
   *output_allocated_pointer = task->output.limit - task->output.buffer;
@@ -1258,8 +1261,7 @@ recode_file_to_buffer (RECODE_CONST_REQUEST request,
   task->output.limit = *output_buffer_pointer + *output_allocated_pointer;
 
   task->strategy = RECODE_SEQUENCE_IN_MEMORY;
-  success = recode_perform_task (task);
-  guarantee_nul_terminator (task);
+  success = recode_perform_task (task) && guarantee_nul_terminator (task);
   *output_buffer_pointer = task->output.buffer;
   *output_length_pointer = task->output.cursor - task->output.buffer;
   *output_allocated_pointer = task->output.limit - task->output.buffer;
