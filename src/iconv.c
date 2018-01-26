@@ -176,7 +176,7 @@ transform_with_iconv (RECODE_SUBTASK subtask)
 
   if (conversion == (iconv_t) -1)
     {
-      SET_SUBTASK_ERROR (RECODE_SYSTEM_ERROR, subtask);
+      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
       SUBTASK_RETURN (subtask);
     }
 

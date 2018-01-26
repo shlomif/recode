@@ -36,13 +36,6 @@ typedef const struct recode_step *		RECODE_CONST_STEP;
 typedef const struct recode_alias *		RECODE_CONST_ALIAS;
 typedef const struct recode_task *		RECODE_CONST_TASK;
 
-/*---------------------------------------------------------.
-| Maintain maximum of ERROR and current error in SUBTASK.  |
-`---------------------------------------------------------*/
-
-#define SET_SUBTASK_ERROR(Error, Subtask) \
-  recode_if_nogo (Error, Subtask)
-
 /*--------------------------------------------------------------------------.
 | Return from SUBTASK, with `false' if the failure level has been reached.  |
 `--------------------------------------------------------------------------*/
