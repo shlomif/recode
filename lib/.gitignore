@@ -180,3 +180,10 @@
 /xstrndup.h
 /asprintf.c
 /vasprintf.c
+/raise.c
+/sig-handler.c
+/sig-handler.h
+/sigaction.c
+/signal.in.h
+/sigprocmask.c
+/signal.h
