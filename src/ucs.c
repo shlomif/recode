@@ -389,7 +389,7 @@ get_ucs2 (unsigned *value, RECODE_SUBTASK subtask)
       character2 = get_byte (subtask);
       if (character2 == EOF)
 	{
-	  SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
+	  recode_if_nogo (RECODE_INVALID_INPUT, subtask);
 	  return false;
 	}
 
@@ -492,7 +492,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
   character = get_byte (subtask);
   if (character == EOF)
     {
-      SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
+      recode_if_nogo (RECODE_INVALID_INPUT, subtask);
       return false;
     }
   chunk |= (BIT_MASK (8) & character) << 16;
@@ -500,7 +500,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
   character = get_byte (subtask);
   if (character == EOF)
     {
-      SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
+      recode_if_nogo (RECODE_INVALID_INPUT, subtask);
       return false;
     }
   chunk |= (BIT_MASK (8) & character) << 8;
@@ -508,7 +508,7 @@ get_ucs4 (unsigned *value, RECODE_SUBTASK subtask)
   character = get_byte (subtask);
   if (character == EOF)
     {
-      SET_SUBTASK_ERROR (RECODE_INVALID_INPUT, subtask);
+      recode_if_nogo (RECODE_INVALID_INPUT, subtask);
       return false;
     }
   chunk |= BIT_MASK (8) & character;

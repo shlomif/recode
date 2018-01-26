@@ -150,7 +150,7 @@ declare_single (RECODE_OUTER outer,
 static bool
 internal_iconv (RECODE_SUBTASK subtask)
 {
-  SET_SUBTASK_ERROR (RECODE_USER_ERROR, subtask);
+  recode_if_nogo (RECODE_USER_ERROR, subtask);
   SUBTASK_RETURN (subtask);
 }
 
