@@ -561,12 +561,12 @@ recode_delete_outer (RECODE_OUTER outer)
     hash_free ((Hash_table *) outer->alias_table);
   if (outer->argmatch_charset_array)
     {
-      char **cursor;
+      const char **cursor;
 
       for (cursor = outer->argmatch_charset_array; *cursor; cursor++)
-       free (*cursor);
+        free ((char **) *cursor);
       for (cursor = outer->argmatch_surface_array; *cursor; cursor++)
-       free (*cursor);
+        free ((char **) *cursor);
       free (outer->argmatch_charset_array);
     }
   free ((void *) outer->one_to_same);

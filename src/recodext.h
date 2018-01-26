@@ -137,8 +137,8 @@ struct recode_outer
     unsigned number_of_symbols;
 
     /* Arrays of strings ready for argmatch.  */
-    char **argmatch_charset_array;
-    char **argmatch_surface_array;
+    char const **argmatch_charset_array;
+    char const **argmatch_surface_array;
     const char **realname_charset_array;
     const char **realname_surface_array;
 
