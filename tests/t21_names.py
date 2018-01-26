@@ -185,7 +185,7 @@ JUS_I.B1.002 ISO646-YU iso-ir-141 js yu
 JUS_I.B1.003-mac iso-ir-147 macedonian
 JUS_I.B1.003-serb iso-ir-146 serbian
 KEYBCS2 Kamenicky
-KOI8-R
+KOI8-R 878 1489 CP878 IBM878 RFC1489
 KOI8-RU
 KOI8-U
 KOI-7
