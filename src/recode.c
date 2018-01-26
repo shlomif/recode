@@ -63,7 +63,7 @@ recode_malloc (RECODE_OUTER outer, size_t size)
 {
   void *result;
 
-  result = malloc (size);
+  result = calloc (1, size);
   if (!result)
     recode_error (outer, _("Virtual memory exhausted"));
 
@@ -248,6 +248,7 @@ complete_pairs (RECODE_OUTER outer, RECODE_STEP step,
       memcpy (table, reverse ? right_table : left_table, 256);
       step->step_type = RECODE_BYTE_TO_BYTE;
       step->step_table = table;
+      step->step_table_term_routine = free;
 
       /* Upgrade step quality to reversible.  */
 
@@ -299,6 +300,7 @@ complete_pairs (RECODE_OUTER outer, RECODE_STEP step,
       step->transform_routine = transform_byte_to_variable;
       step->step_type = RECODE_BYTE_TO_STRING;
       step->step_table = table2;
+      step->step_table_term_routine = free;
     }
 
   return true;
@@ -343,6 +345,18 @@ transform_byte_to_ucs2 (RECODE_SUBTASK subtask)
 | Recode a file from double byte UCS-2 characters to one byte characters.  |
 `-------------------------------------------------------------------------*/
 
+struct ucs2_to_byte
+  {
+    recode_ucs2 code;		/* UCS-2 value */
+    unsigned char byte;		/* corresponding byte */
+  };
+
+struct ucs2_to_byte_local
+  {
+    Hash_table *table;
+    struct ucs2_to_byte *data;
+  };
+
 static size_t
 ucs2_to_byte_hash (const void *void_data, size_t table_size)
 {
@@ -358,6 +372,15 @@ ucs2_to_byte_compare (const void *void_first, const void *void_second)
   const struct ucs2_to_byte *second = (const struct ucs2_to_byte *) void_second;
 
   return first->code == second->code;
+}
+
+static bool
+term_ucs2_to_byte (RECODE_STEP step)
+{
+  hash_free (((struct ucs2_to_byte_local *) step->local)->table);
+  free (((struct ucs2_to_byte_local *) step->local)->data);
+  free (step->local);
+  return true;
 }
 
 bool
@@ -397,14 +420,23 @@ init_ucs2_to_byte (RECODE_STEP step,
 	}
     }
 
-  step->local = table;
+  if (!ALLOC (step->local, 1, struct ucs2_to_byte_local))
+    {
+      hash_free (table);
+      free (data);
+      return false;
+    }
+  ((struct ucs2_to_byte_local *) step->local)->table = table;
+  ((struct ucs2_to_byte_local *) step->local)->data = data;
+
+  step->term_routine = term_ucs2_to_byte;
   return true;
 }
 
 bool
 transform_ucs2_to_byte (RECODE_SUBTASK subtask)
 {
-  Hash_table *table = (Hash_table *) subtask->step->local;
+  Hash_table *table = ((struct ucs2_to_byte_local *) subtask->step->local)->table;
   struct ucs2_to_byte lookup;
   struct ucs2_to_byte *entry;
   unsigned input_value;		/* current UCS-2 character */

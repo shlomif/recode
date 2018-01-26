@@ -73,6 +73,7 @@ init_latin1_ansel (RECODE_STEP step,
     table[cursor->code] = cursor->string;
 
   step->step_table = table;
+  step->step_table_term_routine = free;
 
   return true;
 }

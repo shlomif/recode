@@ -239,7 +239,7 @@ extern bool recode_interrupted;
 typedef bool (*Recode_init) (RECODE_STEP, RECODE_CONST_REQUEST,
                              RECODE_CONST_OPTION_LIST,
                              RECODE_CONST_OPTION_LIST);
-typedef bool (*Recode_term) (RECODE_STEP, RECODE_CONST_REQUEST);
+typedef bool (*Recode_term) (RECODE_STEP);
 typedef bool (*Recode_transform) (RECODE_SUBTASK);
 typedef bool (*Recode_fallback) (RECODE_SUBTASK, unsigned);
 
@@ -306,6 +306,7 @@ struct recode_step
 
     /* Recoding table.  */
     void *step_table;
+    void (*step_table_term_routine)(void *);
 
     /* Step specific variables.  */
     void *local;
@@ -534,12 +535,6 @@ struct strip_data
   {
     const recode_ucs2 *pool;
     const short offset[256 / STRIP_SIZE];
-  };
-
-struct ucs2_to_byte
-  {
-    recode_ucs2 code;		/* UCS-2 value */
-    unsigned char byte;		/* corresponding byte */
   };
 
 struct ucs2_to_string

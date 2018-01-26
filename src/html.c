@@ -443,6 +443,7 @@ init_ucs2_html (RECODE_STEP step,
 
   step->step_type = RECODE_UCS2_TO_STRING;
   step->step_table = table;
+  step->step_table_term_routine = (void (*) (void *)) hash_free;
   return true;
 }
 
@@ -627,6 +628,7 @@ init_html_ucs2 (RECODE_STEP step,
 
   step->step_type = RECODE_STRING_TO_UCS2;
   step->step_table = table;
+  step->step_table_term_routine = (void (*) (void *)) hash_free;
   return true;
 }
 

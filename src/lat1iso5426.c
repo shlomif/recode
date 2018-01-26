@@ -71,6 +71,7 @@ init_latin1_iso5426 (RECODE_STEP step,
     table[cursor->code] = cursor->string;
 
   step->step_table = table;
+  step->step_table_term_routine = free;
 
   return true;
 }

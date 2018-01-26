@@ -129,6 +129,8 @@ wrapped_transform (iconv_t conversion, RECODE_SUBTASK subtask)
 
                       free (check_output_buffer);
                     }
+
+                  iconv_close (check_conversion);
 		}
 
 	      /* Invalid or untranslatable input.  Skip one byte.  */

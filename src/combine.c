@@ -20,7 +20,7 @@
 #include "common.h"
 #include "hash.h"
 
-/* FIXME: Cleanup memory at end of job, and softly report errors.  */
+/* FIXME: Softly report errors.  */
 
 /* The satisfactory aspects are that Recode is now able to combine a set of
    sequence of UCS-2 characters into single codes, or explode those single
@@ -97,6 +97,7 @@ init_explode (RECODE_STEP step,
     return false;
   step->step_type = RECODE_EXPLODE_STEP;
   step->step_table = table;
+  step->step_table_term_routine = (void (*) (void *)) hash_free;
 
   if (!data)
     return true;
@@ -285,12 +286,12 @@ static void
 state_free (void *void_state)
 {
   struct state *state = (struct state *) void_state;
-  struct state *shift = (struct state *) state->shift;
+  struct state *shift = state->shift;
 
   while (shift != NULL)
     {
       struct state *next_shift = shift->next;
-      free (shift);
+      state_free (shift);
       shift = next_shift;
     }
   free (state);
@@ -390,6 +391,7 @@ init_combine (RECODE_STEP step,
     return false;
   step->step_type = RECODE_COMBINE_STEP;
   step->step_table = table;
+  step->step_table_term_routine = (void (*) (void *)) hash_free;
 
   if (!data)
     return true;
