@@ -706,6 +706,12 @@ transform_html_ucs2 (RECODE_SUBTASK subtask)
   if (input_char != EOF)
     put_ucs2 (BYTE_ORDER_MARK, subtask);	/* FIXME: experimental */
 
+  /* According to RFC 2718 and the Unicode Standard, if you declare the
+     character encoding of your page using HTTP as either "UTF-16LE" or
+     "UTF-16BE" then you should not use a byte-order mark at the beginning
+     of the page. Only if the page is labelled in HTTP using IANA charset
+     name "UTF-16" is a byte-order mark appropriate.  */
+
   while (input_char != EOF)
 
     if (input_char == '&')
