@@ -73,14 +73,11 @@ add_work_character (RECODE_REQUEST request, int character)
       new_work_string = (char *)
 	realloc (request->work_string, request->work_string_allocated);
       if (new_work_string)
-	{
-	  request->work_string = new_work_string;
-	  request->work_string[request->work_string_length++] = character;
-	}
-      /* else, the diagnostic gets truncated, no need to fuss about it.  */
+        request->work_string = new_work_string;
+      else
+        return; /* the diagnostic gets truncated, no need to fuss about it.  */
     }
-  else
-    request->work_string[request->work_string_length++] = character;
+  request->work_string[request->work_string_length++] = character;
 }
 
 /*----------------------------------.
