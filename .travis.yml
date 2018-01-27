@@ -39,8 +39,11 @@ matrix:
             - [g++-6]
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python cython flex help2man texinfo valgrind ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install cython flex help2man texinfo valgrind ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/cython/bin:/usr/local/opt/flex/bin:/usr/local/opt/texinfo/bin:$PATH" ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export LDFLAGS="-L/usr/local/opt/flex/lib -L/usr/local/opt/texinfo/lib" ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export CPPFLAGS="-I/usr/local/opt/flex/include" ; fi
 
 # Need gettext 0.19, not in trusty; xenial doesn’t seem to work well yet on Travis
 install:
