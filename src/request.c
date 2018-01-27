@@ -218,6 +218,8 @@ add_to_sequence (RECODE_REQUEST request, RECODE_SINGLE single,
 
   if ((unsigned)request->sequence_length == request->sequence_allocated)
     {
+      unsigned old_allocated = request->sequence_allocated;
+
       if (request->sequence_allocated == 0)
 	request->sequence_allocated = 16;
       else
@@ -229,6 +231,9 @@ add_to_sequence (RECODE_REQUEST request, RECODE_SINGLE single,
 	  recode_error (outer, _("Virtual memory exhausted!"));
 	  return false;
 	}
+
+      memset (request->sequence_array + old_allocated, 0,
+              (request->sequence_allocated - old_allocated) * sizeof (struct recode_step));
     }
 
   step = request->sequence_array + request->sequence_length++;
