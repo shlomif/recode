@@ -119,11 +119,14 @@ iconv.lo: iconvdecl.h
 iconvdecl.h: ../tables.py
 	$(TABLES_PY) -i
 
-# lat1ansel.h and lat1iso5426.h
-.l.h:
-	grep '^\\' $< | \
-	perl -npe 's/{ put_byte \(//;s /, subtask\); }//;s%^\\%%' | \
-	perl -ne '($$a,$$b)=split; $$c=substr($$a,0,3);$$d=substr($$a,3);$$e = eval "0$$c"; next if $$b < 0200 ;printf("\t{%d, \"%c%s\"}, %s* %c *%s\n", $$b, $$e, $$d, "/", $$b, "/")' > $@
+lat1ansel.c: lat1ansel.h
+lat1iso5426.c: lat1iso5426.h
+
+lat1ansel.h: ansellat1.l
+	$(top_srcdir)/build-aux/invert-l-to-h $< > $@
+
+lat1iso5426.h: iso5426lat1.l
+	$(top_srcdir)/build-aux/invert-l-to-h $< > $@
 
 african.lo afrtran.lo atarist.lo bangbang.lo cdcnos.lo \
 ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo lat1iso5426.lo lat1ansel.lo \
