@@ -91,10 +91,11 @@ PYTHON = @PYTHON@
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
 merged.c: mergelex.py $(L_STEPS)
+	echo '#include "config.h"' > merged.c
 	(cd $(srcdir) && cat $(L_STEPS)) \
 	| $(PYTHON) $(srcdir)/mergelex.py > merged.tm1
 	$(LEX) -t -8 -Plibrecode_yy merged.tm1 > merged.tm2
-	grep -av '^# *line [0-9]' merged.tm2 > $(srcdir)/merged.c
+	grep -av '^# *line [0-9]' merged.tm2 >> merged.c
 	rm merged.tm1 merged.tm2
 
 recode.1: main.c $(top_srcdir)/configure.ac
