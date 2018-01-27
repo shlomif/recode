@@ -263,7 +263,6 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
        sequence_index++)
     {
       child_process = -1;
-      subtask->output = task->output;
 
       if (strategy == RECODE_SEQUENCE_IN_MEMORY)
 	if (sequence_index > 0)
@@ -323,19 +322,21 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		}
 	      else
 		{
-		  /* The parent redirects the current input file to the pipe.  */
-
-		  if (dup2 (pipe_pair[0], fileno (subtask->input.file)) < 0)
+		  /* The parent redirects the current input file, if any, to the pipe.  */
+		  if (subtask->input.file)
 		    {
-		      recode_perror (NULL, "dup2 ()");
-		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		      SUBTASK_RETURN (subtask);
+		      if (dup2 (pipe_pair[0], fileno (subtask->input.file)) < 0)
+			{
+			  recode_perror (NULL, "dup2 ()");
+			  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+			  SUBTASK_RETURN (subtask); // FIXME: Don't leak pipe_pair!
+			}
 		    }
 		  if (close (pipe_pair[0]) < 0)
 		    {
 		      recode_perror (NULL, "close ()");
 		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		      SUBTASK_RETURN (subtask);
+		      SUBTASK_RETURN (subtask); // FIXME: Don't leak pipe_pair[1]!
 		    }
 		  if (close (pipe_pair[1]) < 0)
 		    {
@@ -351,6 +352,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	{
 	  /* Prepare the final output file.  */
 
+	  subtask->output = task->output;
 	  if (subtask->output.name)
 	    {
 	      if (!*subtask->output.name)
@@ -381,7 +383,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	  (*step->transform_routine) (subtask);
 
 	  if (strategy == RECODE_SEQUENCE_WITH_PIPE)
-	    break;	/* parent process: escape from loop */
+	    break;	/* child/top-level process: escape from loop */
 
 	  /* Post-step clean up for memory sequence.  */
 
@@ -483,10 +485,9 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
     {
       free (input.buffer);
       free (output.buffer);
-
-      task->output = subtask->output;
     }
 
+  task->output = subtask->output;
   SUBTASK_RETURN (subtask);
 }
 
