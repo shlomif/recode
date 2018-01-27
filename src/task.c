@@ -509,7 +509,6 @@ recode_new_task (RECODE_CONST_REQUEST request)
   if (!ALLOC (task, 1, struct recode_task))
     return NULL;
 
-  memset (task, 0, sizeof (struct recode_task));
   task->request = request;
   task->strategy = RECODE_STRATEGY_UNDECIDED;
   task->fail_level = RECODE_NOT_CANONICAL;

@@ -1123,7 +1123,6 @@ recode_new_request (RECODE_OUTER outer)
   if (!ALLOC (request, 1, struct recode_request))
     return NULL;
 
-  memset (request, 0, sizeof (struct recode_request));
   request->outer = outer;
   request->diaeresis_char = '"';
 

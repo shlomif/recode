@@ -480,7 +480,7 @@ unregister_all_modules (RECODE_OUTER outer)
 RECODE_OUTER
 recode_new_outer (unsigned flags)
 {
-  RECODE_OUTER outer = (RECODE_OUTER) malloc (sizeof (struct recode_outer));
+  RECODE_OUTER outer = (RECODE_OUTER) calloc (1, sizeof (struct recode_outer));
 
   if (!outer)
     {
@@ -490,7 +490,6 @@ recode_new_outer (unsigned flags)
       return NULL;
     }
 
-  memset (outer, 0, sizeof (struct recode_outer));
   outer->auto_abort = (flags & RECODE_AUTO_ABORT_FLAG) != 0;
   outer->use_iconv = (flags & RECODE_NO_ICONV_FLAG) == 0;
 
