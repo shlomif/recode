@@ -45,11 +45,11 @@ before_install:
 # Need gettext 0.19, not in trusty; xenial doesn’t seem to work well yet on Travis
 install:
   - wget ftp://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.gz
-  - tar zxvf gettext-0.19.8.1.tar.gz
-  - cd gettext-0.19.8.1 && ./configure && sudo make install && cd ..
+  - tar zxf gettext-0.19.8.1.tar.gz
+  - cd gettext-0.19.8.1 && ./configure --quiet --enable-silent-rules && sudo make install && cd ..
 
 script:
   - ./bootstrap
-  - ./configure PYTHON=/usr/bin/python-dbg
+  - ./configure PYTHON=/usr/bin/python-dbg --enable-silent-rules
   - make
   - make DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python-dbg" distcheck
