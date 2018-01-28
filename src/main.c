@@ -27,6 +27,7 @@
 #include <libgen.h>
 #include <utime.h>
 #include <setjmp.h>
+#include <locale.h>
 
 #include "getopt.h"
 
