@@ -563,9 +563,9 @@ recode_delete_outer (RECODE_OUTER outer)
       const char **cursor;
 
       for (cursor = outer->argmatch_charset_array; *cursor; cursor++)
-        free ((char **) *cursor);
+        free ((char *) *cursor);
       for (cursor = outer->argmatch_surface_array; *cursor; cursor++)
-        free ((char **) *cursor);
+        free ((char *) *cursor);
       free (outer->argmatch_charset_array);
     }
   free ((void *) outer->one_to_same);
