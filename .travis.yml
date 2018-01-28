@@ -58,4 +58,5 @@ script:
   - ./bootstrap
   - ./configure --enable-silent-rules
   - make
-  - make distcheck
+  # The Cython-built Python extension doesn’t work without make install on macOS
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make install && make check ; else make distcheck ; fi
