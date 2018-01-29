@@ -187,3 +187,5 @@
 /signal.in.h
 /sigprocmask.c
 /signal.h
+/errno.h
+/utime.h

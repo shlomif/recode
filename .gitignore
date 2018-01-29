@@ -48,6 +48,7 @@ html/
 /src/lat1iso5426.h
 /src/merged.c
 /src/recode
+/src/recode.exe
 /src/recode.1
 /src/rfc1345.h
 /src/stamp-steps
@@ -61,3 +62,4 @@ html/
 /tests/Recode.c
 /tests/Recode.so
 /tests/Recode_d.so
+/tests/Recode.pyd
