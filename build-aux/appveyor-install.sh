@@ -18,4 +18,4 @@ case $MSYSTEM in
 esac
 
 # Build dependencies
-pacman --noconfirm -S base-devel rsync mingw-w64-$MINGW_BITS-python2 mingw-w64-$MINGW_BITS-cython texinfo help2man
+pacman --noconfirm -S rsync mingw-w64-$MINGW_BITS-cython
