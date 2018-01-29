@@ -19,6 +19,7 @@
 
 
 import os
+import subprocess
 from __main__ import py
 
 recode_program = os.environ.get('RECODE')
@@ -74,7 +75,12 @@ def external_output(command):
     if not recode_program:
         py.test.skip()
     command = command.replace('$R', recode_program + ' --ignore=:iconv:')
-    return os.popen(command).read()
+    try:
+        # FIXME: Find a more portable solution than checking the OS
+        output = subprocess.check_output(command, universal_newlines=True, shell=os.name != 'nt')
+    except subprocess.CalledProcessError as e:
+        output = e.output
+    return output
 
 def recode_output(input):
     if run.external:
