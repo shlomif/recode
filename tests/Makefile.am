@@ -34,7 +34,7 @@ DISTCLEANFILES = Recode.c
 check-local: Recode@shlibext@
 	if test -n "$(VALGRIND)"; then export VALGRIND='$(VALGRIND) --suppressions=$(srcdir)/valgrind-python.supp'; fi; \
 	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
-	RECODE=$(top_builddir)/src/recode PYTHONPATH=.:$(srcdir) \
+	RECODE=$(top_builddir)/src/recode$(EXEEXT) PYTHONPATH=.:$(srcdir) \
 	  $$VALGRIND $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
 Recode@shlibext@: Recode.c setup.py
