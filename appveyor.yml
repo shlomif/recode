@@ -6,7 +6,7 @@ environment:
     # Only need one flavour of dictionary
     VERBOSE: 1 # Get test logs in output
   matrix:
-    - MSYSTEM: MSYS
+    # - MSYSTEM: MSYS (no cython available)
     - MSYSTEM: MINGW64
     - MSYSTEM: MINGW32
 
