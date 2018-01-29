@@ -12,16 +12,10 @@ case $MSYSTEM in
         PREFIX=/mingw64
         ;;
     MSYS)
+        MINGW_BITS=msys
         PREFIX=/usr
         ;;
 esac
 
 # Build dependencies
-pacman --noconfirm -S base-devel rsync python2 texinfo
-
-# Cython
-wget https://github.com/cython/cython/archive/0.27.3.tar.gz
-tar zxvf 0.27.3.tar.gz
-cd cython-0.27.3
-python2 setup.py install
-cd ..
+pacman --noconfirm -S base-devel rsync mingw-w64-$MINGW_BITS-python2 mingw-w64-$MINGW_BITS-cython texinfo help2man
