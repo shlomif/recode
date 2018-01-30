@@ -246,7 +246,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
     {
       if (!*subtask->input.name)
 	subtask->input.file = stdin;
-      else if (subtask->input.file = fopen (subtask->input.name, "r"),
+      else if (subtask->input.file = fopen (subtask->input.name, "rb"),
 	       subtask->input.file == NULL)
 	{
 	  recode_perror (NULL, "fopen (%s)", subtask->input.name);
@@ -313,7 +313,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		      recode_perror (NULL, "close ()");
 		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 		    }
-		  if (subtask->output.file = fdopen (pipe_pair[1], "w"),
+		  if (subtask->output.file = fdopen (pipe_pair[1], "wb"),
 		      subtask->output.file == NULL)
 		    {
 		      recode_perror (NULL, "fdopen ()");
@@ -357,7 +357,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	    {
 	      if (!*subtask->output.name)
 		subtask->output.file = stdout;
-	      else if (subtask->output.file = fopen (subtask->output.name, "w"),
+	      else if (subtask->output.file = fopen (subtask->output.name, "wb"),
 		       subtask->output.file == NULL)
 		{
 		  recode_perror (NULL, "fopen (%s)", subtask->output.name);

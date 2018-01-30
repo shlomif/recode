@@ -47,7 +47,7 @@ open_mixed (struct mixed *mixed, RECODE_TASK task)
 
   if (!*(task->input.name))
     task->input.file = stdin;
-  else if (task->input.file = fopen (mixed->input_name, "r"),
+  else if (task->input.file = fopen (mixed->input_name, "rb"),
 	   !task->input.file)
     {
       recode_perror (NULL, "fopen (%s)", task->input.name);
@@ -57,7 +57,7 @@ open_mixed (struct mixed *mixed, RECODE_TASK task)
 
   if (!*(task->output.name))
     task->output.file = stdout;
-  else if (task->output.file = fopen (mixed->output_name, "w"),
+  else if (task->output.file = fopen (mixed->output_name, "wb"),
 	   !task->output.file)
     {
       recode_perror (NULL, "fopen (%s)", task->output.name);
