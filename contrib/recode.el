@@ -4,7 +4,7 @@
 
 ;; Ce programme est un logiciel libre; vous pouvez le redistribuer ou le
 ;; modifier selon les termes de la License Publique Générale de GNU, publiée
-;; par la Free Software Foundation (soit la version 2 ou soit, à votre
+;; par la Free Software Foundation (soit la version 3 ou soit, à votre
 ;; discrétion, toute version ultérieure).
 
 ;; Ce programme est distribué pour être utile, mais SANS AUCUNE GARANTIE;
