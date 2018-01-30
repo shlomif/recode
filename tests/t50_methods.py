@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import common
 from common import setup_module, teardown_module
+from __main__ import py
 
 import os, sys
 input_name = '%s/../COPYING' % os.path.dirname(sys.argv[0])
@@ -59,6 +60,8 @@ def test_1():
 def validate(request, sequence, mode):
     before, after = request.split('..')
     if mode == 'filter':
+        if os.name == 'nt':
+            py.test.skip()
         command = ('$R --quiet --force --sequence=%s < %s %s'
                    '| $R --quiet --force --sequence=%s %s..%s'
                    % (sequence, input_name, request, sequence, after, before))
