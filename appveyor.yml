@@ -17,4 +17,4 @@ install:
   - C:\msys64\usr\bin\bash.exe -l c:/projects/recode/build-aux/appveyor-install.sh
 
 build_script:
-  - C:\msys64\usr\bin\bash.exe -lc "cd c:/projects/recode && ./bootstrap && ./configure --enable-silent-rules %CONFIGURE_FLAGS% && make distcheck"
+  - C:\msys64\usr\bin\bash.exe -lc "cd c:/projects/recode && ./bootstrap && ./configure --enable-silent-rules %CONFIGURE_FLAGS% && make && make distcheck"
