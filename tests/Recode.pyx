@@ -39,7 +39,6 @@ cdef extern from "common.h":
         RECODE_NO_SYMBOL_TYPE
         RECODE_CHARSET
         RECODE_DATA_SURFACE
-        RECODE_TREE_SURFACE
 
     enum recode_data_type:
         RECODE_NO_CHARSET_DATA
@@ -235,7 +234,6 @@ cdef extern from "common.h":
         unsigned number_of_singles
         unsigned char *one_to_same
         RECODE_SYMBOL data_symbol
-        RECODE_SYMBOL tree_symbol
         RECODE_SYMBOL ucs2_charset
         RECODE_SYMBOL iconv_pivot
         RECODE_SYMBOL crlf_surface
@@ -310,7 +308,6 @@ cdef extern from "common.h":
     enum alias_find_type:
         SYMBOL_CREATE_CHARSET_ 'SYMBOL_CREATE_CHARSET'
         SYMBOL_CREATE_DATA_SURFACE_ 'SYMBOL_CREATE_DATA_SURFACE'
-        SYMBOL_CREATE_TREE_SURFACE_ 'SYMBOL_CREATE_TREE_SURFACE'
         ALIAS_FIND_AS_CHARSET_ 'ALIAS_FIND_AS_CHARSET'
         ALIAS_FIND_AS_SURFACE_ 'ALIAS_FIND_AS_SURFACE'
         ALIAS_FIND_AS_EITHER_ 'ALIAS_FIND_AS_EITHER'
@@ -456,7 +453,6 @@ class error(Exception):
 NO_SYMBOL_TYPE = RECODE_NO_SYMBOL_TYPE
 CHARSET = RECODE_CHARSET
 DATA_SURFACE = RECODE_DATA_SURFACE
-TREE_SURFACE = RECODE_TREE_SURFACE
 
 NO_CHARSET_DATA = RECODE_NO_CHARSET_DATA
 STRIP_DATA = RECODE_STRIP_DATA
@@ -506,7 +502,6 @@ STRIP_SIZE = STRIP_SIZE_
 
 SYMBOL_CREATE_CHARSET = SYMBOL_CREATE_CHARSET_
 SYMBOL_CREATE_DATA_SURFACE = SYMBOL_CREATE_DATA_SURFACE_
-SYMBOL_CREATE_TREE_SURFACE = SYMBOL_CREATE_TREE_SURFACE_
 ALIAS_FIND_AS_CHARSET = ALIAS_FIND_AS_CHARSET_
 ALIAS_FIND_AS_SURFACE = ALIAS_FIND_AS_SURFACE_
 ALIAS_FIND_AS_EITHER = ALIAS_FIND_AS_EITHER_
@@ -555,8 +550,7 @@ cdef class Outer:
         while symbol is not NULL:
             if (symbol.type == RECODE_CHARSET
                     and symbol is not self.outer.iconv_pivot
-                    and symbol is not self.outer.data_symbol
-                    and symbol is not self.outer.tree_symbol):
+                    and symbol is not self.outer.data_symbol):
                 list.append(symbol.name)
             symbol = symbol.next
         return list

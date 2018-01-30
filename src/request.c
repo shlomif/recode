@@ -121,8 +121,7 @@ edit_sequence (RECODE_REQUEST request, bool edit_quality)
 	  /* Find unsurfacers.  */
 
 	  while (step < request->sequence_array + request->sequence_length
-		 && (step->after == outer->data_symbol
-		     || step->after == outer->tree_symbol))
+		 && step->after == outer->data_symbol)
 	    step++;
 	  unsurfacer_end = step;
 
@@ -154,8 +153,7 @@ edit_sequence (RECODE_REQUEST request, bool edit_quality)
 
 	  add_work_string (request, "..");
 	  if (step < request->sequence_array + request->sequence_length
-	      && step->before != outer->data_symbol
-	      && step->before != outer->tree_symbol)
+	      && step->before != outer->data_symbol)
 	    {
 	      last_charset_printed = step->after;
 	      add_work_string (request, last_charset_printed->name);
@@ -164,15 +162,13 @@ edit_sequence (RECODE_REQUEST request, bool edit_quality)
 	  else
 	    {
 	      last_charset_printed = outer->data_symbol;
-	      /* FIXME: why not outer->tree_symbol?  */
 	      add_work_string (request, last_charset_printed->name);
 	    }
 
 	  /* Print resurfacers.  */
 
 	  while (step < request->sequence_array + request->sequence_length
-		 && (step->before == outer->data_symbol
-		     || step->before == outer->tree_symbol))
+		 && step->before == outer->data_symbol)
 	    {
 	      add_work_character (request, '/');
 	      last_charset_printed = NULL;

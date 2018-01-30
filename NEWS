@@ -27,6 +27,8 @@ Version 3.7
   library if one was available at installation time.  The -x: option
   to the program, or a new flag to the library recode_new_outer
   function, inhibits the initialisation and usage of iconv.
++ The experimental ``tree`` surface is removed.  Structured data
+  needs a proper parser, and that doesn't fit the framework of Recode.
 + Many bug fixes.
 + Long ago, I renamed GNU recode to Free recode: the permission for
   using the GNU prefix mandated a level of obedience to the FSF that

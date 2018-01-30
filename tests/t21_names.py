@@ -220,7 +220,6 @@ T.61-7bit iso-ir-102
 TCVN
 Texinfo texi ti
 Texte txte
-tree
 UNICODE-1-1-UTF-7 TF-7 u7 UTF-7
 UTF-8 FSS_UTF TF-8 u8 UTF-2 UTF-FSS
 UTF-16 TF-16 u6 Unicode
