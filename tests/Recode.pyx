@@ -591,8 +591,9 @@ cdef class Outer:
             raise error
 
     # Lazy, all in one call.
-    def recode(self, char *command, char *input):
+    def recode(self, char *command, char *input, verbose=False):
         request = Request(self)
+        request.set_verbose(verbose)
         request.scan(command)
         return request.string(input)
 
