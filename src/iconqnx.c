@@ -45,7 +45,7 @@ transform_ibmpc_iconqnx (RECODE_SUBTASK subtask)
       {
       case DOS_EOF:
 	RETURN_IF_NOGO (RECODE_NOT_CANONICAL, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       case EOF:
 	SUBTASK_RETURN (subtask);
@@ -80,7 +80,7 @@ transform_ibmpc_iconqnx (RECODE_SUBTASK subtask)
       case ENDLINE:
       case ESCAPE:
 	RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (input_char, subtask);
@@ -208,7 +208,7 @@ transform_iconqnx_ibmpc (RECODE_SUBTASK subtask)
 	    if (input_char == EOF)
 	      SUBTASK_RETURN (subtask);
 	  }
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (input_char, subtask);

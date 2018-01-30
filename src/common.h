@@ -42,6 +42,14 @@
 #endif
 #define N_(Text) Text
 
+#ifndef FALLTHROUGH
+# if __GNUC__ < 7
+#  define FALLTHROUGH ((void) 0)
+# else
+#  define FALLTHROUGH __attribute__ ((__fallthrough__))
+# endif
+#endif
+
 /* Generate a mask of LENGTH one-bits, right justified in a word.  */
 #define BIT_MASK(Length) ((1U << (Length)) - 1)
 
