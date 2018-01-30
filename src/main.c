@@ -136,6 +136,7 @@ task_perror (RECODE_CONST_TASK task)
 | Signal handler.  |
 `-----------------*/
 
+#ifdef HAVE_PIPE
 static void
 sig_catch(int sig, void (*handler) (int))
 {
@@ -153,17 +154,12 @@ signal_handler (int number)
   sig_catch (number, signal_handler);
 }
 
-/*------------------------------------------------------------------------.
-| Prepare to handle signals, intercept willingful requests for stopping.  |
-`------------------------------------------------------------------------*/
-
 static void
 setup_signals (void)
 {
-#ifdef SIGPIPE
-  sig_catch (SIGPIPE, signal_handler);
-#endif
+ sig_catch (SIGPIPE, signal_handler);
 }
+#endif
 
 /* Main control.  */
 
@@ -777,7 +773,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
       exit (EXIT_SUCCESS);
     }
 
+#if HAVE_PIPE
   setup_signals ();
+#endif
 
   {
     RECODE_TASK task;

@@ -228,8 +228,10 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
   struct recode_subtask subtask_block;
   RECODE_SUBTASK subtask = &subtask_block;
 
+#if HAVE_PIPE
   int pipe_pair[2];		/* pair of file descriptors for a pipe */
   pid_t wait_status;		/* status returned by wait() */
+#endif
 
   struct recode_read_write_text input;
   struct recode_read_write_text output;
