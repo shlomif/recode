@@ -21,7 +21,7 @@ AUTOMAKE_OPTIONS = gnits
 
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = doc lib po src tests contrib
+SUBDIRS = doc lib src po tests contrib
 
 EXTRA_DIST = COPYING-LIB \
 m4/gnulib-cache.m4 tables.py \
