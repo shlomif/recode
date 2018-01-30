@@ -40,7 +40,6 @@ open_mixed (struct mixed *mixed, RECODE_TASK task)
 {
   mixed->input_name = task->input.name;
   mixed->output_name = task->output.name;
-  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
   task->byte_order_mark = false;
 
   /* Open both files ourselves.  */

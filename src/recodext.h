@@ -405,15 +405,6 @@ struct recode_read_write_text
     char *limit;
   };
 
-/* Tells how various passes are interconnected.  */
-
-enum recode_sequence_strategy
-  {
-    RECODE_STRATEGY_UNDECIDED,	/* sequencing strategy is undecided yet */
-    RECODE_SEQUENCE_IN_MEMORY,	/* keep intermediate recodings in memory */
-    RECODE_SEQUENCE_WITH_PIPE	/* fork processes connected with `pipe(2)' */
-  };
-
 /* Tells how to swap the incoming pair of bytes, while reading UCS-2.  */
 
 enum recode_swap_input
@@ -465,9 +456,6 @@ struct recode_task
     /* Initial input and final output.  */
     struct recode_read_only_text input;
     struct recode_read_write_text output;
-
-    /* Tells how various recoding steps (passes) will be interconnected.  */
-    enum recode_sequence_strategy strategy : 3;
 
     /* Produce a byte order mark on UCS-2 output, insist for it on input.  */
     bool byte_order_mark : 1;

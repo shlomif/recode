@@ -1209,7 +1209,6 @@ recode_buffer_to_buffer (RECODE_CONST_REQUEST request,
   task->output.cursor = *output_buffer_pointer;
   task->output.limit = *output_buffer_pointer + *output_allocated_pointer;
 
-  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
   success = recode_perform_task (task) && guarantee_nul_terminator (task);
   *output_buffer_pointer = task->output.buffer;
   *output_length_pointer = task->output.cursor - task->output.buffer;
@@ -1236,7 +1235,6 @@ recode_buffer_to_file (RECODE_CONST_REQUEST request,
   task->input.limit = input_buffer + input_length;
   task->output.file = output_file;
 
-  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
   success = recode_perform_task (task);
 
   recode_delete_task (task);
@@ -1261,7 +1259,6 @@ recode_file_to_buffer (RECODE_CONST_REQUEST request,
   task->output.cursor = *output_buffer_pointer;
   task->output.limit = *output_buffer_pointer + *output_allocated_pointer;
 
-  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
   success = recode_perform_task (task) && guarantee_nul_terminator (task);
   *output_buffer_pointer = task->output.buffer;
   *output_length_pointer = task->output.cursor - task->output.buffer;
