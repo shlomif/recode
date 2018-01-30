@@ -83,6 +83,7 @@ ucs2_to_french_charname (int ucs2)
 
   /* Return the result.  */
 
-  *out = NUL;
+  if (out)
+    *out = NUL;
   return result;
 }
