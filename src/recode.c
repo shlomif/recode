@@ -680,6 +680,7 @@ recode_format_table (RECODE_REQUEST request,
 			column += 2;
 			break;
 		      }
+                    FALLTHROUGH;
 
 		  default:
 		    if (isprint (*cursor2))

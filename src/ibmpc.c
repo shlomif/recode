@@ -236,7 +236,7 @@ transform_ibmpc_latin1 (RECODE_SUBTASK subtask)
 
 	  case DOS_LF:
 	    RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	    /* Fall through.  */
+	    FALLTHROUGH;
 
 	  default:
 	    put_byte (table[input_char], subtask);
@@ -272,7 +272,7 @@ transform_ibmpc_latin1 (RECODE_SUBTASK subtask)
 
 	  case DOS_LF:
 	    RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	    /* Fall through.  */
+	    FALLTHROUGH;
 
 	  default:
 	    if (table[input_char])

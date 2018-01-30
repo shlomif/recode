@@ -44,7 +44,7 @@ transform_data_cr (RECODE_SUBTASK subtask)
 	    break;
 	  }
 	RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (character, subtask);
@@ -73,7 +73,7 @@ transform_cr_data (RECODE_SUBTASK subtask)
 	    break;
 	  }
 	RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (character, subtask);
@@ -105,7 +105,7 @@ transform_data_crlf (RECODE_SUBTASK subtask)
 
       case OLD_EOF:
 	RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (character, subtask);
@@ -140,7 +140,7 @@ transform_crlf_data (RECODE_SUBTASK subtask)
 
       case LF:
 	RETURN_IF_NOGO (RECODE_AMBIGUOUS_OUTPUT, subtask);
-	/* Fall through.  */
+	FALLTHROUGH;
 
       default:
 	put_byte (character, subtask);
