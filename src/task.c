@@ -280,11 +280,8 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 
       if (sequence_index + 1 < (unsigned)request->sequence_length)
 	{
-          if (strategy == RECODE_SEQUENCE_IN_MEMORY)
-            {
-	      subtask->output = output;
-	      subtask->output.cursor = subtask->output.buffer;
-            }
+          subtask->output = output;
+          subtask->output.cursor = subtask->output.buffer;
 
 #if HAVE_PIPE
           if (strategy == RECODE_SEQUENCE_WITH_PIPE)
