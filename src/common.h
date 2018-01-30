@@ -43,7 +43,7 @@
 #define N_(Text) Text
 
 /* Generate a mask of LENGTH one-bits, right justified in a word.  */
-#define BIT_MASK(Length) ((unsigned) ~(~0 << (Length)))
+#define BIT_MASK(Length) ((1U << (Length)) - 1)
 
 /* Indicate if CHARACTER holds into 7 bits.  */
 #define IS_ASCII(Character) \
