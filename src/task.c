@@ -382,11 +382,8 @@ recode_perform_task (RECODE_TASK task)
 
       if (child_process <= 0)
 	{
-	  RECODE_CONST_STEP step;	/* pointer into single_steps */
-
-	  step = request->sequence_array + sequence_index;
-	  subtask->step = step;
-	  (*step->transform_routine) (subtask);
+	  subtask->step = request->sequence_array + sequence_index;
+	  (*subtask->step->transform_routine) (subtask);
 
 #if HAVE_PIPE
           break;	/* child/top-level process: escape from loop */
