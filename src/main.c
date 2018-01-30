@@ -390,10 +390,12 @@ main (int argc, char *const *argv)
 	  case -2:
 	    error (0, 0, _("Sequence `%s' is ambiguous"), optarg);
 	    usage (EXIT_FAILURE, 0);
+            break;
 
 	  case -1:
 	    error (0, 0, _("Sequence `%s' is unknown"), optarg);
 	    usage (EXIT_FAILURE, 0);
+            break;
 
 	  case 0:
 	  case 1:
@@ -420,10 +422,12 @@ main (int argc, char *const *argv)
 	    case -2:
 	      error (0, 0, _("Language `%s' is ambiguous"), optarg);
 	      usage (EXIT_FAILURE, 0);
+              break;
 
 	    default:		/* -1 */
 	      error (0, 0, _("Language `%s' is unknown"), optarg);
 	      usage (EXIT_FAILURE, 0);
+              break;
 
 	    case 0:
 	      processor = transform_c_source;
@@ -478,10 +482,12 @@ main (int argc, char *const *argv)
 	      case -2:
 		error (0, 0, _("Language `%s' is ambiguous"), buffer);
 		usage (EXIT_FAILURE, 0);
+                break;
 
 	      default:		/* -1 */
 		error (0, 0, _("Language `%s' is unknown"), buffer);
 		usage (EXIT_FAILURE, 0);
+                break;
 
 	      case 0:
 		header_language = RECODE_LANGUAGE_C;
@@ -516,10 +522,12 @@ main (int argc, char *const *argv)
 	    case -2:
 	      error (0, 0, _("Format `%s' is ambiguous"), optarg);
 	      usage (EXIT_FAILURE, 0);
+              break;
 
 	    case -1:
 	      error (0, 0, _("Format `%s' is unknown"), optarg);
 	      usage (EXIT_FAILURE, 0);
+              break;
 
 	    case 0:
 	      list_format = RECODE_DECIMAL_FORMAT;
