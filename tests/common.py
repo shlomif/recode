@@ -52,6 +52,7 @@ def setup_module(module):
                      'LC_ALL', 'LC_MESSAGES', 'LC_COLLATE'):
         if variable in os.environ:
             del os.environ[variable]
+    os.environ['DEFAULT_CHARSET'] = 'ASCII'
     run.external = outer is None
     import tempfile
     run.work = tempfile.mktemp()
