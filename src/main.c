@@ -30,6 +30,7 @@
 #include <locale.h>
 
 #include "getopt.h"
+#include "xbinary-io.h"
 
 /* Variables.  */
 
@@ -833,6 +834,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      if (asprintf (&output_name, "%s/recode-XXXXXX.tmp", output_dir) == -1)
 		error (EXIT_FAILURE, errno, "asprintf");
 	      int fd = mkstemps (output_name, 4);
+	      xset_binary_mode (fd, O_BINARY);
 	      if (fd == -1)
 		error (EXIT_FAILURE, errno, "mkstemps (%s)", output_name);
 
