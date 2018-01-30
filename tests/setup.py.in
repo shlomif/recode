@@ -7,6 +7,17 @@ build = 'build'
 srcdir = '@srcdir@'
 top_builddir = '@top_builddir@'
 top_srcdir = '@top_srcdir@'
+libintl = '@LIBINTL@'
+libiconv = '@LIBICONV@'
+extra_libs = []
+extra_libs.extend(libintl.split())
+extra_libs.extend(libiconv.split())
+
+# FIXME: On Mingw, Cython seems to call gcc in such a way that it doesn't understand UNIX paths
+if os.name == 'nt':
+    for i in range(len(extra_libs)):
+        if extra_libs[i][0] == '/':
+            extra_libs[i] = os.popen('cygpath --windows ' + extra_libs[i]).read().rstrip()
 
 try:
 
@@ -20,7 +31,8 @@ try:
                                 os.path.join(top_srcdir, 'lib')],
                   library_dirs=[os.path.join(top_builddir, 'src', '.libs'),
                                 os.path.join(top_builddir, 'lib', '.libs')],
-                  libraries=['recode', 'gnu'])
+                  libraries=['recode', 'gnu'],
+                  extra_link_args=extra_libs)
         ])
 
 finally:
