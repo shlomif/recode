@@ -231,20 +231,9 @@ Operation modes:\n\
   -q, --quiet, --silent   inhibit messages about irreversible recodings\n\
   -f, --force             force recodings even when not reversible\n\
   -t, --touch             touch the recoded files after replacement\n\
-      --sequence=memory   use memory buffers for sequencing passes\n\
+  -i, -p, --sequence=STRATEGY  ignored for backwards compatibility\n\
 "),
 	     stdout);
-#if HAVE_PIPE
-      fputs (_("\
-  -p, --sequence=pipe     use pipe machinery for sequencing passes\n\
-"),
-	     stdout);
-#else
-      fputs (_("\
-  -p, --sequence=pipe     same as -i (on this system)\n\
-"),
-	     stdout);
-#endif
       fputs (_("\
 \n\
 Fine tuning:\n\
@@ -285,7 +274,6 @@ with an empty surface name means no surfaces at all.  See the manual.\n"),
 	     stdout);
       fputs (_("\
 \n\
-If none of -i and -p are given, presume -p if no FILE, else -i.\n\
 Each FILE is recoded over itself, destroying the original.  If no\n\
 FILE is specified, then act as a filter and recode stdin to stdout.\n"),
 	     stdout);
@@ -369,7 +357,6 @@ main (int argc, char *const *argv)
   memset (&task_option, 0, sizeof (struct recode_task));
 
   request_option.diaeresis_char = '"';
-  task_option.strategy = RECODE_STRATEGY_UNDECIDED;
   task_option.fail_level = RECODE_AMBIGUOUS_OUTPUT;
   task_option.abort_level = RECODE_AMBIGUOUS_OUTPUT;
 
@@ -397,13 +384,10 @@ main (int argc, char *const *argv)
 	    usage (EXIT_FAILURE, 0);
             break;
 
+            /* Ignore for backwards compatibility with version 3.6.  */
 	  case 0:
 	  case 1:
-	    task_option.strategy = RECODE_SEQUENCE_IN_MEMORY;
-	    break;
-
 	  case 2:
-	    task_option.strategy = RECODE_SEQUENCE_WITH_PIPE;
 	    break;
 
           default:
@@ -507,7 +491,7 @@ main (int argc, char *const *argv)
 	break;
 
       case 'i':
-	task_option.strategy = RECODE_SEQUENCE_IN_MEMORY;
+        /* Ignore for backwards compatibility with version 3.6.  */
 	break;
 
       case 'k':
@@ -551,7 +535,7 @@ main (int argc, char *const *argv)
 	break;
 
       case 'p':
-	task_option.strategy = RECODE_SEQUENCE_WITH_PIPE;
+        /* Ignore for backwards compatibility with version 3.6.  */
 	break;
 
       case 'q':
@@ -789,7 +773,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
     RECODE_TASK task;
 
     task = recode_new_task (request);
-    task->strategy = task_option.strategy;
     task->fail_level = task_option.fail_level;
     task->abort_level = task_option.fail_level;
 
@@ -798,12 +781,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 
     if (optind < argc)
       {
-	/* When reading and writing files, unless the user selected
-	   otherwise, avoid forking and use memory.  */
-
-	if (task->strategy == RECODE_STRATEGY_UNDECIDED)
-	  task->strategy = RECODE_SEQUENCE_IN_MEMORY;
-
 	/* In case files are recoded over themselves and there is no
 	   recoding step at all, do not even try to touch the files.  */
 
@@ -917,12 +894,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
       }
     else
       {
-	/* When reading stdin and writing stdout, unless the user selected
-	   otherwise, fork processes interconnected with pipes.  */
-
-	if (task->strategy == RECODE_STRATEGY_UNDECIDED)
-	  task->strategy = RECODE_SEQUENCE_WITH_PIPE;
-
 	task->input.name = "";
 	task->output.name = "";
 	if (!(*processor) (task))

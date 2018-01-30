@@ -222,7 +222,7 @@ transform_byte_to_variable (RECODE_SUBTASK subtask)
 `---------------------------------------------------------------------*/
 
 static bool
-perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
+perform_sequence (RECODE_TASK task)
 {
   RECODE_CONST_REQUEST request = task->request;
   struct recode_subtask subtask_block;
@@ -284,64 +284,61 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
           subtask->output.cursor = subtask->output.buffer;
 
 #if HAVE_PIPE
-          if (strategy == RECODE_SEQUENCE_WITH_PIPE)
+          /* Create all subprocesses, from the first to the last, and
+             interconnect them.  */
+
+          if (pipe (pipe_pair) < 0)
             {
-	      /* Create all subprocesses, from the first to the last, and
-		 interconnect them.  */
+              recode_perror (NULL, "pipe ()");
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+              SUBTASK_RETURN (subtask);
+            }
+          xset_binary_mode (pipe_pair[0], O_BINARY);
+          xset_binary_mode (pipe_pair[1], O_BINARY);
+          if (child_process = fork (), child_process < 0)
+            {
+              recode_perror (NULL, "fork ()");
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+              SUBTASK_RETURN (subtask);
+            }
+          if (child_process == 0)
+            {
+              /* The child executes its recoding step, reading from the
+                 current input file and writing to the pipe; then it exits.  */
 
-	      if (pipe (pipe_pair) < 0)
-		{
-		  recode_perror (NULL, "pipe ()");
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  SUBTASK_RETURN (subtask);
-		}
-	      xset_binary_mode (pipe_pair[0], O_BINARY);
-	      xset_binary_mode (pipe_pair[1], O_BINARY);
-	      if (child_process = fork (), child_process < 0)
-		{
-		  recode_perror (NULL, "fork ()");
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  SUBTASK_RETURN (subtask);
-		}
-	      if (child_process == 0)
-		{
-		  /* The child executes its recoding step, reading from the
-		     current input file and writing to the pipe; then it exits.  */
+              if (close (pipe_pair[0]) < 0)
+                {
+                  recode_perror (NULL, "close ()");
+                  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                }
+              if (subtask->output.file = fdopen (pipe_pair[1], "w"),
+                  subtask->output.file == NULL)
+                {
+                  recode_perror (NULL, "fdopen ()");
+                  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                }
+            }
+          else
+            {
+              /* The parent saves the read end of the pipe for the next step.  */
 
-		  if (close (pipe_pair[0]) < 0)
-		    {
-		      recode_perror (NULL, "close ()");
-		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		    }
-		  if (subtask->output.file = fdopen (pipe_pair[1], "w"),
-		      subtask->output.file == NULL)
-		    {
-		      recode_perror (NULL, "fdopen ()");
-		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		    }
-		}
-	      else
-		{
-		  /* The parent saves the read end of the pipe for the next step.  */
-
-		  if (input.file = fdopen (pipe_pair[0], "r"),
-		      input.file == NULL)
-		    {
-		      recode_perror (NULL, "fdopen ()");
-		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-                      close (pipe_pair[0]);
-                      close (pipe_pair[1]);
-                      SUBTASK_RETURN (subtask);
-		    }
-		  if (close (pipe_pair[1]) < 0)
-		    {
-		      recode_perror (NULL, "close ()");
-		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-                      close (pipe_pair[0]);
-                      fclose (input.file);
-		      SUBTASK_RETURN (subtask);
-		    }
-		}
+              if (input.file = fdopen (pipe_pair[0], "r"),
+                  input.file == NULL)
+                {
+                  recode_perror (NULL, "fdopen ()");
+                  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                  close (pipe_pair[0]);
+                  close (pipe_pair[1]);
+                  SUBTASK_RETURN (subtask);
+                }
+              if (close (pipe_pair[1]) < 0)
+                {
+                  recode_perror (NULL, "close ()");
+                  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                  close (pipe_pair[0]);
+                  fclose (input.file);
+                  SUBTASK_RETURN (subtask);
+                }
             }
 #endif
 	}
@@ -379,9 +376,9 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	  subtask->step = step;
 	  (*step->transform_routine) (subtask);
 
-	  if (strategy == RECODE_SEQUENCE_WITH_PIPE)
-	    break;	/* child/top-level process: escape from loop */
-
+#if HAVE_PIPE
+          break;	/* child/top-level process: escape from loop */
+#else
 	  /* Post-step clean up for memory sequence.  */
 
 	  if (subtask->input.file)
@@ -406,6 +403,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 	      output = input;
 	      input = subtask->output;
 	    }
+#endif
 	}
 
       if (sequence_index + 1 == (unsigned)request->sequence_length)
@@ -428,61 +426,56 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
     }
 
 #if HAVE_PIPE
-  if (strategy == RECODE_SEQUENCE_WITH_PIPE)
-    {
-      /* Child process exits here. */
+  /* Child process exits here. */
 
-      if (child_process == 0)
-	exit (task->error_so_far < task->fail_level ? EXIT_SUCCESS
-	      : EXIT_FAILURE);
-      else
-	{
-	  /* Wait on all children, mainly to avoid synchronisation problems on
-	     output file contents, but also to reduce the number of zombie
-	     processes in case the user recodes many files at once.  */
-
-	  while (wait (&wait_status) > 0)
-	    {
-	      /* Diagnose and abort on any abnormally terminating child.  */
-
-	      if (!(WIFEXITED (wait_status)
-		    || (WIFSIGNALED (wait_status)
-			&& WTERMSIG (wait_status) == SIGPIPE)))
-		{
-		  recode_error (NULL, _("Child process wait status is 0x%0.2x"),
-				wait_status);
-		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		  SUBTASK_RETURN (subtask);
-		}
-
-	      /* Check for a nonzero exit from the terminating child.  */
-
-	      if (WIFEXITED (wait_status)
-		  ? WEXITSTATUS (wait_status) != 0
-		  : WTERMSIG (wait_status) != 0)
-		/* FIXME: It is not very clear what happened in sub-processes.  */
-		if (task->error_so_far < task->fail_level)
-		  {
-		    task->error_so_far = task->fail_level;
-		    task->error_at_step = request->sequence_array + (unsigned)request->sequence_length - 1;
-		  }
-	    }
-
-	  if (recode_interrupted)
-	    /* FIXME: It is not very clear what happened in sub-processes.  */
-	    if (task->error_so_far < task->fail_level)
-	      {
-		task->error_so_far = task->fail_level;
-		task->error_at_step = request->sequence_array + (unsigned)request->sequence_length - 1;
-	      }
-	}
-    }
+  if (child_process == 0)
+    exit (task->error_so_far < task->fail_level ? EXIT_SUCCESS
+          : EXIT_FAILURE);
   else
-#endif
     {
-      free (input.buffer);
-      free (output.buffer);
+      /* Wait on all children, mainly to avoid synchronisation problems on
+         output file contents, but also to reduce the number of zombie
+         processes in case the user recodes many files at once.  */
+
+      while (wait (&wait_status) > 0)
+        {
+          /* Diagnose and abort on any abnormally terminating child.  */
+
+          if (!(WIFEXITED (wait_status)
+                || (WIFSIGNALED (wait_status)
+                    && WTERMSIG (wait_status) == SIGPIPE)))
+            {
+              recode_error (NULL, _("Child process wait status is 0x%0.2x"),
+                            wait_status);
+              recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+              SUBTASK_RETURN (subtask);
+            }
+
+          /* Check for a nonzero exit from the terminating child.  */
+
+          if (WIFEXITED (wait_status)
+              ? WEXITSTATUS (wait_status) != 0
+              : WTERMSIG (wait_status) != 0)
+            /* FIXME: It is not very clear what happened in sub-processes.  */
+            if (task->error_so_far < task->fail_level)
+              {
+                task->error_so_far = task->fail_level;
+                task->error_at_step = request->sequence_array + (unsigned)request->sequence_length - 1;
+              }
+        }
+
+      if (recode_interrupted)
+        /* FIXME: It is not very clear what happened in sub-processes.  */
+        if (task->error_so_far < task->fail_level)
+          {
+            task->error_so_far = task->fail_level;
+            task->error_at_step = request->sequence_array + (unsigned)request->sequence_length - 1;
+          }
     }
+#else
+  free (input.buffer);
+  free (output.buffer);
+#endif
 
   task->output = subtask->output;
   SUBTASK_RETURN (subtask);
@@ -507,7 +500,6 @@ recode_new_task (RECODE_CONST_REQUEST request)
     return NULL;
 
   task->request = request;
-  task->strategy = RECODE_STRATEGY_UNDECIDED;
   task->fail_level = RECODE_NOT_CANONICAL;
   task->abort_level = RECODE_USER_ERROR;
   task->error_so_far = RECODE_NO_ERROR;
@@ -525,39 +517,15 @@ recode_delete_task (RECODE_TASK task)
 }
 
 /*------------------------------------------------------------------------.
-| Execute the conversion sequence for a recoding TASK, using the selected |
-| strategy whenever more than one conversion step is needed.  If no       |
-| conversion are needed, merely copy the input onto the output.  Returns  |
-| zero if the recoding has been found to be non-reversible.  Tell what    |
-| goes on if VERBOSE.                                                     |
+| Execute the conversion sequence for a recoding TASK.  If no conversions |
+| are needed, merely copy the input onto the output.                      |
+| Returns zero if the recoding has been found to be non-reversible.       |
+| Tell what goes on if VERBOSE.                                           |
 `------------------------------------------------------------------------*/
-
-/* If some sequencing strategies are missing, this routine automatically
-   uses fallback strategies.  */
 
 bool
 recode_perform_task (RECODE_TASK task)
 {
-  /* Leave task->strategy alone, as the same task may be used many
-     times differently, and the fact the strategy is undecided is a
-     clue we want to preserve between calls.  */
-  enum recode_sequence_strategy strategy = task->strategy;
-
-  switch (strategy)
-    {
-    case RECODE_SEQUENCE_WITH_PIPE:
-#if !HAVE_PIPE
-      strategy = RECODE_SEQUENCE_IN_MEMORY;
-#endif
-    case RECODE_SEQUENCE_IN_MEMORY:
-      break;
-
-    default: /* This should not happen, but if it does, try to recover.  */
-    case RECODE_STRATEGY_UNDECIDED:
-      strategy = RECODE_SEQUENCE_IN_MEMORY;
-      break;
-    }
-
   /* Switch stdin and stdout to binary mode unless they are ttys, as this has
      nasty side-effects on several DOSish systems.  For example, the Ctrl-Z
      character is no longer interpreted as EOF, and thus the poor user cannot
@@ -570,5 +538,5 @@ recode_perform_task (RECODE_TASK task)
   if (task->output.name && !*task->output.name && !isatty (fileno (stdout)))
     xset_binary_mode (fileno (stdout), O_BINARY);
 
-  return perform_sequence (task, strategy);
+  return perform_sequence (task);
 }

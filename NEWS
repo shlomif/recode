@@ -12,15 +12,22 @@ Version 3.7
 
 :Author: François Pinard, 2008-03; Reuben Thomas, 2018-01.
 
++ Converters for BibTeX (from Vincent Danjean) and the ANSEL and ISO 5426
+  character sets (from Wolfram Schneider) have been added.
++ The conversion strategies (whether to use pipes, memory or files) are
+  no longer available.  Now it is reasonable to assume virtual memory, so
+  files and memory have similar performance characteristics (in
+  particular, the memory method is not limited by physical memory.)
+  Further, tests showed that even for runs on little data, the pipes
+  method has minimal performance impact (none was measured).  This is
+  not a surprise, as for one-step recodings, the commonest case, no
+  forking is needed.  The command-line options -i, -p and
+  --sequence=STRATEGY are ignored for backwards compatibility.
 + Recode does not include libiconv anymore, but uses an external iconv
   library if one was available at installation time.  The -x: option
   to the program, or a new flag to the library recode_new_outer
   function, inhibits the initialisation and usage of iconv.
-+ Converters for BibTeX (from Vincent Danjean) and the ANSEL and ISO 5426
-character sets (from Wolfram Schneider) have been added.
-+ The option --sequence=file (short option -i) is now an (undocumented)
-synonym for --sequence=memory.
-+ Many internal changes, for correcting reported bugs.
++ Many bug fixes.
 + Long ago, I renamed GNU recode to Free recode: the permission for
   using the GNU prefix mandated a level of obedience to the FSF that
   once went overboard, in my opinion.  After that change, I realized

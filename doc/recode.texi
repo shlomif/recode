@@ -1420,11 +1420,8 @@ four different interconnected tasks, logically equivalent to:
 @var{step1} <@var{input} | @var{step2} | @var{step3} | @var{step4} >@var{output}
 @end example
 
-By default, the splitting is simulated by using memory buffers.  The
-@samp{--sequence=@var{strategy}} options gives you control over the flow
-methods, by replacing @var{strategy} with @samp{memory} or @samp{pipe}.
-On systems where the pipes method is not available, strategy selection
-is ignored.
+On systems where the pipes method is not available, the steps are
+performed in series.
 
 @table @samp
 @item --sequence=memory
@@ -2322,23 +2319,6 @@ held up-to-date in @code{output.buffer}.  It is still possible to call a
 task level function with no output buffer at all to start with, in which
 case all three fields should have @code{NULL} as a value.  This is the
 situation immediately after a call to @code{recode_new_task}.
-
-@item strategy
-@vindex strategy
-@vindex RECODE_STRATEGY_UNDECIDED
-This field, which is of type @code{enum recode_sequence_strategy}, tells
-how various recoding steps (passes) will be interconnected.  Its initial
-value is @code{RECODE_STRATEGY_UNDECIDED}, which is a constant defined in
-the header file @file{recodext.h}.  Other possible values are:
-
-@table @code
-@item RECODE_SEQUENCE_IN_MEMORY
-@vindex RECODE_SEQUENCE_IN_MEMORY
-Keep intermediate recodings in memory.
-@item RECODE_SEQUENCE_WITH_PIPE
-@vindex RECODE_SEQUENCE_WITH_PIPE
-Fork processes connected with pipes.
-@end table
 
 @item byte_order_mark
 @vindex byte_order_mark

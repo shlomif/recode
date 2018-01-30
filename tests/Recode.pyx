@@ -165,11 +165,6 @@ cdef extern from "common.h":
         char *cursor
         char *limit
 
-    enum recode_sequence_strategy:
-        RECODE_STRATEGY_UNDECIDED
-        RECODE_SEQUENCE_IN_MEMORY
-        RECODE_SEQUENCE_WITH_PIPE
-
     enum recode_swap_input:
         RECODE_SWAP_UNDECIDED
         RECODE_SWAP_NO
@@ -190,7 +185,6 @@ cdef extern from "common.h":
         RECODE_CONST_REQUEST request
         recode_read_only_text input
         recode_read_write_text output
-        recode_sequence_strategy strategy
         bool byte_order_mark
         recode_swap_input swap_input
         recode_error_ fail_level
@@ -482,10 +476,6 @@ STRING_TO_UCS2 = RECODE_STRING_TO_UCS2
 COMBINE_EXPLODE = RECODE_COMBINE_EXPLODE
 COMBINE_STEP = RECODE_COMBINE_STEP
 EXPLODE_STEP = RECODE_EXPLODE_STEP
-
-STRATEGY_UNDECIDED = RECODE_STRATEGY_UNDECIDED
-SEQUENCE_IN_MEMORY = RECODE_SEQUENCE_IN_MEMORY
-SEQUENCE_WITH_PIPE = RECODE_SEQUENCE_WITH_PIPE
 
 SWAP_UNDECIDED = RECODE_SWAP_UNDECIDED
 SWAP_NO = RECODE_SWAP_NO
