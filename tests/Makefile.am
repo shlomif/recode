@@ -28,17 +28,17 @@ t30_dumps.py t30_quoted.py t40_african.py t40_combine.py t40_testdump.py \
 t40_utf7.py t40_utf8.py t50_methods.py t90_bigauto.py
 
 EXTRA_DIST = Recode.c Recode.pyx pytest common.py valgrind-python.supp $(SUITE)
-CLEANFILES = Recode@shlibext@ Recode_d@shlibext@ Recode.body.c
+CLEANFILES = Recode@pyextext@ Recode_d@pyextext@ Recode.body.c
 DISTCLEANFILES = Recode.c
 
-check-local: Recode@shlibext@
+check-local: Recode@pyextext@
 	if test -n "$(VALGRIND)"; then export VALGRIND='$(VALGRIND) --suppressions=$(srcdir)/valgrind-python.supp'; fi; \
 	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
 	RECODE=$(top_builddir)/src/recode$(EXEEXT) PYTHONPATH=.:$(srcdir) \
 	  $$VALGRIND $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
-Recode@shlibext@: Recode.c setup.py
-	rm -f *@shlibext@
+Recode@pyextext@: Recode.c setup.py
+	rm -f *@pyextext@
 	$(PYTHON) setup.py build_ext --inplace
 	rm -fr build
 

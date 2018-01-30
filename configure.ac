@@ -24,7 +24,12 @@ AX_WITH_PROG([HELP2MAN], [help2man], [help2man])
 
 AC_SUBST([objdir])
 LT_SYS_MODULE_EXT
-AC_SUBST([shlibext], [$libltdl_cv_shlibext])
+case $host_os in
+  *mingw* )  pyextext=.pyd;;
+  *cygwin*)  pyextext=.dll;;
+  * )        pyextext=.so;;
+esac
+AC_SUBST([pyextext], [$pyextext])
 
 dnl Extra warnings with GCC and compatible compilers
 AC_ARG_ENABLE([gcc-warnings],
