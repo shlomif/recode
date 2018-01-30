@@ -203,7 +203,6 @@ disambiguate_name (RECODE_OUTER outer,
     {
     case SYMBOL_CREATE_CHARSET:
     case SYMBOL_CREATE_DATA_SURFACE:
-    case SYMBOL_CREATE_TREE_SURFACE:
       abort ();
 
     case ALIAS_FIND_AS_CHARSET:
@@ -271,10 +270,6 @@ find_alias (RECODE_OUTER outer, const char *name,
 
     case SYMBOL_CREATE_DATA_SURFACE:
       type = RECODE_DATA_SURFACE;
-      break;
-
-    case SYMBOL_CREATE_TREE_SURFACE:
-      type = RECODE_TREE_SURFACE;
       break;
 
     default:

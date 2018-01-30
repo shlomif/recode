@@ -214,15 +214,15 @@ transform_byte_to_variable (RECODE_SUBTASK subtask)
   SUBTASK_RETURN (subtask);
 }
 
-/*---------------------------------------------------------------------.
-| Execute the conversion sequence for a recoding TASK, using several   |
-| passes with two alternating memory buffers or intermediate files, or |
-| forking for each step and interconnecting the processes with pipes.  |
-| This routine assumes at least one needed recoding step.              |
-`---------------------------------------------------------------------*/
+/*------------------------------------------------------------------------.
+| Execute the conversion sequence for a recoding TASK.  If no conversions |
+| are needed, merely copy the input onto the output.                      |
+| Returns zero if the recoding has been found to be non-reversible.       |
+| Tell what goes on if VERBOSE.                                           |
+`------------------------------------------------------------------------*/
 
-static bool
-perform_sequence (RECODE_TASK task)
+bool
+recode_perform_task (RECODE_TASK task)
 {
   RECODE_CONST_REQUEST request = task->request;
   struct recode_subtask subtask_block;
@@ -241,6 +241,18 @@ perform_sequence (RECODE_TASK task)
   memset (subtask, 0, sizeof (struct recode_subtask));
   subtask->task = task;
   subtask->input = task->input;
+
+  /* Switch stdin and stdout to binary mode unless they are ttys, as this has
+     nasty side-effects on several DOSish systems.  For example, the Ctrl-Z
+     character is no longer interpreted as EOF, and thus the poor user cannot
+     signal end of input; the INTR character also doesn't work, so they cannot
+     even interrupt the program, and are stuck.  On the other hand, output to
+     the screen doesn't have to follow the end-of-line format exactly, since
+     it is going to be discarded anyway.  */
+  if (task->input.name && !*task->input.name && !isatty (fileno (stdin)))
+    xset_binary_mode (fileno (stdin), O_BINARY);
+  if (task->output.name && !*task->output.name && !isatty (fileno (stdout)))
+    xset_binary_mode (fileno (stdout), O_BINARY);
 
   /* Prepare the first input file.  */
 
@@ -514,29 +526,4 @@ recode_delete_task (RECODE_TASK task)
 {
   free (task);
   return true;
-}
-
-/*------------------------------------------------------------------------.
-| Execute the conversion sequence for a recoding TASK.  If no conversions |
-| are needed, merely copy the input onto the output.                      |
-| Returns zero if the recoding has been found to be non-reversible.       |
-| Tell what goes on if VERBOSE.                                           |
-`------------------------------------------------------------------------*/
-
-bool
-recode_perform_task (RECODE_TASK task)
-{
-  /* Switch stdin and stdout to binary mode unless they are ttys, as this has
-     nasty side-effects on several DOSish systems.  For example, the Ctrl-Z
-     character is no longer interpreted as EOF, and thus the poor user cannot
-     signal end of input; the INTR character also doesn't work, so they cannot
-     even interrupt the program, and are stuck.  On the other hand, output to
-     the screen doesn't have to follow the end-of-line format exactly, since
-     it is going to be discarded anyway.  */
-  if (task->input.name && !*task->input.name && !isatty (fileno (stdin)))
-    xset_binary_mode (fileno (stdin), O_BINARY);
-  if (task->output.name && !*task->output.name && !isatty (fileno (stdout)))
-    xset_binary_mode (fileno (stdout), O_BINARY);
-
-  return perform_sequence (task);
 }

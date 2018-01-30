@@ -147,7 +147,6 @@ struct recode_outer
 
     /* Preset charsets and surfaces.  */
     RECODE_SYMBOL data_symbol;/* special charset defining surfaces */
-    RECODE_SYMBOL tree_symbol; /* special charset defining structures */
     RECODE_SYMBOL ucs2_charset; /* UCS-2 */
     RECODE_SYMBOL iconv_pivot; /* `iconv' internal UCS */
     RECODE_SYMBOL crlf_surface; /* for IBM PC machines */
@@ -173,8 +172,7 @@ enum recode_symbol_type
   {
     RECODE_NO_SYMBOL_TYPE,	/* missing value */
     RECODE_CHARSET,		/* visible in the space of charsets */
-    RECODE_DATA_SURFACE,	/* this is a mere data surface */
-    RECODE_TREE_SURFACE		/* this is a structural surface */
+    RECODE_DATA_SURFACE		/* this is a mere data surface */
   };
 
 enum recode_data_type
@@ -570,7 +568,6 @@ enum alias_find_type
 {
   SYMBOL_CREATE_CHARSET,	/* charset as given, create as needed */
   SYMBOL_CREATE_DATA_SURFACE,	/* data surface as given, create as needed */
-  SYMBOL_CREATE_TREE_SURFACE,	/* tree surface as given, create as needed */
   ALIAS_FIND_AS_CHARSET,	/* disambiguate only as a charset */
   ALIAS_FIND_AS_SURFACE,	/* disambiguate only as a surface */
   ALIAS_FIND_AS_EITHER		/* disambiguate as a charset or a surface */

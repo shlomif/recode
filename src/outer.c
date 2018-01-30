@@ -85,18 +85,6 @@ declare_single (RECODE_OUTER outer,
       single->before = before->symbol;
       single->after = outer->data_symbol;
     }
-  else if (strcmp (before_name, "tree") == 0)
-    {
-      single->before = outer->tree_symbol;
-      after = find_alias (outer, after_name, SYMBOL_CREATE_TREE_SURFACE);
-      single->after = after->symbol;
-    }
-  else if (strcmp(after_name, "tree") == 0)
-    {
-      before = find_alias (outer, before_name, SYMBOL_CREATE_TREE_SURFACE);
-      single->before = before->symbol;
-      single->after = outer->tree_symbol;
-    }
   else
     {
       before = find_alias (outer, before_name, SYMBOL_CREATE_CHARSET);
@@ -120,16 +108,14 @@ declare_single (RECODE_OUTER outer,
   single->init_routine = init_routine;
   single->transform_routine = transform_routine;
 
-  if (single->before == outer->data_symbol
-      || single->before == outer->tree_symbol)
+  if (single->before == outer->data_symbol)
     {
       if (single->after->resurfacer)
 	recode_error (outer, _("Resurfacer set more than once for `%s'"),
 		      after_name);
       single->after->resurfacer = single;
     }
-  else if (single->after == outer->data_symbol
-	   || single->after == outer->tree_symbol)
+  else if (single->after == outer->data_symbol)
     {
       if (single->before->unsurfacer)
 	recode_error (outer, _("Unsurfacer set more than once for `%s'"),
@@ -405,10 +391,6 @@ register_all_modules (RECODE_OUTER outer)
   if (alias = find_alias (outer, "data", SYMBOL_CREATE_CHARSET), !alias)
     return false;
   outer->data_symbol = alias->symbol;
-
-  if (alias = find_alias (outer, "tree", SYMBOL_CREATE_CHARSET), !alias)
-    return false;
-  outer->tree_symbol = alias->symbol;
 
   if (alias = find_alias (outer, "ISO-10646-UCS-2", SYMBOL_CREATE_CHARSET),
       !alias)

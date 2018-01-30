@@ -449,8 +449,8 @@ now, clashes are avoided, the old and new charsets are kept well separate.
 Conversion is possible between almost any pair of charsets.  Here is a
 list of the exceptions.  One may not recode @emph{from} the @code{flat},
 @code{count-characters} or @code{dump-with-names} charsets, nor @emph{from}
-or @emph{to} the @code{data}, @code{tree} or @code{:iconv:} charsets.
-Also, if we except the @code{data} and @code{tree} pseudo-charsets, charsets
+or @emph{to} the @code{data} or @code{:iconv:} charsets.
+Also, if we except the @code{data} pseudo-charset, charsets
 and surfaces live in disjoint recoding spaces, one cannot really transform
 a surface into a charset or vice-versa, as surfaces are only meant to be
 applied over charsets, or removed from them.
@@ -4264,32 +4264,17 @@ and usage.  @xref{Universal}.
 
 @cindex surfaces, implementation in Recode
 @tindex data@r{, a special charset}
-@tindex tree@r{, a special charset}
 Surfaces are implemented within Recode as special charsets
-which may only transform to or from the @code{data} or @code{tree}
-special charsets.  Clever users may use this knowledge for writing
+which may only transform to or from the @code{data}
+special charset.  Clever users may use this knowledge for writing
 surface names in requests exactly as if they were pure charsets, when
 the only need is to change surfaces without any kind of recoding between
-real charsets.  In such contexts, either @code{data} or @code{tree} may
-also be used as if it were some kind of generic, anonymous charset: the
+real charsets.  In such contexts @code{data} may also be used as if it
+were some kind of generic, anonymous charset: the
 request @samp{data..@var{surface}} merely adds the given @var{surface},
 while the request @samp{@var{surface}..data} removes it.
 
-@cindex structural surfaces
-@cindex surfaces, structural
-@cindex surfaces, trees
-The Recode library distinguishes between mere data surfaces, and
-structural surfaces, also called tree surfaces for short.  Structural
-surfaces might allow, in the long run, transformations between a few
-specialised representations of structural information like MIME parts,
-Perl or Python initialisers, LISP S-expressions, XML, Emacs outlines, etc.
-
-We are still experimenting with surfaces in Recode.  The concept opens
-the doors to many avenues; it is not clear yet which ones are worth pursuing,
-and which should be abandoned.  In particular, implementation of structural
-surfaces is barely starting, there is not even a commitment that tree
-surfaces will stay in Recode, if they do prove to be more cumbersome
-than useful.  This chapter presents all surfaces currently available.
+This chapter presents all surfaces currently available.
 
 @menu
 * Permutations::        Permuting groups of bytes
@@ -4771,14 +4756,13 @@ the fact your routines is written in C or in Flex.
 
 Adding a new surface is technically quite similar to adding a new charset.
 @xref{New charsets}.  A surface is provided as a set of two transformations:
-one from the predefined special charset @code{data} or @code{tree} to the
+one from the predefined special charset @code{data} to the
 new surface, meant to apply the surface, the other from the new surface
-to the predefined special charset @code{data} or @code{tree}, meant to
-remove the surface.
+to the predefined special charset @code{data}, meant to remove the surface.
 
 @findex declare_step
 Internally in Recode, function @code{declare_step} especially
-recognises when a charset is so related to @code{data} or @code{tree},
+recognises when a charset is so related to @code{data},
 and then takes appropriate actions so that charset gets indeed installed
 as a surface.
 
