@@ -266,16 +266,15 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
     {
       child_process = -1;
 
-      if (strategy == RECODE_SEQUENCE_IN_MEMORY)
-	if (sequence_index > 0)
-	  {
-	    /* Select the input text for this step.  */
+      if (sequence_index > 0)
+        {
+          /* Select the input text for this step.  */
 
-	    subtask->input.buffer = input.buffer;
-	    subtask->input.cursor = input.buffer;
-	    subtask->input.limit = input.cursor;
-	    subtask->input.file = input.file;
-	  }
+          subtask->input.buffer = input.buffer;
+          subtask->input.cursor = input.buffer;
+          subtask->input.limit = input.cursor;
+          subtask->input.file = input.file;
+        }
 
       /* Select the output text for this step.  */
 
@@ -299,6 +298,8 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 		  SUBTASK_RETURN (subtask);
 		}
+	      xset_binary_mode (pipe_pair[0], O_BINARY);
+	      xset_binary_mode (pipe_pair[1], O_BINARY);
 	      if (child_process = fork (), child_process < 0)
 		{
 		  recode_perror (NULL, "fork ()");
@@ -315,7 +316,7 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		      recode_perror (NULL, "close ()");
 		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
 		    }
-		  if (subtask->output.file = fdopen (pipe_pair[1], "wb"),
+		  if (subtask->output.file = fdopen (pipe_pair[1], "w"),
 		      subtask->output.file == NULL)
 		    {
 		      recode_perror (NULL, "fdopen ()");
@@ -324,26 +325,23 @@ perform_sequence (RECODE_TASK task, enum recode_sequence_strategy strategy)
 		}
 	      else
 		{
-		  /* The parent redirects the current input file, if any, to the pipe.  */
-		  if (subtask->input.file)
+		  /* The parent saves the read end of the pipe for the next step.  */
+
+		  if (input.file = fdopen (pipe_pair[0], "r"),
+		      input.file == NULL)
 		    {
-		      if (dup2 (pipe_pair[0], fileno (subtask->input.file)) < 0)
-			{
-			  recode_perror (NULL, "dup2 ()");
-			  recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-			  SUBTASK_RETURN (subtask); // FIXME: Don't leak pipe_pair!
-			}
-		    }
-		  if (close (pipe_pair[0]) < 0)
-		    {
-		      recode_perror (NULL, "close ()");
+		      recode_perror (NULL, "fdopen ()");
 		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
-		      SUBTASK_RETURN (subtask); // FIXME: Don't leak pipe_pair[1]!
+                      close (pipe_pair[0]);
+                      close (pipe_pair[1]);
+                      SUBTASK_RETURN (subtask);
 		    }
 		  if (close (pipe_pair[1]) < 0)
 		    {
 		      recode_perror (NULL, "close ()");
 		      recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
+                      close (pipe_pair[0]);
+                      fclose (input.file);
 		      SUBTASK_RETURN (subtask);
 		    }
 		}
