@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-26 13:28+0000\n"
+"POT-Creation-Date: 2018-01-31 00:39+0000\n"
 "PO-Revision-Date: 2003-04-06 23:16+0300\n"
 "Last-Translator: Ales Nyakhaychyk <nab@mail.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -17,43 +17,44 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Generator: KBabel 0.9.6\n"
 
-#: src/main.c:108
+#: src/main.c:110
 msgid "No error"
 msgstr "Без памылак"
 
-#: src/main.c:111
+#: src/main.c:113
 msgid "Non canonical input"
 msgstr "Некананічнасьць на ўваходзе"
 
-#: src/main.c:114
+#: src/main.c:116
 msgid "Ambiguous output"
 msgstr "Двухсэнсоўнасьць на выхадзе"
 
-#: src/main.c:117
+#: src/main.c:119
 msgid "Untranslatable input"
 msgstr "Неперакладальнае на ўваходзе"
 
-#: src/main.c:120
+#: src/main.c:122
 msgid "Invalid input"
 msgstr "Няправільнае на ўваходзе"
 
-#: src/main.c:123
+#: src/main.c:125
 msgid "System detected problem"
 msgstr "Сыстэма выявіла праблему"
 
-#: src/main.c:126
+#: src/main.c:128
 msgid "Misuse of recoding library"
 msgstr "Няправільнае ўжываньне бібліятэкі перакадаваньня"
 
-#: src/main.c:129
+#: src/main.c:131
 msgid "Internal recoding bug"
 msgstr "Нутраная памылка перакадаваньня"
 
-#: src/main.c:167
+#: src/main.c:173
+#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
-"the Free Software Foundation; either version 2, or (at your option)\n"
+"the Free Software Foundation; either version 3, or (at your option)\n"
 "any later version.\n"
 "\n"
 "This program is distributed in the hope that it will be useful,\n"
@@ -78,17 +79,17 @@ msgstr ""
 "з гэтай праграмай, калі не, напішы на адрас Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:192
+#: src/main.c:198
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Паспрабуй `%s %s', каб атрымаць болей інфармацыі.\n"
 
-#: src/main.c:196
+#: src/main.c:202
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr "Свабодная `recode' зьмяняе знаказбор ці спосаб кадаваньня файла.\n"
 
-#: src/main.c:200
+#: src/main.c:206
 #, c-format
 msgid ""
 "\n"
@@ -97,7 +98,7 @@ msgstr ""
 "\n"
 "Ужывай: %s [ОПЦЫІ]... [ [ЗНАКАЗБОР] | ЗАПЫТ [ФАЙЛ]... ]\n"
 
-#: src/main.c:203
+#: src/main.c:209
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -107,7 +108,7 @@ msgstr ""
 "Калі парамэтар абавязковы для доўгае опцыі, то ён абавязковы й для\n"
 "кароткае опцыі таксама. Аналягічна для неабавязковых парамэтраў.\n"
 
-#: src/main.c:209
+#: src/main.c:215
 #, fuzzy
 msgid ""
 "\n"
@@ -139,7 +140,7 @@ msgstr ""
 "      --version              надрукаваць зьвесткі аб вэрсіі праграмы й "
 "выйсьці\n"
 
-#: src/main.c:221
+#: src/main.c:227
 #, fuzzy
 msgid ""
 "\n"
@@ -148,7 +149,7 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"      --sequence=memory   use memory buffers for sequencing passes\n"
+"  -i, -p, --sequence=STRATEGY  ignored for backwards compatibility\n"
 msgstr ""
 "\n"
 "Рэжымы працы:\n"
@@ -162,15 +163,7 @@ msgstr ""
 "  -i, --sequence=files    ужываць часовыя файлы для працы\n"
 "      --sequence=memory   ужываць буфэры памяці для працы\n"
 
-#: src/main.c:232
-msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr "  -p, --sequence=pipe     ужываць каналы пры апрацоўцы\n"
-
 #: src/main.c:237
-msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "  -p, --sequence=pipe     аналягічнае -i (на гэтай сыстэме)\n"
-
-#: src/main.c:242
 #, fuzzy
 msgid ""
 "\n"
@@ -195,7 +188,7 @@ msgstr ""
 "  -g, --graphics         справаць замяніць рамкі IBMPC знакамі ASCII\n"
 "  -x, --ignore=ЗНАКАЗБОР ігнараваць ЗНАКАЗБОР, абіраючы шлях кадаваньня\n"
 
-#: src/main.c:253
+#: src/main.c:248
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -207,7 +200,7 @@ msgstr ""
 "кадаваньня.\n"
 "ФАРМАТ -- `decimal', `octal', `hexadecimal' ці `full' (ці адзін з `dohf').\n"
 
-#: src/main.c:259
+#: src/main.c:254
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
@@ -216,7 +209,7 @@ msgstr ""
 "Калі не атачэньне ня мае усталёўкі DEFAULT_CHARSET, то ЗНАКАЗБОР адпавядае\n"
 "кадзіроўцы лякалі, якая вызначаецца з LC_ALL, LC_CTYPE, LANG.\n"
 
-#: src/main.c:264
+#: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -229,13 +222,13 @@ msgstr ""
 "лікамі.\n"
 "І зыходныя, і выніковыя знаказборы мусяць быць таблічнымі.\n"
 
-#: src/main.c:269
+#: src/main.c:264
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 "МОВА задае мову праграмаваньня, прыкладам `c', `perl' ці `po'; даўнята `c'.\n"
 
-#: src/main.c:272
+#: src/main.c:267
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -256,10 +249,10 @@ msgstr ""
 "зададзенага\n"
 "СПОСАБУ азначае адсутнасьць СПОСАБАЎ увогуле. Глядзі кіраўніцтва.\n"
 
-#: src/main.c:280
+#: src/main.c:275
+#, fuzzy
 msgid ""
 "\n"
-"If none of -i and -p are given, presume -p if no FILE, else -i.\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
@@ -270,48 +263,48 @@ msgstr ""
 "ФАЙЛ\n"
 "ня дадзены, то праграма працуе фільтрам і перакадоўвае з stdin на stdout.\n"
 
-#: src/main.c:286
+#: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
 
-#: src/main.c:385
+#: src/main.c:378
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Двухсэнсоўная пасьлядоўнасьць: `%s'"
 
-#: src/main.c:389
+#: src/main.c:383
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Невядомая пасьлядоўнасьць: `%s'"
 
-#: src/main.c:415 src/main.c:473
+#: src/main.c:407 src/main.c:467
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Невядомая мова: `%s'"
 
-#: src/main.c:419 src/main.c:477
+#: src/main.c:412 src/main.c:472
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Невядомая мова: `%s'"
 
-#: src/main.c:511
+#: src/main.c:507
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Двухсэнсоўны фармат: `%s'"
 
-#: src/main.c:515
+#: src/main.c:512
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Невядомы фармат: `%s'"
 
-#: src/main.c:575
+#: src/main.c:573
 #, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Напісаў: Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:578
+#: src/main.c:576
 #, fuzzy
 msgid ""
 "\n"
@@ -320,7 +313,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:582
+#: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -329,87 +322,87 @@ msgstr ""
 "зыходным кодзе. Няма НІЯКАЕ гарантыі, нават гарантыі КАШТОЎНАСЬЦІ ці\n"
 "ПРЫДАТНАСЬЦІ ДЛЯ КАНКРЭТНАЕ МЭТЫ.\n"
 
-#: src/main.c:624
+#: src/main.c:622
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Невядомы знак: `%s'"
 
-#: src/main.c:664 src/main.c:678
+#: src/main.c:662 src/main.c:676
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Знаказбор `%s' невядомы ці двухсэнсоўны"
 
-#: src/main.c:709
+#: src/main.c:707
 #, c-format
 msgid "Required argument is missing"
 msgstr "Прапушчаны патрэбны парамэтар"
 
-#: src/main.c:752
+#: src/main.c:750
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Сынтаксыс не найлепшы, ужывай, калі ласка, `%s'"
 
-#: src/main.c:758
+#: src/main.c:756
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Памылковы запыт: `%s'"
 
-#: src/main.c:840
+#: src/main.c:834
 #, c-format
 msgid "Recoding %s..."
 msgstr "Перакадаваньне %s..."
 
-#: src/main.c:850
+#: src/main.c:844
 #, c-format
 msgid " done\n"
 msgstr " зроблена\n"
 
-#: src/main.c:883
+#: src/main.c:877
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " няўдалае: %s у кроку `%s..%s'\n"
 
-#: src/main.c:890
+#: src/main.c:884
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "Няўдалае %s: %s у кроку `%s..%s'"
 
-#: src/main.c:915
+#: src/main.c:903
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s у кроку `%s..%s'"
 
-#: src/names.c:365
+#: src/names.c:352
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Знаказбор %s ужо існуе і не зьяўляецца %s"
 
-#: src/names.c:860
+#: src/names.c:847
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Немагчыма адлюстраваць `%s', бо няма імёнаў для гэтага знаказбора"
 
-#: src/names.c:1012 src/names.c:1058
+#: src/names.c:999 src/names.c:1045
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Дзес Вас Шасн  UCS2 Мнэма  %s\n"
 
-#: src/names.c:1077
+#: src/names.c:1064
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Нажаль няма імёнаў для `%s'"
 
-#: src/outer.c:127
+#: src/outer.c:114
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr "Працэдура закадаваньня ўжываецца часьцей, як адзін раз для `%s'"
 
-#: src/outer.c:135
+#: src/outer.c:121
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Працэдура раскадаваньня ўжываецца часьцей, як адзін раз для `%s'"
 
-#: src/recode.c:68 src/recode.c:80
+#: src/outer.c:469 src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Скончылася віртуальная памяць"
 
@@ -460,7 +453,7 @@ msgstr ""
 msgid "%sfor sequence %s.%s"
 msgstr "%sдля пасьлядоўнасьці %s.%s"
 
-#: src/recode.c:746
+#: src/recode.c:747
 msgid "No table to print"
 msgstr "Няма табліцы для друку"
 
@@ -485,51 +478,51 @@ msgstr "ucs2"
 msgid "variable"
 msgstr "пераменная"
 
-#: src/request.c:111
+#: src/request.c:108
 msgid "*Unachievable*"
 msgstr "*Недасяжна*"
 
-#: src/request.c:113
+#: src/request.c:110
 msgid "*mere copy*"
 msgstr "*простая копія*"
 
-#: src/request.c:232
+#: src/request.c:227
 msgid "Virtual memory exhausted!"
 msgstr "Скончылася віртуальная памяць!"
 
-#: src/request.c:253
+#: src/request.c:251
 msgid "Step initialisation failed"
 msgstr "Няўдалая ініцыялізацыя кроку"
 
-#: src/request.c:260
+#: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Няўдалая ініцыялізацыя кроку (неапрацаваныя опцыі)"
 
-#: src/request.c:574
+#: src/request.c:572
 #, c-format
 msgid "Request: %s\n"
 msgstr "Запыт: %s\n"
 
-#: src/request.c:741
+#: src/request.c:739
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Скарочаны да: %s\n"
 
-#: src/request.c:847 src/request.c:956
+#: src/request.c:846 src/request.c:955
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Невядомае імя спосабу кадаваньня `%s'"
 
-#: src/request.c:927
+#: src/request.c:926
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Немагчыма перакадаваць з `%s' у `%s'"
 
-#: src/request.c:1037
+#: src/request.c:1036
 msgid "Expecting `..' in request"
 msgstr "У запыце чакалася `..'"
 
-#: src/task.c:453
+#: src/task.c:457
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Статус чаканьня даччынага працэсу -- 0x%0.2x"
@@ -541,6 +534,12 @@ msgid ""
 msgstr ""
 "UCS2  Мнэма  Апісаньне\n"
 "\n"
+
+#~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
+#~ msgstr "  -p, --sequence=pipe     ужываць каналы пры апрацоўцы\n"
+
+#~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
+#~ msgstr "  -p, --sequence=pipe     аналягічнае -i (на гэтай сыстэме)\n"
 
 #~ msgid ""
 #~ "\n"

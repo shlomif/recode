@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-26 13:28+0000\n"
+"POT-Creation-Date: 2018-01-31 00:39+0000\n"
 "PO-Revision-Date: 2007-10-16 19:30+0200\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -20,43 +20,44 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/main.c:108
+#: src/main.c:110
 msgid "No error"
 msgstr "Geen fout"
 
-#: src/main.c:111
+#: src/main.c:113
 msgid "Non canonical input"
 msgstr "Niet-canonieke invoer"
 
-#: src/main.c:114
+#: src/main.c:116
 msgid "Ambiguous output"
 msgstr "Niet-eenduidige uitvoer"
 
-#: src/main.c:117
+#: src/main.c:119
 msgid "Untranslatable input"
 msgstr "Onvertaalbare invoer"
 
-#: src/main.c:120
+#: src/main.c:122
 msgid "Invalid input"
 msgstr "Ongeldige invoer"
 
-#: src/main.c:123
+#: src/main.c:125
 msgid "System detected problem"
 msgstr "Systeem heeft fout gevonden"
 
-#: src/main.c:126
+#: src/main.c:128
 msgid "Misuse of recoding library"
 msgstr "Verkeerd gebruik van hercoderings-bibliotheek"
 
-#: src/main.c:129
+#: src/main.c:131
 msgid "Internal recoding bug"
 msgstr "**Interne fout** bij hercoderen"
 
-#: src/main.c:167
+#: src/main.c:173
+#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
-"the Free Software Foundation; either version 2, or (at your option)\n"
+"the Free Software Foundation; either version 3, or (at your option)\n"
 "any later version.\n"
 "\n"
 "This program is distributed in the hope that it will be useful,\n"
@@ -83,19 +84,19 @@ msgstr ""
 "Free Software Foundation, Inc.,  51 Franklin Street, fifth floor,\n"
 "Boston, MA 02110-1301,  USA.\n"
 
-#: src/main.c:192
+#: src/main.c:198
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Typ '%s %s' voor meer informatie.\n"
 
-#: src/main.c:196
+#: src/main.c:202
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "'recode' converteert bestanden van en naar allerlei tekensets en "
 "oppervlakken.\n"
 
-#: src/main.c:200
+#: src/main.c:206
 #, c-format
 msgid ""
 "\n"
@@ -104,7 +105,7 @@ msgstr ""
 "\n"
 "Gebruik:  %s [OPTIE]... [ [TEKENSET] | VERZOEK [BESTAND]... ]\n"
 
-#: src/main.c:203
+#: src/main.c:209
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -114,7 +115,7 @@ msgstr ""
 "Een argument dat verplicht of optioneel is voor een lange optie, is dat\n"
 "ook voor de overeenkomstige korte optie.\n"
 
-#: src/main.c:209
+#: src/main.c:215
 #, fuzzy
 msgid ""
 "\n"
@@ -143,7 +144,7 @@ msgstr ""
 "      --help                 deze hulptekst tonen en stoppen\n"
 "      --version              versie-informatie tonen en stoppen\n"
 
-#: src/main.c:221
+#: src/main.c:227
 #, fuzzy
 msgid ""
 "\n"
@@ -152,7 +153,7 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"      --sequence=memory   use memory buffers for sequencing passes\n"
+"  -i, -p, --sequence=STRATEGY  ignored for backwards compatibility\n"
 msgstr ""
 "\n"
 "Werkingsmodus:\n"
@@ -165,15 +166,7 @@ msgstr ""
 "  -i, --sequence=files    tijdelijke bestanden gebruiken voor tussenstappen\n"
 "      --sequence=memory   geheugenbuffers gebruiken voor tussenstappen\n"
 
-#: src/main.c:232
-msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr "  -p, --sequence=pipe     'pipes' gebruiken voor tussenstappen\n"
-
 #: src/main.c:237
-msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "  -p, --sequence=pipe     hetzelfde als -i (op dit systeem)\n"
-
-#: src/main.c:242
 #, fuzzy
 msgid ""
 "\n"
@@ -200,7 +193,7 @@ msgstr ""
 "  -g, --graphics          IBMPC-lijntjes benaderen met ASCII-tekens\n"
 "  -x, --ignore=TEKENSET   TEKENSET negeren bij keuze van hercodeertraject\n"
 
-#: src/main.c:253
+#: src/main.c:248
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -211,7 +204,7 @@ msgstr ""
 "oppervlakken op.  PRESENTATIE is 'decimal', 'octal', 'hexadecimal' of\n"
 "'full' (volledig), die afgekort mogen worden tot 'd', 'o', 'h' en 'f'.\n"
 
-#: src/main.c:259
+#: src/main.c:254
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
@@ -221,7 +214,7 @@ msgstr ""
 "standaard de taalafhankelijke codering, bepaald door LC_ALL, LC_CTYPE, "
 "LANG.\n"
 
-#: src/main.c:264
+#: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -232,12 +225,12 @@ msgstr ""
 "opgesomd, als tabel van PAREN in de vorm 'VOOR1:NA1,VOOR2:NA2,...', waarbij\n"
 "de VOORs en NAs als decimale getallen gegeven worden.\n"
 
-#: src/main.c:269
+#: src/main.c:264
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr "TL is een taal, en kan 'c', 'perl' of 'po' zijn; 'c' is standaard.\n"
 
-#: src/main.c:272
+#: src/main.c:267
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -261,10 +254,10 @@ msgstr ""
 "helemaal\n"
 "geen oppervlak.  Zie ook de handleiding.\n"
 
-#: src/main.c:280
+#: src/main.c:275
+#, fuzzy
 msgid ""
 "\n"
-"If none of -i and -p are given, presume -p if no FILE, else -i.\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
@@ -275,48 +268,48 @@ msgstr ""
 "Als er geen BESTAND gegeven is, functioneert 'recode' als een filter en\n"
 "wordt van standaardinvoer naar standaarduitvoer gehercodeerd.\n"
 
-#: src/main.c:286
+#: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
 
-#: src/main.c:385
+#: src/main.c:378
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Reeks '%s' is niet eenduidig"
 
-#: src/main.c:389
+#: src/main.c:383
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Reeks '%s' is onbekend"
 
-#: src/main.c:415 src/main.c:473
+#: src/main.c:407 src/main.c:467
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Taal '%s' is niet eenduidig"
 
-#: src/main.c:419 src/main.c:477
+#: src/main.c:412 src/main.c:472
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Taal '%s' is onbekend"
 
-#: src/main.c:511
+#: src/main.c:507
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Presentatie '%s' is niet eenduidig"
 
-#: src/main.c:515
+#: src/main.c:512
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Presentatie '%s' is onbekend"
 
-#: src/main.c:575
+#: src/main.c:573
 #, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Geschreven door François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:578
+#: src/main.c:576
 #, fuzzy
 msgid ""
 "\n"
@@ -325,7 +318,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:582
+#: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -334,87 +327,87 @@ msgstr ""
 "Er is GEEN garantie; zelfs niet voor VERKOOPBAARHEID of GESCHIKTHEID\n"
 "VOOR EEN BEPAALD DOEL.\n"
 
-#: src/main.c:624
+#: src/main.c:622
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Symbool '%s' is onbekend"
 
-#: src/main.c:664 src/main.c:678
+#: src/main.c:662 src/main.c:676
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Tekenset '%s' is onbekend of niet eenduidig"
 
-#: src/main.c:709
+#: src/main.c:707
 #, c-format
 msgid "Required argument is missing"
 msgstr "Een vereist argument ontbreekt"
 
-#: src/main.c:752
+#: src/main.c:750
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Deze syntax is verouderd; gebruik liever '%s'"
 
-#: src/main.c:758
+#: src/main.c:756
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Verzoek '%s' is onjuist"
 
-#: src/main.c:840
+#: src/main.c:834
 #, c-format
 msgid "Recoding %s..."
 msgstr "Hercoderen van %s..."
 
-#: src/main.c:850
+#: src/main.c:844
 #, c-format
 msgid " done\n"
 msgstr " voltooid\n"
 
-#: src/main.c:883
+#: src/main.c:877
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " mislukt: %s in stap '%s..%s'\n"
 
-#: src/main.c:890
+#: src/main.c:884
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s mislukt: %s in stap '%s..%s'"
 
-#: src/main.c:915
+#: src/main.c:903
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s in stap '%s..%s'"
 
-#: src/names.c:365
+#: src/names.c:352
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Tekenset '%s' bestaat al en is niet %s"
 
-#: src/names.c:860
+#: src/names.c:847
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr "Kan '%s' niet opsommen; geen namen beschikbaar voor deze tekenset"
 
-#: src/names.c:1012 src/names.c:1058
+#: src/names.c:999 src/names.c:1045
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1077
+#: src/names.c:1064
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Sorry, geen namen beschikbaar voor '%s'"
 
-#: src/outer.c:127
+#: src/outer.c:114
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr "Her-oppervlakker is meer dan eens gezet voor '%s'"
 
-#: src/outer.c:135
+#: src/outer.c:121
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr "Ont-oppervlakker is meer dan eens gezet voor '%s'"
 
-#: src/recode.c:68 src/recode.c:80
+#: src/outer.c:469 src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Onvoldoende geheugen beschikbaar"
 
@@ -464,7 +457,7 @@ msgstr "%sConversietabel gegenereerd door '%s' %s"
 msgid "%sfor sequence %s.%s"
 msgstr "%svoor reeks %s.%s"
 
-#: src/recode.c:746
+#: src/recode.c:747
 msgid "No table to print"
 msgstr "Geen tabel om weer te geven"
 
@@ -489,51 +482,51 @@ msgstr "ucs2"
 msgid "variable"
 msgstr "variabel"
 
-#: src/request.c:111
+#: src/request.c:108
 msgid "*Unachievable*"
 msgstr "*Kan niet*"
 
-#: src/request.c:113
+#: src/request.c:110
 msgid "*mere copy*"
 msgstr "*simpele kopie*"
 
-#: src/request.c:232
+#: src/request.c:227
 msgid "Virtual memory exhausted!"
 msgstr "Onvoldoende geheugen beschibaar!"
 
-#: src/request.c:253
+#: src/request.c:251
 msgid "Step initialisation failed"
 msgstr "Stap-initialisatie is mislukt"
 
-#: src/request.c:260
+#: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Stap-initialisatie is mislukt (onverwerkte opties)"
 
-#: src/request.c:574
+#: src/request.c:572
 #, c-format
 msgid "Request: %s\n"
 msgstr "Verzoek: %s\n"
 
-#: src/request.c:741
+#: src/request.c:739
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Gekrompen tot: %s\n"
 
-#: src/request.c:847 src/request.c:956
+#: src/request.c:846 src/request.c:955
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Onbekende oppervlaknaam '%s'"
 
-#: src/request.c:927
+#: src/request.c:926
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Er is geen manier om te hercoderen van '%s' naar '%s'"
 
-#: src/request.c:1037
+#: src/request.c:1036
 msgid "Expecting `..' in request"
 msgstr "'..' werd verwacht in verzoek"
 
-#: src/task.c:453
+#: src/task.c:457
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Wachtstatus van dochterproces is 0x%0.2x"
@@ -545,6 +538,12 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Omschrijving\n"
 "\n"
+
+#~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
+#~ msgstr "  -p, --sequence=pipe     'pipes' gebruiken voor tussenstappen\n"
+
+#~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
+#~ msgstr "  -p, --sequence=pipe     hetzelfde als -i (op dit systeem)\n"
 
 #~ msgid ""
 #~ "\n"
