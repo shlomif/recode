@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode-3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-01-26 13:28+0000\n"
+"POT-Creation-Date: 2018-01-31 00:39+0000\n"
 "PO-Revision-Date: 2003-05-04 08:45+0300\n"
 "Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
@@ -17,43 +17,44 @@ msgstr ""
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/main.c:108
+#: src/main.c:110
 msgid "No error"
 msgstr "Nici o eroare"
 
-#: src/main.c:111
+#: src/main.c:113
 msgid "Non canonical input"
 msgstr "Intrare(input) non canonică"
 
-#: src/main.c:114
+#: src/main.c:116
 msgid "Ambiguous output"
 msgstr "Output ambiguu"
 
-#: src/main.c:117
+#: src/main.c:119
 msgid "Untranslatable input"
 msgstr "Intrare(input) intraductibilă"
 
-#: src/main.c:120
+#: src/main.c:122
 msgid "Invalid input"
 msgstr "Input invalid"
 
-#: src/main.c:123
+#: src/main.c:125
 msgid "System detected problem"
 msgstr "Sistemul a detectat o problemă"
 
-#: src/main.c:126
+#: src/main.c:128
 msgid "Misuse of recoding library"
 msgstr "Folosire necorespunzătoare a bibliotecii de recoding"
 
-#: src/main.c:129
+#: src/main.c:131
 msgid "Internal recoding bug"
 msgstr "Bug intern de recoding"
 
-#: src/main.c:167
+#: src/main.c:173
+#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
-"the Free Software Foundation; either version 2, or (at your option)\n"
+"the Free Software Foundation; either version 3, or (at your option)\n"
 "any later version.\n"
 "\n"
 "This program is distributed in the hope that it will be useful,\n"
@@ -79,19 +80,19 @@ msgstr ""
 "împreună cu acest program; dacă nu, scrieţi la Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:192
+#: src/main.c:198
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Încercaţi `%s %s' pentru mai multe informaţii.\n"
 
-#: src/main.c:196
+#: src/main.c:202
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "`recode' este free şi converteşte fişiere între diferite seturi de caractere "
 "şi înfăţişări(surfaces).\n"
 
-#: src/main.c:200
+#: src/main.c:206
 #, c-format
 msgid ""
 "\n"
@@ -100,7 +101,7 @@ msgstr ""
 "\n"
 "Folosire: %s [OPŢIUNE]... [ [SET_CARACTERE] | CERERE [FIŞIER]... ]\n"
 
-#: src/main.c:203
+#: src/main.c:209
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -111,7 +112,7 @@ msgstr ""
 "obligatoriu şi pentru opţiunea scurtă echivalentă.  Similar şi în cazul\n"
 "parametrilor opţionali.\n"
 
-#: src/main.c:209
+#: src/main.c:215
 #, fuzzy
 msgid ""
 "\n"
@@ -140,7 +141,7 @@ msgstr ""
 "      --help                 afişează acest ajutor şi termină\n"
 "      --version              afişează informaţii versiune şi termină\n"
 
-#: src/main.c:221
+#: src/main.c:227
 #, fuzzy
 msgid ""
 "\n"
@@ -149,7 +150,7 @@ msgid ""
 "  -q, --quiet, --silent   inhibit messages about irreversible recodings\n"
 "  -f, --force             force recodings even when not reversible\n"
 "  -t, --touch             touch the recoded files after replacement\n"
-"      --sequence=memory   use memory buffers for sequencing passes\n"
+"  -i, -p, --sequence=STRATEGY  ignored for backwards compatibility\n"
 msgstr ""
 "\n"
 "Moduri operaţie:\n"
@@ -165,17 +166,7 @@ msgstr ""
 "      --sequence=memory   foloseşte bufferele de memorie pentru trecerile "
 "secvenţiale\n"
 
-#: src/main.c:232
-msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-msgstr ""
-"  -p, --sequence=pipe    foloseşte mecanismul de `pipe' pentru treceri "
-"secvenţiale\n"
-
 #: src/main.c:237
-msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-msgstr "  -p, --sequence=pipe     la fel ca -i(pe acest system)\n"
-
-#: src/main.c:242
 #, fuzzy
 msgid ""
 "\n"
@@ -202,7 +193,7 @@ msgstr ""
 "  -x, --ignore=SET_CARACTERE   ignoră SET_CARACTERE în alegerea căilor de "
 "recoding\n"
 
-#: src/main.c:253
+#: src/main.c:248
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -213,7 +204,7 @@ msgstr ""
 "înfăţişările(surfaces) disponibile. FORMAT is `decimal', `octal',\n"
 "`hexadecimal' sau `full' (sau unul din `dohf').\n"
 
-#: src/main.c:259
+#: src/main.c:254
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
@@ -223,7 +214,7 @@ msgstr ""
 "encodarea specifică\n"
 "determinată de LC_ALL, LC_CTYPE, LANG.\n"
 
-#: src/main.c:264
+#: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -235,14 +226,14 @@ msgstr ""
 "cu PERECHI de forma `BEF1:AFT1,BEF2: AFT2,...'\n"
 "unde BEF şi AFT sunt coduri ce trebuie date ca numere zecimale.\n"
 
-#: src/main.c:269
+#: src/main.c:264
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 "LN e un limbaj de programare, poate fi `c', `perl' sau `po'; `c' este "
 "implicit.\n"
 
-#: src/main.c:272
+#: src/main.c:267
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -264,10 +255,10 @@ msgstr ""
 "omisă reprezintă infăţişarea sugerată pentru SET_CARACTERE; un /\n"
 "fără nume de înfăţişare înseamnă fără înfăţişări.  Vedeţi manualul.\n"
 
-#: src/main.c:280
+#: src/main.c:275
+#, fuzzy
 msgid ""
 "\n"
-"If none of -i and -p are given, presume -p if no FILE, else -i.\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
@@ -277,48 +268,48 @@ msgstr ""
 "pierzându-se.  Dacă nu este specificat FIŞIER, atunci se comportă ca un\n"
 "filtru şi recodează stdin în stdout.\n"
 
-#: src/main.c:286
+#: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/Recode\n"
 msgstr ""
 
-#: src/main.c:385
+#: src/main.c:378
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Secvenţa `%s' este ambiguă"
 
-#: src/main.c:389
+#: src/main.c:383
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Secvenţa `%s' nu este cunoscută"
 
-#: src/main.c:415 src/main.c:473
+#: src/main.c:407 src/main.c:467
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Limba `%s' este ambiguă"
 
-#: src/main.c:419 src/main.c:477
+#: src/main.c:412 src/main.c:472
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Limba `%s' nu este cunoscută"
 
-#: src/main.c:511
+#: src/main.c:507
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Formatul `%s' este ambiguu"
 
-#: src/main.c:515
+#: src/main.c:512
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Formatul `%s' nu este cunoscut"
 
-#: src/main.c:575
+#: src/main.c:573
 #, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Scris de Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:578
+#: src/main.c:576
 #, fuzzy
 msgid ""
 "\n"
@@ -327,7 +318,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:582
+#: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -336,92 +327,92 @@ msgstr ""
 "NU există NICI o garanţie; nici măcar pentru VANDABILITATE sau MODIFICARE\n"
 "PENTRU UN SCOP PRIVAT.\n"
 
-#: src/main.c:624
+#: src/main.c:622
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Simbolul `%s' nu este cunoscut"
 
-#: src/main.c:664 src/main.c:678
+#: src/main.c:662 src/main.c:676
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Setul de caractere `%s' nu este cunoscut sau este ambiguu"
 
-#: src/main.c:709
+#: src/main.c:707
 #, c-format
 msgid "Required argument is missing"
 msgstr "Lipseşte parametrul solicitat"
 
-#: src/main.c:752
+#: src/main.c:750
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Sintaxă învechită(deprecated), utilizaţi `%s'"
 
-#: src/main.c:758
+#: src/main.c:756
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Cererea `%s' este greşită"
 
-#: src/main.c:840
+#: src/main.c:834
 #, c-format
 msgid "Recoding %s..."
 msgstr "Recodare %s..."
 
-#: src/main.c:850
+#: src/main.c:844
 #, c-format
 msgid " done\n"
 msgstr " finalizată\n"
 
-#: src/main.c:883
+#: src/main.c:877
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " eşuată: %s în pasul `%s..%s'\n"
 
-#: src/main.c:890
+#: src/main.c:884
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s a eşuat: %s în pasul `%s..%s'"
 
-#: src/main.c:915
+#: src/main.c:903
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s în pasul `%s..%s'"
 
-#: src/names.c:365
+#: src/names.c:352
 #, c-format
 msgid "Charset %s already exists and is not %s"
 msgstr "Setul de caractere %s există deja şi nu este %s"
 
-#: src/names.c:860
+#: src/names.c:847
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr ""
 "Nu se poate lista `%s', nici un nume disponibil pentru acest set de caractere"
 
-#: src/names.c:1012 src/names.c:1058
+#: src/names.c:999 src/names.c:1045
 #, c-format
 msgid "Dec  Oct Hex   UCS2  Mne  %s\n"
 msgstr "Zec  Oct  Hex   UCS2  Mne  %s\n"
 
-#: src/names.c:1077
+#: src/names.c:1064
 #, c-format
 msgid "Sorry, no names available for `%s'"
 msgstr "Ne pare rău, nici un nume disponibil pentru `%s'"
 
-#: src/outer.c:127
+#: src/outer.c:114
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
 msgstr ""
 "Schimbătorul de înfăţişări(resurfacer) setat mai multe decât o dată pentru `"
 "%s'"
 
-#: src/outer.c:135
+#: src/outer.c:121
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
 msgstr ""
 "Schimbătorul de înfăţişări(unsurfacer) setat mai mult decât o dată pentru `"
 "%s'"
 
-#: src/recode.c:68 src/recode.c:80
+#: src/outer.c:469 src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Memorie virtuală plină"
 
@@ -471,7 +462,7 @@ msgstr "%sTabelul de conversie generat mecanic de `%s' Free %s"
 msgid "%sfor sequence %s.%s"
 msgstr "%s pentru secvenţa %s.%s"
 
-#: src/recode.c:746
+#: src/recode.c:747
 msgid "No table to print"
 msgstr "Nu există tabel de tipărit"
 
@@ -496,51 +487,51 @@ msgstr "ucs2"
 msgid "variable"
 msgstr "variabil(ă)"
 
-#: src/request.c:111
+#: src/request.c:108
 msgid "*Unachievable*"
 msgstr "*Neîndeplinibil*"
 
-#: src/request.c:113
+#: src/request.c:110
 msgid "*mere copy*"
 msgstr "*copiere-simplă*"
 
-#: src/request.c:232
+#: src/request.c:227
 msgid "Virtual memory exhausted!"
 msgstr "Memorie virtuală plină!"
 
-#: src/request.c:253
+#: src/request.c:251
 msgid "Step initialisation failed"
 msgstr "Pas de iniţializare eşuat"
 
-#: src/request.c:260
+#: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
 msgstr "Pas de iniţializare eşuat (opţiuni neprocesate)"
 
-#: src/request.c:574
+#: src/request.c:572
 #, c-format
 msgid "Request: %s\n"
 msgstr "Cerere: %s\n"
 
-#: src/request.c:741
+#: src/request.c:739
 #, c-format
 msgid "Shrunk to: %s\n"
 msgstr "Micşorat la: %s\n"
 
-#: src/request.c:847 src/request.c:956
+#: src/request.c:846 src/request.c:955
 #, c-format
 msgid "Unrecognised surface name `%s'"
 msgstr "Nume înfăţişare necunoscut: `%s'"
 
-#: src/request.c:927
+#: src/request.c:926
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
 msgstr "Nici o şansă de recodare din `%s' în `%s'"
 
-#: src/request.c:1037
+#: src/request.c:1036
 msgid "Expecting `..' in request"
 msgstr "Se aşteaptă `..' în cerere"
 
-#: src/task.c:453
+#: src/task.c:457
 #, c-format
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Starea de aşteptare a procesului derivat(child) este 0x%0.2x"
@@ -552,6 +543,14 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Descriere\n"
 "\n"
+
+#~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
+#~ msgstr ""
+#~ "  -p, --sequence=pipe    foloseşte mecanismul de `pipe' pentru treceri "
+#~ "secvenţiale\n"
+
+#~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
+#~ msgstr "  -p, --sequence=pipe     la fel ca -i(pe acest system)\n"
 
 #~ msgid ""
 #~ "\n"
