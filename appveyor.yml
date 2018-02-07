@@ -3,7 +3,6 @@ clone_folder: c:\projects\recode
 
 environment:
   global:
-    # Only need one flavour of dictionary
     VERBOSE: 1 # Get test logs in output
   matrix:
     # - MSYSTEM: MSYS (no cython available)
