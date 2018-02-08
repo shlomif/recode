@@ -20,7 +20,7 @@ gl_INIT
 
 dnl help2man
 dnl Set a value even if not found, so that an invocation via build-aux/missing works
-AX_WITH_PROG([HELP2MAN], [help2man], [help2man])
+AC_PATH_PROG([HELP2MAN], [help2man], [help2man])
 
 AC_SUBST([objdir])
 LT_SYS_MODULE_EXT
