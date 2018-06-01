@@ -70,10 +70,8 @@ Mechanics
 =========
 
 + Intercept signals to cleanup the temporary files in any event.
-+ Revise --sequence=pipe thoroughly.
-+ Rewrite execute_pipe_sequence for having only one child per parent.
 + Revise --force thoroughly.
-+ Rewrite .l converses for lat1{asci,ltex,txte}, for --force.
++ Rewrite .l converters for lat1{asci,ltex,txte}, for --force.
 + Optimize/merge all one-to-many cases.
 + Write a better ``make check``, not as partial and forgiving.
 + Have -l know which output charset to use (Martin Maechler, 93-12-07).
