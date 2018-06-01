@@ -237,7 +237,7 @@ Operation modes:\n\
       fputs (_("\
 \n\
 Fine tuning:\n\
-  -s, --strict           use strict mappings, even loose characters\n\
+  -s, --strict           use strict mappings; discard untranslatable characters\n\
   -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n\
   -S, --source[=LN]      limit recoding to strings and comments as for LN\n\
   -c, --colons           use colons instead of double quotes for diaeresis\n\
