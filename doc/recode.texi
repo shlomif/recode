@@ -522,7 +522,7 @@ go in the next.
 @cindex bug reports, where to send
 @cindex reporting bugs
 Please report suggestions, documentation errors and bugs at
-@uref{https://github.com/rrthomas/Recode}.  Do not be afraid
+@uref{https://github.com/rrthomas/recode}.  Do not be afraid
 to report details, because this program is the mere aggregation of
 hundreds of details.
 
