@@ -405,9 +405,12 @@ those of Keld Simonsen and Bruno Haible.
 @cindex charsets, overview
 Recoding is currently possible between many charsets, the bulk of which
 is described by @w{RFC 1345} tables or available in a pre-installed
-external @code{iconv} library. @xref{Tabular}, and @pxref{iconv}.  The
-Recode library also handles some charsets in some specialised
-ways.  These are:
+external @code{iconv} library. @xref{Tabular}, and
+@pxref{iconv}@footnote{Because @code{iconv} can vary from system to
+system, and is itself a complex tool, it can cause recode to behave in
+unexpected ways. To avoid this, you can disable it with the @code{-x:}
+option; see @xref{disable-iconv}.}.  The Recode library also handles
+some charsets in some specialised ways.  These are:
 
 @itemize @bullet
 @item
@@ -1023,6 +1026,7 @@ is over two hundred lines.  It is best used with @samp{grep -i}, as in:
 recode -l | grep -i greek
 @end example
 
+@anchor{disable-iconv}
 Within a collection of names for a single charset, the Recode
 library distinguishes one of them as being the genuine charset name,
 while the others are said to be aliases.  The list normally integrates
@@ -2658,9 +2662,11 @@ elsewhere than at the beginning, because concatenation of @code{UCS-2}
 files should stay a simple matter, but it might trigger a diagnostic
 about non canonical input.
 
-By default, when producing an @code{UCS-2} file, Recode always
-outputs the high order byte before the low order byte.  But this could be
-easily overridden through the @code{21-Permutation} surface
+By default, when producing an @code{UCS-2} file, Recode always outputs
+the high order byte before the low order byte.  Note that this may not
+be the case if @code{iconv} is used; in that case, you may be able to
+use the charset @code{UCS-2BE} to specify big-endian UCS-2.  The order
+can also be easily overridden through the @code{21-Permutation} surface
 (@pxref{Permutations}).  For example, the command:
 
 @example
