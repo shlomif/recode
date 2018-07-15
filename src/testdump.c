@@ -295,7 +295,6 @@ produce_full_dump (RECODE_SUBTASK subtask)
     {
       bool french = should_prefer_french();
       const char *charname;	/* charname for code */
-      const char *string;	/* environment value */
       char buffer[50];
 
       put_string (_("UCS2   Mne   Description\n\n"), subtask);
