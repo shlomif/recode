@@ -295,21 +295,7 @@ produce_full_dump (RECODE_SUBTASK subtask)
     {
       bool french = should_prefer_french();
       const char *charname;	/* charname for code */
-      const char *string;	/* environment value */
       char buffer[50];
-
-      /* Decide if we prefer French or English output.  */
-
-      french = false;
-      string = getenv ("LANGUAGE");
-      if (string && string[0] == 'f' && string[1] == 'r')
-	french = true;
-      else
-	{
-	  string = getenv ("LANG");
-	  if (string && string[0] == 'f' && string[1] == 'r')
-	    french = true;
-	}
 
       put_string (_("UCS2   Mne   Description\n\n"), subtask);
 
