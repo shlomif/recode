@@ -1070,14 +1070,13 @@ using one line per character showing its decimal, hexadecimal, octal and
 @code{UCS-2} code values, and also a descriptive comment which should be
 the 10646 name for the character.
 
-@vindex LANGUAGE@r{, when listing charsets}
-@vindex LANG@r{, when listing charsets}
+@vindex LC_MESSAGES@r{, when listing charsets}
 @cindex French description of charsets
 The descriptive comment is given in English and ASCII, yet if the English
 description is not available but a French one is, then the French description
-is given instead, using @w{Latin-1}.  However, if the @code{LANGUAGE}
-or @code{LANG} environment variable begins with the letters @samp{fr},
-then listing preference goes to French when both descriptions are available.
+is given instead, using @w{Latin-1}.  However, if the @code{LC_MESSAGES}
+environment variable begins with the letters @samp{fr}, then listing
+preference goes to French when both descriptions are available.
 @end table
 
 When option @samp{-l} is used together with a @var{charset} argument,
@@ -2942,9 +2941,9 @@ UCS2   Mne   Description
 The descriptive comment is given in English and @code{ASCII},
 yet if the English description is not available but a French one is, then
 the French description is given instead, using @code{Latin-1}.  However,
-if the @code{LANGUAGE} or @code{LANG} environment variable begins with
-the letters @samp{fr}, then listing preference goes to French when both
-descriptions are available.
+if the @code{LC_MESSAGES} environment variable begins with the letters
+@samp{fr}, then listing preference goes to French when both descriptions
+are available.
 
 Here is another example.  To get the long description of the code 237 in
 @w{Latin-5} table, one may use the following command.
