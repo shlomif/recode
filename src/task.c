@@ -422,13 +422,13 @@ recode_perform_task (RECODE_TASK task)
   /* Final clean up.  */
  exit:
 
-  if (subtask->input.file && fclose (subtask->input.file) != 0)
+  if (subtask->input.file && subtask->input.file != task->input.file && fclose (subtask->input.file) != 0)
     {
       recode_perror (NULL, "fclose (%s)", subtask->input.name ? subtask->input.name : "stdin");
       recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
     }
 
-  if (subtask->output.file && fclose (subtask->output.file) != 0)
+  if (subtask->output.file && subtask->output.file != task->output.file && fclose (subtask->output.file) != 0)
     {
       recode_perror (NULL, "fclose (%s)", subtask->output.name ? subtask->output.name : "stdout");
       recode_if_nogo (RECODE_SYSTEM_ERROR, subtask);
