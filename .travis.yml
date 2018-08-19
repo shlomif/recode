@@ -24,7 +24,7 @@ matrix:
   include:
     - os: linux
       env:
-        - COMPILER=g++-5
+        - COMPILER=gcc-5
         - PYTHON=/usr/bin/python-dbg
         - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python-dbg"
     - os: osx
@@ -34,7 +34,7 @@ matrix:
         - CPPFLAGS="-I/usr/local/opt/flex/include"
     - compiler: gcc
       env:
-        - COMPILER=g++-6
+        - COMPILER=gcc-6
       addons:
         apt:
           sources:
@@ -56,7 +56,7 @@ install:
 
 script:
   - ./bootstrap
-  - ./configure --enable-silent-rules
+  - ./configure --enable-silent-rules CC=$COMPILER
   - make
   # The Cython-built Python extension doesn’t work without make install on macOS
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make install && make check ; else make distcheck ; fi
