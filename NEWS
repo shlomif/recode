@@ -7,6 +7,16 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-1999, 2000, 2001, 2008, 2018 Free Software Foundation, Inc.
 
+Version 3.7.1
+=============
+
+:Author: Reuben Thomas, 2018-09.
+
++ No code changes to recode itself; this release just updates the version of
+gnulib to fix a bug in glibc 2.28: (GitHub issue #11
+https://github.com/rrthomas/recode/issues/11
+
+
 Version 3.7
 ===========
 
