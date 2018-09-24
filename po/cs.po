@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2009-07-26 20:49+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -528,7 +528,7 @@ msgstr "V požadavku očekáváno „..“"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Proces potomka zakončen ve stavu 0x%0.2x"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

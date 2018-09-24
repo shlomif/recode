@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2002-12-14 02:00-0300\n"
 "Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
@@ -534,7 +534,7 @@ msgstr "Esperado `..' na requisição"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "O estado de espera do processo filho é 0x%0.2x"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

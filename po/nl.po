@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2007-10-16 19:30+0200\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -532,7 +532,7 @@ msgstr "'..' werd verwacht in verzoek"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Wachtstatus van dochterproces is 0x%0.2x"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2015-04-11 21:06+0200\n"
 "Last-Translator: Stéphane Aulery <lkppo@free.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -538,7 +538,7 @@ msgstr "Chaîne « .. » attendue dans la demande"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "L'état du processus fils en attente est 0x%0.2x"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

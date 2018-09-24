@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Free recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2001-05-27 17:06+0300\n"
 "Last-Translator: Eli Zaretskii <eliz@gnu.org>\n"
 "Language-Team: Hebrew <eliz@gnu.org>\n"
@@ -512,7 +512,7 @@ msgstr "`..' לולכל היה רומא המישמה ןויצ"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "0x%0.2x אוה תב-תינכת םויס דוק"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"

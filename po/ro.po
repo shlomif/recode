@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode-3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-06-01 20:40+0100\n"
+"POT-Creation-Date: 2018-09-24 21:14+0100\n"
 "PO-Revision-Date: 2003-05-04 08:45+0300\n"
 "Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
@@ -537,7 +537,7 @@ msgstr "Se aşteaptă `..' în cerere"
 msgid "Child process wait status is 0x%0.2x"
 msgstr "Starea de aşteptare a procesului derivat(child) este 0x%0.2x"
 
-#: src/testdump.c:314
+#: src/testdump.c:300
 msgid ""
 "UCS2   Mne   Description\n"
 "\n"
