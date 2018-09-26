@@ -57,6 +57,4 @@ install:
 script:
   - ./bootstrap
   - ./configure --enable-silent-rules CC=$COMPILER
-  - make
-  # The Cython-built Python extension doesn’t work without make install on macOS
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then make install && make check ; else make distcheck ; fi
+  - make && make distcheck
