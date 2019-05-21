@@ -1,14 +1,14 @@
 # Finnish messsages for recode.
-# Copyright © 2010 Free Software Foundation, Inc.
+# Copyright © 2010, 2019 Free Software Foundation, Inc.
 # This file is distributed under the same license as the recode package.
-# Jorma Karvonen <karvonen.jorma@gmail.com>, 2012.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2012, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: recode 3.6\n"
+"Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
 "POT-Creation-Date: 2018-09-24 21:14+0100\n"
-"PO-Revision-Date: 2012-11-28 00:38+0200\n"
+"PO-Revision-Date: 2019-05-21 18:27+0300\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.2\n"
 
 #: src/main.c:110
 msgid "No error"
@@ -51,7 +52,6 @@ msgid "Internal recoding bug"
 msgstr "Sisäinen koodausvirhe"
 
 #: src/main.c:173
-#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -69,7 +69,7 @@ msgid ""
 msgstr ""
 "Tämä ohjelma on vapaa; voit jakaa sitä edelleen ja/tai muokata\n"
 "sitä Free Software Foundationin julkaiseman GNU General Public License\n"
-"-lisenssin alaisena; joko versiona 2, tai (valintasi mukaan)\n"
+"-lisenssin alaisena; joko versiona 3, tai (valintasi mukaan)\n"
 "minä tahansa myöhäisempänä versiona.\n"
 "\n"
 "Tätä ohjelmaa jaetaan toivossa, että se on hyödyllinen,\n"
@@ -78,8 +78,7 @@ msgstr ""
 "GNU General Public License-lisenssistä.\n"
 "\n"
 "Sinun pitäisi saada kopion GNU General Public License-lisenssistä\n"
-"tämän ohjelman mukana; jos näin ei ole, kirjoita osoittteeseen Free "
-"Software\n"
+"tämän ohjelman mukana; jos näin ei ole, kirjoita osoittteeseen Free Software\n"
 "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
 #: src/main.c:198
@@ -88,10 +87,8 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Lisätietoja komennolla ”%s %s”.\n"
 
 #: src/main.c:202
-#, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Vapaa ”recode” muuntaa tiedostot eri merkistöjen ja pintojen välillä.\n"
+msgstr "Recode muuntaa tiedostot eri merkistöjen ja pintojen välillä.\n"
 
 #: src/main.c:206
 #, c-format
@@ -113,13 +110,11 @@ msgstr ""
 "myös lyhyillä valitsimilla. Sama koskee valitsinargumentteja.\n"
 
 #: src/main.c:215
-#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -128,21 +123,15 @@ msgid ""
 msgstr ""
 "\n"
 "Luettelot:\n"
-"  -l, --list[=MUOTO]         luettele yksi tai kaikki tunnetut merkistöt ja "
-"aliakset\n"
-"  -k, --known=PARIT          rajoita merkistöt tunnetun PARIT-luettelon "
-"mukaan\n"
-"  -h, --header[=[LN/]NIMI]   kirjoita taulukon NIMI vakiotulosteeseen "
-"käyttäen LN-kieltä, poistu sitten\n"
-"  -F, --freeze-tables        kirjoita C moduuliin säilyttäen kaikki taulut\n"
-"  -T, --find-subsets         raportoi kaikki merkistöt, jotka ovat muiden "
-"alijoukkoja\n"
+"  -l, --list[=MUOTO]         luettele yksi tai kaikki tunnetut merkistöt ja aliakset\n"
+"  -k, --known=PARIT          rajoita merkistöt tunnetun PARIT-luettelon mukaan\n"
+"  -h, --header[=[LN/]NIMI]   kirjoita taulukon NIMI vakiotulosteeseen käyttäen LN-kieltä, poistu sitten\n"
+"  -T, --find-subsets         raportoi kaikki merkistöt, jotka ovat muiden alijoukkoja\n"
 "  -C, --copyright            näytä Copyright-tiedot ja kopiointiehdot\n"
 "      --help                 näytä tämä opaste ja poistu\n"
 "      --version              tulosta versiontiedot ja poistu\n"
 
 #: src/main.c:227
-#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -155,25 +144,17 @@ msgstr ""
 "\n"
 "Toimintatilat:\n"
 "  -v, --verbose           selitä vaiheiden sekvenssi ja kerro edistymisestä\n"
-"  -q, --quiet, --silent   estä sanomat peruuttamattomista "
-"uudelleenkoodauksista\n"
-"  -f, --force             pakota uudelleenkoodaukset vaikka ne eivät ole "
-"peruttavissa\n"
-"  -t, --touch             tee touch-toiminta uudelleenkoodatuille "
-"tiedostoille sijoituksen jälkeen\n"
-"  -i, --sequence=files    käytä väliaikaistiedostoja peräkkäisiin "
-"vaiheisiin\n"
-"      --sequence=memory   käytä muistipuskureita peräkkäisiin vaiheisiin\n"
+"  -q, --quiet, --silent   estä sanomat peruuttamattomista uudelleenkoodauksista\n"
+"  -f, --force             pakota uudelleenkoodaukset vaikka ne eivät ole peruttavissa\n"
+"  -t, --touch             tee touch-toiminta uudelleenkoodatuille tiedostoille sijoituksen jälkeen\n"
+"  -i, -p, --sequence=STRATEGIA  käytä väliaikaistiedostoja peräkkäisiin vaiheisiin\n"
 
 #: src/main.c:237
-#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable "
-"characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -181,17 +162,17 @@ msgid ""
 msgstr ""
 "\n"
 "Hienosäätö:\n"
-"  -s, --strict           käytä strict-uudelleenkoodausta, salli merkkien "
-"katoaminen\n"
-"  -d, --diacritics       muunna vain tarkemerkit ja vastaavat HTML/LaTeX-"
-"ohjelmia varten\n"
-"  -S, --source[=LN]      rajoita uudelleenkoodaukset merkkijonoihin ja "
-"kommentteihin kuten LN-kielelle\n"
-"  -c, --colons           käytä kaksoispisteitä kaksoissuljemerkin sijasta "
-"tarkemerkkeihin\n"
+"  -s, --strict           käytä strict-uudelleenkoodausta, salli merkkien\n"
+"                         katoaminen\n"
+"  -d, --diacritics       muunna vain tarkemerkit ja vastaavat\n"
+"                         HTML/LaTeX/BibTeX-ohjelmia varten\n"
+"  -S, --source[=LN]      rajoita uudelleenkoodaukset merkkijonoihin ja\n"
+"                         kommentteihin kuten LN-kielelle\n"
+"  -c, --colons           käytä kaksoispisteitä kaksoissuljemerkin sijasta\n"
+"                         tarkemerkkeihin\n"
 "  -g, --graphics         likimääräistä linjat IBMPC:ssä ASCII-grafiikalla\n"
-"  -x, --ignore=MERKISTÖ  älä välitä MERKISTÖstä valittaessa "
-"uudelleenkoodauspolkua\n"
+"  -x, --ignore=MERKISTÖ  älä välitä MERKISTÖstä valittaessa\n"
+"                         uudelleenkoodauspolkua\n"
 
 #: src/main.c:248
 msgid ""
@@ -200,83 +181,66 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"Valitsin -l ilman MUOTO- tai MERKISTÖ-asetusta luettelee käytettävissä oleva "
+"Valitsin -l ilman MUOTO- tai MERKISTÖ-asetusta luettelee käytettävissä oleva\n"
 "merkistöt ja pinnat.\n"
-"MUOTO on ’decimal’, ’octal’, ’hexadecimal’ tai ’full’ (tai yksi kirjaimista "
+"MUOTO on ’decimal’, ’octal’, ’hexadecimal’ tai ’full’ (tai yksi kirjaimista\n"
 "”dohf”).\n"
 
 #: src/main.c:254
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"Jollei DEFAULT_CHARSET-muuttujaa ole asetettu ympäristössä, MERKISTÖ-"
-"oletuksena on paikallis-\n"
-"asetuksesta riippuvainen koodaus, joka määritellään muuttujissa LC_ALL, "
-"LC_CTYPE, LANG.\n"
+"Jollei DEFAULT_CHARSET-muuttujaa ole asetettu ympäristössä, MERKISTÖ-oletuksena\n"
+"on paikallisasetuksesta riippuvainen koodaus, joka määritellään muuttujissa\n"
+"LC_ALL, LC_CTYPE, LANG.\n"
 
 #: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Valitsimella -k, mahdolliset aloitusmerkistöt luetellaan tiettyille "
-"lopetusmerkistöille,\n"
-"joissa molemmat ovat taulukkomuodossa ”ALKU1:LOPPU1,ALKU2:LOPPU2,...”-"
-"muotoisina pareina'\n"
-"ja ALKU- ja LOPPU-parametrit ovat desimaalilukuina annettuja koodeja.\n"
+"Valitsimella -k, mahdolliset aloitusmerkistöt luetellaan tietyille\n"
+"lopetusmerkistöille, joissa molemmat ovat taulukkomuodossa\n"
+"”ALKU1:LOPPU1,ALKU2:LOPPU2,...”-muotoisina pareina ja ALKU- ja LOPPU-\n"
+"parametrit ovat desimaalilukuina annettuja koodeja.\n"
 
 #: src/main.c:264
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr ""
-"LN on joku kieli, se saattaa olla ’c’, ’perl’ tai ’po’; ’c’ on oletus.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr "LN on joku kieli, se saattaa olla ’c’, ’perl’ tai ’po’; ’c’ on oletus.\n"
 
 #: src/main.c:267
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
 "PYYNTÖ on ALIPYYNTÖ[,ALIPYYNTÖ]...; ALIPYYNTÖ on KOODAUS[..KOODAUS]...\n"
 "KOODAUS on [MERKISTÖ][/[PINTA]]...; PYYNTÖ näyttää usein kuin ALKU..LOPPU,\n"
-"joissa ALKU ja LOPPU ovat merkistöjä.  Poisjätetty MERKISTÖ merkitsee "
-"tavallista\n"
-"merkistöä; poisjätetty [/PINTA]... tarkoittaa epäsuoraa pintaa MERKISTÖlle; "
-"”/”-merkki\n"
-"tyhjän pintanimen kanssa tarkoittaa, että pintaa ei ole ollenkaan.  Katso "
-"käsikirjaa.\n"
+"joissa ALKU ja LOPPU ovat merkistöjä.  Poisjätetty MERKISTÖ merkitsee\n"
+"tavallista merkistöä; poisjätetty [/PINTA]... tarkoittaa epäsuoraa pintaa\n"
+"MERKISTÖlle; ”/”-merkki tyhjän pintanimen kanssa tarkoittaa, että pintaa\n"
+"ei ole ollenkaan.  Katso käsikirjaa.\n"
 
 #: src/main.c:275
-#, fuzzy
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
-msgstr ""
-"\n"
-"Jos kumpaakaan valitsimista -i ja -p ei ole annettu, otaksu valitsin -p, "
-"jos\n"
-"ei ole TIEDOSTOa, muuten -i.  Jokainen TIEDOSTO koodataan uudelleen itsensä\n"
-"päälle, mikä tuhoaa alkuperäisen. Jos TIEDOSTOa ei ole määritelty, toimi "
-"silloin\n"
-"kuin suodatin ja vakiosyöte koodataan uudelleen vakiotulosteeseen.\n"
+msgstr "\n"
 
 #: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
+"\n"
+"Ilmoita vioista osoitteeseen https://github.com/rrthomas/recode\n"
 
 #: src/main.c:378
 #, c-format
@@ -309,28 +273,24 @@ msgid "Format `%s' is unknown"
 msgstr "Muoto ”%s” on tuntematon"
 
 #: src/main.c:573
-#, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Kirjoittaja: François Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:576
-#, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright © 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright © 1990-2018 Free Software Foundation, Inc.\n"
 
 #: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Tämä on vapaa ohjelmisto; katso lähdekoodista kopiointiehdot.  Ohjelmalle "
-"EI\n"
-"ole takuuta; ei edes KAUPALLISUUDELLE tai SOPIVUUDELLE TIETTYYN "
-"TARKOITUKSEEN.\n"
+"Tämä on vapaa ohjelmisto; katso lähdekoodista kopiointiehdot.  Ohjelmalle EI\n"
+"ole takuuta; ei edes KAUPALLISUUDELLE tai SOPIVUUDELLE TIETTYYN TARKOITUKSEEN.\n"
 
 #: src/main.c:622
 #, c-format
@@ -417,14 +377,14 @@ msgid "Virtual memory exhausted"
 msgstr "Virtuaalimuisti loppui"
 
 #: src/recode.c:108
-#, fuzzy, c-format
+#, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "Koodit %3d ja %3d koodataan kumpikin uudelleen koodiksi %3d"
+msgstr "Koodit %3d ja %3u koodataan kumpikin uudelleen koodiksi %3d"
 
 #: src/recode.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "No character recodes to %3u"
-msgstr "Ei merkkiuudelleenkoodausta kohteeseen %3d"
+msgstr "Ei merkkiuudelleenkoodausta kohteeseen %3u"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
@@ -436,9 +396,9 @@ msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Seuraava diagnostiikka kohteelta ”%s” kohteelle ”%s”"
 
 #: src/recode.c:184 src/recode.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "Pari nro %d: <%3d, %3d> on ristiriidassa parin <%3d, %3d> kanssa"
+msgstr "Pari nro %u: <%3d, %3d> on ristiriidassa parin <%3d, %3d> kanssa"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
@@ -453,9 +413,9 @@ msgid "Recoding is too complex for a mere table"
 msgstr "Uudelleenkoodaus on liian mutkikas yksinkertaiselle taululle"
 
 #: src/recode.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sMuunnostaulun on tuottanut automaattisesti ohjelma Free ”%s” %s"
+msgstr "%sMuunnostaulun on tuottanut automaattisesti ohjelma ”%s” %s"
 
 #: src/recode.c:525
 #, c-format
@@ -545,8 +505,7 @@ msgstr ""
 "\n"
 
 #~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-#~ msgstr ""
-#~ "  -p, --sequence=pipe     käytä putkimekanismia peräkkäisiin ajoihin\n"
+#~ msgstr "  -p, --sequence=pipe     käytä putkimekanismia peräkkäisiin ajoihin\n"
 
 #~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 #~ msgstr "  -p, --sequence=pipe     sama kuin -i (tässä järjestelmässä)\n"
@@ -556,7 +515,5 @@ msgstr ""
 #~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Ilmoita virheistä (englanniksi) osoitteeseen <recode-bugs@iro.umontreal."
-#~ "ca>.\n"
-#~ "Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists."
-#~ "sourceforge.net>.\n"
+#~ "Ilmoita virheistä (englanniksi) osoitteeseen <recode-bugs@iro.umontreal.ca>.\n"
+#~ "Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge.net>.\n"
