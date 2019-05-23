@@ -1,16 +1,16 @@
 # Czech translation of recode.
 # This file is distributed under the same license as the recode package.
 # Copyright (C) 2009 Free Software Foundation, Inc.
-# Petr Pisar <petr.pisar@atlas.cz>, 2009.
+# Petr Pisar <petr.pisar@atlas.cz>, 2009, 2019.
 #
 # surface → povrch
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: recode 3.6\n"
+"Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
 "POT-Creation-Date: 2018-09-24 21:14+0100\n"
-"PO-Revision-Date: 2009-07-26 20:49+0200\n"
+"PO-Revision-Date: 2019-05-21 21:28+02:00\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
@@ -52,7 +52,6 @@ msgid "Internal recoding bug"
 msgstr "Vnitřní chyba převodu"
 
 #: src/main.c:173
-#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -70,12 +69,12 @@ msgid ""
 msgstr ""
 "Tento program je svobodné programové vybavení. Můžete jej šířit a/nebo\n"
 "upravovat podle podmínek Obecné veřejné licence GNU (GPL), která byla\n"
-"vydána Free Software Foundation, a to buď podle verze 2, nebo (podle vašeho\n"
+"vydána Free Software Foundation, a to buď podle verze 3, nebo (podle vašeho\n"
 "uvážení) jakékoliv pozdější verze.\n"
 "\n"
 "Tento program je šířen v naději, že bude užitečný, avšak BEZ JAKÉKOLIV\n"
 "ZÁRUKY, a to dokonce bez odvozené záruky OBCHODOVATELNOSTI nebo VHODNOSTI\n"
-"PRO DANÝ ÚČEL. Podrobnosti naleznete v Obecně veřejné licenci GNU (GPL).\n"
+"PRO DANÝ ÚČEL. Podrobnosti naleznete v Obecné veřejné licenci GNU (GPL).\n"
 "\n"
 "Spolu s tímto program byste měli obdržet kopii Obecné veřejné licence GNU\n"
 "(GPL). Není-li tomu tak, napište na adresu Free Software Foundation,\n"
@@ -87,11 +86,8 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Podrobnosti získáte pomocí „%s %s“.\n"
 
 #: src/main.c:202
-#, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Svobodný „recode“ převádí soubory mezi rozličnými znakovými sadami a "
-"povrchy.\n"
+msgstr "Recode převádí soubory mezi rozličnými znakovými sadami a povrchy.\n"
 
 #: src/main.c:206
 #, c-format
@@ -110,17 +106,14 @@ msgid ""
 msgstr ""
 "\n"
 "Pokud dlouhý přepínač označuje argument za povinný, pak je povinný i pro\n"
-"odpovídající krátký přepínač. Obdobné pravidlo platí pro volitelné "
-"argumenty.\n"
+"odpovídající krátký přepínač. Obdobné pravidlo platí pro volitelné argumenty.\n"
 
 #: src/main.c:215
-#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -133,7 +126,6 @@ msgstr ""
 "                             a aliasy\n"
 "  -k, --known=PÁRY           omezí znakové sady na seznam známých PÁRŮ\n"
 "  -h, --header[=[JZ/]NÁZEV]  vypíše tabulku NÁZEV pomocí JZ, pak skončí\n"
-"  -F, --freeze-tables        vypíše všechny tabulky jako modul v C\n"
 "  -T, --find-subsets         nahlásí všechny znakové sady, které jsou\n"
 "                             podmnožinou jiných sad\n"
 "  -C, --copyright            zobrazí Copyright a podmínky užití\n"
@@ -141,7 +133,6 @@ msgstr ""
 "      --version              vypíše informace o verzi a skončí\n"
 
 #: src/main.c:227
-#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -156,20 +147,15 @@ msgstr ""
 "  -v, --verbose           vysvětlí posloupnost kroků a vyznačí postup běhu\n"
 "  -q, --quiet, --silent   potlačí zprávy o nevratných převodech\n"
 "  -f, --force             vynutí převody, i když budou nevratné\n"
-"  -t, --touch             po nahrazení převedených souborů změní i jejich "
-"časy\n"
-"  -i, --sequence=files    mezi průchody odkládá data do dočasných souborů\n"
-"      --sequence=memory   mezi průchody odkládá data do paměťových bufferů\n"
+"  -t, --touch             po nahrazení převedených souborů změní i jejich časy\n"
+"  -i, -p, --sequence=STRATEGIE ignoruje se, pro zpětnou kompatibilitu\n"
 
 #: src/main.c:237
-#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable "
-"characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -177,10 +163,9 @@ msgid ""
 msgstr ""
 "\n"
 "Drobná nastavení\n"
-"  -s, --strict           použije přísné mapování, může ztratit některé "
-"znaky\n"
-"  -d, --diacritics       převádí jen diakritiku a podobné znaky u HTML/"
-"LaTeXu\n"
+"  -s, --strict           použije přísné mapování, nepřeložitelné znaky zahodí\n"
+"  -d, --diacritics       převádí jen diakritiku a podobné znaky u HTML,\n"
+"                         LaTeXu a BibTeXu\n"
 "  -S, --source[=JZ]      omezí převod na řetězce a komentáře jazyka JZ\n"
 "  -c, --colons           pro apostrofy použije dvojtečky namísto dvojitých\n"
 "                         uvozovek\n"
@@ -200,8 +185,7 @@ msgstr ""
 
 #: src/main.c:254
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Není-li nastavena proměnná prostředí DEFAULT_CHARSET, jako implicitní\n"
@@ -211,57 +195,43 @@ msgstr ""
 #: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Pomocí -k lze určit možné sady před pro zadanou ZNAKOVOU_SADU po, obě "
-"jsouce\n"
+"Pomocí -k lze určit možné sady před pro zadanou ZNAKOVOU_SADU po, obě jsouce\n"
 "tabulkovými znakovými sadami, PÁRY jsouce tvaru „PŘED1:PO1,PŘED2:PO2,…“.\n"
 "PŘED a PO jsou kódy zadané jako desítkové číslo.\n"
 
 #: src/main.c:264
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr ""
-"JZ představuje jazyk, nabývá hodnot „c“, „perl“ nebo „po“, implicitní je "
-"„c“.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr "JZ představuje jazyk, nabývá hodnot „c“, „perl“ nebo „po“, implicitní je „c“.\n"
 
 #: src/main.c:267
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
 "POŽADAVEK je PODPOŽADAVEK[,PODPOŽADAVEK…]; PODPOŽADAVEK je\n"
-"KÓDOVÁNÍ[..KÓDOVÁNÍ…]. KÓDOVÁNÍ je [ZNAKOVÁ_SADA][/[POVRCH]…]; POŽADAVEK "
-"často\n"
+"KÓDOVÁNÍ[..KÓDOVÁNÍ…]. KÓDOVÁNÍ je [ZNAKOVÁ_SADA][/[POVRCH]…]; POŽADAVEK často\n"
 "vypadá jako PŘED..POTOM, kde PŘED a POTOM jsou znakové sady. Vynechaná\n"
 "ZNAKOVÁ_SADA implikuje obvyklou znakovou sadu, vynechaný [/POVRCH…] znamená\n"
-"implicitní povrch dané ZNAKOVÉ_SADY, „/“ s prázdným názvem povrchu značí "
-"žádný\n"
+"implicitní povrch dané ZNAKOVÉ_SADY, „/“ s prázdným názvem povrchu značí žádný\n"
 "povrch. Vizte manuál.\n"
 
 #: src/main.c:275
-#, fuzzy
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"Není-li zadáno ani -i, ani -p, předpokládá se -p, nebyl-li zadán SOUBOR,\n"
-"jinak -i. Každý SOUBOR se převádí sám do sebe, takže zničí originál. Není-"
-"li\n"
-"zadán žádný SOUBOR, pak se recode chová jako filtr a převádí standardní "
-"vstup\n"
+"Každý SOUBOR se převádí sám do sebe, takže zničí originál. Není-li zadán\n"
+"žádný SOUBOR, pak se recode chová jako filtr a převádí standardní vstup\n"
 "na standardní výstup.\n"
 
 #: src/main.c:280
@@ -269,6 +239,9 @@ msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
+"\n"
+"Chyby v programu hlaste anglicky na <https://github.com/rrthomas/recode>.\n"
+"Chyby v překladu hlaste česky na <translation-team-cs@lists.sourceforge.net>.\n"
 
 #: src/main.c:378
 #, c-format
@@ -301,26 +274,23 @@ msgid "Format `%s' is unknown"
 msgstr "Formát „%s“ není znám"
 
 #: src/main.c:573
-#, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Napsal François Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:576
-#, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright © 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright © 1990–2018 Free Software Foundation, Inc.\n"
 
 #: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
-"Toto je svobodné programové vybavení, pro podmínky rozmnožování vizte "
-"zdrojové\n"
+"Toto je svobodné programové vybavení, pro podmínky rozmnožování vizte zdrojové\n"
 "kódy. Není zde ŽÁDNÁ záruka, ani na OBCHODOVATELNOST, ani na VHODNOST PRO\n"
 "URČITÝ ÚČEL.\n"
 
@@ -409,14 +379,14 @@ msgid "Virtual memory exhausted"
 msgstr "Virtuální paměť vyčerpána"
 
 #: src/recode.c:108
-#, fuzzy, c-format
+#, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "Oba kódy %3d a %3d vedou na %3d"
+msgstr "Oba kódy %3d a %3u vedou na %3d"
 
 #: src/recode.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "No character recodes to %3u"
-msgstr "Žádný znak nevede na %3d"
+msgstr "Žádný znak nevede na %3u"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
@@ -428,9 +398,9 @@ msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Následuje diagnostika pro „%s“ do „%s“"
 
 #: src/recode.c:184 src/recode.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "Pár č. %d: <%3d, %3d> je v rozporu s <%3d, %3d>"
+msgstr "Pár č. %u: <%3d, %3d> je v rozporu s <%3d, %3d>"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
@@ -445,9 +415,9 @@ msgid "Recoding is too complex for a mere table"
 msgstr "Převod je na pouhou tabulku příliš složitý"
 
 #: src/recode.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sPřevodní tabulka mechanicky vytvořena pomocí svobodného „%s“ %s"
+msgstr "%sPřevodní tabulka mechanicky vytvořena pomocí %s %s"
 
 #: src/recode.c:525
 #, c-format

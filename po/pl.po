@@ -1,14 +1,15 @@
 # Polish translations for the GNU recode messages
 # Copyright (C) 1996 Free Software Foundation, Inc.
+# This file is distributed under the same license as the recode package.
 # Paweł Krawczyk <kravietz@ceti.pl>, 1996, 1997, 1998, 1999.
-# Jakub Bogusz <qboosh@pld-linux.org>, 2002.
+# Jakub Bogusz <qboosh@pld-linux.org>, 2002-2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: recode 3.6\n"
+"Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
 "POT-Creation-Date: 2018-09-24 21:14+0100\n"
-"PO-Revision-Date: 2002-10-27 12:22+0100\n"
+"PO-Revision-Date: 2019-05-23 20:15+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
@@ -50,7 +51,6 @@ msgid "Internal recoding bug"
 msgstr "Wystąpił wewnętrzny błąd przekodowania"
 
 #: src/main.c:173
-#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -66,18 +66,18 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
-"Ten program jest darmowy; możesz rozprowadzać go i/lub modyfikować\n"
+"Ten program jest wolnodostępny; można rozprowadzać go i/lub modyfikować\n"
 "zachowując warunki Powszechnej Licencji Publicznej GNU (General Public\n"
-"Licence), opublikowanej przez Free Software Foundation, w wersji 2 lub\n"
+"Licence), opublikowanej przez Free Software Foundation, w wersji 3 lub\n"
 "wyższej.\n"
 "\n"
 "Program ten jest rozprowadzany w nadziei, że będzie przydatny,\n"
-"ale BEZ ŻADNEJ GWARANCJI, nawet bez domyślnej gwarancji SPRZEDAWALNOŚCI\n"
-"lub PRZYDATNOŚCI DO KONKRETNYCH ZASTOSOWAŃ. Szczegóły znajdziesz\n"
+"ale BEZ ŻADNEJ GWARANCJI, nawet bez domyślnej gwarancji PRZYDATNOŚCI\n"
+"DO KONKRETNEGO ZASTOSOWANIA lub SPRZEDAŻY. Szczegóły można znaleźć\n"
 "w Powszechnej Licencji Publicznej GNU.\n"
 "\n"
-"Powinieneś otrzymać kopię Powszechnej Licencji Publicznej GNU wraz\n"
-"z tym programem. Jeśli nie, napisz do Free Software Foundation,\n"
+"Kopia Powszechnej Licencji Publicznej GNU powinna być dołączona do\n"
+"tego programu. Jeśli nie, można napisać do Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
 #: src/main.c:198
@@ -86,11 +86,8 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Polecenie `%s %s' wyświetli więcej informacji.\n"
 
 #: src/main.c:202
-#, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Program `recode' konwertuje pliki pomiędzy różnymi zestawami znaków\n"
-"i sposobami kodowania.\n"
+msgstr "Recode konwertuje pliki pomiędzy różnymi zestawami znaków i sposobami kodowania.\n"
 
 # REQUEST tłumaczę wszędzie konsekwentnie jako POLECENIE, a nie 'żądanie' --pk
 #: src/main.c:206
@@ -113,13 +110,11 @@ msgstr ""
 "obowiązkowe dla krótkich wersji. Analogicznie dla argumentów opcjonalnych.\n"
 
 #: src/main.c:215
-#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -128,22 +123,19 @@ msgid ""
 msgstr ""
 "\n"
 "Listy:\n"
-"  -l, --list[=FORMAT]        wyświetla jeden lub wszystkie znane zestawy\n"
-"                             znaków i aliasy\n"
-"  -k, --known=PARY           ogranicza listę zestawów do znanych PAR\n"
-"  -h, --header[=[LN/]NAZWA]  wyświetla tablicę NAZWA na standardowe wyjście\n"
-"                             używając LN i kończy pracę\n"
-"  -F, --freeze-table         wyświetla moduł w C zawierający wszystkie\n"
-"                             tablice\n"
-"  -T, --find-subsets         wyświetla wszystkie zestawy będące podzbiorami\n"
-"                             innych zestawów\n"
-"  -C, --copyright            wyświetla informacje o prawach autorskich\n"
+"  -l, --list[=FORMAT]        wyświetlenie jednego lub wszystkich znanych\n"
+"                             zestawów znaków i aliasów\n"
+"  -k, --known=PARY           ograniczenie listy zestawów do znanych PAR\n"
+"  -h, --header[=[LN/]NAZWA]  wyświetlenie tablicy NAZWA na standardowym wyjściu\n"
+"                             z użyciem LN i zakończenie\n"
+"  -T, --find-subsets         wyświetlenie wszystkich zestawów znaków\n"
+"                             będących podzbiorami innych\n"
+"  -C, --copyright            wyświetlenie informacji o prawach autorskich\n"
 "                             oraz warunkach kopiowania\n"
-"      --help                 wyświetla ten tekst pomocy i kończy pracę\n"
-"      --version              wyświetla wersję programu i kończy pracę\n"
+"      --help                 wyświetlenie tego tekstu pomocy i zakończenie\n"
+"      --version              wyświetlenie informacji o wersji i zakończenie\n"
 
 #: src/main.c:227
-#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -156,24 +148,19 @@ msgstr ""
 "\n"
 "Tryby pracy:\n"
 "\n"
-"  -v, --verbose           oznajmia wykonywane kroki oraz postęp pracy\n"
-"  -q, --quiet, --silent   nie wyświetla komunikatów o nieistotnych\n"
-"                          konwersjach\n"
-"  -f, --force             wymusza przekodowanie nawet jeśli jest ono\n"
+"  -v, --verbose           wyjaśnianie kolejnych kroków i postępów prac\n"
+"  -q, --quiet, --silent   bez komunikatów o nieodwracalnych zapisach\n"
+"  -f, --force             wymuszenie przekodowania, nawet jeśli jest ono\n"
 "                          nieodwracalne\n"
-"  -t, --touch             uaktualnia czas plików po przekodowaniu\n"
-"  -i, --sequence=pliki    używa plików tymczasowych między etapami\n"
-"      --sequence=memory   używa buforów w pamięci między etapami\n"
+"  -t, --touch             uaktualnienie czasu zastępowanych plików\n"
+"  -i, -p, --sequence=STRATEGIA  ignorowane dla zgodności wstecznej\n"
 
 #: src/main.c:237
-#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable "
-"characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -182,15 +169,14 @@ msgstr ""
 "\n"
 "Modyfikacja parametrów pracy:\n"
 "\n"
-"  -s, --strict           używa ścisłego mapowania, nawet dla nieścisłych\n"
-"                         znaków\n"
-"  -d, --diacritics       konwertuje tylko znaki diakrytyczne oraz symbole\n"
-"                         znaków (takie jak w HTML i LaTeX)\n"
-"  -c, --colons           używa dwukropków zamiast cudzysłowów dla "
-"oznaczenia\n"
-"                         umlautu\n"
-"  -g, --graphics         próbuje przybliżać ramki IBMPC znakami ASCII\n"
-"  -x, --ignore=ZESTAW    ignoruje ZESTAW znaków podczas określania drogi\n"
+"  -s, --strict           użycie ścisłego mapowania; pominięcie znaków\n"
+"                         niemożliwych do przetłumaczenia\n"
+"  -d, --diacritics       konwersja tylko znaków diakrytycznych itp. dla\n"
+"                         HTML-a/LaTeXa/BibTeXa\n"
+"  -c, --colons           użycie dwukropków zamiast podwójnych cudzysłowów\n"
+"                         do oznaczenia przegłosu (umlaut)\n"
+"  -g, --graphics         przybliżanie ramek IBMPC znakami ASCII\n"
+"  -x, --ignore=ZESTAW    ignorowanie ZESTAWU znaków podczas określania drogi\n"
 "                         przekodowania\n"
 
 #: src/main.c:248
@@ -206,8 +192,7 @@ msgstr ""
 
 #: src/main.c:254
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Jeśli zmienna środowiskowa DEFAULT_CHARSET nie jest ustawiona, domyślnym\n"
@@ -217,8 +202,7 @@ msgstr ""
 #: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 "Jeśli podano opcję -k, program wyświetla zestawy znaków z których można\n"
@@ -227,8 +211,7 @@ msgstr ""
 "SKĄD i DOKĄD są kodami podanymi jako liczby dziesiętne.\n"
 
 #: src/main.c:264
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 "LN jest językiem programowania, do wyboru `c', `perl' lub `po'.\n"
 "Domyślną wartością jest `c'.\n"
@@ -236,13 +219,10 @@ msgstr ""
 #: src/main.c:267
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
@@ -255,23 +235,23 @@ msgstr ""
 "w dokumentacji.\n"
 
 #: src/main.c:275
-#, fuzzy
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"Jeśli nie podano opcji -i ani -p, przyjmowana jest opcja -p jeśli nie\n"
-"podano PLIKu, w przeciwnym razie -i. Każdy PLIK jest nadpisywany z utratą\n"
-"oryginalnej zawartości. Jeśli nie podano PLIKu, program działa jako filtr\n"
-"przekodowując stdin na stdout.\n"
+"Każdy PLIK jest nadpisywany nową wersją, a oryginał niszczony. Jeśli\n"
+"nie podano PLIKU, program działa jako filtr i przekodowuje ze\n"
+"standardowego wejścia na standardowe wyjście.\n"
 
 #: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
+"\n"
+"Błędy prosimy zgłaszać pod adresem https://github.com/rrthomas/recode\n"
 
 #: src/main.c:378
 #, c-format
@@ -304,18 +284,16 @@ msgid "Format `%s' is unknown"
 msgstr "Format `%s' jest nieznany"
 
 #: src/main.c:573
-#, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Autorem jest François Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:576
-#, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 
 #: src/main.c:580
 msgid ""
@@ -323,8 +301,8 @@ msgid ""
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
 "Oprogramowanie darmowe; warunki jego kopiowania znajdują się w kodzie\n"
-"źródłowym. Nie podlega żadnej gwarancji, nawet gwarancji przydatności\n"
-"do jakiegokolwiek zastosowania lub sprzedaży.\n"
+"źródłowym. Nie podlega ŻADNEJ gwarancji, nawet gwarancji PRZYDATNOŚCI\n"
+"DO KONKRETNEGO ZASTOSOWANIA lub SPRZEDAŻY.\n"
 
 #: src/main.c:622
 #, c-format
@@ -411,14 +389,14 @@ msgid "Virtual memory exhausted"
 msgstr "Pamięć wirtualna wyczerpana"
 
 #: src/recode.c:108
-#, fuzzy, c-format
+#, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "Kody %3d i %3d oba tłumaczą się na %3d"
+msgstr "Kody %3d i %3u oba tłumaczą się na %3d"
 
 #: src/recode.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "No character recodes to %3u"
-msgstr "Żaden znak nie koduje się na %3d"
+msgstr "Żaden znak nie koduje się na %3u"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
@@ -430,9 +408,9 @@ msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Diagnostyka dla `%s' do `%s'"
 
 #: src/recode.c:184 src/recode.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "Para nr %d: < %3d, %3d > konflikt z < %3d, %3d >"
+msgstr "Para nr %u: <%3d, %3d> konflikt z <%3d, %3d>"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
@@ -447,9 +425,9 @@ msgid "Recoding is too complex for a mere table"
 msgstr "Przekodowanie jest zbyt skomplikowane na zwykłą tablicę"
 
 #: src/recode.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sTablica przekodowań wygenerowana automatycznie przez GNU `%s' %s."
+msgstr "%sTablica przekodowań wygenerowana automatycznie przez %s %s."
 
 #: src/recode.c:525
 #, c-format
@@ -537,16 +515,3 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Description\n"
 "\n"
-
-#~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-#~ msgstr "  -p, --sequence=pipe     używa potoków między etapami\n"
-
-#~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-#~ msgstr "  -p, --sequence=pipe     identyczne jak -i (w tym systemie)\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Prosimy o zgłaszanie błędów na adres <recode-bugs@iro.umontreal.ca>.\n"
