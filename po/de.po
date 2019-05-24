@@ -1,21 +1,25 @@
-# recode.
+# German translation of recode.
 # Copyright (C) 1995, 1996, 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the recode package.
 # Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1995.
-# Karl Eichwalder <ke@suse.de>, 1996, 2006
+# Karl Eichwalder <ke@suse.de>, 1996, 2006.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: recode 3.6\n"
+"Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
 "POT-Creation-Date: 2018-09-24 21:14+0100\n"
-"PO-Revision-Date: 2006-12-09 19:25+0100\n"
-"Last-Translator: Karl Eichwalder <ke@suse.de>\n"
+"PO-Revision-Date: 2019-05-24 13:35+0200\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.04.1\n"
 
 #: src/main.c:110
 msgid "No error"
@@ -50,7 +54,6 @@ msgid "Internal recoding bug"
 msgstr "Interner Umkodierungsfehler"
 
 #: src/main.c:173
-#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -66,36 +69,30 @@ msgid ""
 "along with this program; if not, write to the Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 msgstr ""
-"Der folgende Text ist eine nicht überprüfte Übersetzung, die zur\n"
-"Information dient;  in rechtlichen Fragen ist immer das englische\n"
-"Original ausschlaggebend.\n"
-"\n"
 "Dieses Programm ist freie Software;  Sie können es nach den Bedingungen\n"
-"der von der Free Software Foundation als \"GNU General Public License\"\n"
-"veröffentlichten Lizenz weitergeben und/oder verändern;  dabei gilt\n"
-"die Version 2 oder (frei nach ihrer Wahl) jede spätere Version.\n"
+"der von der Free Software Foundation als »GNU General Public License«\n"
+"veröffentlichten Lizenz weitergeben und/oder verändern; dabei gilt\n"
+"die Version 3 oder (frei nach Ihrer Wahl) jede spätere Version.\n"
 "\n"
-"Dieses Programm wird in der Hoffnung verteilt, daß es nützlich ist,\n"
+"Dieses Programm wird in der Hoffnung verteilt, dass es nützlich ist,\n"
 "jedoch OHNE JEGLICHE GARANTIE; sogar ohne die implizite Garantie der\n"
 "MARKTFÄHIGKEIT oder der ERFÜLLUNG EINES BESTIMMTEN ZWECKES.  In der\n"
-"\"GNU General Public License\" können weitere Einzelheiten nachgelesen\n"
+"»GNU General Public License« können weitere Einzelheiten nachgelesen\n"
 "werden.\n"
 "\n"
-"Sie sollten mit diesem Programm eine Kopie der \"GNU General Public License"
-"\"\n"
+"Sie sollten mit diesem Programm eine Kopie der \"GNU General Public License\"\n"
 "erhalten haben;  wenn nicht, schreiben Sie an die Free Software Foundation,\n"
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
 #: src/main.c:198
 #, c-format
 msgid "Try `%s %s' for more information.\n"
-msgstr "`%s %s' zeigt weitere Informationen.\n"
+msgstr "»%s %s« zeigt weitere Informationen.\n"
 
 #: src/main.c:202
-#, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
-"`recode' konvertiert Dateien zwischen diversen Zeichensätzen und\n"
+"Recode konvertiert Dateien zwischen diversen Zeichensätzen und\n"
 "-formaten.\n"
 
 #: src/main.c:206
@@ -105,7 +102,7 @@ msgid ""
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 msgstr ""
 "\n"
-"Aufruf: %s [OPTION]... [ [ZEISATZ] | ANFRAGE [DATEI]... ]\n"
+"Aufruf: %s [OPTION]… [ [ZEICHENSATZ] | ANFRAGE [DATEI]… ]\n"
 
 #: src/main.c:209
 msgid ""
@@ -119,13 +116,11 @@ msgstr ""
 "Entsprechendes gilt für optionale Argumente.\n"
 
 #: src/main.c:215
-#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -134,21 +129,18 @@ msgid ""
 msgstr ""
 "\n"
 "Auflistungen:\n"
-"  -l, --list[=FORMAT]        Einen oder alle bekannten Zeichensätze "
-"auflisten\n"
-"  -k, --known=PAARE          Zeichensätze auf Liste bekannter PAARE "
-"beschränken\n"
-"  -h, --header[=[LN/]NAME]   LN-Code für Tabelle NAME ausgeben\n"
-"  -F, --freeze-tables        Ein C-Modul mit allen Tabellen ausgeben\n"
-"  -T, --find-subsets         Alle Zeichensätze ausgeben, die Untermengen "
-"von\n"
+"  -l, --list[=FORMAT]        Einen oder alle bekannten Zeichensätze und Aliase\n"
+"                               auflisten\n"
+"  -k, --known=PAARE          Zeichensätze auf Liste bekannter PAARE beschränken\n"
+"  -h, --header[=[LN/]NAME]   LN-Code für Tabelle NAME in die Standardausgabe\n"
+"                               schreiben und beenden\n"
+"  -T, --find-subsets         Alle Zeichensätze ausgeben, die Untermengen von\n"
 "                              anderen Zeichensätzen sind\n"
 "  -C, --copyright            Copyright und Kopierbedingungen anzeigen\n"
 "      --help                 Diese Hilfe anzeigen\n"
-"      --version              Versionsnummer ausgeben\n"
+"      --version              Versionsnummer ausgeben und beenden\n"
 
 #: src/main.c:227
-#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -160,28 +152,21 @@ msgid ""
 msgstr ""
 "\n"
 "Funktionsmodi:\n"
-"  -v, --verbose           Reihenfolge der Umkodierungsschritte und "
-"Fortschritt\n"
+"  -v, --verbose           Reihenfolge der Umkodierungsschritte und Fortschritt\n"
 "                           anzeigen\n"
-"  -q, --quiet, --silent   Keine Meldungen über nicht umkehrbare "
-"Umkodierungen\n"
-"  -f, --force             Umkodierung vornehmen, auch wenn sie nicht "
-"umkehrbar ist\n"
-"  -t, --touch             Nach der Umkodierung ein 'touch' auf die "
-"umkodierte\n"
+"  -q, --quiet, --silent   Keine Meldungen über nicht umkehrbare Umkodierungen\n"
+"  -f, --force             Umkodierung vornehmen, auch wenn sie nicht umkehrbar ist\n"
+"  -t, --touch             Nach der Umkodierung ein »touch« auf die umkodierte\n"
 "                           Datei ausführen\n"
-"  -i, --sequence=files    Für Zwischenschritte temporäre Dateien anlegen\n"
-"      --sequence=memory   Für Zwischenschritte Speicherpuffer verwenden\n"
+"  -i, -p, --sequence=STRATEGIE\n"
+"                          nur zwecks Abwärtskompatibilität, wird ignoriert\n"
 
 #: src/main.c:237
-#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable "
-"characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -189,19 +174,18 @@ msgid ""
 msgstr ""
 "\n"
 "Feineinstellungen:\n"
-"  -s, --strict           Strikte Abbildung benutzen, auch bei "
-"Zeichenverlust\n"
-"  -d, --diacritics       Nur Akzente/Umlaute umkodieren (z.B. für HTML/"
-"LaTeX)\n"
+"  -s, --strict           Strikte Abbildung benutzen; nicht übersetzbare\n"
+"                           Zeichen verwerfen\n"
+"  -d, --diacritics       Nur Akzente/Umlaute umkodieren\n"
+"                           (z.B. für HTML/LaTeX/BibTeX)\n"
 "  -S, --source[=LN]      Bei LN nur Zeichenketten und Kommentare umkodieren\n"
-"  -c, --colons           benutze ':' statt '\"' für Umlaute (z.B. 'fu:r' "
-"statt\n"
-"                          ('fu\"r')\n"
-"  -g, --graphics         'Linienzeichen' des IBMPC-Zeichensatzes durch "
-"ähnliche\n"
+"  -c, --colons           »:« statt »\"« für Umlaute verwenden\n"
+"                           (z.B. »fu:r« statt »fu\"r«)\n"
+"  -g, --graphics         »Linienzeichen« des IBMPC-Zeichensatzes durch ähnliche\n"
 "                         ASCII-Zeichen darstellen\n"
-"  -x, --ignore=ZEISATZ   ZEISATZ bei der Wahl der Kodierungsschritte "
-"ignorieren\n"
+"  -x, --ignore=ZEICHENSATZ\n"
+"                         ZEICHENSATZ bei der Wahl der Kodierungsschritte\n"
+"                           ignorieren\n"
 
 #: src/main.c:248
 msgid ""
@@ -210,76 +194,61 @@ msgid ""
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 "\n"
-"Die Option -l ohne FORMAT und ZEISATZ listet alle Zeichensätze und -formate\n"
-"auf. FORMAT ist `decimal', `octal', `hexadecimal' oder `full' (können durch "
-"den\n"
+"Die Option -l ohne FORMAT und ZEICHENSATZ listet alle Zeichensätze und -formate\n"
+"auf. FORMAT ist »decimal«, »octal«, »hexadecimal« oder »full« (können durch den\n"
 "Anfangsbuchstaben abgekürzt werden)\n"
 
 #: src/main.c:254
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
-"Wenn die Umgebungsvariable DEFAULT_CHARSET nicht gesetzt ist, gilt für "
-"ZEISATZ\n"
-"die lokale-abhängiges Kodierung, festgelegt von LC_ALL, LC_CTYPE. LANG "
-"wird.\n"
+"Wenn die Umgebungsvariable DEFAULT_CHARSET nicht gesetzt ist, gilt für\n"
+"ZEICHENSATZ die Locale-abhängiges Kodierung, festgelegt von LC_ALL,\n"
+"LC_CTYPE, LANG.\n"
 
 #: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Mit '-k' werden mögliche 'Vorher'-Zeichensätze für den 'Nachher'-ZEISATZ\n"
-"ausgegeben, mit PAAREn der Form 'VOR1:NACH1,VOR2:NACH2,...', wobei die VORs "
-"und\n"
-"NACHs Kodes sind. Alle Kodes werden als Dezimalzahlen angegeben.\n"
+"Mit »-k« werden mögliche »Vorher«-Zeichensätze für den »Nachher«-ZEICHENSATZ\n"
+"ausgegeben, mit PAAREn der Form »VOR1:NACH1,VOR2:NACH2,…«, wobei die VORs und\n"
+"NACHs Codes sind. Alle Codes werden als Dezimalzahlen angegeben.\n"
 
 #: src/main.c:264
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
-"LN ist eine Programmiersprache, z.B. `c', `perl' oder `po', wobei `c' die\n"
+"LN ist eine Programmiersprache, z.B. »c«, »perl« oder »po«, wobei »c« die\n"
 "Voreinstellung ist.\n"
 
 #: src/main.c:267
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"ANFRAGE ist UNTERANFRAGE[,UNTERANFRAGE]...; UNTERANFRAGE ist KODIERUNG[.."
-"KODIERUNG]...\n"
-"KODIERUNG ist [ZEISATZ][/[SURFACE]]...; ANFRAGE ist meistens VORHER.."
-"NACHHER,\n"
-"wobei VORHER und NACHHER Zeichensätze sind. Ohne ZEISATZ wird der übliche\n"
-"Zeichensatz benutzt; ohne [/SURFACE]... wird das für ZEISATZ übliche Format\n"
-"angenommen; ein / ohne Angabe eines Formats heißt, dass kein Format "
-"angenommen\n"
+"ANFRAGE ist UNTERANFRAGE[,UNTERANFRAGE]…; UNTERANFRAGE ist KODIERUNG[..KODIERUNG]…\n"
+"KODIERUNG ist [ZEICHENSATZ][/[SURFACE]]…; ANFRAGE ist meistens VORHER..NACHHER,\n"
+"wobei VORHER und NACHHER Zeichensätze sind. Ohne ZEICHENSATZ wird der übliche\n"
+"Zeichensatz benutzt; ohne [/SURFACE]… wird das für ZEICHENSATZ übliche Format\n"
+"angenommen; ein / ohne Angabe eines Formats heißt, dass kein Format angenommen\n"
 "wird. Siehe Anleitung.\n"
 
 #: src/main.c:275
-#, fuzzy
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"Wenn weder -i noch -p angegeben sind, wird -p angenommen wenn keine DATEI\n"
-"angegeben ist, sonst -i.\n"
 "Jede DATEI wird bei mit der umkodierten Datei überschrieben. Wenn keine\n"
-"DATEI angegen ist wird die Standardeingabe umkodiert und auf der\n"
+"DATEI angegen ist, wird die Standardeingabe umkodiert und auf der\n"
 "Standardausgabe ausgegeben.\n"
 
 #: src/main.c:280
@@ -287,6 +256,8 @@ msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
+"\n"
+"Melden Sie Fehler auf https://github.com/rrthomas/recode\n"
 
 #: src/main.c:378
 #, c-format
@@ -319,18 +290,16 @@ msgid "Format `%s' is unknown"
 msgstr "Format »%s« ist unbekannt"
 
 #: src/main.c:573
-#, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Geschrieben von François Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:576
-#, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 
 #: src/main.c:580
 msgid ""
@@ -370,7 +339,7 @@ msgstr "Anfrage »%s« ist fehlerhaft"
 #: src/main.c:834
 #, c-format
 msgid "Recoding %s..."
-msgstr "Kodiere `%s' um..."
+msgstr "»%s« wird umkodiert …"
 
 #: src/main.c:844
 #, c-format
@@ -401,7 +370,7 @@ msgstr "Zeichensatz %s existiert bereits und ist nicht %s"
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
 msgstr ""
-"Kann `%s' nicht anzeigen, keine Namen für diesen Zeichensatz\n"
+"»%s« kann nicht angezeigt werden, keine Namen für diesen Zeichensatz\n"
 " verfügbar"
 
 #: src/names.c:999 src/names.c:1045
@@ -412,50 +381,49 @@ msgstr "Dec  Oct Hex   UCS2  Mne  %s\n"
 #: src/names.c:1064
 #, c-format
 msgid "Sorry, no names available for `%s'"
-msgstr "Tut mir leid, aber es sind für `%s' keine Namen verfügbar"
+msgstr "Tut mir leid, aber es sind für »%s« keine Namen verfügbar"
 
 #: src/outer.c:114
 #, c-format
 msgid "Resurfacer set more than once for `%s'"
-msgstr "`Resurfacer' für `%s' mehr als einmal gesetzt."
+msgstr "»Resurfacer« für »%s« mehr als einmal gesetzt."
 
 #: src/outer.c:121
 #, c-format
 msgid "Unsurfacer set more than once for `%s'"
-msgstr "`Unsurfacer' für `%s' mehr als einmal gesetzt."
+msgstr "»Unsurfacer« für »%s« mehr als einmal gesetzt."
 
 #: src/outer.c:469 src/recode.c:68 src/recode.c:80
 msgid "Virtual memory exhausted"
 msgstr "Virtueller Speicher voll"
 
 #: src/recode.c:108
-#, fuzzy, c-format
+#, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "Die Kodes %3d und %3d werden beide konvertiert zu %3d"
+msgstr "Die Codes %3d und %3u werden beide zu %3d konvertiert"
 
 #: src/recode.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "No character recodes to %3u"
-msgstr "Kein Zeichen wird zu %3d umkodiert"
+msgstr "Kein Zeichen wird zu %3u umkodiert"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
-msgstr "Kann die gegebene \"Eins-zu-Eins\"-Tabelle nicht invertieren"
+msgstr "Die gegebene »Eins-zu-Eins«-Tabelle kann nicht invertiert werden"
 
 #: src/recode.c:179 src/recode.c:191
 #, c-format
 msgid "Following diagnostics for `%s' to `%s'"
-msgstr "Folgende Diagnose für Konvertierung von `%s' nach `%s'"
+msgstr "Folgende Diagnose für Konvertierung von »%s« nach »%s«"
 
 #: src/recode.c:184 src/recode.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "Paar Nr. %d: { %3d, %3d } steht in Konflikt mit { %3d, %3d }"
+msgstr "Paar Nr. %u: <%3d, %3d> steht in Konflikt mit <%3d, %3d>"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
-msgstr ""
-"Kann die Tabelle aus der Menge der bekannten Paare nicht vervollständigen"
+msgstr "Die Tabelle aus der Menge der bekannten Paare kann nicht vervollständigt werden"
 
 #: src/recode.c:484
 msgid "Identity recoding, not worth a table"
@@ -466,9 +434,9 @@ msgid "Recoding is too complex for a mere table"
 msgstr "Umkodierung ist für eine einfache Tabelle zu kompliziert"
 
 #: src/recode.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sKonvertierung automatisch generiert von »GNU %s %s«"
+msgstr "%sKonvertierung automatisch generiert von %s %s"
 
 #: src/recode.c:525
 #, c-format
@@ -506,7 +474,7 @@ msgstr "*unmöglich*"
 
 #: src/request.c:110
 msgid "*mere copy*"
-msgstr "*einface Kopie*"
+msgstr "*einfache Kopie*"
 
 #: src/request.c:227
 msgid "Virtual memory exhausted!"
@@ -518,7 +486,7 @@ msgstr "Schrittinitialisierung fehlgeschlagen"
 
 #: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "Schrittinitialisierung fehlgeschlagen (nichtbeachtete Optionen)"
+msgstr "Schrittinitialisierung fehlgeschlagen (nicht beachtete Optionen)"
 
 #: src/request.c:572
 #, c-format
@@ -533,16 +501,16 @@ msgstr "Geschrumpft zu: %s\n"
 #: src/request.c:846 src/request.c:955
 #, c-format
 msgid "Unrecognised surface name `%s'"
-msgstr "Unbekannter `surface' Name `%s'"
+msgstr "Unbekannter »surface«-Name »%s«"
 
 #: src/request.c:926
 #, c-format
 msgid "No way to recode from `%s' to `%s'"
-msgstr "Keine Möglichkeit, von `%s' nach `%s' umzukodieren"
+msgstr "Keine Möglichkeit, von »%s« nach »%s« umzukodieren"
 
 #: src/request.c:1036
 msgid "Expecting `..' in request"
-msgstr "In der Anfrage wird `..' erwartet"
+msgstr "In der Anfrage wird »..« erwartet"
 
 #: src/task.c:457
 #, c-format
@@ -556,18 +524,3 @@ msgid ""
 msgstr ""
 "UCS2   Mne   Beschreibung\n"
 "\n"
-
-#~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-#~ msgstr ""
-#~ "  -p, --sequence=pipe     benutze \"pipe\" für Abarbeitung der Schritte\n"
-
-#~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
-#~ msgstr ""
-#~ "  -p, --sequence=pipe     das gleiche wie '-i' (auf diesem System)\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Report bugs to <recode-bugs@iro.umontreal.ca>.\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Berichte über Programmfehler bitte an <recode-bugs@iro.umontreal.ca>.\n"
