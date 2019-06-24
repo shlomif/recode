@@ -143,3 +143,5 @@ gnulib-comp.m4
 /sigaction.m4
 /signal_h.m4
 /signalblocking.m4
+/mkdir.m4
+/std-gnu11.m4
