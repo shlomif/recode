@@ -102,7 +102,7 @@ recode.1: main.c $(top_srcdir)/configure.ac
 ## Exit gracefully if recode.1 is not writeable, such as during distcheck!
 	$(MAKE) $(AM_MAKEFLAGS) recode$(EXEEXT)
 	$(AM_V_GEN)if ( touch $@.w && rm -f $@.w; ) >/dev/null 2>&1; then \
-	  $(top_srcdir)/build-aux/missing --run $(HELP2MAN) --locale=en_US.UTF-8 \
+	  $(top_srcdir)/build-aux/missing --run $(HELP2MAN) --locale=C \
 		--name="converts files between character sets" \
 		--output=$@ ./recode; \
 	fi
