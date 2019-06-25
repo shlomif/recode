@@ -43,6 +43,12 @@ When `-F' and `-n' are used, process Alain's tables.
 
 import re, sys
 
+if sys.version_info >= (3, ):
+    unicode = str
+    PY3 = True
+else:
+    PY3 = False
+
 def to_unicode(s):
     import six
     if isinstance(s, six.text_type):
@@ -385,7 +391,7 @@ class Charnames(Options):
         for counter in range(singles, count):
             word = to_unicode(words[counter])
             s = u'    %-28s/* \\%0.3o\\%0.3o */\n' % (u'"%s",' % unicode(word), char1, char2)
-            write(s.encode('utf-8'))
+            write(s if PY3 else s.encode('utf-8'))
             self.code_map[words[counter]] = 256 * char1 + char2
             if char2 == 255:
                 char1 += 1
