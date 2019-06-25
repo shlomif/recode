@@ -9,6 +9,7 @@ addons:
       - ubuntu-toolchain-r-test
     packages: &default_deps
       - python-dbg
+      - python-six
       - cython
       - flex
       - help2man

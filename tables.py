@@ -43,6 +43,16 @@ When `-F' and `-n' are used, process Alain's tables.
 
 import re, sys
 
+def to_unicode(s):
+    import six
+    if isinstance(s, six.text_type):
+        return s
+    try:
+        s = six.text_type(s, 'utf-8')
+    except UnicodeDecodeError as err:
+        s = six.text_type(s, 'utf-8', 'ignore')
+    return s
+
 # Character constants.
 REPLACEMENT_CHARACTER = 0xFFFD
 NOT_A_CHARACTER = 0xFFFF
@@ -127,7 +137,7 @@ class Main:
                         self.mnemonics = Mnemonics()
                     self.mnemonics.digest_mnemonics_ds(input)
                     break
-                if input.match('Network Working Group +K\. Simonsen$'):
+                if input.match('Network Working Group +K\\. Simonsen$'):
                     if (self.charnames
                             and self.charnames.do_sources
                             and not French_option):
@@ -201,12 +211,15 @@ class Charnames(Options):
 
     def digest_french(self, input):
         self.preset_french()
-        fold_table = range(256)
-        for before, after in map(
-                None,
+        fold_table = list(range(256))
+        def myord(c):
+            if isinstance(c, int):
+                return c
+            return ord(c)
+        for before, after in zip(
                 u'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÇÈÉÊÎÏÑÔÖÛ'.encode('ISO-8859-1'),
                 u'abcdefghijklmnopqrstuvwxyzàâçèéêîïñôöû'.encode('ISO-8859-1')):
-            fold_table[ord(before)] = ord(after)
+            fold_table[myord(before)] = myord(after)
         folding = ''.join(map(chr, fold_table))
         ignorables = (
                 u'<commande>'.encode('ISO-8859-1'),
@@ -314,6 +327,8 @@ class Charnames(Options):
         if len(text) > self.max_length:
             self.max_length = len(text)
         for word in text.split():
+            word = to_unicode(word)
+            assert isinstance(word, str)
             self.code_map[word] = self.code_map.get(word, 0) + 1
 
     def presort_word(self, word):
@@ -334,18 +349,18 @@ class Charnames(Options):
         # the second cycling faster from 1 to 255.
         if run.verbose:
             sys.stdout.write('  sorting words...')
-        pairs = map(self.presort_word, self.code_map.keys())
+        pairs = list(map(self.presort_word, self.code_map.keys()))
         pairs.sort()
-        words = map(lambda pair: pair[1], pairs)
+        words = list(map(lambda pair: pair[1], pairs))
         pairs = None
         if run.verbose:
             sys.stdout.write(' %d of them\n' % len(words))
         count = len(words)
-        singles = (255 * 255 - count) / 254
+        singles = (255 * 255 - count) // 254
         # Transmit a few values for further usage by the C code.
         if run.verbose:
             sys.stdout.write('  sorting names...')
-        ucs2_table = self.charname_map.keys()
+        ucs2_table = list(self.charname_map.keys())
         ucs2_table.sort()
         if run.verbose:
             sys.stdout.write(' %d of them\n' % len(ucs2_table))
@@ -366,12 +381,14 @@ class Charnames(Options):
             word = words[counter]
             write('    %-28s/* \\%0.3o */\n'
                   % ('"%s",' % re.sub('"', r'\"', word), char1))
+            assert isinstance(word, str)
             self.code_map[words[counter]] = char1
             char1 += 1
         for counter in range(singles, count):
             word = words[counter]
             write('    %-28s/* \\%0.3o\\%0.3o */\n'
                   % ('"%s",' % re.sub('"', r'\"', word, 1), char1, char2))
+            assert isinstance(word, str)
             self.code_map[words[counter]] = 256 * char1 + char2
             if char2 == 255:
                 char1 += 1
@@ -397,7 +414,7 @@ class Charnames(Options):
                     if code < 256:
                         write('\\%0.3o' % code)
                     else:
-                        write('\\%0.3o\\%0.3o' % (code / 256, code % 256))
+                        write('\\%0.3o\\%0.3o' % (code // 256, code % 256))
                 else:
                     sys.stdout.write('??? %s\n' % word)
             write('"},\n')
@@ -540,7 +557,7 @@ class Mnemonics(Options):
                 continue
             if len(line) == 3:
                 continue
-            if input.begins('   \.\.\.'):
+            if input.begins('   \\.\\.\\.'):
                 continue
             if line == '   Presentation forms\n':
                 continue
@@ -667,7 +684,7 @@ class Mnemonics(Options):
               'static const struct entry table[TABLE_LENGTH] =\n'
               '  {\n')
         count = 0
-        indices = self.mnemonic_map.keys()
+        indices = list(self.mnemonic_map.keys())
         indices.sort()
         for ucs2 in indices:
             text = self.mnemonic_map[ucs2]
@@ -681,7 +698,7 @@ class Mnemonics(Options):
               'static const unsigned short inverse[TABLE_LENGTH] =\n'
               '  {')
         count = 0
-        keys = inverse_map.keys()
+        keys = list(inverse_map.keys())
         keys.sort()
         for text in keys:
             if count % 10 == 0:
@@ -744,7 +761,7 @@ class Strips(Options):
     def digest_rfc1345(self, input):
         self.init_write_data()
         # Informal canonical order of presentation.
-        CHARSET, REM, ALIAS, ESC, BITS, CODE = range(6)
+        CHARSET, REM, ALIAS, ESC, BITS, CODE = list(range(6))
         charset = None
         skip = False
         while True:
@@ -956,7 +973,7 @@ class Strips(Options):
             if input.search('\032'):
                 # Old MS-DOS C-z !!
                 break
-            match = input.match('0x([0-9A-F]+)\t0x([0-9A-F]+)\t\#')
+            match = input.match('0x([0-9A-F]+)\t0x([0-9A-F]+)\t#')
             if match:
                 self.table[int(match.group(1), 16)] = int(match.group(2), 16)
             else:
@@ -1125,7 +1142,7 @@ class Strips(Options):
             write = Output('fr-%s' % self.TEXINFO, noheader=True).write
         else:
             write = Output(self.TEXINFO, noheader=True).write
-        charsets = self.remark_map.keys()
+        charsets = list(self.remark_map.keys())
         charsets.sort()
         for charset in charsets:
             write('\n'
@@ -1161,12 +1178,12 @@ class Input:
 
     def __init__(self, name):
         self.name = name
-        self.input = file(name)
+        self.input = open(name, "rb")
         self.line_count = 0
         sys.stdout.write("Reading %s\n" % name)
 
     def readline(self):
-        self.line = self.input.readline()
+        self.line = to_unicode(self.input.readline())
         self.line_count += 1
         return self.line
 
@@ -1184,16 +1201,16 @@ class Input:
         return self.line[:len(text)] == text
 
     def match(self, pattern):
-        return re.match(pattern, self.line)
+        return re.match(pattern, to_unicode(self.line))
 
     def search(self, pattern):
-        return re.search(pattern, self.line)
+        return re.search(pattern, to_unicode(self.line))
 
 class Output:
 
     def __init__(self, name, noheader=False):
         self.name = name
-        self.write = file(name, 'w').write
+        self.write = open(name, 'w').write
         sys.stdout.write("Writing %s\n" % name)
         if not noheader:
             self.write("""\
