@@ -211,7 +211,7 @@ class Charnames(Options):
 
     def digest_french(self, input):
         self.preset_french()
-        fold_table = list(range(256))
+        fold_table = {}
         def myord(c):
             if isinstance(c, int):
                 return c
@@ -219,8 +219,8 @@ class Charnames(Options):
         for before, after in zip(
                 u'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÇÈÉÊÎÏÑÔÖÛ'.encode('ISO-8859-1'),
                 u'abcdefghijklmnopqrstuvwxyzàâçèéêîïñôöû'.encode('ISO-8859-1')):
-            fold_table[myord(before)] = myord(after)
-        folding = ''.join(map(chr, fold_table))
+            fold_table[chr(myord(before))] = chr(myord(after))
+        folding = fold_table
         ignorables = (
                 u'<commande>'.encode('ISO-8859-1'),
                 u'<réservé>'.encode('ISO-8859-1'),
@@ -328,7 +328,6 @@ class Charnames(Options):
             self.max_length = len(text)
         for word in text.split():
             word = to_unicode(word)
-            assert isinstance(word, str)
             self.code_map[word] = self.code_map.get(word, 0) + 1
 
     def presort_word(self, word):
@@ -378,17 +377,15 @@ class Charnames(Options):
         char1 = 1
         char2 = 1
         for counter in range(singles):
-            word = words[counter]
+            word = to_unicode(words[counter])
             write('    %-28s/* \\%0.3o */\n'
                   % ('"%s",' % re.sub('"', r'\"', word), char1))
-            assert isinstance(word, str)
             self.code_map[words[counter]] = char1
             char1 += 1
         for counter in range(singles, count):
-            word = words[counter]
-            write('    %-28s/* \\%0.3o\\%0.3o */\n'
-                  % ('"%s",' % re.sub('"', r'\"', word, 1), char1, char2))
-            assert isinstance(word, str)
+            word = to_unicode(words[counter])
+            s = u'    %-28s/* \\%0.3o\\%0.3o */\n' % (u'"%s",' % unicode(word), char1, char2)
+            write(s.encode('utf-8'))
             self.code_map[words[counter]] = 256 * char1 + char2
             if char2 == 255:
                 char1 += 1
@@ -416,7 +413,7 @@ class Charnames(Options):
                     else:
                         write('\\%0.3o\\%0.3o' % (code // 256, code % 256))
                 else:
-                    sys.stdout.write('??? %s\n' % word)
+                    sys.stdout.write('??? %s\n' % to_unicode(word))
             write('"},\n')
         write('  };\n')
 
@@ -1210,7 +1207,7 @@ class Output:
 
     def __init__(self, name, noheader=False):
         self.name = name
-        self.write = open(name, 'w').write
+        self.write = open(name, 'wt').write
         sys.stdout.write("Writing %s\n" % name)
         if not noheader:
             self.write("""\
