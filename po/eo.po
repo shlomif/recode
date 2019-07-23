@@ -1,15 +1,16 @@
 # Esperantaj mesaĝoj por recode.
 # This file is distributed under the same license as the recode package.
-# Copyright (C) 2001 Free Software Foundation, Inc.
+# Copyright (C) 2001, 2012, 2019 Free Software Foundation, Inc.
 # Edmund GRIMLEY EVANS <edmundo@rano.org>, 2001, 2012.
+# Felipe Castro <fefcas@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: recode 3.6\n"
+"Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
 "POT-Creation-Date: 2018-09-24 21:14+0100\n"
-"PO-Revision-Date: 2012-04-04 21:04+0100\n"
-"Last-Translator: Edmund GRIMLEY EVANS <edmundo@rano.org>\n"
+"PO-Revision-Date: 2019-07-15 14:49-0300\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +51,6 @@ msgid "Internal recoding bug"
 msgstr "Interna eraro dum rekodado"
 
 #: src/main.c:173
-#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Ĉi tiu programo estas libera; vi povas pludoni kopiojn kaj modifi\n"
 "ĝin sub la kondiĉoj de la Ĝenerala Publika Rajtigilo de GNU,\n"
-"kiel tio estas eldonita de Free Software Foundation; aŭ versio 2\n"
+"kiel tio estas eldonita de Free Software Foundation; aŭ versio 3\n"
 "de la Rajtigilo, aŭ (laŭ via elekto) iu sekva versio.\n"
 "\n"
 "Ĉi tiu programo estas disdonita kun la espero, ke ĝi estos utila,\n"
@@ -86,10 +86,8 @@ msgid "Try `%s %s' for more information.\n"
 msgstr "Provu '%s %s' por pli da informoj.\n"
 
 #: src/main.c:202
-#, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
-msgstr ""
-"Libera 'recode' konvertas dosierojn inter diversaj signaroj kaj surfacoj.\n"
+msgstr "Recode konvertas dosierojn inter diversaj signaroj kaj surfacoj.\n"
 
 #: src/main.c:206
 #, c-format
@@ -111,13 +109,11 @@ msgstr ""
 "ankaŭ por la ekvivalenta mallonga opcio. Simile por nedevigaj argumentoj.\n"
 
 #: src/main.c:215
-#, fuzzy
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
-"list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -129,14 +125,12 @@ msgstr ""
 "  -l, --list[=FORMO]         Listigi unu aŭ ĉiujn signarojn kaj kromnomojn\n"
 "  -k, --known=PAROJ          Limigi signarojn laŭ konataj PAROJ\n"
 "  -h, --header[=[LN/]NOMO]   Skribi tabelon NOMO al normala eligo per LN\n"
-"  -F, --freeze-tables        Eligi C-modulon kun ĉiuj tabeloj\n"
 "  -T, --find-subsets         Raporti signarojn, kiuj estas subaroj de aliaj\n"
 "  -C, --copyright            Montri kopirajton kaj kopikondiĉojn\n"
 "      --help                 Montri ĉi tiun helpon kaj eliri\n"
 "      --version              Montri versiinformon kaj eliri\n"
 
 #: src/main.c:227
-#, fuzzy
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -152,18 +146,14 @@ msgstr ""
 "  -q, --quiet, --silent   subpremi mesaĝojn pri neinversigeblaj rekodadoj\n"
 "  -f, --force             fari rekodadon, ankaŭ kiam ne inversigebla\n"
 "  -t, --touch             fari 'touch' al konvertitaj dosieroj\n"
-"  -i, --sequence=files    uzi dumtempajn dosierojn por internaj paŝoj\n"
-"      --sequence=memory   uzi bufrojn en memoro por internaj paŝoj\n"
+"  -i, -p, --sequence=STRATEGIO ne plu funkcias, tenita pro retrokongruo\n"
 
 #: src/main.c:237
-#, fuzzy
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable "
-"characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -171,7 +161,7 @@ msgid ""
 msgstr ""
 "\n"
 "Fajnaj agordoj:\n"
-"  -s, --strict           uzi striktajn mapojn, eĉ ĉe signoperdo\n"
+"  -s, --strict           uzi striktajn mapojn; forlasi nekonverteblajn signojn\n"
 "  -d, --diacritics       konverti nur kromsignojn aŭ simile por HTML/LaTeX\n"
 "  -S, --source[=LN]      limigi rekodadon al signoĉenoj kaj komentoj por LN\n"
 "  -c, --colons           uzi ':' anstataŭ '\"' por diarezoj\n"
@@ -191,8 +181,7 @@ msgstr ""
 
 #: src/main.c:254
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
-"locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Se la media variablo DEFAULT_CHARSET ne estas agordita, SIGNARO implicite\n"
@@ -201,50 +190,40 @@ msgstr ""
 #: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
-"AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
-"Kun -k, eblaj antaŭaj signaroj por la donita posta SIGNARO estas "
-"listigitaj,\n"
+"Kun -k, eblaj antaŭaj signaroj por la donita posta SIGNARO estas listigitaj,\n"
 "kun PAROJ en la formo 'ANT1:POST1,ANT2,POST2,...', kie ANT-oj kaj POST-oj\n"
 "estas kodoj donitaj kiel dekumaj nombroj.\n"
 
 #: src/main.c:264
-msgid ""
-"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr ""
-"LN estas programlingvo, ekzemple 'c', 'perl' aŭ 'po'; implicite estas 'c'.\n"
+msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr "LN estas programlingvo, ekzemple 'c', 'perl' aŭ 'po'; implicite estas 'c'.\n"
 
 #: src/main.c:267
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
-"ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
-"AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
-"a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
 "PETO estas SUBPETO[,SUBPETO]...; SUBPETO estas KODO[..KODO]...\n"
 "KODO estas [SIGNARO][/[SURFACO]]...; PETO ofte aspektas kiel ANTAŬ...POST,\n"
 "kie ANTAŬ kaj POST estas signaroj. Ellasita SIGNARO implicas la kutiman\n"
-"signaron; ellasita [/SURFACO]... signifas la implicitan surfacon por "
-"SIGNARO;\n"
+"signaron; ellasita [/SURFACO]... signifas la implicitan surfacon por SIGNARO;\n"
 "/ kun malplena surfaco-nomo signifas neniajn surfacojn. Vidu la manlibron.\n"
 
 #: src/main.c:275
-#, fuzzy
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 "\n"
-"Se neniu el -i kaj -p estas donita, supozi -p, se neniu DOSIERO, alie -i.\n"
 "Ĉiu DOSIERO estas rekodita surloke, anstataŭante la originalon. Se neniu\n"
 "DOSIERO estas specifita, agi kiel filtrilo kaj rekodi de la normala enigo\n"
 "al la normala eligo.\n"
@@ -254,6 +233,8 @@ msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
+"\n"
+"Raportu erarojn al https://github.com/rrthomas/recode\n"
 
 #: src/main.c:378
 #, c-format
@@ -286,18 +267,16 @@ msgid "Format `%s' is unknown"
 msgstr "Formo '%s' estas nekonata"
 
 #: src/main.c:573
-#, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Verkita de François Pinard <pinard@iro.umontreal.ca>.\n"
 
 #: src/main.c:576
-#, fuzzy
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 "\n"
-"Kopirajto (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
+"Kopirajto (C) 1990-2018 Free Software Foundation, Inc.\n"
 
 #: src/main.c:580
 msgid ""
@@ -392,14 +371,14 @@ msgid "Virtual memory exhausted"
 msgstr "Vituala memoro elĉerpiĝis"
 
 #: src/recode.c:108
-#, fuzzy, c-format
+#, c-format
 msgid "Codes %3d and %3u both recode to %3d"
-msgstr "La kodoj %3d kaj %3d estas ambaŭ konvertataj al %3d"
+msgstr "La kodoj %3d kaj %3u estas ambaŭ konvertataj al %3d"
 
 #: src/recode.c:122
-#, fuzzy, c-format
+#, c-format
 msgid "No character recodes to %3u"
-msgstr "Neniu signo estas konvertata al %3d"
+msgstr "Neniu signo estas konvertata al %3u"
 
 #: src/recode.c:123
 msgid "Cannot invert given one-to-one table"
@@ -411,9 +390,9 @@ msgid "Following diagnostics for `%s' to `%s'"
 msgstr "Jena diagnozo por konvertado de '%s' al '%s'"
 
 #: src/recode.c:184 src/recode.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "Pair no. %u: <%3d, %3d> conflicts with <%3d, %3d>"
-msgstr "Paro numero %d: <%3d, %3d> konfliktas kun <%3d, %3d>"
+msgstr "Paro numero %u: <%3d, %3d> konfliktas kun <%3d, %3d>"
 
 #: src/recode.c:227
 msgid "Cannot complete table from set of known pairs"
@@ -428,9 +407,9 @@ msgid "Recoding is too complex for a mere table"
 msgstr "Rekodado estas tro komplika por nura tabelo"
 
 #: src/recode.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "%sConversion table generated mechanically by %s %s"
-msgstr "%sKonvertotabelo kreita aŭtomate de Free '%s' %s"
+msgstr "%sKonvertotabelo kreita aŭtomate de %s %s"
 
 #: src/recode.c:525
 #, c-format
@@ -520,8 +499,7 @@ msgstr ""
 "\n"
 
 #~ msgid "  -p, --sequence=pipe     use pipe machinery for sequencing passes\n"
-#~ msgstr ""
-#~ "  -p, --sequence=pipe     uzi tubojn (\"pipe\") por internaj paŝoj\n"
+#~ msgstr "  -p, --sequence=pipe     uzi tubojn (\"pipe\") por internaj paŝoj\n"
 
 #~ msgid "  -p, --sequence=pipe     same as -i (on this system)\n"
 #~ msgstr "  -p, --sequence=pipe     same kiel -i (en ĉi tiu sistemo)\n"
