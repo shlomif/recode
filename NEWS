@@ -5,7 +5,18 @@ Recode NEWS - User visible changes
 .. contents::
 .. sectnum::
 
-:Copyright: © 1993-1999, 2000, 2001, 2008, 2018 Free Software Foundation, Inc.
+:Copyright: © 1993-2019 Free Software Foundation, Inc.
+
+Version 3.7.2
+=============
+
+:Author: Reuben Thomas, 2019-08.
+
++ No code changes to recode itself; this release includes updates to license
+headers to guide users to the GPL online, corrects the version of
+COPYING-LIB shipped with the sources, and updates the message files for
+various languages.
+
 
 Version 3.7.1
 =============
