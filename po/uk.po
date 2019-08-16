@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-09-24 21:14+0100\n"
+"POT-Creation-Date: 2019-08-16 13:46+0100\n"
 "PO-Revision-Date: 2019-05-21 16:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
-"X-Bugs: Report translation errors to the Language-Team address.\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 19.04.0\n"
 
 #: src/main.c:110
@@ -52,6 +53,7 @@ msgid "Internal recoding bug"
 msgstr "Внутрішня вада перекодування"
 
 #: src/main.c:173
+#, fuzzy
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -64,34 +66,37 @@ msgid ""
 "GNU General Public License for more details.\n"
 "\n"
 "You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software Foundation,\n"
-"Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+"along with this program; if not, see <https://www.gnu.org/licenses/>.\n"
 msgstr ""
 "Ця програма — вільне програмне забезпечення; Ви можете розповсюджувати її\n"
-"та/або вносити зміни відповідно до умов Загальної Публічної Ліцензії GNU у тому\n"
+"та/або вносити зміни відповідно до умов Загальної Публічної Ліцензії GNU у "
+"тому\n"
 "вигляді, у якому її було оприлюднено Фундацією Вільного Програмного\n"
 "Забезпечення; або версії 2 Ліцензії, або (на Ваш розсуд) будь-якої більш\n"
 "пізньої версії.\n"
 "\n"
-"Ця програма розповсюджується із сподіванням, що вона виявиться корисною, але\n"
-"БЕЗ БУДЬ-ЯКОЇ ГАРАНТІЇ, без навіть УЯВНОЇ ГАРАНТІЇ КОМЕРЦІЙНОЇ ПРИДАТНОСТІ чи\n"
+"Ця програма розповсюджується із сподіванням, що вона виявиться корисною, "
+"але\n"
+"БЕЗ БУДЬ-ЯКОЇ ГАРАНТІЇ, без навіть УЯВНОЇ ГАРАНТІЇ КОМЕРЦІЙНОЇ ПРИДАТНОСТІ "
+"чи\n"
 "ВІДПОВІДНОСТІ БУДЬ-ЯКОМУ ПЕВНОМУ ЗАСТОСУВАННЮ. Зверніться до Загальної\n"
 "громадської ліцензії GNU за подробицями.\n"
 "\n"
 "Ви мали отримати копію Загальної Публічної Ліцензії GNU разом з цією\n"
-"програмою. Якщо Ви не отримали копії ліцензії, напишіть за адресою Free Software\n"
+"програмою. Якщо Ви не отримали копії ліцензії, напишіть за адресою Free "
+"Software\n"
 "Foundation, Inc., 59 Temple Place — Suite 330, Boston, MA 02111-1307, USA.\n"
 
-#: src/main.c:198
+#: src/main.c:197
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Спробуйте скористатися `%s %s', щоб дізнатися більше.\n"
 
-#: src/main.c:202
+#: src/main.c:201
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr "Recode перетворює файли у різних наборах символів і прив'язках.\n"
 
-#: src/main.c:206
+#: src/main.c:205
 #, c-format
 msgid ""
 "\n"
@@ -100,7 +105,7 @@ msgstr ""
 "\n"
 "Користування: %s [ПАРАМЕТР]... [ [НАБІР_СИМВОЛІВ] | ЗАПИТ [ФАЙЛ]... ]\n"
 
-#: src/main.c:209
+#: src/main.c:208
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -111,12 +116,13 @@ msgstr ""
 "він є обов'язковим і для скороченої версії параметра. Те саме стосується\n"
 "необов'язкових аргументів.\n"
 
-#: src/main.c:215
+#: src/main.c:214
 msgid ""
 "\n"
 "Listings:\n"
 "  -l, --list[=FORMAT]        list one or all known charsets and aliases\n"
-"  -k, --known=PAIRS          restrict charsets according to known PAIRS list\n"
+"  -k, --known=PAIRS          restrict charsets according to known PAIRS "
+"list\n"
 "  -h, --header[=[LN/]NAME]   write table NAME on stdout using LN, then exit\n"
 "  -T, --find-subsets         report all charsets being subset of others\n"
 "  -C, --copyright            display Copyright and copying conditions\n"
@@ -127,8 +133,10 @@ msgstr ""
 "Списки:\n"
 "  -l, --list[=ФОРМАТ]        вивести список одного або усіх відомих наборів\n"
 "                              символів та їхніх альтернативних варіантів\n"
-"  -k, --known=ПАРИ           обмежити набори символів за відомим списком ПАР\n"
-"  -h, --header[=[LN/]НАЗВА]  вивести таблицю НАЗВА до stdout з використанням\n"
+"  -k, --known=ПАРИ           обмежити набори символів за відомим списком "
+"ПАР\n"
+"  -h, --header[=[LN/]НАЗВА]  вивести таблицю НАЗВА до stdout з "
+"використанням\n"
 "                              мови LN, потім завершити роботу\n"
 "  -T, --find-subsets         повідомляти про усі набори символів, які є\n"
 "                              підмножинами інших наборів символів\n"
@@ -136,7 +144,7 @@ msgstr ""
 "      --help                 вивести цю довідку і завершити роботу\n"
 "      --version              вивести дані щодо версії і завершити роботу\n"
 
-#: src/main.c:227
+#: src/main.c:226
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -148,18 +156,25 @@ msgid ""
 msgstr ""
 "\n"
 "Режими роботи:\n"
-"  -v, --verbose           вивести пояснення послідовності кроків і повідомити про поступ\n"
-"  -q, --quiet, --silent   не виводити повідомлення щодо незворотного перекодування\n"
-"  -f, --force             примусово виконати перекодування, навіть якщо воно є незворотним\n"
-"  -t, --touch             оновити часову позначку перекодованих файлів після заміни\n"
-"  -i, -p, --sequence=СТРАТЕГІЯ  буде проігноровано, призначено для зворотної сумісності\n"
+"  -v, --verbose           вивести пояснення послідовності кроків і "
+"повідомити про поступ\n"
+"  -q, --quiet, --silent   не виводити повідомлення щодо незворотного "
+"перекодування\n"
+"  -f, --force             примусово виконати перекодування, навіть якщо воно "
+"є незворотним\n"
+"  -t, --touch             оновити часову позначку перекодованих файлів після "
+"заміни\n"
+"  -i, -p, --sequence=СТРАТЕГІЯ  буде проігноровано, призначено для зворотної "
+"сумісності\n"
 
-#: src/main.c:237
+#: src/main.c:236
 msgid ""
 "\n"
 "Fine tuning:\n"
-"  -s, --strict           use strict mappings; discard untranslatable characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n"
+"  -s, --strict           use strict mappings; discard untranslatable "
+"characters\n"
+"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
+"BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -167,16 +182,21 @@ msgid ""
 msgstr ""
 "\n"
 "Коригування:\n"
-"  -s, --strict           використовувати строгі прив'язки; відкидати символи,\n"
+"  -s, --strict           використовувати строгі прив'язки; відкидати "
+"символи,\n"
 "                          які не можна транслювати\n"
-"  -d, --diacritics       перетворити лише символи з діакритикою та подібними\n"
+"  -d, --diacritics       перетворити лише символи з діакритикою та "
+"подібними\n"
 "                          доповненнями для HTML/LaTeX/BibTeX\n"
-"  -S, --source[=LN]      обмежити перекодування до рядків і коментарів мови LN\n"
-"  -c, --colons           використовувати двокрапки замість подвійних лапок для трем\n"
+"  -S, --source[=LN]      обмежити перекодування до рядків і коментарів мови "
+"LN\n"
+"  -c, --colons           використовувати двокрапки замість подвійних лапок "
+"для трем\n"
 "  -g, --graphics         замінити лінійки IBMPC псевдографікою ASCII\n"
-"  -x, --ignore=НАБІР     ігнорувати НАБІР символів під час вибору шляху перекодування\n"
+"  -x, --ignore=НАБІР     ігнорувати НАБІР символів під час вибору шляху "
+"перекодування\n"
 
-#: src/main.c:248
+#: src/main.c:247
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -188,18 +208,21 @@ msgstr ""
 "Значенням аргумент ФОРМАТ може бути «decimal», «octal», «hexadecimal» або\n"
 "«full» (або одне із «dohf»).\n"
 
-#: src/main.c:254
+#: src/main.c:253
 msgid ""
-"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the locale\n"
+"Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
+"locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 "Якщо у середовищі не визначено DEFAULT_CHARSET, типовим значенням параметра\n"
-"НАБІР_СИМВОЛІВ буде кодування локалі, яке визначається LC_ALL, LC_CTYPE, LANG.\n"
+"НАБІР_СИМВОЛІВ буде кодування локалі, яке визначається LC_ALL, LC_CTYPE, "
+"LANG.\n"
 
-#: src/main.c:259
+#: src/main.c:258
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
-"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:AFT2,...'\n"
+"both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
+"AFT2,...'\n"
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 "Якщо вказано -k, буде виведено можливі початкові кодування для\n"
@@ -207,28 +230,38 @@ msgstr ""
 "ПАРАМИ у форматі «ДО1:ПІСЛЯ1,ДО2:ПІСЛЯ2,...», а ДО і ПІСЛЯ є\n"
 "кодами у форматі десяткових чисел.\n"
 
-#: src/main.c:264
-msgid "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
-msgstr "LN — якась мова; можна вказати «c», «perl» або «po»; типовим варіантом є «c».\n"
+#: src/main.c:263
+msgid ""
+"LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
+msgstr ""
+"LN — якась мова; можна вказати «c», «perl» або «po»; типовим варіантом є "
+"«c».\n"
 
-#: src/main.c:267
+#: src/main.c:266
 msgid ""
 "\n"
-"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[..ENCODING]...\n"
-"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE..AFTER,\n"
+"REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
+"ENCODING]...\n"
+"ENCODING is [CHARSET][/[SURFACE]]...; REQUEST often looks like BEFORE.."
+"AFTER,\n"
 "with BEFORE and AFTER being charsets.  An omitted CHARSET implies the usual\n"
-"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; a /\n"
+"charset; an omitted [/SURFACE]... means the implied surfaces for CHARSET; "
+"a /\n"
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 "\n"
-"ЗАПИТ є записом ПІДЗАПИТ[,ПІДЗАПИТ]...; ПІДЗАПИТ є записом КОДУВАННЯ[..КОДУВАННЯ]...\n"
-"КОДУВАННЯ є записом [НАБІР_СИМВОЛІВ][/[ПРИВ'ЯЗКА]]...; ЗАПИТ часто виглядає як\n"
-"ДО..ПІСЛЯ, де ДО і ПІСЛЯ є наборами символів. Якщо НАБІР_СИМВОЛІВ не вказано,\n"
+"ЗАПИТ є записом ПІДЗАПИТ[,ПІДЗАПИТ]...; ПІДЗАПИТ є записом КОДУВАННЯ[.."
+"КОДУВАННЯ]...\n"
+"КОДУВАННЯ є записом [НАБІР_СИМВОЛІВ][/[ПРИВ'ЯЗКА]]...; ЗАПИТ часто виглядає "
+"як\n"
+"ДО..ПІСЛЯ, де ДО і ПІСЛЯ є наборами символів. Якщо НАБІР_СИМВОЛІВ не "
+"вказано,\n"
 "припускається типовий набір символів; якщо не вказано [/ПРИВʼЯЗКА]..., буде\n"
-"використано типові ПРИВ'ЯЗКИ для НАБОРУ_СИМВОЛІВ; / з порожньою назвою прив'язки\n"
+"використано типові ПРИВ'ЯЗКИ для НАБОРУ_СИМВОЛІВ; / з порожньою назвою "
+"прив'язки\n"
 "означає, що прив'язки взагалі не слід використовувати. Див. підручник.\n"
 
-#: src/main.c:275
+#: src/main.c:274
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
@@ -239,7 +272,7 @@ msgstr ""
 "початкових даних. Якщо не буде вказано ФАЙЛ, програма\n"
 "працюватиме як фільтр, перекодовуючи дані зі stdin до stdout.\n"
 
-#: src/main.c:280
+#: src/main.c:279
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
@@ -247,41 +280,41 @@ msgstr ""
 "\n"
 "Повідомляєте про вади на сторінці https://github.com/rrthomas/recode\n"
 
-#: src/main.c:378
+#: src/main.c:377
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Послідовність «%s» є неоднозначною"
 
-#: src/main.c:383
+#: src/main.c:382
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Послідовність «%s» є невідомою"
 
-#: src/main.c:407 src/main.c:467
+#: src/main.c:406 src/main.c:466
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Мова «%s» є неоднозначною"
 
-#: src/main.c:412 src/main.c:472
+#: src/main.c:411 src/main.c:471
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Мова «%s» є невідомою"
 
-#: src/main.c:507
+#: src/main.c:506
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Формат «%s» є неоднозначним"
 
-#: src/main.c:512
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Формат «%s» є невідомим"
 
-#: src/main.c:573
+#: src/main.c:572
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Автор — Франсуа Піньяр (François Pinard) <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:576
+#: src/main.c:575
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
@@ -289,7 +322,7 @@ msgstr ""
 "\n"
 "© Free Software Foundation, Inc., 1990-2018\n"
 
-#: src/main.c:580
+#: src/main.c:579
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -299,52 +332,54 @@ msgstr ""
 "Умовами ліцензування програми НЕ передбачено жодних гарантій, зокрема\n"
 "гарантій працездатності або придатності для певної мети.\n"
 
-#: src/main.c:622
+#: src/main.c:621
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Символ «%s» є невідомим"
 
-#: src/main.c:662 src/main.c:676
+#: src/main.c:661 src/main.c:675
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Набір символів «%s» є невідомим або неоднозначним"
 
-#: src/main.c:707
+#: src/main.c:706
 #, c-format
 msgid "Required argument is missing"
 msgstr "Пропущено обов'язковий аргумент"
 
-#: src/main.c:750
+#: src/main.c:749
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
-msgstr "Ця синтаксична конструкція є застарілою. Будь ласка, скористайтеся замість неї «%s»"
+msgstr ""
+"Ця синтаксична конструкція є застарілою. Будь ласка, скористайтеся замість "
+"неї «%s»"
 
-#: src/main.c:756
+#: src/main.c:755
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Запит «%s» є помилковим"
 
-#: src/main.c:834
+#: src/main.c:833
 #, c-format
 msgid "Recoding %s..."
 msgstr "Перекодовуємо %s..."
 
-#: src/main.c:844
+#: src/main.c:843
 #, c-format
 msgid " done\n"
 msgstr " виконано\n"
 
-#: src/main.c:877
+#: src/main.c:876
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " помилка: %s на кроці `%s..%s'\n"
 
-#: src/main.c:884
+#: src/main.c:883
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "Помилка %s: %s на кроці `%s..%s'"
 
-#: src/main.c:903
+#: src/main.c:902
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s на кроці `%s..%s'"
@@ -357,7 +392,9 @@ msgstr "Набір символів %s вже існує і має назву, �
 #: src/names.c:847
 #, c-format
 msgid "Cannot list `%s', no names available for this charset"
-msgstr "Не вдалося побудувати список для «%s», оскільки немає назв, які доступні для цього набору символів"
+msgstr ""
+"Не вдалося побудувати список для «%s», оскільки немає назв, які доступні для "
+"цього набору символів"
 
 #: src/names.c:999 src/names.c:1045
 #, c-format
@@ -472,7 +509,8 @@ msgstr "Помилка під час ініціалізації кроку"
 
 #: src/request.c:258
 msgid "Step initialisation failed (unprocessed options)"
-msgstr "Помилка під час спроби ініціалізації кроку (непридатні до обробки параметри)"
+msgstr ""
+"Помилка під час спроби ініціалізації кроку (непридатні до обробки параметри)"
 
 #: src/request.c:572
 #, c-format

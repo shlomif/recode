@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-09-24 21:14+0100\n"
+"POT-Creation-Date: 2019-08-16 13:46+0100\n"
 "PO-Revision-Date: 2005-11-13 15:20+0000\n"
 "Last-Translator: Helder Correia <helder.pereira.correia@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -64,8 +64,7 @@ msgid ""
 "GNU General Public License for more details.\n"
 "\n"
 "You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software Foundation,\n"
-"Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+"along with this program; if not, see <https://www.gnu.org/licenses/>.\n"
 msgstr ""
 "Este programa é livre; pode redistribuí-lo e/ou modificá-lo\n"
 "nos termos previstos na Licença Pública Geral GNU,\n"
@@ -81,19 +80,19 @@ msgstr ""
 "com este programa; se assim não for, escreva para Free Software\n"
 "Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, EUA.\n"
 
-#: src/main.c:198
+#: src/main.c:197
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr "Para mais informação, tente '%s %s'.\n"
 
-#: src/main.c:202
+#: src/main.c:201
 #, fuzzy
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 "Free 'recode' converte ficheiros entre vários conjuntos de caracteres e "
 "superfícies.\n"
 
-#: src/main.c:206
+#: src/main.c:205
 #, c-format
 msgid ""
 "\n"
@@ -102,7 +101,7 @@ msgstr ""
 "\n"
 "Utilização: %s [OPÇÃO]... [ [CONJCAR] | PEDIDO [FICHEIRO]... ]\n"
 
-#: src/main.c:209
+#: src/main.c:208
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
@@ -112,7 +111,7 @@ msgstr ""
 "Se uma opção longa mostrar um argumento como mandatório, então é igualmente\n"
 "mandatório para a versão curta.  Similarmente para argumentos opcionais.\n"
 
-#: src/main.c:215
+#: src/main.c:214
 #, fuzzy
 msgid ""
 "\n"
@@ -140,7 +139,7 @@ msgstr ""
 "      --help                 exibir esta ajuda e sair\n"
 "      --version              exibir versão e sair\n"
 
-#: src/main.c:227
+#: src/main.c:226
 #, fuzzy
 msgid ""
 "\n"
@@ -162,7 +161,7 @@ msgstr ""
 "sequenciais\n"
 "      --sequence=memory   usar memória para passos sequenciais\n"
 
-#: src/main.c:237
+#: src/main.c:236
 #, fuzzy
 msgid ""
 "\n"
@@ -188,7 +187,7 @@ msgstr ""
 "  -x, --ignore=CONJCAR   ignorar CONJCAR ao escolher um caminho a "
 "recodificar\n"
 
-#: src/main.c:248
+#: src/main.c:247
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -199,7 +198,7 @@ msgstr ""
 "superfícies disponíveis.\n"
 "FORMATO é 'decimal', 'octal', 'hexadecimal' ou 'full' (ou um de 'dohf').\n"
 
-#: src/main.c:254
+#: src/main.c:253
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
@@ -210,7 +209,7 @@ msgstr ""
 "da codificação por omissão da localização, determinado por LC_ALL, LC_CTYPE, "
 "LANG.\n"
 
-#: src/main.c:259
+#: src/main.c:258
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -222,13 +221,13 @@ msgstr ""
 "sendo ambos tabulares, com PARES da forma `BEF1:AFT1,BEF2:AFT2,...'\n"
 "e BEFs e AFTs sendo códigos são dados como números decimais.\n"
 
-#: src/main.c:264
+#: src/main.c:263
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 "LN é uma linguagem, podendo ser 'c', 'perl' ou 'po'; 'c' é predefinido.\n"
 
-#: src/main.c:267
+#: src/main.c:266
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -251,7 +250,7 @@ msgstr ""
 "com um nome de superfície vazio significa ausência de superfícies.  Veja o "
 "manual manual.\n"
 
-#: src/main.c:275
+#: src/main.c:274
 #, fuzzy
 msgid ""
 "\n"
@@ -265,48 +264,48 @@ msgstr ""
 "FICHEIRO não for especificado, actue-se como um filtro e recidifique-se a "
 "entrada padrão para a saída padrão.\n"
 
-#: src/main.c:280
+#: src/main.c:279
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
 
-#: src/main.c:378
+#: src/main.c:377
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "A sequência '%s' é ambígua"
 
-#: src/main.c:383
+#: src/main.c:382
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "A sequência '%s' é desconhecida"
 
-#: src/main.c:407 src/main.c:467
+#: src/main.c:406 src/main.c:466
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "A linguagem '%s' é ambígua"
 
-#: src/main.c:412 src/main.c:472
+#: src/main.c:411 src/main.c:471
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "A linguagem '%s' é desconhecida"
 
-#: src/main.c:507
+#: src/main.c:506
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "O formato '%s' é ambíguo"
 
-#: src/main.c:512
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "O formato '%s' é desconhecido"
 
-#: src/main.c:573
+#: src/main.c:572
 #, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Escrito por François Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:576
+#: src/main.c:575
 #, fuzzy
 msgid ""
 "\n"
@@ -315,7 +314,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:580
+#: src/main.c:579
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -325,52 +324,52 @@ msgstr ""
 "NÃO HÁ GARANTIA; nem mesmo de COMERCIABILIDADE ou de UTILIDADE PARA UM "
 "PROPÓSITO PARTICULAR.\n"
 
-#: src/main.c:622
+#: src/main.c:621
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "O símbolo '%s' é desconhecido"
 
-#: src/main.c:662 src/main.c:676
+#: src/main.c:661 src/main.c:675
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "O conjunto de caracteres '%s' é desconhecido ou ambíguo"
 
-#: src/main.c:707
+#: src/main.c:706
 #, c-format
 msgid "Required argument is missing"
 msgstr "Argumento requerido em falta"
 
-#: src/main.c:750
+#: src/main.c:749
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "A sintaxe está desaprovada, por favor prefira '%s'"
 
-#: src/main.c:756
+#: src/main.c:755
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "O pedido '%s' é erróneo"
 
-#: src/main.c:834
+#: src/main.c:833
 #, c-format
 msgid "Recoding %s..."
 msgstr "Convertendo %s..."
 
-#: src/main.c:844
+#: src/main.c:843
 #, c-format
 msgid " done\n"
 msgstr " terminado\n"
 
-#: src/main.c:877
+#: src/main.c:876
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " falhou: %s no passo '%s..%s'\n"
 
-#: src/main.c:884
+#: src/main.c:883
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s falhou: %s no passo '%s..%s'"
 
-#: src/main.c:903
+#: src/main.c:902
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s no passo '%s..%s'"

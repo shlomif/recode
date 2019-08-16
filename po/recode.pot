@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2018-09-24 21:14+0100\n"
+"POT-Creation-Date: 2019-08-16 13:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,34 +62,33 @@ msgid ""
 "GNU General Public License for more details.\n"
 "\n"
 "You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software Foundation,\n"
-"Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+"along with this program; if not, see <https://www.gnu.org/licenses/>.\n"
 msgstr ""
 
-#: src/main.c:198
+#: src/main.c:197
 #, c-format
 msgid "Try `%s %s' for more information.\n"
 msgstr ""
 
-#: src/main.c:202
+#: src/main.c:201
 msgid "Recode converts files between various character sets and surfaces.\n"
 msgstr ""
 
-#: src/main.c:206
+#: src/main.c:205
 #, c-format
 msgid ""
 "\n"
 "Usage: %s [OPTION]... [ [CHARSET] | REQUEST [FILE]... ]\n"
 msgstr ""
 
-#: src/main.c:209
+#: src/main.c:208
 msgid ""
 "\n"
 "If a long option shows an argument as mandatory, then it is mandatory\n"
 "for the equivalent short option also.  Similarly for optional arguments.\n"
 msgstr ""
 
-#: src/main.c:215
+#: src/main.c:214
 msgid ""
 "\n"
 "Listings:\n"
@@ -103,7 +102,7 @@ msgid ""
 "      --version              output version information and exit\n"
 msgstr ""
 
-#: src/main.c:227
+#: src/main.c:226
 msgid ""
 "\n"
 "Operation modes:\n"
@@ -114,7 +113,7 @@ msgid ""
 "  -i, -p, --sequence=STRATEGY  ignored for backwards compatibility\n"
 msgstr ""
 
-#: src/main.c:237
+#: src/main.c:236
 msgid ""
 "\n"
 "Fine tuning:\n"
@@ -128,21 +127,21 @@ msgid ""
 "  -x, --ignore=CHARSET   ignore CHARSET while choosing a recoding path\n"
 msgstr ""
 
-#: src/main.c:248
+#: src/main.c:247
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
 "FORMAT is `decimal', `octal', `hexadecimal' or `full' (or one of `dohf').\n"
 msgstr ""
 
-#: src/main.c:254
+#: src/main.c:253
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
 "dependent encoding, determined by LC_ALL, LC_CTYPE, LANG.\n"
 msgstr ""
 
-#: src/main.c:259
+#: src/main.c:258
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -150,12 +149,12 @@ msgid ""
 "and BEFs and AFTs being codes are given as decimal numbers.\n"
 msgstr ""
 
-#: src/main.c:264
+#: src/main.c:263
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 
-#: src/main.c:267
+#: src/main.c:266
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -168,111 +167,111 @@ msgid ""
 "with an empty surface name means no surfaces at all.  See the manual.\n"
 msgstr ""
 
-#: src/main.c:275
+#: src/main.c:274
 msgid ""
 "\n"
 "Each FILE is recoded over itself, destroying the original.  If no\n"
 "FILE is specified, then act as a filter and recode stdin to stdout.\n"
 msgstr ""
 
-#: src/main.c:280
+#: src/main.c:279
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
 
-#: src/main.c:378
+#: src/main.c:377
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr ""
 
-#: src/main.c:383
+#: src/main.c:382
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr ""
 
-#: src/main.c:407 src/main.c:467
+#: src/main.c:406 src/main.c:466
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr ""
 
-#: src/main.c:412 src/main.c:472
+#: src/main.c:411 src/main.c:471
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr ""
 
-#: src/main.c:507
+#: src/main.c:506
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr ""
 
-#: src/main.c:512
+#: src/main.c:511
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr ""
 
-#: src/main.c:573
+#: src/main.c:572
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr ""
 
-#: src/main.c:576
+#: src/main.c:575
 msgid ""
 "\n"
 "Copyright (C) 1990-2018 Free Software Foundation, Inc.\n"
 msgstr ""
 
-#: src/main.c:580
+#: src/main.c:579
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
 msgstr ""
 
-#: src/main.c:622
+#: src/main.c:621
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr ""
 
-#: src/main.c:662 src/main.c:676
+#: src/main.c:661 src/main.c:675
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr ""
 
-#: src/main.c:707
+#: src/main.c:706
 #, c-format
 msgid "Required argument is missing"
 msgstr ""
 
-#: src/main.c:750
+#: src/main.c:749
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr ""
 
-#: src/main.c:756
+#: src/main.c:755
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr ""
 
-#: src/main.c:834
+#: src/main.c:833
 #, c-format
 msgid "Recoding %s..."
 msgstr ""
 
-#: src/main.c:844
+#: src/main.c:843
 #, c-format
 msgid " done\n"
 msgstr ""
 
-#: src/main.c:877
+#: src/main.c:876
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr ""
 
-#: src/main.c:884
+#: src/main.c:883
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr ""
 
-#: src/main.c:903
+#: src/main.c:902
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr ""
