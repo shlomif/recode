@@ -13,8 +13,7 @@
 ;; de GNU pour plus de détails.
 
 ;; Vous devriez avoir reçu copie de la Licence Publique Générale de GNU
-;; avec ce programme; sinon, écrire à la Free Software Foundation, Inc.,
-;; 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+;; avec ce programme; sinon, voir <https://www.gnu.org/licenses/>.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Les outils sont regroupés par thème fonctionnel, un par page.  ;;;

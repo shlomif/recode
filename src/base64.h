@@ -14,8 +14,8 @@
 
    You should have received a copy of the GNU Lesser General Public
    License along with the Recode Library; see the file `COPYING.LIB'.
-   If not, write to the Free Software Foundation, Inc., 59 Temple Place -
-   Suite 330, Boston, MA 02111-1307, USA.  */
+   If not, see <https://www.gnu.org/licenses/>.
+*/
 
 /* Maximum number of characters per MIME line.  */
 #define MIME_LINE_LENGTH 76
