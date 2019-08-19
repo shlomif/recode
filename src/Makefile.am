@@ -54,7 +54,7 @@ recode_LDADD = librecode.la
 librecode_la_SOURCES = charname.c combine.c fr-charname.c iconv.c \
 names.c outer.c recode.c request.c strip-pool.c task.c $(ALL_STEPS) \
 $(include_HEADERS) $(noinst_HEADERS) $(H_STEPS)
-librecode_la_LDFLAGS = -version-info 0:0:0
+librecode_la_LDFLAGS = -version-info $(VERSION_INFO)
 librecode_la_LIBADD = ../lib/libgnu.la libmerged.la
 
 libmerged_la_SOURCES = merged.c

@@ -10,6 +10,29 @@ AM_INIT_AUTOMAKE
 AC_CONFIG_MACRO_DIR(m4)
 AC_CANONICAL_HOST
 
+dnl Release number rules:
+dnl This is derived from "Versioning" chapter of info libtool documentation.
+dnl Format is MAJOR:MINOR:MICRO
+dnl     4a) Increment major when removing or changing interfaces.
+dnl     4a) 5) Increment minor when adding interfaces.
+dnl     6) Set minor to zero when removing or changing interfaces.
+dnl     3) Increment micro when interfaces not changed at all,
+dnl               only bug fixes or internal changes made.
+dnl     4b) Set micro to zero when adding, removing or changing interfaces.
+
+dnl First extract pieces from the version number string
+RECODE_MAJOR_VERSION=`echo $VERSION | awk -F. '{print $1}'`
+RECODE_MINOR_VERSION=`echo $VERSION | awk -F. '{print $2}'`
+RECODE_MICRO_VERSION=`echo $VERSION | awk -F. '{print $3}'`
+
+dnl Version info for libraries = CURRENT:REVISION:AGE
+RECODE_SONUM=$RECODE_MAJOR_VERSION
+AGE=$RECODE_MINOR_VERSION
+REVISION=$RECODE_MICRO_VERSION
+CURRENT=`expr $RECODE_SONUM + $AGE`
+VERSION_INFO=$CURRENT:$REVISION:$AGE
+AC_SUBST(VERSION_INFO)
+
 AC_PROG_CC_C99
 gl_EARLY
 LT_INIT
