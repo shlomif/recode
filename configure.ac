@@ -37,13 +37,15 @@ AC_PROG_CC_C99
 gl_EARLY
 LT_INIT
 AC_PROG_LEX
-AX_PYTHON_PATH
-AX_PYTHON_VERSION_ENSURE([2.2])
+AM_PATH_PYTHON([2.2])
 gl_INIT
 
 dnl help2man
 dnl Set a value even if not found, so that an invocation via build-aux/missing works
 AC_PATH_PROG([HELP2MAN], [help2man], [help2man])
+
+dnl Cython
+AC_CHECK_PROG([CYTHON], [cython], [cython])
 
 AC_SUBST([objdir])
 LT_SYS_MODULE_EXT

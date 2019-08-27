@@ -27,7 +27,6 @@ KELD = ../keld
 CHARSETS_DEF = $(KELD)/charsets.def
 MNEMONICS_DS = $(KELD)/iso10646.def $(KELD)/other.def $(KELD)/control.def
 
-PYTHON = python
 TABLES_PY = $(PYTHON) $(top_srcdir)/tables.py
 
 $(srcdir)/recode.info: rfc1345.texi
