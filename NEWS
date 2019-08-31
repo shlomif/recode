@@ -7,6 +7,15 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-2019 Free Software Foundation, Inc.
 
+Version 3.7.3
+=============
+
+:Author: Reuben Thomas, 2019-08.
+
++ No code changes to recode itself; this release features a properly
+versioned shared library.
+
+
 Version 3.7.2
 =============
 
