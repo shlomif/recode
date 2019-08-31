@@ -1,6 +1,6 @@
 language: c
 
-dist: trusty
+dist: xenial
 sudo: required
 
 addons:
@@ -12,6 +12,7 @@ addons:
       - cython
       - flex
       - help2man
+      - autopoint
       - texinfo
       - valgrind
       - g++-5
@@ -45,14 +46,10 @@ matrix:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install cython flex help2man texinfo ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/cython/bin:/usr/local/opt/flex/bin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$PATH" ; fi
-
-# Need gettext 0.19, not in trusty; xenial doesn’t seem to work well yet on Travis
-install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget ftp://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.gz ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then tar zxf gettext-0.19.8.1.tar.gz ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd gettext-0.19.8.1 && ./configure --quiet --enable-silent-rules && sudo make install && cd .. ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew unlink python ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python@2 flex help2man texinfo ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip install cython ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/flex/bin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$PATH" ; fi
 
 script:
   - ./bootstrap
