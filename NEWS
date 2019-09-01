@@ -7,6 +7,16 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-2019 Free Software Foundation, Inc.
 
+Version 3.7.4
+=============
+
+:Author: Reuben Thomas, 2019-09.
+
++ Fixes to file handling in enchant program.
+
++ Fix tests on Windows.
+
+
 Version 3.7.3
 =============
 
