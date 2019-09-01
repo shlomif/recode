@@ -816,9 +816,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 	      if (asprintf (&output_name, "%s/recode-XXXXXX.tmp", output_dir) == -1)
 		error (EXIT_FAILURE, errno, "asprintf");
 	      int fd = mkstemps (output_name, 4);
-	      xset_binary_mode (fd, O_BINARY);
 	      if (fd == -1)
 		error (EXIT_FAILURE, errno, "mkstemps (%s)", output_name);
+	      xset_binary_mode (fd, O_BINARY);
 
 	      /* Recode the file.  */
 
@@ -843,6 +843,11 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"),
 		      fprintf (stderr, _(" done\n"));
 		      fflush (stderr);
 		    }
+
+                  /* Close the file. */
+
+                  if (fclose(task->output.file) == EOF)
+                    error (EXIT_FAILURE, errno, "close ()");
 
 		  /* Move the new file over the original.  */
 
