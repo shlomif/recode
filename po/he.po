@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Free recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2001-05-27 17:06+0300\n"
 "Last-Translator: Eli Zaretskii <eliz@gnu.org>\n"
 "Language-Team: Hebrew <eliz@gnu.org>\n"
@@ -340,17 +340,17 @@ msgstr "`%s' תרמתה"
 msgid " done\n"
 msgstr " החלצהב המייתסה\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr "%s :לשכנ `%s..%s' הרמתה בלש\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s ץבוק רובע %s בקע לשכנ `%s..%s' הרמתה בלש"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s :`%s..%s' הרמתה בלשב"

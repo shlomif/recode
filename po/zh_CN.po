@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2005-12-03 21:43+0800\n"
 "Last-Translator: Meng Jie <zuxyhere@eastday.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -336,17 +336,17 @@ msgstr "重新编码 %s..."
 msgid " done\n"
 msgstr " 完成\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " 失败：%s 在步骤‘%s..%s’中\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s 失败：%s 在步骤‘%s..%s’中"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s 在步骤‘%s..%s’中"

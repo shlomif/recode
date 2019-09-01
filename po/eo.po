@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.7.1\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2019-07-15 14:49-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -334,17 +334,17 @@ msgstr "Rekodas '%s' ..."
 msgid " done\n"
 msgstr " preta\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " malsukcesis: %s en paŝo '%s..%s'\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s malsukcesis: %s en paŝo '%s..%s'"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s en paŝo '%s..%s'"

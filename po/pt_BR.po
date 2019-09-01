@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2019-01-21 12:07-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldpbr-translation@lists.sourceforge."
@@ -366,17 +366,17 @@ msgstr "Recodificando %s..."
 msgid " done\n"
 msgstr " feito\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " falhou: %s no passo `%s..%s'\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s falhou: %s no passo `%s..%s'"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s no passo %s..%s"

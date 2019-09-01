@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Free recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2002-09-17 00:28+0200\n"
 "Last-Translator: Santiago Vila Doncel <sanvila@unex.es>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -372,17 +372,17 @@ msgstr "Convirtiendo %s..."
 msgid " done\n"
 msgstr " hecho\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " falló: %s en el paso %s..%s\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s falló: %s en el paso %s..%s"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s en el paso %s..%s"

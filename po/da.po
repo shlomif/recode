@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2001-09-12 11:05+02:00\n"
 "Last-Translator: Niels Kristian Bech Jensen <nkbj@image.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -354,17 +354,17 @@ msgstr "Omkoder %s..."
 msgid " done\n"
 msgstr " færdig\n"
 
-#: src/main.c:876
+#: src/main.c:881
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " fejlede: %s i trin '%s..%s'\n"
 
-#: src/main.c:883
+#: src/main.c:888
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s fejlede: %s i trin '%s..%s'"
 
-#: src/main.c:902
+#: src/main.c:907
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s i trin '%s..%s'"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU recode 3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-08-16 13:59+0100\n"
+"POT-Creation-Date: 2019-09-02 00:42+0100\n"
 "PO-Revision-Date: 2008-02-13 01:30+0000\n"
 "Last-Translator: Simos Xenitellis <simos.lists@googlemail.com>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -391,19 +391,19 @@ msgid " done\n"
 msgstr " έγινε\n"
 
 # src/main.c:1142
-#: src/main.c:876
+#: src/main.c:881
 #, fuzzy, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " απέτυχε: %s σε %s..%s\n"
 
 # src/main.c:1149
-#: src/main.c:883
+#: src/main.c:888
 #, fuzzy, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s απέτυχε: %s σε %s..%s"
 
 # src/main.c:1172
-#: src/main.c:902
+#: src/main.c:907
 #, fuzzy, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s σε %s..%s"
