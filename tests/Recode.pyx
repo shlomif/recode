@@ -268,7 +268,7 @@ cdef extern from "common.h":
 
     struct strip_data:
         recode_ucs2 *pool
-        short offset[256 / STRIP_SIZE_]
+        short offset[256 // STRIP_SIZE_]
 
     struct ucs2_to_byte:
         recode_ucs2 code

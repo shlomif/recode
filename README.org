@@ -38,9 +38,9 @@ Consider documentation errors as bugs, and report them as such.  If
 you develop anything pertaining to Recode or have suggestions, please
 share them on GitHub.
 
-The [[https://github.com/pinard/Recode][Git repository]] for Recode gives access, through the magic of Git
-and GitHub, to all distribution releases, would they be actual or
-past, pretest or official, as well as individual files.
+The [[https://github.com/pinard/Recode][Git repository]] for Recode gives access, through the magic of Git and
+GitHub, to all distribution releases, be they actual or past, pretest or
+official, as well as individual files.
 
 * Installation
 ** In a hurry?
@@ -49,17 +49,15 @@ See =INSTALL=.
 More fine-grained instructions follow.
 
 ** Prerequisites
-Simple installation of Recode requires the usual tools and facilities
-as those needed for most GNU packages.  If not already bundled with
-your system, you also need to pre-install [[http://www.python.org][Python]], version 2.2 or
-later.
+Simple installation of Recode requires the usual tools and facilities as
+those needed for most GNU packages.  If not already bundled with your
+system, you also need to install [[https://www.python.org][Python]], version 3.5 or later.
 
-It is also convenient to have some *iconv* library already present on
-your system, this much extends Recode capabilities, especially in the
-area of Asiatic character sets.  GNU *libc*, as found on Linux systems
-and a few others, already has such an *iconv* library.  Otherwise, you
-might consider pre-installing the [[http://www.gnu.org/software/libiconv/][portable libiconv]], written by Bruno
-Haible.
+It is also convenient to have some *iconv* library already present on your
+system, this much extends Recode capabilities, especially in the area of
+Asiatic character sets.  GNU *libc*, as found on Linux systems and a few
+others, already has such an *iconv* library.  Otherwise, you might consider
+installing the [[https://www.gnu.org/software/libiconv/][portable libiconv]], written by Bruno Haible.
 
 ** Getting a release
 Source files and various distributions (either latest, prestest, or

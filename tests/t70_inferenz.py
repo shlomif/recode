@@ -84,8 +84,9 @@ loese(Grad, Vern, Kern, Sich, Schr, Prot) :-
 '''
 
 def test_1():
+    import sys
     common.request('u8..l1')
     output = common.recode_iconv_output(input)
-    expected = ''.join(input.splitlines(True)[-6:])
-    output = ''.join(output.splitlines(True)[-6:])
+    expected = b''.join(input.encode('latin-1').splitlines(True)[-6:])
+    output = b''.join(output.splitlines(True)[-6:])
     common.assert_or_diff(output, expected)

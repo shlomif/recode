@@ -8,8 +8,8 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages: &default_deps
-      - python-dbg
-      - cython
+      - python3-dbg
+      - cython3
       - flex
       - help2man
       - autopoint
@@ -26,16 +26,21 @@ matrix:
     - os: linux
       env:
         - COMPILER=gcc-5
-        - PYTHON=/usr/bin/python-dbg
-        - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python-dbg"
+        - PYTHON=/usr/bin/python3-dbg
+        - CYTHON=/usr/bin/cython3
+        - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python3-dbg CYTHON=/usr/bin/cython3"
     - os: osx
       osx_image: xcode9.2
       env:
         - LDFLAGS="-L/usr/local/opt/flex/lib -L/usr/local/opt/texinfo/lib"
         - CPPFLAGS="-I/usr/local/opt/flex/include"
+        - PYTHON=/usr/local/bin/python3
     - compiler: gcc
       env:
         - COMPILER=gcc-6
+        - PYTHON=/usr/bin/python3-dbg
+        - CYTHON=/usr/bin/cython3
+        - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python3-dbg CYTHON=/usr/bin/cython3"
       addons:
         apt:
           sources:
@@ -46,12 +51,12 @@ matrix:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew unlink python ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install python@2 flex help2man texinfo ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip install cython ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade python ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install flex help2man texinfo ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip3 install cython ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/flex/bin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$PATH" ; fi
 
 script:
   - ./bootstrap
-  - ./configure --enable-silent-rules CC=$COMPILER
+  - ./configure --enable-silent-rules CC=$COMPILER $DISTCHECK_CONFIGURE_FLAGS
   - make && make distcheck

@@ -17,7 +17,7 @@ m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python
 
 * Testing with Valgrind
 
-Currently, Valgrind does not play nice with CPython, even with a fairly extensive suppressions file. It works on Ubuntu with the debug build of Python, from the package ~python-dbg~. Having installed this, configure with the option ~PYTHON=/usr/bin/python-dbg~ (the full path is required).
+Currently, Valgrind does not play nice with CPython, even with a fairly extensive suppressions file. It works on Ubuntu with the debug build of Python, from the package ~python3-dbg~. Having installed this, configure with the option ~PYTHON=/usr/bin/python3-dbg~ (the full path is required).
 
 To ensure that Valgrind is used for testing releases too, the above setting can be added to ~DISTCHECK_CONFIGURE_FLAGS~.
 

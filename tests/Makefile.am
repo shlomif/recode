@@ -30,6 +30,9 @@ EXTRA_DIST = Recode.c Recode.pyx pytest common.py valgrind-python.supp $(SUITE)
 CLEANFILES = Recode@pyextext@ Recode_d@pyextext@ Recode.body.c
 DISTCLEANFILES = Recode.c
 
+clean-local:
+	rm -f *@pyextext@
+
 check-local: Recode@pyextext@
 	if test -n "$(VALGRIND)"; then export VALGRIND='$(VALGRIND) --suppressions=$(srcdir)/valgrind-python.supp'; fi; \
 	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
@@ -44,6 +47,6 @@ Recode@pyextext@: Recode.c setup.py
 
 Recode.c: Recode.pyx Makefile
 	rm -f Recode.c && \
-	$(CYTHON) -o Recode.body.c $(srcdir)/Recode.pyx && \
+	$(CYTHON) -3 -o Recode.body.c $(srcdir)/Recode.pyx && \
 	echo '#include "config.h"' > Recode.c && \
 	cat Recode.body.c >> Recode.c

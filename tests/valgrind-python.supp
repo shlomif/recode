@@ -57,9 +57,175 @@
 {
    Suppress debugging leaks
    Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:PyMem_Malloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:_PyMem_DebugAlloc
+   fun:_PyMem_DebugMalloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:PyObject_Malloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:PyObject_Realloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:_PyMem_DebugRawAlloc
+   fun:_PyMem_DebugRawMalloc
+   fun:PyMem_RawMalloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
    fun:realloc
    fun:PyObject_Realloc
    fun:_PyObject_DebugReallocApi
+}
+
+{
+   ADDRESS_IN_RANGE/Invalid read of size 4
+   Memcheck:Addr4
+   fun:address_in_range
+   fun:_PyObject_Realloc
+   fun:_PyMem_DebugRawRealloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_Realloc
+}
+
+{
+   ADDRESS_IN_RANGE/Use of uninitialised value of size 8
+   Memcheck:Value8
+   fun:address_in_range
+   fun:_PyObject_Realloc
+   fun:_PyMem_DebugRawRealloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_Realloc
+}
+
+{
+   ADDRESS_IN_RANGE/Invalid read of size 4
+   Memcheck:Addr4
+   fun:_PyObject_Realloc
+   fun:_PyMem_DebugRealloc
+   fun:PyObject_Realloc
+}
+
+{
+   ADDRESS_IN_RANGE/Conditional jump or move
+   Memcheck:Cond
+   fun:address_in_range
+   fun:_PyObject_Realloc
+   fun:_PyMem_DebugRawRealloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_Realloc
+}
+
+{
+   ADDRESS_IN_RANGE/Conditional jump or move
+   Memcheck:Cond
+   fun:address_in_range
+   fun:_PyObject_Free
+   fun:_PyMem_DebugRawFree
+   fun:_PyMem_DebugFree
+   fun:PyMem_Free
+}
+
+{
+   ADDRESS_IN_RANGE/Conditional jump or move
+   Memcheck:Value8
+   fun:address_in_range
+   fun:_PyObject_Free
+   fun:_PyMem_DebugRawFree
+   fun:_PyMem_DebugFree
+   fun:PyObject_Free
+}
+
+{
+   ADDRESS_IN_RANGE/Conditional jump or move
+   Memcheck:Cond
+   fun:address_in_range
+   fun:_PyObject_Free
+   fun:_PyMem_DebugRawFree
+   fun:_PyMem_DebugFree
+   fun:PyObject_Free
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:realloc
+   fun:_PyMem_RawRealloc
+   fun:PyObject_Realloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:realloc
+   fun:_PyMem_RawRealloc
+   fun:_PyMem_DebugRawRealloc
+   fun:PyMem_RawRealloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:realloc
+   fun:_PyMem_RawRealloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_Realloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:realloc
+   fun:_PyMem_RawRealloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_RawRealloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:malloc
+   fun:_PyMem_RawMalloc
+   fun:_PyMem_DebugAlloc
+   fun:_PyMem_DebugRealloc
+   fun:PyMem_Realloc
+}
+
+{
+   Suppress debugging leaks
+   Memcheck:Leak
+   fun:calloc
+   fun:_PyMem_RawCalloc
+   fun:_PyMem_DebugRawAlloc
+   fun:_PyMem_DebugRawCalloc
+   fun:PyMem_RawCalloc
 }
 
 {
@@ -157,12 +323,30 @@
 
 {
    ADDRESS_IN_RANGE/Invalid read of size 4
+   Memcheck:Addr4
+   fun:address_in_range
+   fun:_PyObject_Free
+   fun:_PyMem_DebugRawFree
+   fun:_PyMem_DebugFree
+   fun:PyObject_Free
+}
+
+{
+   ADDRESS_IN_RANGE/Invalid read of size 4
+   Memcheck:Addr4
+   fun:_PyObject_Free
+   fun:_PyMem_DebugFree
+   fun:PyObject_Free
+}
+
+{
+   ADDRESS_IN_RANGE/Invalid read of size 4
    Memcheck:Value4
    fun:PyObject_Free
 }
 
 {
-   ADDRESS_IN_RANGE/Use of uninitialised value of size 8
+   ADDRESS_IN_RANGE/Invalid read of size 8
    Memcheck:Addr8
    fun:PyObject_Free
 }
@@ -192,7 +376,7 @@
 }
 
 {
-   ADDRESS_IN_RANGE/Use of uninitialised value of size 8
+   ADDRESS_IN_RANGE/Invalid read of size 8
    Memcheck:Addr8
    fun:PyObject_Realloc*
 }
@@ -482,6 +666,22 @@
 }
 
 {
+   internal_utf8_loop_false_positive
+   Memcheck:Cond
+   fun:internal_utf8_loop
+}
+
+{
+   encode_current_locale
+   Memcheck:Cond
+   fun:__wcsnlen_*
+   fun:wcsrtombs
+   fun:wcstombs
+   fun:wcstombs
+   fun:encode_current_locale
+}
+
+{
    wcscmp_false_positive
    Memcheck:Addr8
    fun:wcscmp
@@ -502,4 +702,3 @@
    Memcheck:Addr4
    fun:PyUnicode_FSConverter
 }
-

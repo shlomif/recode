@@ -24,8 +24,8 @@ run = Run()
 def external(flag):
     run.external = flag
 
-def request(text):
-    run.request = text
+def request(text, encoding='utf-8'):
+    run.request = bytes(text, encoding)
 
 # Functions only meant to be imported into real testing modules, where
 # pytest is meant to find and use them.
@@ -66,34 +66,46 @@ def external_output(command):
         output = e.output
     return output
 
-def recode_output(input):
+def recode_output(input, encoding='utf-8'):
+    if type(input) != bytes:
+        input = bytes(input, encoding)
     if run.external:
-        file(run.work, 'wb').write(input)
+        open(run.work, 'wb').write(input)
         return external_output('$R %s < %s' % (run.request, run.work))
     if outer is None:
         py.test.skip()
     return outer.recode(run.request, input)
 
-def recode_iconv_output(input):
+def recode_iconv_output(input, encoding='utf-8'):
+    if type(input) != bytes:
+        input = bytes(input, encoding)
     if run.external or outer_iconv is None:
         py.test.skip()
     return outer_iconv.recode(run.request, input)
 
-def recode_back_output(input):
-    before, after = run.request.split('..')
+def recode_back_output(input, encoding='utf-8'):
+    if type(input) != bytes:
+        input = bytes(input, encoding)
+    before, after = run.request.split(b'..')
     if run.external:
-        file(run.work, 'wb').write(input)
-        external_output('$R %s %s' % (run.request, run.work))
-        return external_output('$R %s..%s < %s' % (after, before, run.work))
+        open(run.work, 'wb').write(input)
+        external_output(b'$R %s %s' % (run.request, run.work))
+        return external_output(b'$R %s..%s < %s' % (after, before, run.work))
     if outer is None:
         py.test.skip()
     temp = outer.recode(run.request, input)
-    return outer.recode('%s..%s' % (after, before), temp)
+    return outer.recode(b'%s..%s' % (after, before), temp)
 
-def validate(input, expected):
+def validate(input, expected, encoding='utf-8'):
     output = recode_output(input)
+    if type(input) != bytes:
+        output = output.decode(encoding)
+    import sys
+    print(type(input), type(output), type(expected))
     assert_or_diff(output, expected)
 
-def validate_back(input):
+def validate_back(input, encoding='utf-8'):
     output = recode_back_output(input)
+    if type(input) != bytes:
+        output = output.decode(encoding)
     assert_or_diff(output, input)

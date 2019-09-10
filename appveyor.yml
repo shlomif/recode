@@ -4,7 +4,6 @@ clone_folder: c:\projects\recode
 environment:
   global:
     VERBOSE: 1 # Get test logs in output
-    CONFIGURE_FLAGS: PYTHON=python2 CYTHON=cython2
   matrix:
     # - MSYSTEM: MSYS (no cython available)
     - MSYSTEM: MINGW64

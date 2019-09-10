@@ -32,7 +32,7 @@ from common import py, Recode
 from common import setup_module, teardown_module
 
 class Test:
-    avoid_as_before = 'count-characters', 'dump-with-names', 'flat'
+    avoid_as_before = b'count-characters', b'dump-with-names', b'flat'
 
     def test_1(self):
         if Recode is None:
@@ -57,11 +57,11 @@ class Test:
         # consider as a single test, one "before" against all "after"s.
         # However, without a Recode module, we do not know how many
         # "before"s exist, and the skip count is then rather small.
-        print before
+        print(before)
         for after in self.charsets:
             if after is not before:
                 request = Recode.Request(self.outer)
-                request.scan('%s..%s' % (before, after))
+                request.scan(b'%s..%s' % (before, after))
 
 def main(*arguments):
     recode_options = []
@@ -97,7 +97,7 @@ class Report:
                 line = readline()
                 if line:
                     if len(line[:-lensep].split(':', 1)) != 2:
-                        print '*', line,
+                        print('*', line, end='')
                     type, shrunk_to = line[:-lensep].split(':', 1)
                     if type == 'Shrunk to':
                         steps = self.get_steps(shrunk_to)
