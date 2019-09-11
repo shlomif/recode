@@ -88,7 +88,7 @@ transform_utf16_java (RECODE_SUBTASK subtask)
       put_byte (value, subtask);
     else
       {
-        char buffer[7];
+        char buffer[11];
         char *cursor;
 
         sprintf (buffer, "\\u%04x", value);

@@ -254,7 +254,7 @@ produce_count (RECODE_SUBTASK subtask)
 	      delayed--;
 	    }
 
-	sprintf (buffer, "%*u  %.4X", (int)count_width, (*cursor)->count, character);
+	snprintf (buffer, sizeof(buffer), "%*u  %.4X", (int)count_width, (*cursor)->count, character);
         put_string (buffer, subtask);
 	if (mnemonic)
 	  {
