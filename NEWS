@@ -7,6 +7,14 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-2019 Free Software Foundation, Inc.
 
+Version 3.7.5
+=============
+
+:Author: Reuben Thomas, 2019-09.
+
++ Port tests to Python 3.
+
+
 Version 3.7.4
 =============
 
