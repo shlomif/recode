@@ -33,12 +33,13 @@ DISTCLEANFILES = Recode.c
 clean-local:
 	rm -f *@pyextext@
 
+# TESTS_ENVIRONMENT_EXTRA can be set at configure time
 check-local: Recode@pyextext@
-	if test -n "$(VALGRIND)"; then export VALGRIND='$(VALGRIND) --suppressions=$(srcdir)/valgrind-python.supp'; fi; \
 	export LD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
 	export DYLD_LIBRARY_PATH=$(top_builddir)/src/@objdir@; \
+	export LSAN_OPTIONS=suppressions=$(srcdir)/asan-suppressions.txt; \
 	RECODE=$(top_builddir)/src/recode$(EXEEXT) PYTHONPATH=.:$(srcdir) \
-	  $$VALGRIND $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
+	  $(TESTS_ENVIRONMENT_EXTRA) $(PYTHON) $(srcdir)/pytest $(LIMIT) $(srcdir)/t*.py
 
 Recode@pyextext@: Recode.c setup.py
 	rm -f *@pyextext@

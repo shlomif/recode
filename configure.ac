@@ -101,6 +101,9 @@ else
 fi
 AC_SUBST([ISYSTEM])
 
+# Extra settings for running tests, e.g. LD_PRELOAD for ASAN
+AC_SUBST([TESTS_ENVIRONMENT_EXTRA])
+
 AC_CONFIG_HEADERS([config.h])
 AC_HEADER_STDC
 AM_ICONV

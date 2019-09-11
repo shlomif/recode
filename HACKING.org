@@ -15,12 +15,6 @@ m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python
   make install
 #+END_SRC
 
-* Testing with Valgrind
-
-Currently, Valgrind does not play nice with CPython, even with a fairly extensive suppressions file. It works on Ubuntu with the debug build of Python, from the package ~python3-dbg~. Having installed this, configure with the option ~PYTHON=/usr/bin/python3-dbg~ (the full path is required).
-
-To ensure that Valgrind is used for testing releases too, the above setting can be added to ~DISTCHECK_CONFIGURE_FLAGS~.
-
 * Making a release
 
 To make a release, you'll need [[https://github.com/rrthomas/woger][woger]] and [[https://github.com/aktau/github-release][github-release]], suitably configured. Having tested and pushed all the changes, update the version number in =configure.ac= and write the =NEWS= entry and push those too.
