@@ -50,9 +50,8 @@ AC_CHECK_PROG([CYTHON], [cython], [cython])
 AC_SUBST([objdir])
 LT_SYS_MODULE_EXT
 case $host_os in
-  *mingw* )  pyextext=.pyd;;
-  *cygwin*)  pyextext=.dll;;
-  * )        pyextext=.so;;
+  *mingw*|*cygwin* )  pyextext=.dll;;
+  * )                 pyextext=.so;;
 esac
 AC_SUBST([pyextext], [$pyextext])
 

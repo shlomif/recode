@@ -26,8 +26,8 @@ t30_dumps.py t30_quoted.py t40_african.py t40_combine.py t40_testdump.py \
 t40_utf7.py t40_utf8.py t50_methods.py t90_bigauto.py
 
 CYTHON = @CYTHON@
-EXTRA_DIST = Recode.c Recode.pyx pytest common.py valgrind-python.supp $(SUITE)
-CLEANFILES = Recode@pyextext@ Recode_d@pyextext@ Recode.body.c
+EXTRA_DIST = Recode.c Recode.pyx pytest common.py $(SUITE)
+CLEANFILES = Recode.body.c
 DISTCLEANFILES = Recode.c
 
 clean-local:
