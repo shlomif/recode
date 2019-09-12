@@ -604,7 +604,7 @@ cdef class Request:
     def pair_sequence(self):
         list = []
         cdef recode_step step
-        cdef unsigned counter
+        cdef short counter
         for counter from 0 <= counter < self.request.sequence_length:
             step = self.request.sequence_array[counter]
             list.append((step.before.name, step.after.name))
