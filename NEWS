@@ -7,6 +7,14 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-2019 Free Software Foundation, Inc.
 
+Version 3.7.6
+=============
+
+:Author: Reuben Thomas, 2019-09.
+
++ Improvements to the build system.
+
+
 Version 3.7.5
 =============
 
