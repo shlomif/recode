@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: recode-3.6\n"
 "Report-Msgid-Bugs-To: rrt@sc3d.org\n"
-"POT-Creation-Date: 2019-09-13 13:28+0100\n"
+"POT-Creation-Date: 2019-12-12 21:02+0000\n"
 "PO-Revision-Date: 2003-05-04 08:45+0300\n"
 "Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
@@ -172,8 +172,8 @@ msgid ""
 "Fine tuning:\n"
 "  -s, --strict           use strict mappings; discard untranslatable "
 "characters\n"
-"  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/"
-"BibTeX\n"
+"  -d, --diacritics       convert only diacritics and special characters for\n"
+"                         HTML/LaTeX/BibTeX\n"
 "  -S, --source[=LN]      limit recoding to strings and comments as for LN\n"
 "  -c, --colons           use colons instead of double quotes for diaeresis\n"
 "  -g, --graphics         approximate IBMPC rulers by ASCII graphics\n"
@@ -193,7 +193,7 @@ msgstr ""
 "  -x, --ignore=SET_CARACTERE   ignoră SET_CARACTERE în alegerea căilor de "
 "recoding\n"
 
-#: src/main.c:247
+#: src/main.c:248
 msgid ""
 "\n"
 "Option -l with no FORMAT nor CHARSET list available charsets and surfaces.\n"
@@ -204,7 +204,7 @@ msgstr ""
 "înfăţişările(surfaces) disponibile. FORMAT is `decimal', `octal',\n"
 "`hexadecimal' sau `full' (sau unul din `dohf').\n"
 
-#: src/main.c:253
+#: src/main.c:254
 msgid ""
 "Unless DEFAULT_CHARSET is set in environment, CHARSET defaults to the "
 "locale\n"
@@ -214,7 +214,7 @@ msgstr ""
 "encodarea specifică\n"
 "determinată de LC_ALL, LC_CTYPE, LANG.\n"
 
-#: src/main.c:258
+#: src/main.c:259
 msgid ""
 "With -k, possible before charsets are listed for the given after CHARSET,\n"
 "both being tabular charsets, with PAIRS of the form `BEF1:AFT1,BEF2:"
@@ -226,14 +226,14 @@ msgstr ""
 "cu PERECHI de forma `BEF1:AFT1,BEF2: AFT2,...'\n"
 "unde BEF şi AFT sunt coduri ce trebuie date ca numere zecimale.\n"
 
-#: src/main.c:263
+#: src/main.c:264
 msgid ""
 "LN is some language, it may be `c', `perl' or `po'; `c' is the default.\n"
 msgstr ""
 "LN e un limbaj de programare, poate fi `c', `perl' sau `po'; `c' este "
 "implicit.\n"
 
-#: src/main.c:266
+#: src/main.c:267
 msgid ""
 "\n"
 "REQUEST is SUBREQUEST[,SUBREQUEST]...; SUBREQUEST is ENCODING[.."
@@ -255,7 +255,7 @@ msgstr ""
 "omisă reprezintă infăţişarea sugerată pentru SET_CARACTERE; un /\n"
 "fără nume de înfăţişare înseamnă fără înfăţişări.  Vedeţi manualul.\n"
 
-#: src/main.c:274
+#: src/main.c:275
 #, fuzzy
 msgid ""
 "\n"
@@ -268,48 +268,48 @@ msgstr ""
 "pierzându-se.  Dacă nu este specificat FIŞIER, atunci se comportă ca un\n"
 "filtru şi recodează stdin în stdout.\n"
 
-#: src/main.c:279
+#: src/main.c:280
 msgid ""
 "\n"
 "Report bugs at https://github.com/rrthomas/recode\n"
 msgstr ""
 
-#: src/main.c:377
+#: src/main.c:378
 #, c-format
 msgid "Sequence `%s' is ambiguous"
 msgstr "Secvenţa `%s' este ambiguă"
 
-#: src/main.c:382
+#: src/main.c:383
 #, c-format
 msgid "Sequence `%s' is unknown"
 msgstr "Secvenţa `%s' nu este cunoscută"
 
-#: src/main.c:406 src/main.c:466
+#: src/main.c:407 src/main.c:467
 #, c-format
 msgid "Language `%s' is ambiguous"
 msgstr "Limba `%s' este ambiguă"
 
-#: src/main.c:411 src/main.c:471
+#: src/main.c:412 src/main.c:472
 #, c-format
 msgid "Language `%s' is unknown"
 msgstr "Limba `%s' nu este cunoscută"
 
-#: src/main.c:506
+#: src/main.c:507
 #, c-format
 msgid "Format `%s' is ambiguous"
 msgstr "Formatul `%s' este ambiguu"
 
-#: src/main.c:511
+#: src/main.c:512
 #, c-format
 msgid "Format `%s' is unknown"
 msgstr "Formatul `%s' nu este cunoscut"
 
-#: src/main.c:572
+#: src/main.c:573
 #, fuzzy
 msgid "Written by François Pinard <pinard@iro.umontreal.ca>.\n"
 msgstr "Scris de Franc,ois Pinard <pinard@iro.umontreal.ca>.\n"
 
-#: src/main.c:575
+#: src/main.c:576
 #, fuzzy
 msgid ""
 "\n"
@@ -318,7 +318,7 @@ msgstr ""
 "\n"
 "Copyright (C) 1990, 92, 93, 94, 96, 97, 99 Free Software Foundation, Inc.\n"
 
-#: src/main.c:579
+#: src/main.c:580
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
@@ -327,52 +327,52 @@ msgstr ""
 "NU există NICI o garanţie; nici măcar pentru VANDABILITATE sau MODIFICARE\n"
 "PENTRU UN SCOP PRIVAT.\n"
 
-#: src/main.c:621
+#: src/main.c:622
 #, c-format
 msgid "Symbol `%s' is unknown"
 msgstr "Simbolul `%s' nu este cunoscut"
 
-#: src/main.c:661 src/main.c:675
+#: src/main.c:662 src/main.c:676
 #, c-format
 msgid "Charset `%s' is unknown or ambiguous"
 msgstr "Setul de caractere `%s' nu este cunoscut sau este ambiguu"
 
-#: src/main.c:706
+#: src/main.c:707
 #, c-format
 msgid "Required argument is missing"
 msgstr "Lipseşte parametrul solicitat"
 
-#: src/main.c:749
+#: src/main.c:750
 #, c-format
 msgid "Syntax is deprecated, please prefer `%s'"
 msgstr "Sintaxă învechită(deprecated), utilizaţi `%s'"
 
-#: src/main.c:755
+#: src/main.c:756
 #, c-format
 msgid "Request `%s' is erroneous"
 msgstr "Cererea `%s' este greşită"
 
-#: src/main.c:833
+#: src/main.c:834
 #, c-format
 msgid "Recoding %s..."
 msgstr "Recodare %s..."
 
-#: src/main.c:843
+#: src/main.c:844
 #, c-format
 msgid " done\n"
 msgstr " finalizată\n"
 
-#: src/main.c:881
+#: src/main.c:882
 #, c-format
 msgid " failed: %s in step `%s..%s'\n"
 msgstr " eşuată: %s în pasul `%s..%s'\n"
 
-#: src/main.c:888
+#: src/main.c:889
 #, c-format
 msgid "%s failed: %s in step `%s..%s'"
 msgstr "%s a eşuat: %s în pasul `%s..%s'"
 
-#: src/main.c:907
+#: src/main.c:908
 #, c-format
 msgid "%s in step `%s..%s'"
 msgstr "%s în pasul `%s..%s'"
