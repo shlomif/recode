@@ -8,7 +8,7 @@ m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python
 
 #+BEGIN_SRC sh
   git clone https://github.com/rrthomas/recode.git
-  cd Recode
+  cd recode
   ./bootstrap
   ./configure
   make check
