@@ -131,7 +131,7 @@ lat1iso5426.h: iso5426lat1.l
 african.lo afrtran.lo atarist.lo bangbang.lo cdcnos.lo \
 ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo lat1iso5426.lo lat1ansel.lo \
 java.lo mule.lo strip-data.lo testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo \
-varia.lo vn.lo flat.lo html.lo lat1ltex.lo lat1txte.lo rfc1345.lo \
+varia.lo vn.lo flat.lo html.lo lat1ltex.lo lat1btex.lo lat1txte.lo rfc1345.lo \
 texinfo.lo base64.lo dump.lo endline.lo permut.lo quoted.lo \
 iconv.lo outer.lo decsteps.h inisteps.h tersteps.h: stamp-steps
 stamp-steps: $(ALL_STEPS) merged.c
