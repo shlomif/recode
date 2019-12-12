@@ -27,9 +27,8 @@ matrix:
         - PYTHON=/usr/local/bin/python3
     - compiler: gcc
       env:
-        - PYTHON=/usr/bin/python3-dbg
+        - PYTHON=/usr/bin/python3
         - CYTHON=/usr/bin/cython3
-        - CONFIGURE_ARGS=(--enable-package-suffix "CFLAGS=\"-g3 -fsanitize=address -fsanitize=undefined\"" "LDFLAGS=\"-fsanitize=address -fsanitize=undefined\"" "PY_LOG_ENV=\"LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc\"")
         - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python3 CYTHON=/usr/bin/cython3"
 
 before_install:
@@ -39,7 +38,12 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip3 install cython ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/flex/bin:/usr/local/opt/texinfo/bin:/usr/local/opt/gettext/bin:$PATH" ; fi
 
+# Test TRAVIS_OS_NAME below because we cannot put the desired extra
+# configure arguments for Linux in a variable, owing to spaces and quotes.
+# We could use an array, but we cannot set an environment variable to an
+# array.
 script:
   - ./bootstrap
-  - ./configure --enable-silent-rules "${CONFIGURE_ARGS[@]}" $DISTCHECK_CONFIGURE_FLAGS
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./configure --enable-silent-rules $DISTCHECK_CONFIGURE_FLAGS ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./configure --enable-silent-rules --enable-package-suffix CFLAGS="-g3 -fsanitize=address -fsanitize=undefined" LDFLAGS="-fsanitize=address -fsanitize=undefined" TESTS_ENVIRONMENT_EXTRA="LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc" $DISTCHECK_CONFIGURE_FLAGS ; fi
   - make && make distcheck
