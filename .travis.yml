@@ -27,9 +27,7 @@ matrix:
         - PYTHON=/usr/local/bin/python3
     - compiler: gcc
       env:
-        - PYTHON=/usr/bin/python3
         - CYTHON=/usr/bin/cython3
-        - DISTCHECK_CONFIGURE_FLAGS="PYTHON=/usr/bin/python3 CYTHON=/usr/bin/cython3"
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi
@@ -44,6 +42,6 @@ before_install:
 # array.
 script:
   - ./bootstrap
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./configure --enable-silent-rules $DISTCHECK_CONFIGURE_FLAGS ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./configure --enable-silent-rules --enable-package-suffix CFLAGS="-g3 -fsanitize=address -fsanitize=undefined" LDFLAGS="-fsanitize=address -fsanitize=undefined" TESTS_ENVIRONMENT_EXTRA="LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc" $DISTCHECK_CONFIGURE_FLAGS ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./configure --enable-silent-rules ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./configure --enable-silent-rules --enable-package-suffix CFLAGS="-g3 -fsanitize=address -fsanitize=undefined" LDFLAGS="-fsanitize=address -fsanitize=undefined" TESTS_ENVIRONMENT_EXTRA="LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc" ; fi
   - make && make distcheck
