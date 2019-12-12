@@ -133,7 +133,9 @@ ebcdic.lo ibmpc.lo iconqnx.lo lat1asci.lo lat1iso5426.lo lat1ansel.lo \
 java.lo mule.lo strip-data.lo testdump.lo ucs.lo utf16.lo utf7.lo utf8.lo \
 varia.lo vn.lo flat.lo html.lo lat1ltex.lo lat1btex.lo lat1txte.lo rfc1345.lo \
 texinfo.lo base64.lo dump.lo endline.lo permut.lo quoted.lo \
-iconv.lo outer.lo decsteps.h inisteps.h tersteps.h: stamp-steps
+iconv.lo outer.lo: decsteps.h inisteps.h tersteps.h
+
+decsteps.h inisteps.h tersteps.h: stamp-steps
 stamp-steps: $(ALL_STEPS) merged.c
 	@echo "Updating {dec,ini,ter}steps.h"
 	@(cd $(srcdir) && grep -h '^module_' $(ALL_STEPS) merged.c) \
