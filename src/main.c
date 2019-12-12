@@ -237,7 +237,8 @@ Operation modes:\n\
 \n\
 Fine tuning:\n\
   -s, --strict           use strict mappings; discard untranslatable characters\n\
-  -d, --diacritics       convert only diacritics or alike for HTML/LaTeX/BibTeX\n\
+  -d, --diacritics       convert only diacritics and special characters for\n\
+                         HTML/LaTeX/BibTeX\n\
   -S, --source[=LN]      limit recoding to strings and comments as for LN\n\
   -c, --colons           use colons instead of double quotes for diaeresis\n\
   -g, --graphics         approximate IBMPC rulers by ASCII graphics\n\
