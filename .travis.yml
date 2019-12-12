@@ -25,9 +25,7 @@ matrix:
         - LDFLAGS="-L/usr/local/opt/flex/lib -L/usr/local/opt/texinfo/lib"
         - CPPFLAGS="-I/usr/local/opt/flex/include"
         - PYTHON=/usr/local/bin/python3
-    - compiler: gcc
-      env:
-        - CYTHON=/usr/bin/cython3
+    - os: linux
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; fi

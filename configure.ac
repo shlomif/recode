@@ -45,7 +45,7 @@ dnl Set a value even if not found, so that an invocation via build-aux/missing w
 AC_PATH_PROG([HELP2MAN], [help2man], [help2man])
 
 dnl Cython
-AC_CHECK_PROG([CYTHON], [cython], [cython])
+AC_CHECK_PROGS([CYTHON], [cython3 cython], [true])
 
 AC_SUBST([objdir])
 LT_SYS_MODULE_EXT
