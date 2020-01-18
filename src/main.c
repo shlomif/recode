@@ -362,7 +362,7 @@ main (int argc, char *const *argv)
 
   while (option_char = getopt_long (argc, argv, "CFS::Tcdfgh::ik:l::pqstvx:",
 				    long_options, NULL),
-	 option_char != EOF)
+	 option_char != -1)
     switch (option_char)
       {
       default:
