@@ -5,9 +5,9 @@ dist: bionic
 addons:
   homebrew:
     packages:
-    - help2man
-    - flex
-    - texinfo
+      - help2man
+      - flex
+      - texinfo
     update: true
   apt:
     packages: &default_deps
