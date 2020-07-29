@@ -5,7 +5,16 @@ Recode NEWS - User visible changes
 .. contents::
 .. sectnum::
 
-:Copyright: © 1993-2019 Free Software Foundation, Inc.
+:Copyright: © 1993-2020 Free Software Foundation, Inc.
+
+Version 3.7.7
+=============
+
+:Author: Reuben Thomas, 2020-07.
+
++ Improvements to the build system.
++ Updates to nl, pt, sv translations (thanks, translators!).
+
 
 Version 3.7.6
 =============

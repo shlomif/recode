@@ -1,4 +1,4 @@
-@set UPDATED 20 July 2018
-@set UPDATED-MONTH July 2018
-@set EDITION 3.7.6
-@set VERSION 3.7.6
+@set UPDATED 12 December 2019
+@set UPDATED-MONTH December 2019
+@set EDITION 3.7.7
+@set VERSION 3.7.7
