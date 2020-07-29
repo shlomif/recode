@@ -43,5 +43,5 @@ before_install:
 script:
   - ./bootstrap
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./configure --enable-silent-rules ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./configure --enable-silent-rules --enable-package-suffix CFLAGS="-g3 -fsanitize=address -fsanitize=undefined" LDFLAGS="-fsanitize=address -fsanitize=undefined" TESTS_ENVIRONMENT_EXTRA="LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc" ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./configure --enable-silent-rules CFLAGS="-g3 -fsanitize=address -fsanitize=undefined" LDFLAGS="-fsanitize=address -fsanitize=undefined" TESTS_ENVIRONMENT_EXTRA="LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/7/libasan.so PYTHONMALLOC=malloc" ; fi
   - make && make distcheck
