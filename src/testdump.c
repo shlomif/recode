@@ -223,8 +223,8 @@ produce_count (RECODE_SUBTASK subtask)
 
   {
     const unsigned non_count_width = 12;
-    char buffer[50];
     struct ucs2_to_count **cursor;
+    char *buffer;
     unsigned count_width;
     unsigned maximum_count = 0;
     unsigned column = 0;
@@ -233,8 +233,10 @@ produce_count (RECODE_SUBTASK subtask)
     for (cursor = array; cursor < array + size; cursor++)
       if ((*cursor)->count > maximum_count)
 	maximum_count = (*cursor)->count;
-    sprintf (buffer, "%u", maximum_count);
+    if (asprintf (&buffer, "%u", maximum_count) == -1)
+      return false;
     count_width = strlen (buffer);
+    free (buffer);
 
     for (cursor = array; cursor < array + size; cursor++)
       {
@@ -254,8 +256,10 @@ produce_count (RECODE_SUBTASK subtask)
 	      delayed--;
 	    }
 
-	snprintf (buffer, sizeof(buffer), "%*u  %.4X", (int)count_width, (*cursor)->count, character);
+	if (asprintf (&buffer, "%*u  %.4X", (int)count_width, (*cursor)->count, character) == -1)
+          return false;
         put_string (buffer, subtask);
+        free (buffer);
 	if (mnemonic)
 	  {
 	    put_byte (' ', subtask);
