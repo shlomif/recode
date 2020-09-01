@@ -245,7 +245,7 @@ module_utf8 (RECODE_OUTER outer)
 		       NULL, transform_ucs2_utf8);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_utf8 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

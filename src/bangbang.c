@@ -391,7 +391,7 @@ module_bangbang (RECODE_OUTER outer)
 		       NULL, transform_bangbang_latin1);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_bangbang (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -170,7 +170,7 @@ module_endline (RECODE_OUTER outer)
     && declare_alias (outer, "cl", "CR-LF");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_endline (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

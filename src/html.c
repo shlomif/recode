@@ -927,7 +927,7 @@ module_html (RECODE_OUTER outer)
     && declare_alias (outer, "h", "HTML_4.0");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_html (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -337,7 +337,7 @@ module_cdcnos (RECODE_OUTER outer)
     && declare_alias (outer, "NOS", "CDC-NOS");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_cdcnos (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

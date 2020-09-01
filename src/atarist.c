@@ -100,7 +100,7 @@ module_atarist (RECODE_OUTER outer)
   return declare_strip_data (outer, &table, "AtariST");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_atarist (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

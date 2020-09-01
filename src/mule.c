@@ -112,7 +112,7 @@ module_mule (RECODE_OUTER outer)
 		       NULL, transform_mule_latin2);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_mule (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -113,7 +113,7 @@ module_permutations (RECODE_OUTER outer)
     && declare_alias (outer, "swabytes", "21-Permutation");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_permutations (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

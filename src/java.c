@@ -111,7 +111,7 @@ module_java (RECODE_OUTER outer)
 		       NULL, transform_java_utf16);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_java (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

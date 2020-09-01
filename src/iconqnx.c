@@ -229,7 +229,7 @@ module_iconqnx (RECODE_OUTER outer)
     && declare_alias (outer, "QNX", "Icon-QNX");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_iconqnx (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -266,7 +266,7 @@ module_ebcdic (RECODE_OUTER outer)
 		       init_ebcdic_ibm_ascii, transform_byte_to_byte);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_ebcdic (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

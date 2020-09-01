@@ -293,7 +293,7 @@ module_utf7 (RECODE_OUTER outer)
 		       NULL, transform_utf16_utf7);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_utf7 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

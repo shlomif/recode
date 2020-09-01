@@ -625,7 +625,7 @@ module_ucs (RECODE_OUTER outer)
     && declare_alias (outer, "co", "combined-UCS-2");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_ucs (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -239,7 +239,7 @@ module_iconv (RECODE_OUTER outer)
   return true;
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_iconv (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

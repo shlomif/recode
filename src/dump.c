@@ -434,7 +434,7 @@ module_dump (RECODE_OUTER outer)
     ;
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_dump (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

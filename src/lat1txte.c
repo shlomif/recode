@@ -224,7 +224,7 @@ module_latin1_texte (RECODE_OUTER outer)
     && declare_alias (outer, "txte", "Texte");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_latin1_texte (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

@@ -332,7 +332,7 @@ module_afrtran (RECODE_OUTER outer)
         && declare_alias (outer, "t-wolof", "AFRLIN-105-BPI_OCIL");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_afrtran (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

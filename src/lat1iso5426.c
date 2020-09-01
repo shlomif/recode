@@ -84,7 +84,7 @@ module_latin1_iso5426 (RECODE_OUTER outer)
                          transform_byte_to_variable);
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_latin1_iso5426 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

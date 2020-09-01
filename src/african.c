@@ -120,7 +120,7 @@ module_african (RECODE_OUTER outer)
     && declare_alias (outer, "wolof", "AFRLIN-104-BPI_OCIL");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_african (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

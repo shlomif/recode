@@ -259,7 +259,7 @@ module_base64 (RECODE_OUTER outer)
     && declare_alias (outer, "64", "Base64");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_base64 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

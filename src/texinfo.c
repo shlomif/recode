@@ -84,7 +84,7 @@ module_texinfo (RECODE_OUTER outer)
     && declare_alias (outer, "ti", "Texinfo");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_texinfo (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

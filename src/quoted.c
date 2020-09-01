@@ -360,7 +360,7 @@ module_quoted_printable (RECODE_OUTER outer)
     && declare_alias (outer, "QP", "Quoted-Printable");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_quoted_printable (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }

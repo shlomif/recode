@@ -211,7 +211,7 @@ module_utf16 (RECODE_OUTER outer)
     && declare_alias (outer, "u6", "UTF-16");
 }
 
-_GL_ATTRIBUTE_CONST void
+void
 delmodule_utf16 (RECODE_OUTER outer _GL_UNUSED_PARAMETER)
 {
 }
