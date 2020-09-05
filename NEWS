@@ -7,6 +7,17 @@ Recode NEWS - User visible changes
 
 :Copyright: © 1993-2020 Free Software Foundation, Inc.
 
+Version 3.7.8
+=============
+
+:Author: Reuben Thomas, 2020-09.
+
++ Improvements to the build system.
++ Fix man page generation, and document that help2man must be built with
+  gettext.
++ Updates to nl, pt, sv translations (thanks, translators!).
+
+
 Version 3.7.7
 =============
 
