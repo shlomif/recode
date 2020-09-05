@@ -2,7 +2,9 @@
 #+OPTIONS: H:2 toc:2
 
 * Build dependencies
-m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python, Cython, tar and wget.
+
+m4, GNU Make, libtool, Autoconf, automake, gettext, help2man (built with
+gettext), Perl, Flex, Python, Cython, tar and wget.
 
 * Building from git
 
@@ -17,7 +19,9 @@ m4, GNU Make, libtool, Autoconf, automake, Gettext, Help2man, Perl, Flex, Python
 
 * Making a release
 
-To make a release, you'll need [[https://github.com/rrthomas/woger][woger]] and [[https://github.com/aktau/github-release][github-release]], suitably configured. Having tested and pushed all the changes, update the version number in =configure.ac= and write the =NEWS= entry and push those too.
+To make a release, you'll need [[https://github.com/rrthomas/woger][woger]] and [[https://github.com/aktau/github-release][github-release]], suitably
+configured. Having tested and pushed all the changes, update the version
+number in =configure.ac= and write the =NEWS= entry and push those too.
 
 Then execute: ~make release~
 
@@ -142,4 +146,5 @@ guessing that users will not be much impacted in practice.
 - b2c :: This [[http://research.de.uu.net:8080/~gnu/b2c/b2c-2.1.tar.gz][program]], by [[mailto:Joerg.Heitkoetter@de.uu.net][Jörg Heitkötter]], 1997-11, is able to
          generate interpreted character dumps, but properly embedded
          within complete C header files.
-- PyRecode :: This [[http://www.suxers.de/PyRecode.tgz][wrapper]], by [[mailto:ajung@server.python.net][Andreas Jung]], provides Recode functionality to Python programs.  Also see [[http://www.vex.net/parnassus/apyllo.py?find%3Drecode][this link]] and [[http://www.suxers.de/python/pyrecode.htm][this other link]].
+- PyRecode :: This [[http://www.suxers.de/PyRecode.tgz][wrapper]], by [[mailto:ajung@server.python.net][Andreas Jung]], provides Recode functionality
+              to Python programs.  Also see [[http://www.vex.net/parnassus/apyllo.py?find%3Drecode][this link]] and [[http://www.suxers.de/python/pyrecode.htm][this other link]].
