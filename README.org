@@ -6,13 +6,15 @@
 The Recode library converts files between character sets and usages.
 It recognises or produces over 200 different character sets (or about
 300 if combined with an *iconv* library) and transliterates files
-between almost any pair.  When exact transliteration are not possible,
+between almost any pair.  When exact transliterations are not possible,
 it gets rid of offending characters or falls back on approximations.
 The *recode* program is a handy front-end to the library.
 
-Glance through this =README= file before starting configuration.  Make
-sure you read files =ABOUT-NLS= and =INSTALL= if you are not familiar with
-them already.
+Glance through this =README= file before starting configuration.  If you are
+trying to build a local clone of the git repository, then make sure you run
+`./bootstrap` first, followed by `./configure`, `make` and `make install`.
+Make sure you read the files =ABOUT-NLS= and =INSTALL= if you are not familiar
+with them already.
 
 The Recode program and library have been written by François Pinard,
 yet it significantly reuses tabular works from Keld Simonsen.  It is
